@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-@yield('app')
+<div id="app-knock">
+    @yield('app')
+</div>
 </body>
 </html>

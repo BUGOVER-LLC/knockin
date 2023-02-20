@@ -68,7 +68,6 @@ return [
     | the next request. You may even add your own listeners to the list.
     |
     */
-
     'listeners' => [
         WorkerStarting::class => [
             EnsureUploadedFilesAreValid::class,
@@ -133,7 +132,6 @@ return [
     | will force the container to resolve that binding again when asked.
     |
     */
-
     'warm' => [
         ...Octane::defaultServicesToWarm(),
     ],
@@ -152,7 +150,6 @@ return [
     | the number of bytes per row using the configuration options below.
     |
     */
-
     'cache' => [
         'rows' => 1000,
         'bytes' => 10000,
@@ -168,7 +165,6 @@ return [
     | quickly accessed by other workers on the particular Swoole server.
     |
     */
-
     'tables' => [
         'example:1000' => [
             'name' => 'string:1000',
@@ -186,7 +182,6 @@ return [
     | files are changed, Octane will automatically reload your workers.
     |
     */
-
     'watch' => [
         'app',
         'src',
@@ -210,7 +205,6 @@ return [
     | collection if your application consumes this amount of megabytes.
     |
     */
-
     'garbage' => 50,
 
     /*
@@ -223,7 +217,5 @@ return [
     | there isn't a specific time limit on Octane request execution time.
     |
     */
-
     'max_execution_time' => 30,
-
 ];
