@@ -15,6 +15,7 @@ return new class extends Migration {
         Schema::create('shared_channels', static function (Blueprint $table) {
             $table->id('shared_channel_id')->index('shared_channels_index_shared_channel_id');
             $table->unsignedBigInteger('channel_id')->index('shared_channels_index_channel_id');
+            $table->uuid('uid')->index('shared_channels_index_uid');
             $table->string('name')->unique();
             $table->timestamps();
         });

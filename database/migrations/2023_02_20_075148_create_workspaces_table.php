@@ -14,8 +14,8 @@ return new class extends Migration {
     {
         Schema::create('workspaces', function (Blueprint $table) {
             $table->id('workspace_id')->index('workspace_index_id');
-            $table->uuid('uid')->index('workspace_index_uid');
             $table->unsignedBigInteger('creator_id')->index('workspace_index_creator_id');
+            $table->uuid('uid')->index('workspace_index_uid');
             $table->string('name', '500')->unique();
             $table->timestamps();
         });

@@ -2,5 +2,6 @@
 
 import vuetify from './vuetify';
 // import filters from './filters';
+// import validators from './validators';
 
-export { vuetify };
+export { vuetify/*, filters, validators */};
