@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group([], static fn() => [
     Route::get('/', function () {
-
+        return view('app.index');
     }),
 ]);
