@@ -8,9 +8,10 @@
 import axios from 'axios';
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
-import { BROADCAST } from './consts';
+import { BROADCAST, csrf } from './consts';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.common['X-CSRF-TOKEN'] = csrf;
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

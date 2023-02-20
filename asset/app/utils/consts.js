@@ -1,5 +1,7 @@
 /** @format */
 
+export const csrf = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
 export const BROADCAST = {
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
