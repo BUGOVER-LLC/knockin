@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "@babel/plugin-proposal-do-expressions",
+    "@babel/plugin-proposal-async-do-expressions"
+  ],
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
