@@ -82,3 +82,20 @@
 [2023-02-20 20:34:03 $15575.0]	INFO	Server is reloading all workers now
 [2023-02-20 20:34:05 *17442.3]	NOTICE	ProcessFactory::end() (ERRNO 1005): session#45 does not exists
 [2023-02-20 20:34:09 $15575.0]	INFO	Server is reloading all workers now
+[2023-02-21 08:03:42 $2355.0]	INFO	Server is reloading all workers now
+[2023-02-21 08:03:43 $2355.0]	INFO	Server is reloading all workers now
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now
+[2023-02-21 08:03:44 #2347.4]	WARNING	ReactorEpoll::del() (ERRNO 800): failed to delete events[fd=7, fd_type=1], it has already been removed
+[2023-02-21 08:03:44 #2347.4]	INFO	Server is shutdown now

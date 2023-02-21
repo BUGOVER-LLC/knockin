@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Service\Models\Entity\ServiceModel;
 
-class Country extends Model
+class Country extends ServiceModel
 {
     use HasFactory;
 }
