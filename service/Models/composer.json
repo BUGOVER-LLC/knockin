@@ -1,0 +1,28 @@
+{
+  "name": "vendor_name/repository",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "type": "service-package",
+  "authors": [
+    {
+      "name": "artak",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  },
+  "require_dev": {
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Service\\Models\\": "src/"
+    }
+  }
+}
