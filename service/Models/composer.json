@@ -11,6 +11,13 @@
     }
   ],
   "require": {
+    "staudenmeir/belongs-to-through": "^2.12.1",
+    "staudenmeir/eloquent-json-relations": "^1.8",
+    "staudenmeir/eloquent-has-many-deep": "^1.18",
+    "laravel/sanctum": "^3.0.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
   },
   "require_dev": {
   },

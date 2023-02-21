@@ -21,7 +21,9 @@ class ManagerProvider extends BaseBroadcastProvider
     {
         $this->app->singleton(BroadcastManager::class, fn($app) => new TlsBroadcastManager($app));
 
-        $this->app->singleton(BroadcasterContract::class, fn($app) => $app->make(BroadcastManager::class)->connection());
+        $this->app->singleton(BroadcasterContract::class,
+            fn($app) => $app->make(BroadcastManager::class)->connection()
+        );
 
         $this->app->alias(BroadcastManager::class, BroadcastingFactory::class);
     }

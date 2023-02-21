@@ -5,17 +5,10 @@ declare(strict_types=1);
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 use Service\Models\Entity\ServiceAuthenticable;
 
 class User extends ServiceAuthenticable
 {
-    use HasApiTokens;
-    use HasFactory;
-    use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *

@@ -11,7 +11,8 @@
     }
   ],
   "require": {
-    "beyondcode/laravel-websockets": "^1.0.0"
+    "beyondcode/laravel-websockets": "^1.0.0",
+    "pusher/pusher-php-server": "^7.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"

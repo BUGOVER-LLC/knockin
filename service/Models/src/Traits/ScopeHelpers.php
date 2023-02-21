@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use JetBrains\PhpStorm\Pure;
-use Service\Elastica\IndexConfigurator;
-use Service\Elastica\Traits\Searchable;
 use Service\Models\Custom\HasCustomRelations;
 use Service\Repository\Contracts\BaseRepositoryContract;
 use Service\Role\Traits\HasFranchise;
@@ -33,7 +31,6 @@ trait ScopeHelpers
     use HasModules;
     use HasFactory;
     use HasFranchise;
-    use Searchable;
 
     /**
      * @var string

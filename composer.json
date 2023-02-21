@@ -9,16 +9,16 @@
   "license": "MIT",
   "require": {
     "php": "^8.2",
-    "ext-pdo": "*",
-    "ext-swoole": "*",
-    "ext-openssl": "*",
-    "ext-sockets": "*",
     "ext-fileinfo": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*",
+    "ext-sockets": "*",
+    "ext-swoole": "*",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
-    "laravel/sanctum": "^3.0.0",
+    "laravel/octane": "^1.0.0",
     "laravel/tinker": "^2.0.0",
-    "laravel/octane": "^1.0.0"
+    "wikimedia/composer-merge-plugin": "^2.0.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.0.0",
@@ -76,6 +76,23 @@
   "extra": {
     "laravel": {
       "dont-discover": []
+    },
+    "merge-plugin": {
+      "include": [
+        "service/*/composer.local.json",
+        "service/*/composer.json"
+      ],
+      "require": [
+        "service/*/composer.json"
+      ],
+      "recurse": true,
+      "replace": false,
+      "ignore-duplicates": false,
+      "merge-dev": true,
+      "merge-extra": false,
+      "merge-extra-deep": false,
+      "merge-replace": true,
+      "merge-scripts": false
     }
   },
   "config": {
@@ -83,7 +100,8 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "allow-plugins": {
-      "pestphp/pest-plugin": true
+      "pestphp/pest-plugin": true,
+      "wikimedia/composer-merge-plugin": true
     }
   },
   "minimum-stability": "stable",

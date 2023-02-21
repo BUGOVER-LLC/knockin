@@ -6,7 +6,7 @@ namespace Service\Models\Entity;
 
 use Illuminate\Foundation\Auth\User as Authenticable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens;
 use Service\Models\Traits\ScopeHelpers;
 use Service\Role\Traits\HasRoles;
 
