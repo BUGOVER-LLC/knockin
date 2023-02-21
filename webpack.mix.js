@@ -41,7 +41,7 @@ mix.version();
 mix.webpackConfig(
     (module.exports = {
         resolve: {
-            extensions: [".js", ".json", ".vue", ".ts"],
+            extensions: [".js", ".ts", ".json", ".vue"],
             alias: {
                 "@": path.resolve(__dirname, "./asset"),
                 "~": path.resolve(__dirname, "./asset"),
@@ -57,9 +57,11 @@ mix.webpackConfig(
 
 // Global babel config for all bundles
 mix.babelConfig({
-    plugins: [],
+    plugins: [
+        ['@babel/plugin-proposal-decorators', { legacy: true }]
+    ],
     presets: [
-        "@babel/preset-env"
+        ['@babel/preset-env', { targets: { node: 'current' } }],
     ]
 });
 

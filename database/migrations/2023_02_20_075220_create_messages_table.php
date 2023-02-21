@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -19,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('channel_id')->index('messages_index_channel_id');
             $table->unsignedBigInteger('author_id')->index('messages_index_author_id');
             $table->unsignedBigInteger('parent_id')->index('messages_index_parent_id');
-            $table->json('body');
+            $table->json('body')->fulltext('body_messages_full_index');
             $table->timestamps();
         });
     }

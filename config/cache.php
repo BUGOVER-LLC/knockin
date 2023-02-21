@@ -16,7 +16,6 @@ return [
     | not explicitly specified when executing a given caching function.
     |
     */
-
     'default' => env('CACHE_DRIVER', 'file'),
 
     /*
@@ -32,12 +31,7 @@ return [
     |         "memcached", "redis", "dynamodb", "octane", "null"
     |
     */
-
     'stores' => [
-        'apc' => [
-            'driver' => 'apc',
-        ],
-
         'array' => [
             'driver' => 'array',
             'serialize' => false,
@@ -77,6 +71,5 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
-
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache_'),
 ];
