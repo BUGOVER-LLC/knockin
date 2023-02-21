@@ -41,7 +41,7 @@ mix.version();
 mix.webpackConfig(
     (module.exports = {
         resolve: {
-            extensions: [".js", ".json", ".vue", ".ts"],
+            extensions: [".js", ".ts", ".json", ".vue"],
             alias: {
                 "@": path.resolve(__dirname, "./asset"),
                 "~": path.resolve(__dirname, "./asset"),
