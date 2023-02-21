@@ -59,7 +59,7 @@ mix.webpackConfig(
 mix.babelConfig({
     plugins: [],
     presets: [
-        "@babel/preset-env"
+        ['@babel/preset-env', { targets: { node: 'current' } }],
     ]
 });
 

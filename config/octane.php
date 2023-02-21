@@ -185,6 +185,7 @@ return [
     'watch' => [
         'app',
         'src',
+        'service',
         'bootstrap',
         'config',
         'database',
