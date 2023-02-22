@@ -14,11 +14,12 @@ return new class extends Migration {
     {
         Schema::connection('pgsql_app')->create('users', function (Blueprint $table) {
             $table->id('user_id')->index('users_index_user_id');
-            $table->string('name', 200);
+
             $table->string('email', 300)->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamp('verified_at')->nullable();
+
             $table->timestamps();
         });
     }
