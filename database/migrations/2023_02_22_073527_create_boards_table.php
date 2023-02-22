@@ -14,8 +14,12 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('{{ table }}', function (Blueprint $table) {
-            $table->id();
+        Schema::create('boards', function (Blueprint $table) {
+            $table->id('board_id')->index('boards_index_board_id');
+
+            $table->unsignedBigInteger('workspace_id')->index('boards_index_workspace_id');
+            $table->unsignedBigInteger('title')->index('boards_index_title');
+
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('{{ table }}');
+        Schema::dropIfExists('boards');
     }
 };

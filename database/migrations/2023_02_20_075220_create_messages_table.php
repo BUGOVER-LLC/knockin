@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('channel_id')->index('messages_index_channel_id');
             $table->unsignedBigInteger('author_id')->index('messages_index_author_id');
             $table->unsignedBigInteger('parent_id')->index('messages_index_parent_id');
-            $table->json('body');
+            $table->json('body')->fulltext('messages_fulltext_body');
             $table->timestamps();
         });
     }
