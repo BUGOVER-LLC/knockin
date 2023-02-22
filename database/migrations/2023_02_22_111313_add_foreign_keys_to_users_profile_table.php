@@ -14,11 +14,18 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::table('users_profile', static function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('users_profile', static function (Blueprint $table) {
             $table
                 ->foreign('user_id', 'users_profile_foreign_user_id')
                 ->references('user_id')
                 ->on('users')
+                ->onUpdate('NO ACTION')
+                ->onDelete('CASCADE');
+
+            $table
+                ->foreign('country_id', 'users_profile_foreign_country_id')
+                ->references('country_id')
+                ->on('countries')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
         });
@@ -29,10 +36,11 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::table('users_profile', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('users_profile', function (Blueprint $table) {
             $table->dropForeign('users_profile_foreign_user_id');
+            $table->dropForeign('users_profile_foreign_country_id');
         });
     }
 };

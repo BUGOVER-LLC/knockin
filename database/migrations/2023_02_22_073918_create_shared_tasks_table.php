@@ -14,7 +14,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('shared_tasks', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('shared_tasks', static function (Blueprint $table) {
             $table->id('shared_task_id')->index('shared_tasks_index_shared_task_id');
 
             $table->unsignedBigInteger('task_id')->index('shared_tasks_index_task_id');
@@ -34,6 +34,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('shared_tasks');
+        Schema::connection('pgsql_app')->dropIfExists('shared_tasks');
     }
 };

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('messages', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('messages', function (Blueprint $table) {
             $table
                 ->foreign('workspace_id', 'messages_foreign_workspace_id')
                 ->references('workspace_id')
@@ -49,7 +49,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('messages', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('messages', function (Blueprint $table) {
             $table->dropForeign('messages_foreign_workspace_id');
             $table->dropForeign('messages_foreign_channel_id');
             $table->dropForeign('messages_foreign_author_id');

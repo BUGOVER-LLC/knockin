@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('users', function (Blueprint $table) {
             $table->id('user_id')->index('users_index_user_id');
             $table->string('name', 200);
             $table->string('email', 300)->unique();
@@ -28,6 +28,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::connection('pgsql_app')->dropIfExists('users');
     }
 };

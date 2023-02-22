@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('shared_channels', static function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('shared_channels', static function (Blueprint $table) {
             $table->id('shared_channel_id')->index('shared_channels_index_shared_channel_id');
             $table->unsignedBigInteger('channel_id')->index('shared_channels_index_channel_id');
             $table->uuid('uid')->index('shared_channels_index_uid');
@@ -26,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('shared_channels');
+        Schema::connection('pgsql_app')->dropIfExists('shared_channels');
     }
 };

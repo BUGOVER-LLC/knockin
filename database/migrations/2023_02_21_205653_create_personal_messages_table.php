@@ -14,7 +14,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('personal_messages', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('personal_messages', function (Blueprint $table) {
             $table->id('personal_message_id')->index('personal_messages_index_personal_message_id');
 
             $table->unsignedBigInteger('author_id')->index('personal_messages_index_author_id');
@@ -36,6 +36,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('personal_messages');
+        Schema::connection('pgsql_app')->dropIfExists('personal_messages');
     }
 };
