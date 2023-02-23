@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Service\Models\Entity\ServiceModel;
 
@@ -46,5 +47,13 @@ class Workspace extends ServiceModel
     public function boards(): HasMany
     {
         return $this->hasMany(Channel::class, 'workspace_id', 'workspace_id');
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function workers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, Worker::class, 'user_id', 'workspace_id');
     }
 }
