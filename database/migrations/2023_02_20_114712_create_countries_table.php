@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -15,7 +14,17 @@ return new class extends Migration
     {
         Schema::connection('pgsql_app')->create('countries', function (Blueprint $table) {
             $table->id('country_id');
-            $table->timestamps();
+
+            $table->char('iso', 2);
+            $table->char('iso3', 3);
+            $table->string('name', 80);
+            $table->string('nice_name', 80);
+            $table->unsignedTinyInteger('phone_code', 4);
+            $table->string('phone_mask', 32);
+            $table->string('currency', 50);
+            $table->string('flag', 50);
+
+            $table->timestamp('created_at', DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
