@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Service\Models\Entity\ServiceModel;
 use Znck\Eloquent\Relations\BelongsToThrough;
 
@@ -49,5 +50,13 @@ class BoardTask extends ServiceModel
     public function board(): BelongsToThrough
     {
         return $this->belongsToThrough(BoardStape::class, Board::class, 'board_id', 'board_id');
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function executors(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, TaskExecution::class, 'task_id', 'task_execution_id', 'user_id');
     }
 }

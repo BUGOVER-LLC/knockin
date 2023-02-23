@@ -98,6 +98,14 @@ class User extends ServiceAuthenticable
     }
 
     /**
+     * @return BelongsToMany
+     */
+    public function executeTasks(): BelongsToMany
+    {
+        return $this->belongsToMany(BoardTask::class, TaskExecution::class, 'user_id', 'task_execution_id', 'task_id');
+    }
+
+    /**
      * @return HasOne
      */
     public function profile(): HasOne
