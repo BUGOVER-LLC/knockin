@@ -4,8 +4,50 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Service\Models\Entity\ServiceModel;
+use Znck\Eloquent\Relations\BelongsToThrough;
 
 class BoardTask extends ServiceModel
 {
+    /**
+     * @var string
+     */
+    protected $primaryKey = 'board_task_id';
+    /**
+     * @var string[]
+     */
+    protected $fillable = ['stape_id', 'creator_id', 'channel_id', 'title', 'body', 'assigned'];
+
+    /**
+     * @return BelongsTo
+     */
+    public function channel(): BelongsTo
+    {
+        return $this->belongsTo(Channel::class, 'channel_id', 'channel_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function creator(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id', 'creator_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function stape(): BelongsTo
+    {
+        return $this->belongsTo(BoardStape::class, 'board_stape_id', 'stape_id');
+    }
+
+    /**@TODO FIX THIS RELATION
+     * @return BelongsToThrough
+     */
+    public function board(): BelongsToThrough
+    {
+        return $this->belongsToThrough(BoardStape::class, Board::class, 'board_id', 'board_id');
+    }
 }

@@ -74,4 +74,12 @@ class Channel extends ServiceModel
     {
         return $this->belongsToMany(User::class, Participant::class, 'user_id', 'channel_id');
     }
+
+    /**
+     * @return HasMany
+     */
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(BoardTask::class, 'channel_id', 'channel_id');
+    }
 }

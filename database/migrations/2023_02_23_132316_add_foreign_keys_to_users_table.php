@@ -29,7 +29,7 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::connection('pgsql_app')->table('users', function (Blueprint $table) {
             $table->dropForeign('users_foreign_current_workspace_id');

@@ -28,6 +28,13 @@ return new class extends Migration {
                 ->on('users')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
+
+            $table
+                ->foreign('channel_id', 'board_tasks_foreign_channel_id')
+                ->references('channel_id')
+                ->on('channels')
+                ->onUpdate('NO ACTION')
+                ->onDelete('CASCADE');
         });
     }
 
@@ -41,6 +48,7 @@ return new class extends Migration {
         Schema::connection('pgsql_app')->table('board_tasks', function (Blueprint $table) {
             $table->dropForeign('board_tasks_foreign_stape_id');
             $table->dropForeign('board_tasks_foreign_creator_id');
+            $table->dropForeign('board_tasks_foreign_channel_id');
         });
     }
 };

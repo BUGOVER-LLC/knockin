@@ -19,6 +19,7 @@ return new class extends Migration {
 
             $table->unsignedBigInteger('stape_id')->index('board_tasks_index_stape_id');
             $table->unsignedBigInteger('creator_id')->index('board_tasks_index_creator_id');
+            $table->unsignedBigInteger('channel_id')->nullable()->index('board_tasks_index_channel_id');
             $table->string('title')->index('board_tasks_index_title');
             $table->jsonb('body')->index('board_tasks_index_body');
             $table->boolean('assigned')->default(false);
