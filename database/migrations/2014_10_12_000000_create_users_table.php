@@ -15,6 +15,9 @@ return new class extends Migration {
         Schema::connection('pgsql_app')->create('users', function (Blueprint $table) {
             $table->id('user_id')->index('users_index_user_id');
 
+            $table->unsignedBigInteger('current_workspace_id')->index('users_index_current_workspace_id');
+            $table->uuid('uid')->unique();
+            $table->string('phone', 300)->nullable()->unique();
             $table->string('email', 300)->unique();
             $table->string('password');
             $table->rememberToken();

@@ -23,14 +23,14 @@ return new class extends Migration {
                 ->onDelete('CASCADE');
 
             $table
-                ->foreign('main_board_id', 'shared_tasks_foreign_main_board_id')
+                ->foreign('board_id', 'shared_tasks_foreign_board_id')
                 ->references('board_id')
                 ->on('boards')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
 
             $table
-                ->foreign('target_board_id', 'shared_tasks_foreign_target_board_id')
+                ->foreign('target_id', 'shared_tasks_foreign_target_id')
                 ->references('board_id')
                 ->on('boards')
                 ->onUpdate('NO ACTION')
@@ -47,8 +47,8 @@ return new class extends Migration {
     {
         Schema::connection('pgsql_app')->table('shared_tasks', static function (Blueprint $table) {
             $table->dropForeign('shared_tasks_foreign_task_id');
-            $table->dropForeign('shared_tasks_foreign_main_board_id');
-            $table->dropForeign('shared_tasks_foreign_target_board_id');
+            $table->dropForeign('shared_tasks_foreign_board_id');
+            $table->dropForeign('shared_tasks_foreign_target_id');
         });
     }
 };

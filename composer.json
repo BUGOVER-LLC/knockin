@@ -23,6 +23,7 @@
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.0.0",
     "barryvdh/laravel-ide-helper": "^2.0.0",
+    "beyondcode/laravel-er-diagram-generator": "^2.0",
     "beyondcode/laravel-query-detector": "^1.0.0",
     "fakerphp/faker": "^1.20.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",

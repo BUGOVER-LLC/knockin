@@ -20,6 +20,20 @@ return new class extends Migration
                 ->on('channels')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
+
+            $table
+                ->foreign('workspace_id', 'shared_channels_foreign_workspace_id')
+                ->references('workspace_id')
+                ->on('workspaces')
+                ->onUpdate('NO ACTION')
+                ->onDelete('CASCADE');
+
+            $table
+                ->foreign('target_id', 'shared_channels_foreign_target_id')
+                ->references('workspace_id')
+                ->on('workspaces')
+                ->onUpdate('NO ACTION')
+                ->onDelete('CASCADE');
         });
     }
 
@@ -30,6 +44,8 @@ return new class extends Migration
     {
         Schema::connection('pgsql_app')->table('shared_channels', function (Blueprint $table) {
             $table->dropForeign('shared_channels_foreign_channel_id');
+            $table->dropForeign('shared_channels_foreign_workspace_id');
+            $table->dropForeign('shared_channels_foreign_target_id');
         });
     }
 };

@@ -18,8 +18,8 @@ return new class extends Migration {
             $table->id('shared_board_id')->index('shared_boards_index_shared_board_id');
 
             $table->unsignedBigInteger('board_id')->index('shared_boards_index_board_id');
-            $table->unsignedBigInteger('main_workspace_id')->index('shared_boards_index_main_workspace_id');
-            $table->unsignedBigInteger('target_workspace_id')->index('shared_boards_index_target_workspace_id');
+            $table->unsignedBigInteger('workspace_id')->index('shared_boards_index_workspace_id');
+            $table->unsignedBigInteger('target_id')->index('shared_boards_index_target_id');
             $table->string('name');
 
             $table->timestamps();
