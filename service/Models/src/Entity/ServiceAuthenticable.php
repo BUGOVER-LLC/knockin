@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Service\Models\Entity;
 
+use App\Models\PersonalAccessToken;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -39,5 +41,15 @@ class ServiceAuthenticable extends Authenticable
     public function routeNotificationForFcm(): ?string
     {
         return $this->fcm()->first()->key ?? null;
+    }
+
+    /**
+     * Get the access tokens that belong to model.
+     *
+     * @return HasMany
+     */
+    public function tokens(): HasMany
+    {
+        return $this->hasMany(PersonalAccessToken::class, 'user_id', 'user_id');
     }
 }

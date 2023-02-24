@@ -19,12 +19,12 @@ return new class extends Migration {
             $table->char('iso3', 3);
             $table->string('name', 80);
             $table->string('nice_name', 80);
-            $table->unsignedTinyInteger('phone_code', 4);
+            $table->unsignedTinyInteger('phone_code');
             $table->string('phone_mask', 32);
             $table->string('currency', 50);
-            $table->string('flag', 50);
+            $table->string('flag', 30);
 
-            $table->timestamp('created_at', DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('created_at')->default(DB::raw('current_timestamp'));
         });
     }
 
