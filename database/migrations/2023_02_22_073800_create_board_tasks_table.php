@@ -23,6 +23,7 @@ return new class extends Migration {
             $table->string('title')->index('board_tasks_index_title');
             $table->jsonb('body')->index('board_tasks_index_body');
             $table->boolean('assigned')->default(false);
+            $table->enum('status', ['']);
 
             $table->timestamps();
         });

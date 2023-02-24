@@ -18,10 +18,10 @@ return new class extends Migration {
             $table->id('board_id')->index('boards_index_board_id');
 
             $table->unsignedBigInteger('workspace_id')->index('boards_index_workspace_id');
-            $table->unsignedBigInteger('title')->index('boards_index_title');
-
+            $table->string('title');
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE app.boards ADD COLUMN terms daterange NULL');
     }
 
     /**
