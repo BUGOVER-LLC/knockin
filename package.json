@@ -45,6 +45,7 @@
     "crypto-js": "^4.1.1",
     "laravel-echo": "^1.15.0",
     "pusher-js": "^8.0.1",
+    "tiptap-vuetify": "^2.24.0",
     "vee-validate": "^3.4.14",
     "vue": "^2.7.14",
     "vue-router": "^3.6.5",
