@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ mix('builds/app/css/app.css') }}">
-    <script defer src="{{ mix('builds/app/js/app.js') }}"></script>
+    <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>
 <body>
 <div id="app-knock" style='height: 100%;'>

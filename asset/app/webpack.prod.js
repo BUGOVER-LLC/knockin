@@ -5,7 +5,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 mix.vue({ version: 2 })
-    .js('assets/app/app.js', 'public/builds/app/js/app.js')
+    .js('assets/app/app.ts', 'public/builds/app/js/app.ts')
     .sass('assets/app/style/app.scss', 'public/builds/app/css/app.css')
     .webpackConfig({
         output: {

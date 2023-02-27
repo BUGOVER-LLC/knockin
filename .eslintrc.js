@@ -1,21 +1,25 @@
+/** @format */
+
 module.exports = {
     extends: [
         'eslint:recommended',
-        "plugin:vue/essential",
-        "plugin:vue/recommended",
-        "plugin:vue/strongly-recommended",
-        "prettier"
+        'plugin:vue/essential',
+        'plugin:vue/recommended',
+        'plugin:vue/strongly-recommended',
+        'prettier',
     ],
     env: {
         browser: true,
         node: true,
         es6: true,
-        es2021: true
+        es2021: true,
     },
-    "parserOptions": {
-        ecmaVersion: 2022
+    parserOptions: {
+        ecmaVersion: 2022,
     },
+    plugins: ['@typescript-eslint'],
+    parser: '@typescript-eslint/parser',
     rules: {
         // @add severity as you wish
-    }
-}
+    },
+};
