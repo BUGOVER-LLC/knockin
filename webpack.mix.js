@@ -1,11 +1,11 @@
 require("dotenv").config();
-const path = require("path");
-const mix = require("laravel-mix");
+const path = require('path');
+const mix = require('laravel-mix');
 const environment = process.env.APP_ENV;
 const strictMode = 'true' === process.env.STRICT_MODE ?? false;
 const WebpackObfuscation = require('webpack-obfuscator');
 
-if ("local" !== environment) {
+if ('local' !== environment) {
     /**
      * =================================================================================================================
      * 💣    For complex build all bundles, Production or Development environments
@@ -41,9 +41,9 @@ mix.version();
 mix.webpackConfig(
     (module.exports = {
         resolve: {
-            extensions: ['.js', 'tsx', '.ts'],
+            extensions: ['.js', '.jsx', 'tsx', '.ts', '.vue'],
             alias: {
-                "~": path.resolve(__dirname, "./asset"),
+                '~': path.resolve(__dirname, './asset'),
             },
         },
         optimization: {
@@ -54,9 +54,8 @@ mix.webpackConfig(
     }),
 );
 
-// Disable LICENSE files
 mix.options({
     terser: {
         extractComments: false,
-    }
+    },
 });

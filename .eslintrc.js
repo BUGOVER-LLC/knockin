@@ -16,7 +16,7 @@ module.exports = {
         browser: true,
         node: true,
         es6: true,
-        es2021: true,
+        es2022: true,
     },
     parserOptions: {
         ecmaVersion: 2022,
@@ -27,6 +27,8 @@ module.exports = {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'vue/component-name-in-template-casing': 'error',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
         'vue/match-component-file-name': [
             'error',
             {
@@ -34,7 +36,6 @@ module.exports = {
                 shouldMatchCase: true,
             },
         ],
-        '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/naming-convention': [
             'error',
             {
@@ -46,6 +47,5 @@ module.exports = {
                 },
             },
         ],
-        '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
     },
 };

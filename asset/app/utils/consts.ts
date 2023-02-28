@@ -1,10 +1,6 @@
 /** @format */
 
-export const cRef = document.head.querySelector('meta[name="csrf-token"]');
-
-if (cRef) {
-    cRef.getAttribute('content');
-}
+export const cRef = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 export const BROADCAST = {
     broadcaster: 'pusher',
