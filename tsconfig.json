@@ -18,7 +18,8 @@
     "typeRoots": [
       "./node_modules/@types",
       "asset/app/types"
-    ]
+    ],
+    "resolveJsonModule": true,
   },
   "include": [
     "asset/app/**/*"

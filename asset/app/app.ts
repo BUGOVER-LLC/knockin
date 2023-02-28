@@ -7,7 +7,7 @@ import store from './store';
 import './utils/bootstrap';
 
 new Vue({
-    router,
     store,
+    router,
     vuetify,
 }).$mount('#app-knock');

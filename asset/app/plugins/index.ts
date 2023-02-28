@@ -1,7 +1,6 @@
 /** @format */
 
 import vuetify from './vuetify';
-// import filters from './filters';
-// import validators from './validators';
+const validators = import('./validators');
 
-export { vuetify/*, filters, validators */};
+export { vuetify, validators };
