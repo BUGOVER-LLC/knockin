@@ -1,5 +1,9 @@
 /** @format */
 
+if (!document.head.querySelector('meta[name="csrf-token"]')) {
+    throw new Error('Go');
+}
+
 export const cRef = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 export const BROADCAST = {
