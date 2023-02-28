@@ -17,15 +17,16 @@
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "asset/app/types"
+      "./asset/app/types"
     ],
     "resolveJsonModule": true,
     "paths": {
       "~/*": [
-        "./asset/"
+        "asset/*"
       ]
     }
   },
+  "exclude": ["node_modules"],
   "include": [
     "asset/app/**/*"
   ]
