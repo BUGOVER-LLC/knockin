@@ -6,8 +6,6 @@ if (cRef) {
     cRef.getAttribute('content');
 }
 
-const process = process;
-
 export const BROADCAST = {
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
