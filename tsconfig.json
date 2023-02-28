@@ -20,6 +20,11 @@
       "asset/app/types"
     ],
     "resolveJsonModule": true,
+    "paths": {
+      "~/*": [
+        "./asset/"
+      ]
+    }
   },
   "include": [
     "asset/app/**/*"

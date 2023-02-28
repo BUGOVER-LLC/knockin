@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": [
+      "webpack-env",
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "asset/app/types"
+    ],
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": [
+        "./asset/"
+      ]
+    }
+  },
+  "include": [
+    "asset/app/**/*"
+  ]
+}
