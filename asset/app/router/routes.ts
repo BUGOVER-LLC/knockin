@@ -10,10 +10,5 @@ export const Routes = [
             // navigation: Navigation,
             default: () => import('~/app/pages/auth/AuthIndex'),
         },
-        children: [
-            {
-
-            }
-        ],
     },
 ];
