@@ -1,6 +1,9 @@
 /** @format */
 
-export const Routes = [
+import { RouteConfig } from 'vue-router';
+
+const AuthIndex = (): any => import('~/app/pages/auth/AuthIndex');
+export const Routes: RouteConfig[] = [
     {
         props: true,
         name: 'authIndex',
@@ -8,12 +11,7 @@ export const Routes = [
         components: {
             // toolbar: Toolbar,
             // navigation: Navigation,
-            default: () => import('~/app/pages/auth/AuthIndex'),
+            default: AuthIndex,
         },
-        children: [
-            {
-
-            }
-        ],
     },
 ];

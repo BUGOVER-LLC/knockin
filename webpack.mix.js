@@ -41,11 +41,9 @@ mix.version();
 mix.webpackConfig(
     (module.exports = {
         resolve: {
-            extensions: [".js", ".ts", ".vue"],
+            extensions: ['.js', 'tsx', '.ts'],
             alias: {
                 "~": path.resolve(__dirname, "./asset"),
-                "@": path.resolve(__dirname, "./node_modules"),
-                "vue-property-decorator": "vue-property-decorator/lib/index.d.ts"
             },
         },
         optimization: {
@@ -55,17 +53,6 @@ mix.webpackConfig(
         },
     }),
 );
-
-// Global babel config for all bundles
-mix.babelConfig({
-    plugins: [
-        ["@babel/proposal-decorators", { "legacy": true }],
-        ["@babel/proposal-class-properties", { "loose": true }]
-    ],
-    presets: [
-        ['@babel/preset-env', { targets: { node: 'current' } }],
-    ]
-});
 
 // Disable LICENSE files
 mix.options({

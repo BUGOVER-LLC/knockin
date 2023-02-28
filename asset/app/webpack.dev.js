@@ -3,7 +3,7 @@
 const mix = require('laravel-mix');
 
 mix.vue({ version: 2 })
-    .js('asset/app/app.ts', 'public/builds/app/js/app.js')
+    .ts('asset/app/app.ts', 'public/builds/app/js/app.js')
     .sass('asset/app/style/app.scss', 'public/builds/app/css/app.css')
     .webpackConfig({
         output: {

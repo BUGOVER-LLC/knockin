@@ -2,10 +2,14 @@
 
 module.exports = {
     extends: [
+        '@vue/typescript/recommended',
+        '@vue/prettier',
         'eslint:recommended',
         'plugin:vue/essential',
         'plugin:vue/recommended',
         'plugin:vue/strongly-recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
         'prettier',
     ],
     env: {
@@ -20,6 +24,28 @@ module.exports = {
     plugins: ['@typescript-eslint'],
     parser: '@typescript-eslint/parser',
     rules: {
-        // @add severity as you wish
+        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'vue/component-name-in-template-casing': 'error',
+        'vue/match-component-file-name': [
+            'error',
+            {
+                extensions: ['vue'],
+                shouldMatchCase: true,
+            },
+        ],
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/naming-convention': [
+            'error',
+            {
+                selector: 'interface',
+                format: ['PascalCase'],
+                custom: {
+                    regex: '^I[A-Z]',
+                    match: true,
+                },
+            },
+        ],
+        '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
     },
 };

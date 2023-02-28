@@ -75,6 +75,8 @@ import { Component, Vue } from 'vue-property-decorator';
     mixins: [],
 })
 export default class AuthIndex extends Vue {
+    beforeRouteUpdate(to, from, next: string): void {}
+
     data() {
         return {
             drawer: null,

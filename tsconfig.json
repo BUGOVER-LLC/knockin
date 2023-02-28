@@ -1,13 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2020",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": "./",
     "strict": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": [
+      "webpack-env",
+      "node"
+    ]
   },
-  "include": ["asset/app/**/*"]  // Frontend paths pattern
+  "include": [
+    "asset/app/**/*"
+  ]
 }

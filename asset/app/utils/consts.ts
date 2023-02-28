@@ -1,6 +1,12 @@
 /** @format */
 
-export const csrf = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content');
+export const cRef = document.head.querySelector('meta[name="csrf-token"]');
+
+if (cRef) {
+    cRef.getAttribute('content');
+}
+
+const process = process;
 
 export const BROADCAST = {
     broadcaster: 'pusher',
@@ -16,7 +22,7 @@ export const BROADCAST = {
     enabledTransports: ['ws', 'wss'],
     disabledTransports: ['sockjs', 'xhr_polling', 'xhr_streaming'],
     namespace: '',
-    csrfToken: csrf,
+    csrfToken: cRef,
     authEndpoint: '/broadcasting/auth',
     transports: ['websocket', 'polling'],
     autoConnect: true,
