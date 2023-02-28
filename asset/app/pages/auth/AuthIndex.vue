@@ -70,22 +70,16 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-    props: {},
     components: {},
     mixins: [],
 })
 export default class AuthIndex extends Vue {
+    drawer: null | boolean = null;
+
     beforeRouteUpdate(to, from, next: string): void {}
 
-    data() {
-        return {
-            drawer: null,
-            example: '54354343',
-        };
-    }
-
     created() {
-        let data = '';
+        console.log(this.drawer);
     }
 }
 </script>
