@@ -32,7 +32,7 @@ module.exports = {
         'vue/match-component-file-name': [
             'error',
             {
-                extensions: ['vue'],
+                extensions: ['vue', 'ts', 'js'],
                 shouldMatchCase: true,
             },
         ],

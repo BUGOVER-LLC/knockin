@@ -48,7 +48,7 @@ export default {
 
     methods: {
         setBorderWidth() {
-            let i = this.$refs.drawer.$el.querySelector('.v-navigation-drawer__border');
+            const i = this.$refs.drawer.$el.querySelector('.v-navigation-drawer__border');
             i.style.width = this.navigation.borderSize + 'px';
             i.style.cursor = 'ew-resize';
         },
