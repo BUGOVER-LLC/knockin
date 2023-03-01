@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "es2022",
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "strict": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
     "experimentalDecorators": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "types": [
       "webpack-env",
@@ -17,16 +18,20 @@
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "asset/app/types"
+      "./asset/app/@types"
     ],
     "resolveJsonModule": true,
     "paths": {
       "~/*": [
-        "./asset/"
+        "asset/*"
       ]
     }
   },
+  "vueCompilerOptions": {
+    "target": 2.7
+  },
+  "exclude": ["node_modules"],
   "include": [
-    "asset/app/**/*"
+    "asset/**/*"
   ]
 }

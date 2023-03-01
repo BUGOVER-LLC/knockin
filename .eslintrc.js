@@ -19,7 +19,7 @@ module.exports = {
         es2022: true,
     },
     parserOptions: {
-        ecmaVersion: 2022,
+        ecmaVersion: 'latest',
     },
     plugins: ['@typescript-eslint'],
     parser: '@typescript-eslint/parser',

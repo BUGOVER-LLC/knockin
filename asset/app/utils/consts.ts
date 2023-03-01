@@ -1,12 +1,13 @@
 /** @format */
 
-if (!document.head.querySelector('meta[name="csrf-token"]')) {
+const cRefObject: HTMLElement | null = document.head.querySelector('meta[name="csrf-token"]');
+if (null === cRefObject) {
+    process.exit(500);
     throw new Error('Go');
 }
+const cRef: string | null = cRefObject.getAttribute('content');
 
-export const cRef = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-export const BROADCAST = {
+const BROADCAST = {
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
@@ -29,3 +30,5 @@ export const BROADCAST = {
     httpHost: window.location.hostname,
     stats_host: window.location.hostname,
 };
+
+export { BROADCAST, cRef };
