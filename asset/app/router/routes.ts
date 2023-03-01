@@ -2,7 +2,7 @@
 
 import { RouteConfig } from 'vue-router';
 
-const AuthIndex = (): any => import('~/app/pages/auth/AuthIndex');
+const AuthIndex = (): any => import('~/app/pages/auth/AuthIndex.vue');
 export const Routes: RouteConfig[] = [
     {
         props: true,
