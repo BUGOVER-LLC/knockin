@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\App\NoixIndexController;
+use App\Http\Controllers\Auth\SignInController;
+use App\Http\Controllers\Greeting\GreetingIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +17,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::group([], static fn () => [
-    Route::get('/', function () {
-        return view('app.index');
-    }),
+Route::group(['middleware' => 'guest'], static fn () => [
+    Route::get('/', GreetingIndexController::class)->name('greeting-index'),
 ]);
 
-Route::group(['middleware' => 'auth'], fn () => [
+Route::group(['middleware' => 'guest'], static fn () => [
+    Route::get('signin', SignInController::class)->name('sign-in-index'),
+]);
+
+Route::group(['middleware' => 'auth'], static fn () => [
+    Route::get('noix/{id}', NoixIndexController::class)->name('index-noix'),
 ]);

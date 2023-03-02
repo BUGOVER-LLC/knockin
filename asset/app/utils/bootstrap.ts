@@ -5,6 +5,7 @@
  *
  * @format
  */
+import Vue from 'vue';
 import axios from 'axios';
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
@@ -20,3 +21,4 @@ axios.defaults.headers.common['X-CSRF-TOKEN'] = cRef;
  */
 window.Pusher = Pusher;
 window.Echo = new Echo(BROADCAST);
+Vue.prototype.$http = axios;

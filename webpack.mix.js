@@ -43,7 +43,7 @@ mix.webpackConfig(
         resolve: {
             extensions: ['.js', '.ts', '.vue'],
             alias: {
-                '~': path.resolve(__dirname, './asset'),
+                '@': path.resolve(__dirname, './asset'),
             },
         },
         optimization: {

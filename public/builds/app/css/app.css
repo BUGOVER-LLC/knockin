@@ -4,6 +4,10 @@
   font-family: inherit;
 }
 
+html {
+  overflow: hidden !important;
+}
+
 #app {
   font-family: "Roboto", sans-serif;
 }
