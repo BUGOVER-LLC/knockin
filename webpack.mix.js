@@ -1,4 +1,6 @@
-require("dotenv").config();
+/** @format */
+
+require('dotenv').config();
 const path = require('path');
 const mix = require('laravel-mix');
 const environment = process.env.APP_ENV;
@@ -20,17 +22,17 @@ if ('local' !== environment) {
                 rotateUnicodeArray: true,
             }),
         ],
-    })
+    });
 } else {
     /**
      * =================================================================================================================
      * 🤠    Uncomment the one, on which you work and run your ran watch, dev or prod, for local development environment
      * =================================================================================================================
      */
-    require("./asset/app/webpack.dev");
+    require('./asset/app/webpack.dev');
 
     if (strictMode) {
-        mix.sourceMaps()
+        mix.sourceMaps();
     }
 }
 
@@ -54,8 +56,14 @@ mix.webpackConfig(
     }),
 );
 
+mix.extract({
+    to: 'builds/vendor/vendor.js',
+    libraries: ['vue', 'vuex', 'vuetify', 'vee-validate'],
+});
+
 mix.options({
     terser: {
         extractComments: false,
+        runtimeChunkPath: 'builds/vendor',
     },
 });

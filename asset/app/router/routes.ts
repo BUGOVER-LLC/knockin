@@ -2,27 +2,36 @@
 
 import { RouteConfig } from 'vue-router';
 
-const AuthIndex = (): any => import('@/app/pages/auth/AuthIndex.vue');
-const Greeting = (): any => import('@/app/pages/greeting/GreetingIndex.vue');
-const Application = (): any => import('@/app/pages/greeting/GreetingIndex.vue');
+const getStartedIndex = (): any => import('@/app/pages/auth/started/GetStartedIndex.vue');
+const authIndex = (): any => import('@/app/pages/auth/AuthIndex.vue');
+const greeting = (): any => import('@/app/pages/greeting/GreetingIndex.vue');
+const application = (): any => import('@/app/pages/application/AppIndex.vue');
 
 export const Routes: RouteConfig[] = [
     {
         props: true,
-        name: 'greeting',
+        name: 'greetingIndex',
         path: '/',
-        component: Greeting,
+        component: greeting,
     },
     {
         props: true,
         name: 'authIndex',
         path: '/signin',
-        component: AuthIndex,
+        component: authIndex,
+        children: [
+            {
+                props: false,
+                name: 'authStartedIndex',
+                path: '/started',
+                component: getStartedIndex,
+            },
+        ],
     },
     {
         props: true,
         name: 'applicationIndex',
         path: '/noix/:id',
-        component: Application,
+        component: application,
     },
 ];

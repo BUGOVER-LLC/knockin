@@ -8,7 +8,7 @@ use App\Http\Action;
 
 class SignInController extends Action
 {
-    public function index()
+    public function __invoke()
     {
     }
 }

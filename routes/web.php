@@ -21,10 +21,10 @@ Route::group(['middleware' => 'guest'], static fn () => [
     Route::get('/', GreetingIndexController::class)->name('greeting-index'),
 ]);
 
-Route::group(['middleware' => 'guest'], static fn () => [
+Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn () => [
     Route::get('signin', SignInController::class)->name('sign-in-index'),
 ]);
 
-Route::group(['middleware' => 'auth'], static fn () => [
+Route::group(['middleware' => 'auth', 'prefix' => 'aloha'], static fn () => [
     Route::get('noix/{id}', NoixIndexController::class)->name('index-noix'),
 ]);

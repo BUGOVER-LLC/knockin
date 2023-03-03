@@ -6,12 +6,12 @@ namespace Src\Loaders;
 
 use Illuminate\Support\Str;
 
-trait ObserverLoaderTrait
+trait ObserverLoader
 {
     use Getters;
 
     /**
-     * @return array
+     * @return void
      */
     protected function loadObservers(): void
     {

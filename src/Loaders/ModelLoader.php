@@ -7,7 +7,7 @@ namespace Src\Loaders;
 use App\BaseModel;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
-trait ModelLoaderTrait
+trait ModelLoader
 {
     use Getters;
 
