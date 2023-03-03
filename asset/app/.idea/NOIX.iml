@@ -11,5 +11,6 @@
     <orderEntry type="library" name="@types/media-typer" level="application" />
     <orderEntry type="library" name="@types/simple-peer" level="application" />
     <orderEntry type="library" name="modules" level="project" />
+    <orderEntry type="library" name="@types/typescript-deferred" level="application" />
   </component>
 </module>

@@ -25,17 +25,17 @@ B
 webpack.dev.js,8/8/88370f22b4cd5b65c6abcf2a1fef5886355982b9
 >
 style/app.scss,b/1/b1eb3e6bdd12112c94b3e3e616d56dda3dc93a6d
-Q
-!components/ChannelsNavigation.vue,d/e/de20057cb44938daba7930e5620bf9639b17901b
 H
 components/SystemBar.vue,3/d/3db378f8b322a3086780d374ab46b4833a5504b4
+S
+#components/WorkspacesNavigation.vue,b/2/b26ccc136460b5778b124c7e4ea4f5f289e88a92
+Q
+!components/ChannelsNavigation.vue,d/e/de20057cb44938daba7930e5620bf9639b17901b
 O
 components/MessagingContent.vue,b/4/b431bd5eb5ecad8bc1361b6d47a565bdcf4fb719
 N
 components/MessagingWriter.vue,b/0/b0799827be421535214c9c7f4c2d1c8c4e8487aa
 H
 pages/auth/AuthIndex.vue,c/5/c55341f6f767aff7b4a8a7d6ab0bdd67fe2cce84
-S
-#components/WorkspacesNavigation.vue,b/2/b26ccc136460b5778b124c7e4ea4f5f289e88a92
 E
 plugins/validators.ts,1/0/103d37a445964d9e8582348c2d1db6a850314067
