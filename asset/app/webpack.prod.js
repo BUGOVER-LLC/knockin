@@ -2,11 +2,10 @@
 
 const mix = require('laravel-mix');
 const CompressionPlugin = require('compression-webpack-plugin');
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 mix.vue({ version: 2 })
-    .ts('assets/app/app.ts', 'public/builds/app/js/app.ts')
-    .sass('assets/app/style/app.scss', 'public/builds/app/css/app.css')
+    .ts('asset/app/app.ts', 'public/builds/app/js/app.ts')
+    .sass('asset/app/style/app.scss', 'public/builds/app/css/app.css')
     .webpackConfig({
         output: {
             chunkFilename: 'builds/chunks/[name].[hash].js',
@@ -21,7 +20,6 @@ mix.vue({ version: 2 })
                     level: 9,
                 },
             }),
-            new MomentLocalesPlugin(),
         ],
     })
     .options({

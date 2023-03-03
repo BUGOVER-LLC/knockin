@@ -123,7 +123,7 @@ return [
         | Default: -1
         |
         */
-        'lifetime' => (int)env('QUERY_CACHE_LIFETIME', 0),
+        'lifetime' => (int)env('QUERY_CACHE_LIFETIME', 1),
 
         /*
         |--------------------------------------------------------------------------
