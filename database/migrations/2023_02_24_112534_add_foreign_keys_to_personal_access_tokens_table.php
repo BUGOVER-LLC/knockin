@@ -29,7 +29,7 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::connection('pgsql_app')->table('personal_access_tokens', function (Blueprint $table) {
             $table->dropForeign('personal_access_tokens_foreign_user_id');
