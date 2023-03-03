@@ -58,7 +58,7 @@ mix.webpackConfig(
 
 mix.extract({
     to: 'builds/vendor/vendor.js',
-    libraries: ['vue', 'vuex', 'vuetify', 'vee-validate'],
+    libraries: ['vue', 'vuex', 'vue-router', 'vuetify', 'vee-validate'],
 });
 
 mix.options({

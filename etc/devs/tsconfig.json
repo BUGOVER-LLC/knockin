@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
+    "noUnusedParameters": true,
     "types": [
       "webpack-env",
       "node"
@@ -22,7 +23,7 @@
     ],
     "resolveJsonModule": true,
     "paths": {
-      "~/*": [
+      "@/*": [
         "asset/*"
       ]
     }
