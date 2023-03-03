@@ -17,8 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-var/debugbar
-var/framework
-var/logs
-var/swoole
+var
 .php-cs-fixer.cache
