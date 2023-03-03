@@ -106,21 +106,21 @@ trait Cache
      */
     protected function flushCacheKeys(): array
     {
-        $flushedKeys = [];
+        $flushed_keys = [];
         $calledClass = static::class;
         $config = $this->getContainer('config')->get('repository.cache');
         $cacheKeys = $this->getCacheKeys($config['keys_file']);
 
         if (isset($cacheKeys[$calledClass]) && \is_array($cacheKeys[$calledClass])) {
             foreach ($cacheKeys[$calledClass] as $cacheKey) {
-                $flushedKeys[] = $calledClass . '@' . $cacheKey;
+                $flushed_keys[] = $calledClass . '@' . $cacheKey;
             }
 
             unset($cacheKeys[$calledClass]);
             file_put_contents($config['keys_file'], json_encode($cacheKeys, JSON_THROW_ON_ERROR));
         }
 
-        return $flushedKeys;
+        return $flushed_keys;
     }
 
     /**

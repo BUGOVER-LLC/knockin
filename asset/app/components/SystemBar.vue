@@ -2,7 +2,7 @@
 
 <template>
     <v-system-bar app>
-        <v-spacer></v-spacer>
+        <v-spacer />
 
         <v-icon>mdi-square</v-icon>
 

@@ -6,8 +6,9 @@ import { router } from './router';
 import store from './store';
 import './utils/bootstrap';
 
-new Vue({
+const app = new Vue({
     store,
     router,
     vuetify,
-}).$mount('#app-knock');
+});
+app.$mount('#app-knock');

@@ -82,7 +82,7 @@ trait RelationsStore
      */
     protected function getRelationRepositoryId($entity, $method): mixed
     {
-        $namespace = 'Src\Repositories\\';
+        $namespace = 'App\Repositories\\';
         $xt_name = Str::afterLast(\get_class($entity->{$method}()->getRelated()), '\\');
 
         return app($namespace . $xt_name . '\\' . $xt_name . 'Contract');

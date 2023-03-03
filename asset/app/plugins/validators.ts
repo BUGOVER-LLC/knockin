@@ -1,7 +1,7 @@
 /** @format */
 
 import { extend, localize } from 'vee-validate';
-import { min, required, email, confirmed } from 'vee-validate/dist/rules';
+import { min, required, email } from 'vee-validate/dist/rules';
 import en from 'vee-validate/dist/locale/en.json';
 
 // Install rules

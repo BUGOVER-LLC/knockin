@@ -6,8 +6,9 @@ namespace Src\Loaders;
 
 trait AutoLoader
 {
-    use ObserverLoaderTrait;
-    use ModelLoaderTrait;
+    use ObserverLoader;
+    use ModelLoader;
+    use RepositoryLoader;
 
     /**
      * Register method service provider
@@ -16,7 +17,7 @@ trait AutoLoader
      */
     public function runLoaderRegister(): void
     {
-        // @TODO Register provider
+        $this->loadContractRepo();
     }//end runLoaderRegister()
 
     /**

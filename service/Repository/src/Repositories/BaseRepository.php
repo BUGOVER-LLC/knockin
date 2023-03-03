@@ -36,8 +36,8 @@ class BaseRepository extends Repository
 
     /**
      * @inheritDoc
-     * @param  null  $column
-     * @param  array  $attributes
+     * @param null $column
+     * @param array $attributes
      * @return mixed
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -49,31 +49,13 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->latest($column)->first($attributes)
+            fn () => $this->prepareQuery($this->createModel())->latest($column)->first($attributes)
         );
     }
 
     /**
      * @inheritDoc
-     * @param  null  $column
-     * @return mixed
-     * @throws ContainerExceptionInterface
-     * @throws JsonException
-     * @throws NotFoundExceptionInterface
-     */
-    public function firstOldest($column = null): ?object
-    {
-        return $this->executeCallback(
-            static::class,
-            __FUNCTION__,
-            \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->oldest($column)->first()
-        );
-    }
-
-    /**
-     * @inheritDoc
-     * @param  null  $column
+     * @param null $column
      * @return mixed
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -85,13 +67,31 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->latest($column)
+            fn () => $this->prepareQuery($this->createModel())->latest($column)
         );
     }
 
     /**
      * @inheritDoc
-     * @param  null  $column
+     * @param null $column
+     * @return mixed
+     * @throws ContainerExceptionInterface
+     * @throws JsonException
+     * @throws NotFoundExceptionInterface
+     */
+    public function firstOldest($column = null): ?object
+    {
+        return $this->executeCallback(
+            static::class,
+            __FUNCTION__,
+            \func_get_args(),
+            fn () => $this->prepareQuery($this->createModel())->oldest($column)->first()
+        );
+    }
+
+    /**
+     * @inheritDoc
+     * @param null $column
      * @return mixed
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -103,7 +103,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->oldest($column)
+            fn () => $this->prepareQuery($this->createModel())->oldest($column)
         );
     }
 
@@ -159,7 +159,7 @@ class BaseRepository extends Repository
 
     /**
      * {@inheritdoc}
-     * @param  string[]  $attr
+     * @param string[] $attr
      * @return mixed
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -171,14 +171,32 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->get($attr)
+            fn () => $this->prepareQuery($this->createModel())->get($attr)
         );
     }
 
     /**
      * {@inheritdoc}
-     * @param  array  $where
-     * @param  string[]  $attributes
+     * @param string $columns
+     * @return int
+     * @throws ContainerExceptionInterface
+     * @throws JsonException
+     * @throws NotFoundExceptionInterface
+     */
+    public function count($columns = '*'): int
+    {
+        return (int)$this->executeCallback(
+            static::class,
+            __FUNCTION__,
+            \func_get_args(),
+            fn () => $this->prepareQuery($this->createModel())->count($columns)
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     * @param array $where
+     * @param string[] $attributes
      * @return mixed
      * @throws JsonException
      * @throws ContainerExceptionInterface
@@ -216,7 +234,10 @@ class BaseRepository extends Repository
         if ($entities->count() > 0) {
             foreach ($entities as $entity) {
                 // Fire the deleted event
-                $this->getContainer('events')->dispatch($this->getRepositoryId() . '.entity.deleting', [$this, $entity]);
+                $this->getContainer('events')->dispatch(
+                    $this->getRepositoryId() . '.entity.deleting',
+                    [$this, $entity]
+                );
 
                 // Delete the instance
                 $deleted = $entity->delete();
@@ -230,29 +251,59 @@ class BaseRepository extends Repository
     }
 
     /**
+     * {@inheritdoc}
+     * @throws ContainerExceptionInterface
+     * @throws JsonException
+     * @throws NotFoundExceptionInterface
+     */
+    public function delete($id): false|object
+    {
+        $deleted = false;
+
+        // Find the given instance
+        $entity = $id instanceof Model ? $id : $this->find($id);
+
+        if ($entity) {
+            // Fire the deleted event
+            $this->getContainer('events')->dispatch($this->getRepositoryId() . '.entity.deleting', [$this, $entity]);
+
+            // Delete the instance
+            $deleted = $entity->delete();
+
+            // Fire the deleted event
+            $this->getContainer('events')->dispatch($this->getRepositoryId() . '.entity.deleted', [$this, $entity]);
+        }
+
+        return $deleted ? $entity : $deleted;
+    }
+
+    /**
+     * {@inheritdoc}
+     * @param $id
+     * @param string[] $attrs
+     * @return object|null
+     * @throws ContainerExceptionInterface
+     * @throws JsonException
+     * @throws NotFoundExceptionInterface
+     */
+    public function find($id, $attrs = ['*']): ?object
+    {
+        return $this->executeCallback(
+            static::class,
+            __FUNCTION__,
+            \func_get_args(),
+            fn () => $this->prepareQuery($this->createModel())->find($id, $attrs)
+        );
+    }
+
+    /////////////////////////         RESET WHERE CLAUSES          /////////////////////////
+
+    /**
      * @inheritdoc
      */
     public function fullSearch($against, ...$matches): ?WhereClauseContract
     {
         return $this->whereRaw("MATCH ($matches) AGAINST (\\'$against\\' IN BOOLEAN MODE)");
-    }
-
-    /**
-     * {@inheritdoc}
-     * @param  string  $columns
-     * @return int
-     * @throws ContainerExceptionInterface
-     * @throws JsonException
-     * @throws NotFoundExceptionInterface
-     */
-    public function count($columns = '*'): int
-    {
-        return (int)$this->executeCallback(
-            static::class,
-            __FUNCTION__,
-            \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->count($columns)
-        );
     }
 
     /**
@@ -262,15 +313,18 @@ class BaseRepository extends Repository
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function whereExistsExist($attribute, $operator = null, $value = null, $existsColumn = '', string $boolean = 'and'): bool
-    {
+    public function whereExistsExist(
+        $attribute,
+        $operator = null,
+        $value = null,
+        $existsColumn = '',
+        string $boolean = 'and'
+    ): bool {
         return $this->where($attribute, $operator, $value, $boolean)->exists($existsColumn);
     }
 
-    /////////////////////////         RESET WHERE CLAUSES          /////////////////////////
-
     /**
-     * @param  string  $column
+     * @param string $column
      * @return bool
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -282,7 +336,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->exists($column)
+            fn () => $this->prepareQuery($this->createModel())->exists($column)
         );
     }
 
@@ -305,25 +359,6 @@ class BaseRepository extends Repository
         }
 
         throw new EntityNotFoundException($this->getModel(), $id);
-    }
-
-    /**
-     * {@inheritdoc}
-     * @param $id
-     * @param  string[]  $attrs
-     * @return object|null
-     * @throws ContainerExceptionInterface
-     * @throws JsonException
-     * @throws NotFoundExceptionInterface
-     */
-    public function find($id, $attrs = ['*']): ?object
-    {
-        return $this->executeCallback(
-            static::class,
-            __FUNCTION__,
-            \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->find($id, $attrs)
-        );
     }
 
     /**
@@ -394,13 +429,13 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->where($attribute, '=', $value)->first($attributes)
+            fn () => $this->prepareQuery($this->createModel())->where($attribute, '=', $value)->first($attributes)
         );
     }
 
     /**
      * {@inheritdoc}
-     * @param  string[]  $attr
+     * @param string[] $attr
      * @return object|null
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -412,62 +447,70 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->first($attr)
+            fn () => $this->prepareQuery($this->createModel())->first($attr)
         );
     }
 
     /**
      * {@inheritdoc}
-     * @param  null  $perPage
-     * @param  string[]  $attributes
-     * @param  string  $pageName
-     * @param  null  $page
+     * @param null $perPage
+     * @param string[] $attributes
+     * @param string $pageName
+     * @param null $page
      * @return LengthAwarePaginator
      * @throws ContainerExceptionInterface
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function paginate($perPage = null, $attributes = ['*'], $pageName = 'page', $page = null): LengthAwarePaginator
-    {
+    public function paginate(
+        $perPage = null,
+        $attributes = ['*'],
+        $pageName = 'page',
+        $page = null
+    ): LengthAwarePaginator {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 
         return $this->executeCallback(
             static::class,
             __FUNCTION__,
             array_merge(\func_get_args(), compact('page')),
-            fn() => $this->prepareQuery($this->createModel())->paginate($perPage, $attributes, $pageName, $page)
+            fn () => $this->prepareQuery($this->createModel())->paginate($perPage, $attributes, $pageName, $page)
         );
     }
 
     /**
      * {@inheritdoc}
-     * @param  null  $perPage
-     * @param  string[]  $attributes
-     * @param  string  $pageName
-     * @param  null  $page
+     * @param null $perPage
+     * @param string[] $attributes
+     * @param string $pageName
+     * @param null $page
      * @return mixed
      * @throws ContainerExceptionInterface
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function simplePaginate($perPage = null, $attributes = ['*'], $pageName = 'page', $page = null): \Illuminate\Contracts\Pagination\Paginator
-    {
+    public function simplePaginate(
+        $perPage = null,
+        $attributes = ['*'],
+        $pageName = 'page',
+        $page = null
+    ): \Illuminate\Contracts\Pagination\Paginator {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 
         return $this->executeCallback(
             static::class,
             __FUNCTION__,
             array_merge(\func_get_args(), compact('page')),
-            fn() => $this->prepareQuery($this->createModel())->simplePaginate($perPage, $attributes, $pageName, $page)
+            fn () => $this->prepareQuery($this->createModel())->simplePaginate($perPage, $attributes, $pageName, $page)
         );
     }
 
     /**
      * {@inheritdoc}
-     * @param  null  $perPage
-     * @param  string[]  $columns
-     * @param  string  $cursorName
-     * @param  null  $cursor
+     * @param null $perPage
+     * @param string[] $columns
+     * @param string $cursorName
+     * @param null $cursor
      * @return mixed
      * @throws ContainerExceptionInterface
      * @throws JsonException
@@ -481,7 +524,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             array_merge(\func_get_args(), compact('cursor')),
-            fn() => $this->prepareQuery($this->createModel())->cursorPaginate($perPage, $columns, $cursorName, $cursor)
+            fn () => $this->prepareQuery($this->createModel())->cursorPaginate($perPage, $columns, $cursorName, $cursor)
         );
     }
 
@@ -585,8 +628,12 @@ class BaseRepository extends Repository
      * @throws NotFoundExceptionInterface
      * @throws RepositoryException
      */
-    public function updateOrCreate(array $where, array $attrs, bool $sync_relations = false, bool $merge = false): ?object
-    {
+    public function updateOrCreate(
+        array $where,
+        array $attrs,
+        bool $sync_relations = false,
+        bool $merge = false
+    ): ?object {
         $queries_chunk = array_chunk($where, 3);
 
         if (1 < count($queries_chunk)) {
@@ -734,40 +781,13 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->insert($values)
+            fn () => $this->prepareQuery($this->createModel())->insert($values)
         );
 
         // Fire the created event
         $this->getContainer('events')->dispatch($this->getRepositoryId() . '.entity.created', [$this, $entity]);
 
         return $inserted;
-    }
-
-    /**
-     * {@inheritdoc}
-     * @throws ContainerExceptionInterface
-     * @throws JsonException
-     * @throws NotFoundExceptionInterface
-     */
-    public function delete($id): false|object
-    {
-        $deleted = false;
-
-        // Find the given instance
-        $entity = $id instanceof Model ? $id : $this->find($id);
-
-        if ($entity) {
-            // Fire the deleted event
-            $this->getContainer('events')->dispatch($this->getRepositoryId() . '.entity.deleting', [$this, $entity]);
-
-            // Delete the instance
-            $deleted = $entity->delete();
-
-            // Fire the deleted event
-            $this->getContainer('events')->dispatch($this->getRepositoryId() . '.entity.deleted', [$this, $entity]);
-        }
-
-        return $deleted ? $entity : $deleted;
     }
 
     /**
@@ -841,7 +861,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->min($column)
+            fn () => $this->prepareQuery($this->createModel())->min($column)
         );
     }
 
@@ -860,7 +880,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->max($column)
+            fn () => $this->prepareQuery($this->createModel())->max($column)
         );
     }
 
@@ -895,7 +915,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->sum($column)
+            fn () => $this->prepareQuery($this->createModel())->sum($column)
         );
     }
 
@@ -912,7 +932,7 @@ class BaseRepository extends Repository
             static::class,
             __FUNCTION__,
             \func_get_args(),
-            fn() => $this->prepareQuery($this->createModel())->whereIn($where, $values)->delete()
+            fn () => $this->prepareQuery($this->createModel())->whereIn($where, $values)->delete()
         );
     }
 }

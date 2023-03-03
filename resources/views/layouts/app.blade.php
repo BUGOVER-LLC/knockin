@@ -7,7 +7,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{--CLient App Style--}}
     <link rel="stylesheet" href="{{ mix('builds/app/css/app.css') }}">
+
+    {{--Client APP Script--}}
+    <script src="{{ asset('builds/vendor/manifest.js') }}"></script>
+    <script src="{{ asset('builds/vendor/vendor.js') }}"></script>
     <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>
 <body>
