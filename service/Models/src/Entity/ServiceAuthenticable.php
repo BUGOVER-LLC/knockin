@@ -30,6 +30,10 @@ class ServiceAuthenticable extends Authenticable
     /**
      * @var string
      */
+    protected $connection = 'pgsql_app';
+    /**
+     * @var string
+     */
     protected $dateFormat = 'Y-m-d H:i:s.u';
 
     /**

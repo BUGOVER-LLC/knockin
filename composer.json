@@ -13,6 +13,7 @@
     "ext-openssl": "*",
     "ext-pdo": "*",
     "ext-sockets": "*",
+    "ext-redis": "*",
     "ext-swoole": "*",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
@@ -68,7 +69,7 @@
       "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
     ],
     "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('var/.env.example', '.env');\""
+      "@php -r \"file_exists('.env') || copy('etc/devs/.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
       "@php artisan key:generate --ansi"

@@ -67,8 +67,8 @@ trait Cache
             if (method_exists($this->getContainer('cache')->getStore(), 'tags')) {
                 $this->getContainer('cache')->tags($this->getRepositoryId())->flush();
             } else {
-                foreach ($this->flushCacheKeys() as $cacheKey) {
-                    $this->getContainer('cache')->forget($cacheKey);
+                foreach ($this->flushCacheKeys() as $cache_key) {
+                    $this->getContainer('cache')->forget($cache_key);
                 }
             }
 

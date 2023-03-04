@@ -26,7 +26,7 @@ trait RepositoryLoader
             }
         }
 
-        $namespace = 'Src\Repositories';
+        $namespace = 'App\Repositories';
 
         foreach ($folders as $folder) {
             $contract_file = str_replace('.php', '', scandir($_root_directory . $folder)[2]);

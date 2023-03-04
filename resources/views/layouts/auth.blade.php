@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ mix('builds/app/css/app.css') }}">
 
     {{--Client APP Script--}}
-    <script src="{{ asset('builds/app/js/manifest.js') }}"></script>
+    <script src="{{ asset('builds/vendor/manifest.js') }}"></script>
     <script src="{{ asset('builds/vendor/vendor.js') }}"></script>
     <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>

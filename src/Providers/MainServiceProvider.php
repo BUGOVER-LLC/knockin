@@ -18,6 +18,7 @@ class MainServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->app->register(RedisProvider::class);
         $this->runLoaderRegister();
     }
 
