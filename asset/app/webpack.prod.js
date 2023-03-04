@@ -23,8 +23,8 @@ mix.vue({ version: 2 })
         ],
     })
     .options({
-        processCssUrls: false,
-        purifyCss: false,
+        processCssUrls: true,
+        purifyCss: true,
         extractStyles: false,
         imgLoaderOptions: {
             enabled: false,

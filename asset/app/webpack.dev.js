@@ -11,7 +11,7 @@ mix.vue({ version: 2 })
         },
     })
     .options({
-        processCssUrls: false,
+        processCssUrls: true,
         imgLoaderOptions: {
             enabled: false,
         },

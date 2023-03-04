@@ -7,10 +7,14 @@
     font-family: inherit;
 }
 
+#app {
+    font-family: 'Roboto', sans-serif;
+}
+
 html {
     overflow: hidden !important;
 }
 
-#app {
-    font-family: 'Roboto', sans-serif;
+.v-icon {
+    color: #021826 !important;
 }

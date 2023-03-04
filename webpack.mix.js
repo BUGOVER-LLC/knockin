@@ -36,9 +36,6 @@ if ('local' !== environment) {
     }
 }
 
-// Global dependencies for all bundles
-mix.version();
-
 // Global webpack config for all bundles
 mix.webpackConfig(
     (module.exports = {
