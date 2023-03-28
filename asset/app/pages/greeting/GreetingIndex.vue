@@ -10,7 +10,7 @@
             <v-spacer />
 
             <v-btn icon>
-                <v-icon  v-text="'mdi-login'"/>
+                <v-icon v-text="'mdi-login'" />
             </v-btn>
         </v-app-bar>
     </div>
