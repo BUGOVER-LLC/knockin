@@ -8,7 +8,7 @@
   "overrides": [
     {
       "files": [
-        "assets/**/*.vue"
+        "asset/**/*.vue"
       ],
       "customSyntax": "postcss-scss"
     }

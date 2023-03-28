@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<template>
+<template lang="html">
     <v-footer app color="transparent" height="72" inset>
         <v-text-field background-color="grey lighten-1" dense flat hide-details rounded solo />
     </v-footer>
@@ -16,4 +16,4 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class MessagingWriter extends Vue {}
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

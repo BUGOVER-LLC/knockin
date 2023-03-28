@@ -20,6 +20,6 @@ export default new Vuex.Store({
         BoardStapes,
         BoardTasks,
         Channels,
-        Wss: WssClient,
+        WssClient,
     },
 });

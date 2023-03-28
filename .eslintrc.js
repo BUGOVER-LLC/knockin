@@ -7,10 +7,10 @@ module.exports = {
         'plugin:vue/essential',
         'plugin:vue/recommended',
         'plugin:vue/strongly-recommended',
-        "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "@vue/eslint-config-typescript",
         "@vue/eslint-config-typescript/recommended",
+        "eslint:recommended",
+        "@vue/eslint-config-typescript",
         "@vue/eslint-config-prettier",
         '@vue/prettier',
         'prettier',
@@ -26,7 +26,6 @@ module.exports = {
     },
     plugins: ['unused-imports', 'simple-import-sort', '@typescript-eslint'],
     overrides: [
-        // override "simple-import-sort" config
         {
             files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
         },

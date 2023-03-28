@@ -6,6 +6,5 @@ import { Module, VuexModule } from 'vuex-module-decorators';
     name: 'module/abstractStore',
     namespaced: true,
     stateFactory: true,
-    dynamic: true,
 })
 export default class AbstractStore extends VuexModule {}

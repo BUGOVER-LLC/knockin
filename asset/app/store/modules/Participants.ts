@@ -6,6 +6,5 @@ import { Module, VuexModule } from 'vuex-module-decorators';
     name: 'module/participant',
     namespaced: true,
     stateFactory: true,
-    dynamic: true,
 })
 export default class Participants extends VuexModule {}
