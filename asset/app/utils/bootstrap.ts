@@ -5,10 +5,11 @@
  *
  * @format
  */
-import Vue from 'vue';
 import axios from 'axios';
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
+import Vue from 'vue';
+
 import { BROADCAST, cRef } from './consts';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
