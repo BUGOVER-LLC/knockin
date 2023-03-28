@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<template>
+<template lang="html">
     <v-main>
         <!--  -->
     </v-main>
@@ -16,4 +16,4 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class MessagingContent extends Vue {}
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

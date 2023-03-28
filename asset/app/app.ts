@@ -1,10 +1,12 @@
 /** @format */
 
+import './utils/bootstrap';
+
 import Vue from 'vue';
+
 import { vuetify } from './plugins';
 import { router } from './router';
 import store from './store';
-import './utils/bootstrap';
 
 const app = new Vue({
     store,

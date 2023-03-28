@@ -9,6 +9,7 @@ import Boards from '@/app/store/modules/Boards';
 import BoardStapes from '@/app/store/modules/BoardStapes';
 import BoardTasks from '@/app/store/modules/BoardTasks';
 import Channels from '@/app/store/modules/Channels';
+import WssClient from '@/app/store/modules/WssClient';
 
 export default new Vuex.Store({
     devtools: 'production' !== process.env.NODE_ENV,
@@ -19,5 +20,6 @@ export default new Vuex.Store({
         BoardStapes,
         BoardTasks,
         Channels,
+        Wss: WssClient,
     },
 });
