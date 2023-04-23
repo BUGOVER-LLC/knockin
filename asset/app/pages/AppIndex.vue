@@ -2,23 +2,9 @@
 
 <template>
     <v-app id="inspire">
-        <v-system-bar app>
-            <v-spacer></v-spacer>
+        <SystemBar></SystemBar>
 
-            <v-icon v-text="'mdi-square'" />
-
-            <v-icon v-text="'mdi-circle'" />
-
-            <v-icon v-text="'mdi-triangle'" />
-        </v-system-bar>
-
-        <v-app-bar app clipped-right flat height="70">
-            <v-spacer />
-
-            <v-responsive max-width="156">
-                <v-text-field dense flat hide-details rounded solo-inverted />
-            </v-responsive>
-        </v-app-bar>
+        <AppBar></AppBar>
 
         <v-navigation-drawer v-model="drawer" app width="300">
             <v-navigation-drawer v-model="drawer" absolute color="grey lighten-3" mini-variant>
@@ -48,9 +34,7 @@
 
         <DrawerDrag></DrawerDrag>
 
-        <v-main>
-            <!--  -->
-        </v-main>
+        <MessagingContent></MessagingContent>
 
         <MessagingWriter></MessagingWriter>
     </v-app>
@@ -60,12 +44,15 @@
 import { Component, Vue } from 'vue-property-decorator';
 import DrawerDrag from '@/app/components/DrawerDrag.vue';
 import MessagingWriter from '@/app/components/MessagingWriter.vue';
+import MessagingContent from '@/app/components/MessagingContent.vue';
+import AppBar from '@/app/components/AppBar.vue';
+import SystemBar from '@/app/components/SystemBar.vue';
 
 @Component({
-    components: { MessagingWriter, DrawerDrag },
+    components: { SystemBar, AppBar, MessagingContent, MessagingWriter, DrawerDrag },
 })
 export default class GreetingIndex extends Vue {
-    drawer = true;
+    private drawer: boolean = true;
 }
 </script>
 

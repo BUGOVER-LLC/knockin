@@ -7,4 +7,6 @@ import { Module, VuexModule } from 'vuex-module-decorators';
     namespaced: true,
     stateFactory: true,
 })
-export default class WssClient extends VuexModule {}
+export default class WssClient extends VuexModule {
+    public emit = false;
+}

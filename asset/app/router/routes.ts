@@ -5,7 +5,7 @@ import { RouteConfig } from 'vue-router';
 const getStartedIndex = (): object => import('@/app/pages/auth/started/GetStartedIndex.vue');
 const authIndex = (): object => import('@/app/pages/auth/AuthIndex.vue');
 const greeting = (): object => import('@/app/pages/greeting/GreetingIndex.vue');
-const application = (): object => import('@/app/pages/application/AppIndex.vue');
+const application = (): object => import('@/app/pages/AppIndex.vue');
 
 export const Routes: RouteConfig[] = [
     {
