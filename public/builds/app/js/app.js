@@ -1,19 +1,20 @@
 (self["webpackChunknoix_app"] = self["webpackChunknoix_app"] || []).push([["/builds/app/js/app"],{
 
-/***/ "./asset/app/app.ts":
+/***/ "./asset/app/app.js":
 /*!**************************!*\
-  !*** ./asset/app/app.ts ***!
+  !*** ./asset/app/app.js ***!
   \**************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/bootstrap */ "./asset/app/utils/bootstrap.ts");
+/* harmony import */ var _utils_bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/bootstrap */ "./asset/app/utils/bootstrap.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _plugins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugins */ "./asset/app/plugins/index.ts");
-/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./asset/app/router/index.ts");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./asset/app/store/index.ts");
+/* harmony import */ var _plugins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugins */ "./asset/app/plugins/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./router */ "./asset/app/router/index.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./asset/app/store/index.js");
 /** @format */
+
 
 
 
@@ -28,9 +29,9 @@ app.$mount('#app-knock');
 
 /***/ }),
 
-/***/ "./asset/app/plugins/index.ts":
+/***/ "./asset/app/plugins/index.js":
 /*!************************************!*\
-  !*** ./asset/app/plugins/index.ts ***!
+  !*** ./asset/app/plugins/index.js ***!
   \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -40,17 +41,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "validators": function() { return /* binding */ validators; },
 /* harmony export */   "vuetify": function() { return /* reexport safe */ _vuetify__WEBPACK_IMPORTED_MODULE_0__["default"]; }
 /* harmony export */ });
-/* harmony import */ var _vuetify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vuetify */ "./asset/app/plugins/vuetify.ts");
+/* harmony import */ var _vuetify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vuetify */ "./asset/app/plugins/vuetify.js");
 /** @format */
 
-var validators = Promise.all(/*! import() */[__webpack_require__.e("builds/vendor/vendor"), __webpack_require__.e("asset_app_plugins_validators_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./validators */ "./asset/app/plugins/validators.ts"));
+
+var validators = Promise.all(/*! import() */[__webpack_require__.e("builds/vendor/vendor"), __webpack_require__.e("asset_app_plugins_validators_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./validators */ "./asset/app/plugins/validators.js"));
 
 
 /***/ }),
 
-/***/ "./asset/app/plugins/vuetify.ts":
+/***/ "./asset/app/plugins/vuetify.js":
 /*!**************************************!*\
-  !*** ./asset/app/plugins/vuetify.ts ***!
+  !*** ./asset/app/plugins/vuetify.js ***!
   \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -63,10 +65,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_3__);
 /** @format */
 
+
  // Ensure you are using css-loader
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].use((vuetify__WEBPACK_IMPORTED_MODULE_3___default()));
+
 // noinspection JSUnusedGlobalSymbols
 /* harmony default export */ __webpack_exports__["default"] = (new (vuetify__WEBPACK_IMPORTED_MODULE_3___default())({
   iconfont: 'mdiSvg',
@@ -84,15 +89,18 @@ vue__WEBPACK_IMPORTED_MODULE_2__["default"].use((vuetify__WEBPACK_IMPORTED_MODUL
       success: '#4CAF50',
       warning: '#FB8C00',
       smoke: '#f5f5f5'
+    },
+    options: {
+      customProperties: true
     }
   }
 }));
 
 /***/ }),
 
-/***/ "./asset/app/router/index.ts":
+/***/ "./asset/app/router/index.js":
 /*!***********************************!*\
-  !*** ./asset/app/router/index.ts ***!
+  !*** ./asset/app/router/index.js ***!
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -103,9 +111,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes */ "./asset/app/router/routes.ts");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes */ "./asset/app/router/routes.js");
 /* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 /** @format */
+
 
 
 
@@ -120,9 +129,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
 
 /***/ }),
 
-/***/ "./asset/app/router/routes.ts":
+/***/ "./asset/app/router/routes.js":
 /*!************************************!*\
-  !*** ./asset/app/router/routes.ts ***!
+  !*** ./asset/app/router/routes.js ***!
   \************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -132,6 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Routes": function() { return /* binding */ Routes; }
 /* harmony export */ });
 /** @format */
+
 var getStartedIndex = function getStartedIndex() {
   return __webpack_require__.e(/*! import() */ "asset_app_pages_auth_started_GetStartedIndex_vue").then(__webpack_require__.bind(__webpack_require__, /*! @/app/pages/auth/started/GetStartedIndex.vue */ "./asset/app/pages/auth/started/GetStartedIndex.vue"));
 };
@@ -169,9 +179,9 @@ var Routes = [{
 
 /***/ }),
 
-/***/ "./asset/app/store/index.ts":
+/***/ "./asset/app/store/index.js":
 /*!**********************************!*\
-  !*** ./asset/app/store/index.ts ***!
+  !*** ./asset/app/store/index.js ***!
   \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -179,13 +189,14 @@ var Routes = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _app_store_modules_AbstractStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/app/store/modules/AbstractStore */ "./asset/app/store/modules/AbstractStore.ts");
-/* harmony import */ var _app_store_modules_Boards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/app/store/modules/Boards */ "./asset/app/store/modules/Boards.ts");
-/* harmony import */ var _app_store_modules_BoardStapes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/app/store/modules/BoardStapes */ "./asset/app/store/modules/BoardStapes.ts");
-/* harmony import */ var _app_store_modules_BoardTasks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/app/store/modules/BoardTasks */ "./asset/app/store/modules/BoardTasks.ts");
-/* harmony import */ var _app_store_modules_Channels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/app/store/modules/Channels */ "./asset/app/store/modules/Channels.ts");
-/* harmony import */ var _app_store_modules_WssClient__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/app/store/modules/WssClient */ "./asset/app/store/modules/WssClient.ts");
+/* harmony import */ var _app_store_modules_AbstractStore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/app/store/modules/AbstractStore */ "./asset/app/store/modules/AbstractStore.js");
+/* harmony import */ var _app_store_modules_Boards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/app/store/modules/Boards */ "./asset/app/store/modules/Boards.js");
+/* harmony import */ var _app_store_modules_BoardStapes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/app/store/modules/BoardStapes */ "./asset/app/store/modules/BoardStapes.js");
+/* harmony import */ var _app_store_modules_BoardTasks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/app/store/modules/BoardTasks */ "./asset/app/store/modules/BoardTasks.js");
+/* harmony import */ var _app_store_modules_Channels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/app/store/modules/Channels */ "./asset/app/store/modules/Channels.js");
+/* harmony import */ var _app_store_modules_WssClient__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/app/store/modules/WssClient */ "./asset/app/store/modules/WssClient.js");
 /** @format */
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -210,317 +221,159 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
 
 /***/ }),
 
-/***/ "./asset/app/store/modules/AbstractStore.ts":
+/***/ "./asset/app/store/modules/AbstractStore.js":
 /*!**************************************************!*\
-  !*** ./asset/app/store/modules/AbstractStore.ts ***!
+  !*** ./asset/app/store/modules/AbstractStore.js ***!
   \**************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ AbstractStore; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /** @format */
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-    d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+var AbstractStore = /*#__PURE__*/_createClass(function AbstractStore() {
+  _classCallCheck(this, AbstractStore);
+});
 
-var AbstractStore = /*#__PURE__*/function (_VuexModule) {
-  _inherits(AbstractStore, _VuexModule);
-  var _super = _createSuper(AbstractStore);
-  function AbstractStore() {
-    _classCallCheck(this, AbstractStore);
-    return _super.apply(this, arguments);
-  }
-  return _createClass(AbstractStore);
-}(vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.VuexModule);
-AbstractStore = __decorate([(0,vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Module)({
-  name: 'module/abstractStore',
-  namespaced: true,
-  stateFactory: true
-})], AbstractStore);
-/* harmony default export */ __webpack_exports__["default"] = (AbstractStore);
 
 /***/ }),
 
-/***/ "./asset/app/store/modules/BoardStapes.ts":
+/***/ "./asset/app/store/modules/BoardStapes.js":
 /*!************************************************!*\
-  !*** ./asset/app/store/modules/BoardStapes.ts ***!
+  !*** ./asset/app/store/modules/BoardStapes.js ***!
   \************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ BoardStapes; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /** @format */
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-    d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+var BoardStapes = /*#__PURE__*/_createClass(function BoardStapes() {
+  _classCallCheck(this, BoardStapes);
+});
 
-var BoardStapes = /*#__PURE__*/function (_VuexModule) {
-  _inherits(BoardStapes, _VuexModule);
-  var _super = _createSuper(BoardStapes);
-  function BoardStapes() {
-    _classCallCheck(this, BoardStapes);
-    return _super.apply(this, arguments);
-  }
-  return _createClass(BoardStapes);
-}(vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.VuexModule);
-BoardStapes = __decorate([(0,vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Module)({
-  name: 'module/boardStape',
-  namespaced: true,
-  stateFactory: true
-})], BoardStapes);
-/* harmony default export */ __webpack_exports__["default"] = (BoardStapes);
 
 /***/ }),
 
-/***/ "./asset/app/store/modules/BoardTasks.ts":
+/***/ "./asset/app/store/modules/BoardTasks.js":
 /*!***********************************************!*\
-  !*** ./asset/app/store/modules/BoardTasks.ts ***!
+  !*** ./asset/app/store/modules/BoardTasks.js ***!
   \***********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ BoardTasks; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /** @format */
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-    d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+var BoardTasks = /*#__PURE__*/_createClass(function BoardTasks() {
+  _classCallCheck(this, BoardTasks);
+});
 
-var BoardTasks = /*#__PURE__*/function (_VuexModule) {
-  _inherits(BoardTasks, _VuexModule);
-  var _super = _createSuper(BoardTasks);
-  function BoardTasks() {
-    _classCallCheck(this, BoardTasks);
-    return _super.apply(this, arguments);
-  }
-  return _createClass(BoardTasks);
-}(vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.VuexModule);
-BoardTasks = __decorate([(0,vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Module)({
-  name: 'module/boardTask',
-  namespaced: true,
-  stateFactory: true
-})], BoardTasks);
-/* harmony default export */ __webpack_exports__["default"] = (BoardTasks);
 
 /***/ }),
 
-/***/ "./asset/app/store/modules/Boards.ts":
+/***/ "./asset/app/store/modules/Boards.js":
 /*!*******************************************!*\
-  !*** ./asset/app/store/modules/Boards.ts ***!
+  !*** ./asset/app/store/modules/Boards.js ***!
   \*******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Boards; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 /** @format */
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-    d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+var Boards = /*#__PURE__*/_createClass(function Boards() {
+  _classCallCheck(this, Boards);
+});
 
-var Boards = /*#__PURE__*/function (_VuexModule) {
-  _inherits(Boards, _VuexModule);
-  var _super = _createSuper(Boards);
-  function Boards() {
-    var _this;
-    _classCallCheck(this, Boards);
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    _this = _super.call.apply(_super, [this].concat(args));
-    _defineProperty(_assertThisInitialized(_this), "_payload", void 0);
-    return _this;
-  }
-  _createClass(Boards, [{
-    key: "initBoard",
-    value: function initBoard(payload) {
-      this._payload = payload;
-    }
-  }]);
-  return Boards;
-}(vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.VuexModule);
-__decorate([vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Mutation], Boards.prototype, "initBoard", null);
-Boards = __decorate([(0,vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Module)({
-  name: 'module/board',
-  namespaced: true,
-  stateFactory: true
-})], Boards);
-/* harmony default export */ __webpack_exports__["default"] = (Boards);
 
 /***/ }),
 
-/***/ "./asset/app/store/modules/Channels.ts":
+/***/ "./asset/app/store/modules/Channels.js":
 /*!*********************************************!*\
-  !*** ./asset/app/store/modules/Channels.ts ***!
+  !*** ./asset/app/store/modules/Channels.js ***!
   \*********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ BoardStapes; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /** @format */
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-    d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+var BoardStapes = /*#__PURE__*/_createClass(function BoardStapes() {
+  _classCallCheck(this, BoardStapes);
+});
 
-var BoardStapes = /*#__PURE__*/function (_VuexModule) {
-  _inherits(BoardStapes, _VuexModule);
-  var _super = _createSuper(BoardStapes);
-  function BoardStapes() {
-    _classCallCheck(this, BoardStapes);
-    return _super.apply(this, arguments);
-  }
-  return _createClass(BoardStapes);
-}(vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.VuexModule);
-BoardStapes = __decorate([(0,vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Module)({
-  name: 'module/channel',
-  namespaced: true,
-  stateFactory: true
-})], BoardStapes);
-/* harmony default export */ __webpack_exports__["default"] = (BoardStapes);
 
 /***/ }),
 
-/***/ "./asset/app/store/modules/WssClient.ts":
+/***/ "./asset/app/store/modules/WssClient.js":
 /*!**********************************************!*\
-  !*** ./asset/app/store/modules/WssClient.ts ***!
+  !*** ./asset/app/store/modules/WssClient.js ***!
   \**********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex-module-decorators */ "./node_modules/vuex-module-decorators/dist/esm/index.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ WssClient; }
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 /** @format */
-var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
-  var c = arguments.length,
-    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-    d;
-  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+var WssClient = /*#__PURE__*/_createClass(function WssClient() {
+  _classCallCheck(this, WssClient);
+});
 
-var WssClient = /*#__PURE__*/function (_VuexModule) {
-  _inherits(WssClient, _VuexModule);
-  var _super = _createSuper(WssClient);
-  function WssClient() {
-    _classCallCheck(this, WssClient);
-    return _super.apply(this, arguments);
-  }
-  return _createClass(WssClient);
-}(vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.VuexModule);
-WssClient = __decorate([(0,vuex_module_decorators__WEBPACK_IMPORTED_MODULE_0__.Module)({
-  name: 'module/wss',
-  namespaced: true,
-  stateFactory: true
-})], WssClient);
-/* harmony default export */ __webpack_exports__["default"] = (WssClient);
 
 /***/ }),
 
-/***/ "./asset/app/utils/bootstrap.ts":
+/***/ "./asset/app/utils/bootstrap.js":
 /*!**************************************!*\
-  !*** ./asset/app/utils/bootstrap.ts ***!
+  !*** ./asset/app/utils/bootstrap.js ***!
   \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -531,7 +384,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pusher-js */ "./node_modules/pusher-js/dist/web/pusher.js");
 /* harmony import */ var pusher_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(pusher_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _consts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./consts */ "./asset/app/utils/consts.ts");
+/* harmony import */ var _consts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./consts */ "./asset/app/utils/consts.js");
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -546,6 +399,7 @@ __webpack_require__.r(__webpack_exports__);
 
 axios__WEBPACK_IMPORTED_MODULE_3__["default"].defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 axios__WEBPACK_IMPORTED_MODULE_3__["default"].defaults.headers.common["X-CSRF-TOKEN"] = _consts__WEBPACK_IMPORTED_MODULE_2__.cRef;
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -557,9 +411,9 @@ vue__WEBPACK_IMPORTED_MODULE_4__["default"].prototype.$http = axios__WEBPACK_IMP
 
 /***/ }),
 
-/***/ "./asset/app/utils/consts.ts":
+/***/ "./asset/app/utils/consts.js":
 /*!***********************************!*\
-  !*** ./asset/app/utils/consts.ts ***!
+  !*** ./asset/app/utils/consts.js ***!
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -571,6 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 /** @format */
+
 var cRefObject = document.head.querySelector('meta[name="csrf-token"]');
 if (null === cRefObject) {
   process.exit(500);
@@ -2565,10 +2420,10 @@ function isnan (val) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/@mdi/font/css/materialdesignicons.css":
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/@mdi/font/css/materialdesignicons.css ***!
-  \**********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/@mdi/font/css/materialdesignicons.css":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/@mdi/font/css/materialdesignicons.css ***!
+  \********************************************************************************************************************************************************************************************/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4612,10 +4467,10 @@ var Echo = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./asset/app/style/app.scss":
-/*!**********************************!*\
-  !*** ./asset/app/style/app.scss ***!
-  \**********************************/
+/***/ "./asset/app/styles/app.scss":
+/*!***********************************!*\
+  !*** ./asset/app/styles/app.scss ***!
+  \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9829,7 +9684,7 @@ runtime.setup(pusher_Pusher);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_10_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./materialdesignicons.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/@mdi/font/css/materialdesignicons.css");
+/* harmony import */ var _css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./materialdesignicons.css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/@mdi/font/css/materialdesignicons.css");
 
             
 
@@ -9838,11 +9693,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ __webpack_exports__["default"] = (_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -10122,461 +9977,6 @@ module.exports = function (list, options) {
     lastIdentifiers = newLastIdentifiers;
   };
 };
-
-/***/ }),
-
-/***/ "./node_modules/vuex-module-decorators/dist/esm/index.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/vuex-module-decorators/dist/esm/index.js ***!
-  \***************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Action": function() { return /* binding */ Action; },
-/* harmony export */   "Module": function() { return /* binding */ Module; },
-/* harmony export */   "Mutation": function() { return /* binding */ Mutation; },
-/* harmony export */   "MutationAction": function() { return /* binding */ MutationAction; },
-/* harmony export */   "VuexModule": function() { return /* binding */ VuexModule; },
-/* harmony export */   "config": function() { return /* binding */ config; },
-/* harmony export */   "getModule": function() { return /* binding */ getModule; }
-/* harmony export */ });
-/**
- * Takes the properties on object from parameter source and adds them to the object
- * parameter target
- * @param {object} target  Object to have properties copied onto from y
- * @param {object} source  Object with properties to be copied to x
- */
-function addPropertiesToObject(target, source) {
-    for (let k of Object.keys(source || {})) {
-        Object.defineProperty(target, k, {
-            get: () => source[k]
-        });
-    }
-}
-/**
- * Returns a namespaced name of the module to be used as a store getter
- * @param module
- */
-function getModuleName(module) {
-    if (!module._vmdModuleName) {
-        throw new Error(`ERR_GET_MODULE_NAME : Could not get module accessor.
-      Make sure your module has name, we can't make accessors for unnamed modules
-      i.e. @Module({ name: 'something' })`);
-    }
-    return `vuexModuleDecorators/${module._vmdModuleName}`;
-}
-
-class VuexModule {
-    constructor(module) {
-        this.actions = module.actions;
-        this.mutations = module.mutations;
-        this.state = module.state;
-        this.getters = module.getters;
-        this.namespaced = module.namespaced;
-        this.modules = module.modules;
-    }
-}
-function getModule(moduleClass, store) {
-    const moduleName = getModuleName(moduleClass);
-    if (store && store.getters[moduleName]) {
-        return store.getters[moduleName];
-    }
-    else if (moduleClass._statics) {
-        return moduleClass._statics;
-    }
-    const genStatic = moduleClass._genStatic;
-    if (!genStatic) {
-        throw new Error(`ERR_GET_MODULE_NO_STATICS : Could not get module accessor.
-      Make sure your module has name, we can't make accessors for unnamed modules
-      i.e. @Module({ name: 'something' })`);
-    }
-    const storeModule = genStatic(store);
-    if (store) {
-        store.getters[moduleName] = storeModule;
-    }
-    else {
-        moduleClass._statics = storeModule;
-    }
-    return storeModule;
-}
-
-const reservedKeys = ['actions', 'getters', 'mutations', 'modules', 'state', 'namespaced', 'commit'];
-function stateFactory(module) {
-    const state = new module.prototype.constructor({});
-    const s = {};
-    Object.keys(state).forEach((key) => {
-        if (reservedKeys.indexOf(key) !== -1) {
-            if (typeof state[key] !== 'undefined') {
-                throw new Error(`ERR_RESERVED_STATE_KEY_USED: You cannot use the following
-        ['actions', 'getters', 'mutations', 'modules', 'state', 'namespaced', 'commit']
-        as fields in your module. These are reserved as they have special purpose in Vuex`);
-            }
-            return;
-        }
-        if (state.hasOwnProperty(key)) {
-            if (typeof state[key] !== 'function') {
-                s[key] = state[key];
-            }
-        }
-    });
-    return s;
-}
-
-function staticStateGenerator(module, modOpt, statics) {
-    const state = modOpt.stateFactory ? module.state() : module.state;
-    Object.keys(state).forEach((key) => {
-        if (state.hasOwnProperty(key)) {
-            // If not undefined or function means it is a state value
-            if (['undefined', 'function'].indexOf(typeof state[key]) === -1) {
-                Object.defineProperty(statics, key, {
-                    get() {
-                        const path = modOpt.name.split('/');
-                        let data = statics.store.state;
-                        for (let segment of path) {
-                            data = data[segment];
-                        }
-                        return data[key];
-                    }
-                });
-            }
-        }
-    });
-}
-function staticGetterGenerator(module, modOpt, statics) {
-    Object.keys(module.getters).forEach((key) => {
-        if (module.namespaced) {
-            Object.defineProperty(statics, key, {
-                get() {
-                    return statics.store.getters[`${modOpt.name}/${key}`];
-                }
-            });
-        }
-        else {
-            Object.defineProperty(statics, key, {
-                get() {
-                    return statics.store.getters[key];
-                }
-            });
-        }
-    });
-}
-function staticMutationGenerator(module, modOpt, statics) {
-    Object.keys(module.mutations).forEach((key) => {
-        if (module.namespaced) {
-            statics[key] = function (...args) {
-                statics.store.commit(`${modOpt.name}/${key}`, ...args);
-            };
-        }
-        else {
-            statics[key] = function (...args) {
-                statics.store.commit(key, ...args);
-            };
-        }
-    });
-}
-function staticActionGenerators(module, modOpt, statics) {
-    Object.keys(module.actions).forEach((key) => {
-        if (module.namespaced) {
-            statics[key] = async function (...args) {
-                return statics.store.dispatch(`${modOpt.name}/${key}`, ...args);
-            };
-        }
-        else {
-            statics[key] = async function (...args) {
-                return statics.store.dispatch(key, ...args);
-            };
-        }
-    });
-}
-
-function registerDynamicModule(module, modOpt) {
-    if (!modOpt.name) {
-        throw new Error('Name of module not provided in decorator options');
-    }
-    if (!modOpt.store) {
-        throw new Error('Store not provided in decorator options when using dynamic option');
-    }
-    modOpt.store.registerModule(modOpt.name, // TODO: Handle nested modules too in future
-    module, { preserveState: modOpt.preserveState || false });
-}
-function addGettersToModule(targetModule, srcModule) {
-    Object.getOwnPropertyNames(srcModule.prototype).forEach((funcName) => {
-        const descriptor = Object.getOwnPropertyDescriptor(srcModule.prototype, funcName);
-        if (descriptor.get && targetModule.getters) {
-            targetModule.getters[funcName] = function (state, getters, rootState, rootGetters) {
-                const thisObj = { context: { state, getters, rootState, rootGetters } };
-                addPropertiesToObject(thisObj, state);
-                addPropertiesToObject(thisObj, getters);
-                const got = descriptor.get.call(thisObj);
-                return got;
-            };
-        }
-    });
-}
-function moduleDecoratorFactory(moduleOptions) {
-    return function (constructor) {
-        const module = constructor;
-        const stateFactory$1 = () => stateFactory(module);
-        if (!module.state) {
-            module.state = moduleOptions && moduleOptions.stateFactory ? stateFactory$1 : stateFactory$1();
-        }
-        if (!module.getters) {
-            module.getters = {};
-        }
-        if (!module.namespaced) {
-            module.namespaced = moduleOptions && moduleOptions.namespaced;
-        }
-        let parentModule = Object.getPrototypeOf(module);
-        while (parentModule.name !== 'VuexModule' && parentModule.name !== '') {
-            addGettersToModule(module, parentModule);
-            parentModule = Object.getPrototypeOf(parentModule);
-        }
-        addGettersToModule(module, module);
-        const modOpt = moduleOptions;
-        if (modOpt.name) {
-            Object.defineProperty(constructor, '_genStatic', {
-                value: (store) => {
-                    let statics = { store: store || modOpt.store };
-                    if (!statics.store) {
-                        throw new Error(`ERR_STORE_NOT_PROVIDED: To use getModule(), either the module
-            should be decorated with store in decorator, i.e. @Module({store: store}) or
-            store should be passed when calling getModule(), i.e. getModule(MyModule, this.$store)`);
-                    }
-                    // ===========  For statics ==============
-                    // ------ state -------
-                    staticStateGenerator(module, modOpt, statics);
-                    // ------- getters -------
-                    if (module.getters) {
-                        staticGetterGenerator(module, modOpt, statics);
-                    }
-                    // -------- mutations --------
-                    if (module.mutations) {
-                        staticMutationGenerator(module, modOpt, statics);
-                    }
-                    // -------- actions ---------
-                    if (module.actions) {
-                        staticActionGenerators(module, modOpt, statics);
-                    }
-                    return statics;
-                }
-            });
-            Object.defineProperty(constructor, '_vmdModuleName', {
-                value: modOpt.name
-            });
-        }
-        if (modOpt.dynamic) {
-            registerDynamicModule(module, modOpt);
-        }
-        return constructor;
-    };
-}
-function Module(modOrOpt) {
-    if (typeof modOrOpt === 'function') {
-        /*
-         * @Module decorator called without options (directly on the class definition)
-         */
-        moduleDecoratorFactory({})(modOrOpt);
-    }
-    else {
-        /*
-         * @Module({...}) decorator called with options
-         */
-        return moduleDecoratorFactory(modOrOpt);
-    }
-}
-
-const config = {};
-
-function actionDecoratorFactory(params) {
-    const { commit = undefined, rawError = !!config.rawError, root = false } = params || {};
-    return function (target, key, descriptor) {
-        const module = target.constructor;
-        if (!module.hasOwnProperty('actions')) {
-            module.actions = Object.assign({}, module.actions);
-        }
-        const actionFunction = descriptor.value;
-        const action = async function (context, payload) {
-            try {
-                let actionPayload = null;
-                if (module._genStatic) {
-                    const moduleName = getModuleName(module);
-                    const moduleAccessor = context.rootGetters[moduleName]
-                        ? context.rootGetters[moduleName]
-                        : getModule(module);
-                    moduleAccessor.context = context;
-                    actionPayload = await actionFunction.call(moduleAccessor, payload);
-                }
-                else {
-                    const thisObj = { context };
-                    addPropertiesToObject(thisObj, context.state);
-                    addPropertiesToObject(thisObj, context.getters);
-                    actionPayload = await actionFunction.call(thisObj, payload);
-                }
-                if (commit) {
-                    context.commit(commit, actionPayload);
-                }
-                return actionPayload;
-            }
-            catch (e) {
-                throw rawError
-                    ? e
-                    : new Error('ERR_ACTION_ACCESS_UNDEFINED: Are you trying to access ' +
-                        'this.someMutation() or this.someGetter inside an @Action? \n' +
-                        'That works only in dynamic modules. \n' +
-                        'If not dynamic use this.context.commit("mutationName", payload) ' +
-                        'and this.context.getters["getterName"]' +
-                        '\n' +
-                        new Error(`Could not perform action ${key.toString()}`).stack +
-                        '\n' +
-                        e.stack);
-            }
-        };
-        module.actions[key] = root ? { root, handler: action } : action;
-    };
-}
-/**
- * The @Action decorator turns an async function into an Vuex action
- *
- * @param targetOrParams the module class
- * @param key name of the action
- * @param descriptor the action function descriptor
- * @constructor
- */
-function Action(targetOrParams, key, descriptor) {
-    if (!key && !descriptor) {
-        /*
-         * This is the case when `targetOrParams` is params.
-         * i.e. when used as -
-         * <pre>
-            @Action({commit: 'incrCount'})
-            async getCountDelta() {
-              return 5
-            }
-         * </pre>
-         */
-        return actionDecoratorFactory(targetOrParams);
-    }
-    else {
-        /*
-         * This is the case when @Action is called on action function
-         * without any params
-         * <pre>
-         *   @Action
-         *   async doSomething() {
-         *    ...
-         *   }
-         * </pre>
-         */
-        actionDecoratorFactory()(targetOrParams, key, descriptor);
-    }
-}
-
-function Mutation(target, key, descriptor) {
-    const module = target.constructor;
-    if (!module.hasOwnProperty('mutations')) {
-        module.mutations = Object.assign({}, module.mutations);
-    }
-    const mutationFunction = descriptor.value;
-    const mutation = function (state, payload) {
-        mutationFunction.call(state, payload);
-    };
-    module.mutations[key] = mutation;
-}
-
-function mutationActionDecoratorFactory(params) {
-    return function (target, key, descriptor) {
-        const module = target.constructor;
-        if (!module.hasOwnProperty('mutations')) {
-            module.mutations = Object.assign({}, module.mutations);
-        }
-        if (!module.hasOwnProperty('actions')) {
-            module.actions = Object.assign({}, module.actions);
-        }
-        const mutactFunction = descriptor.value;
-        const action = async function (context, payload) {
-            try {
-                const thisObj = { context };
-                addPropertiesToObject(thisObj, context.state);
-                addPropertiesToObject(thisObj, context.getters);
-                const actionPayload = await mutactFunction.call(thisObj, payload);
-                if (actionPayload === undefined)
-                    return;
-                context.commit(key, actionPayload);
-            }
-            catch (e) {
-                if (params.rawError) {
-                    throw e;
-                }
-                else {
-                    console.error('Could not perform action ' + key.toString());
-                    console.error(e);
-                    return Promise.reject(e);
-                }
-            }
-        };
-        const mutation = function (state, payload) {
-            if (!params.mutate) {
-                params.mutate = Object.keys(payload);
-            }
-            for (let stateItem of params.mutate) {
-                if (state.hasOwnProperty(stateItem) && payload.hasOwnProperty(stateItem)) {
-                    state[stateItem] = payload[stateItem];
-                }
-                else {
-                    throw new Error(`ERR_MUTATE_PARAMS_NOT_IN_PAYLOAD
-          In @MutationAction, mutate: ['a', 'b', ...] array keys must
-          match with return type = {a: {}, b: {}, ...} and must
-          also be in state.`);
-                }
-            }
-        };
-        module.actions[key] = params.root ? { root: true, handler: action } : action;
-        module.mutations[key] = mutation;
-    };
-}
-/**
- * The @MutationAction decorator turns this into an action that further calls a mutation
- * Both the action and the mutation are generated for you
- *
- * @param paramsOrTarget the params or the target class
- * @param key the name of the function
- * @param descriptor the function body
- * @constructor
- */
-function MutationAction(paramsOrTarget, key, descriptor) {
-    if (!key && !descriptor) {
-        /*
-         * This is the case when `paramsOrTarget` is params.
-         * i.e. when used as -
-         * <pre>
-            @MutationAction({mutate: ['incrCount']})
-            async getCountDelta() {
-              return {incrCount: 5}
-            }
-         * </pre>
-         */
-        return mutationActionDecoratorFactory(paramsOrTarget);
-    }
-    else {
-        /*
-         * This is the case when `paramsOrTarget` is target.
-         * i.e. when used as -
-         * <pre>
-            @MutationAction
-            async getCountDelta() {
-              return {incrCount: 5}
-            }
-         * </pre>
-         */
-        mutationActionDecoratorFactory({})(paramsOrTarget, key, descriptor);
-    }
-}
-
-
-//# sourceMappingURL=index.js.map
-
 
 /***/ }),
 
@@ -14572,7 +13972,7 @@ const toJSONObject = (obj) => {
 },
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-/******/ __webpack_require__.O(0, ["builds/vendor/vendor","builds/app/css/app"], function() { return __webpack_exec__("./asset/app/app.ts"), __webpack_exec__("./asset/app/style/app.scss"); });
+/******/ __webpack_require__.O(0, ["builds/vendor/vendor","builds/app/css/app"], function() { return __webpack_exec__("./asset/app/app.js"), __webpack_exec__("./asset/app/styles/app.scss"); });
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

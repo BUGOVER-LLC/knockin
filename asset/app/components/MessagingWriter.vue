@@ -6,14 +6,8 @@
     </v-footer>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({
-    components: {},
-    mixins: [],
-})
-export default class MessagingWriter extends Vue {}
+<script lang="js">
+export default {}
 </script>
 
 <style scoped lang="scss"></style>

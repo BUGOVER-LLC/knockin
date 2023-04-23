@@ -12,8 +12,8 @@ class NoixIndexController extends Action
     {
     }
 
-    public function __invoke()
+    public function __invoke($workspace_id)
     {
-        dd(111);
+        return view('app.dashboard');
     }
 }
