@@ -12,8 +12,14 @@
     </v-navigation-drawer>
 </template>
 
-<script lang="js">
-export default {}
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({
+    components: {},
+    mixins: [],
+})
+export default class ChannelsNavigation extends Vue {}
 </script>
 
 <style scoped></style>

@@ -1,11 +1,13 @@
 /** @format */
 
-const getStartedIndex = () => import('@/app/pages/auth/started/GetStartedIndex.vue');
-const authIndex = () => import('@/app/pages/auth/AuthIndex.vue');
-const greeting = () => import('@/app/pages/greeting/GreetingIndex.vue');
-const application = () => import('@/app/pages/application/AppIndex.vue');
+import { RouteConfig } from 'vue-router';
 
-export const Routes = [
+const getStartedIndex = (): object => import('@/app/pages/auth/started/GetStartedIndex.vue');
+const authIndex = (): object => import('@/app/pages/auth/AuthIndex.vue');
+const greeting = (): object => import('@/app/pages/greeting/GreetingIndex.vue');
+const application = (): object => import('@/app/pages/application/AppIndex.vue');
+
+export const Routes: RouteConfig[] = [
     {
         props: true,
         name: 'greetingIndex',

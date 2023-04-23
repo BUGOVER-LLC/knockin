@@ -16,8 +16,11 @@
     </div>
 </template>
 
-<script lang="js">
-export default {}
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({})
+export default class GreetingIndex extends Vue {}
 </script>
 
 <style scoped></style>

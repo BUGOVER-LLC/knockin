@@ -6,8 +6,14 @@
     </v-main>
 </template>
 
-<script lang="js">
-export default {}
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({
+    components: {},
+    mixins: [],
+})
+export default class MessagingContent extends Vue {}
 </script>
 
 <style scoped lang="scss"></style>

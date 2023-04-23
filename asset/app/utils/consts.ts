@@ -1,11 +1,11 @@
 /** @format */
 
-const cRefObject = document.head.querySelector('meta[name="csrf-token"]');
+const cRefObject: HTMLElement | null = document.head.querySelector('meta[name="csrf-token"]');
 if (null === cRefObject) {
     process.exit(500);
     throw new Error('Go');
 }
-const cRef = cRefObject.getAttribute('content');
+const cRef: string | null = cRefObject.getAttribute('content');
 
 const BROADCAST = {
     broadcaster: 'pusher',
