@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Http;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Throwable;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Greeting;
 
-use App\Http\Action;
+use App\Http\Controllers\Action;
 use App\Repositories\Workspace\WorkspaceContract;
 
 class GreetingIndexController extends Action

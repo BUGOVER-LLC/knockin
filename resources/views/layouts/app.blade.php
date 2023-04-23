@@ -22,5 +22,13 @@
         @yield('app-body')
     </v-app>
 </div>
+
+<script>
+    document.addEventListener('mousedown', function (event) {
+        if (event.detail > 1) {
+            event.preventDefault()
+        }
+    }, false)
+</script>
 </body>
 </html>

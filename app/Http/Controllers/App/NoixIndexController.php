@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\App;
 
-use App\Http\Action;
+use App\Http\Controllers\Action;
 
 class NoixIndexController extends Action
 {
@@ -12,8 +12,8 @@ class NoixIndexController extends Action
     {
     }
 
-    public function __invoke()
+    public function __invoke($workspace_id)
     {
-        dd(111);
+        return view('app.dashboard');
     }
 }

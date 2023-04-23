@@ -26,8 +26,8 @@ Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn() => [
     Route::get('{anyauth}', SignInController::class)->where('anyauth', '.*'),
 ]);
 
-Route::group(['middleware' => 'auth', 'prefix' => 'aloha'], static fn() => [
-    Route::get('{workspace_id}', NoixIndexController::class)->name('index-noix'),
+Route::group(['middleware' => [], 'prefix' => 'noix'], static fn() => [
+    Route::get('/{workspace_id}', NoixIndexController::class)->name('index-noix'),
 
     Route::get('{any}', NoixIndexController::class)->where('any', '.*'),
 ]);

@@ -2,7 +2,7 @@
 
 <template lang="html">
     <v-footer app color="transparent" height="72" inset>
-        <v-text-field background-color="grey lighten-1" dense flat hide-details rounded solo />
+        <v-text-field autofocus background-color="grey lighten-3" class="rounded-lg" flat hide-details solo />
     </v-footer>
 </template>
 

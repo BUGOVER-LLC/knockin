@@ -1,6 +1,159 @@
 "use strict";
 (self["webpackChunknoix_app"] = self["webpackChunknoix_app"] || []).push([["asset_app_pages_application_AppIndex_vue"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/DrawerDrag.vue?vue&type=script&lang=ts&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/DrawerDrag.vue?vue&type=script&lang=ts& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var DrawerDrag = /*#__PURE__*/function (_Vue) {
+  _inherits(DrawerDrag, _Vue);
+  var _super = _createSuper(DrawerDrag);
+  function DrawerDrag() {
+    var _this;
+    _classCallCheck(this, DrawerDrag);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    _this = _super.call.apply(_super, [this].concat(args));
+    _defineProperty(_assertThisInitialized(_this), "navigationWidth", 300);
+    _defineProperty(_assertThisInitialized(_this), "drawer", void 0);
+    _defineProperty(_assertThisInitialized(_this), "navigation", {
+      shown: true,
+      width: _this.navigationWidth,
+      borderSize: 4
+    });
+    return _this;
+  }
+  _createClass(DrawerDrag, [{
+    key: "direction",
+    get: function get() {
+      return this.navigation.shown ? 'Closed' : 'Open';
+    }
+  }, {
+    key: "mounted",
+    value: function mounted() {
+      this.setBorderWidth();
+      this.setEvents();
+    }
+  }, {
+    key: "setBorderWidth",
+    value: function setBorderWidth() {
+      var i = this.drawer.$el.querySelector('.v-navigation-drawer__border');
+      i.style.width = this.navigation.borderSize + 'px';
+      i.style.cursor = 'ew-resize';
+    }
+  }, {
+    key: "setEvents",
+    value: function setEvents() {
+      var minSize = this.navigation.borderSize;
+      var el = this.drawer.$el;
+      var drawerBorder = el.querySelector('.v-navigation-drawer__border');
+      var vm = this;
+      var direction = el.classList.contains('v-navigation-drawer--right') ? 'right' : 'left';
+      function resize(e) {
+        document.body.style.cursor = 'ew-resize';
+        var f = 'right' === direction ? document.body.scrollWidth - e.clientX : e.clientX;
+        el.style.width = f + 'px';
+      }
+      drawerBorder.addEventListener('mousedown', function (e) {
+        if (e.offsetX < minSize) {
+          var mPos = e.x;
+          el.style.transition = 'initial';
+          document.addEventListener('mousemove', resize, false);
+        }
+      }, false);
+      document.addEventListener('mouseup', function () {
+        el.style.transition = '';
+        vm.navigation.width = el.style.width;
+        document.body.style.cursor = '';
+        document.removeEventListener('mousemove', resize, false);
+      }, false);
+    }
+  }]);
+  return DrawerDrag;
+}(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Vue);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Prop)()], DrawerDrag.prototype, "navigationWidth", void 0);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Ref)()], DrawerDrag.prototype, "drawer", void 0);
+DrawerDrag = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({
+  components: {},
+  mixins: []
+})], DrawerDrag);
+/* harmony default export */ __webpack_exports__["default"] = (DrawerDrag);
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/MessagingWriter.vue?vue&type=script&lang=ts&":
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/MessagingWriter.vue?vue&type=script&lang=ts& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/index.js");
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+    r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+    d;
+  if ((typeof Reflect === "undefined" ? "undefined" : _typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var MessagingWriter = /*#__PURE__*/function (_Vue) {
+  _inherits(MessagingWriter, _Vue);
+  var _super = _createSuper(MessagingWriter);
+  function MessagingWriter() {
+    _classCallCheck(this, MessagingWriter);
+    return _super.apply(this, arguments);
+  }
+  return _createClass(MessagingWriter);
+}(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Vue);
+MessagingWriter = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({
+  components: {},
+  mixins: []
+})], MessagingWriter);
+/* harmony default export */ __webpack_exports__["default"] = (MessagingWriter);
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/application/AppIndex.vue?vue&type=script&lang=ts&":
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/application/AppIndex.vue?vue&type=script&lang=ts& ***!
@@ -9,6 +162,8 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/index.js");
+/* harmony import */ var _app_components_DrawerDrag_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/app/components/DrawerDrag.vue */ "./asset/app/components/DrawerDrag.vue");
+/* harmony import */ var _app_components_MessagingWriter_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/app/components/MessagingWriter.vue */ "./asset/app/components/MessagingWriter.vue");
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31,6 +186,8 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
+
+
 var GreetingIndex = /*#__PURE__*/function (_Vue) {
   _inherits(GreetingIndex, _Vue);
   var _super = _createSuper(GreetingIndex);
@@ -41,13 +198,125 @@ var GreetingIndex = /*#__PURE__*/function (_Vue) {
       args[_key] = arguments[_key];
     }
     _this = _super.call.apply(_super, [this].concat(args));
-    _defineProperty(_assertThisInitialized(_this), "drawer", false);
+    _defineProperty(_assertThisInitialized(_this), "drawer", true);
     return _this;
   }
   return _createClass(GreetingIndex);
 }(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Vue);
-GreetingIndex = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({})], GreetingIndex);
+GreetingIndex = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({
+  components: {
+    MessagingWriter: _app_components_MessagingWriter_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    DrawerDrag: _app_components_DrawerDrag_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+})], GreetingIndex);
 /* harmony default export */ __webpack_exports__["default"] = (GreetingIndex);
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/DrawerDrag.vue?vue&type=template&id=0f0c4d13&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/DrawerDrag.vue?vue&type=template&id=0f0c4d13& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": function() { return /* binding */ render; },
+/* harmony export */   "staticRenderFns": function() { return /* binding */ staticRenderFns; }
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("div", [_c("v-navigation-drawer", {
+    ref: "drawer",
+    attrs: {
+      app: "",
+      right: "",
+      width: _vm.navigation.width
+    },
+    model: {
+      value: _vm.navigation.shown,
+      callback: function callback($$v) {
+        _vm.$set(_vm.navigation, "shown", $$v);
+      },
+      expression: "navigation.shown"
+    }
+  }, [_c("v-toolbar", {
+    attrs: {
+      color: "grey lighten-4",
+      height: "70"
+    }
+  }, [_c("v-toolbar-title", {
+    staticClass: "headline text-uppercase"
+  }, [_c("span", [_vm._v("t a")]), _c("span", {
+    staticClass: "font-weight-light"
+  }, [_vm._v(" b s ")])])], 1), _vm._v(" "), _c("v-tabs", [_vm._l(3, function (n) {
+    return _c("v-tab", {
+      key: n
+    }, [_vm._v(" Item " + _vm._s(n) + " ")]);
+  }), _vm._v(" "), _vm._l(3, function (n) {
+    return _c("v-tab-item", {
+      key: n
+    }, [_c("v-card", {
+      attrs: {
+        flat: ""
+      }
+    }, [_c("v-card-text", [_vm._v("Content for tab " + _vm._s(n) + " would go here")])], 1)], 1);
+  })], 2)], 1), _vm._v(" "), _c("v-layout", {
+    attrs: {
+      "justify-center": ""
+    }
+  }, [_c("v-btn", {
+    on: {
+      click: function click($event) {
+        _vm.navigation.shown = !_vm.navigation.shown;
+      }
+    }
+  }, [_vm._v("Toggle " + _vm._s(_vm.direction))])], 1)], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": function() { return /* binding */ render; },
+/* harmony export */   "staticRenderFns": function() { return /* binding */ staticRenderFns; }
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c("v-footer", {
+    attrs: {
+      app: "",
+      color: "transparent",
+      height: "72",
+      inset: ""
+    }
+  }, [_c("v-text-field", {
+    staticClass: "rounded-lg",
+    attrs: {
+      autofocus: "",
+      "background-color": "grey lighten-3",
+      flat: "",
+      "hide-details": "",
+      solo: ""
+    }
+  })], 1);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
 
 /***/ }),
 
@@ -74,12 +343,24 @@ var render = function render() {
     attrs: {
       app: ""
     }
-  }, [_c("v-spacer"), _vm._v(" "), _c("v-icon", [_vm._v("mdi-square")]), _vm._v(" "), _c("v-icon", [_vm._v("mdi-circle")]), _vm._v(" "), _c("v-icon", [_vm._v("mdi-triangle")])], 1), _vm._v(" "), _c("v-app-bar", {
+  }, [_c("v-spacer"), _vm._v(" "), _c("v-icon", {
+    domProps: {
+      textContent: _vm._s("mdi-square")
+    }
+  }), _vm._v(" "), _c("v-icon", {
+    domProps: {
+      textContent: _vm._s("mdi-circle")
+    }
+  }), _vm._v(" "), _c("v-icon", {
+    domProps: {
+      textContent: _vm._s("mdi-triangle")
+    }
+  })], 1), _vm._v(" "), _c("v-app-bar", {
     attrs: {
       app: "",
       "clipped-right": "",
       flat: "",
-      height: "72"
+      height: "70"
     }
   }, [_c("v-spacer"), _vm._v(" "), _c("v-responsive", {
     attrs: {
@@ -153,36 +434,7 @@ var render = function render() {
         link: ""
       }
     }, [_c("v-list-item-content", [_c("v-list-item-title", [_vm._v("Item " + _vm._s(n))])], 1)], 1);
-  }), 1)], 1), _vm._v(" "), _c("v-navigation-drawer", {
-    attrs: {
-      app: "",
-      clipped: "",
-      right: ""
-    }
-  }, [_c("v-list", _vm._l(5, function (n) {
-    return _c("v-list-item", {
-      key: n,
-      attrs: {
-        link: ""
-      }
-    }, [_c("v-list-item-content", [_c("v-list-item-title", [_vm._v("Item " + _vm._s(n))])], 1)], 1);
-  }), 1)], 1), _vm._v(" "), _c("v-main"), _vm._v(" "), _c("v-footer", {
-    attrs: {
-      app: "",
-      color: "transparent",
-      height: "72",
-      inset: ""
-    }
-  }, [_c("v-text-field", {
-    attrs: {
-      "background-color": "grey lighten-1",
-      dense: "",
-      flat: "",
-      "hide-details": "",
-      rounded: "",
-      solo: ""
-    }
-  })], 1)], 1);
+  }), 1)], 1), _vm._v(" "), _c("DrawerDrag"), _vm._v(" "), _c("v-main"), _vm._v(" "), _c("MessagingWriter")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -526,6 +778,76 @@ Component.registerHooks = function registerHooks(keys) {
 
 /***/ }),
 
+/***/ "./asset/app/components/DrawerDrag.vue":
+/*!*********************************************!*\
+  !*** ./asset/app/components/DrawerDrag.vue ***!
+  \*********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DrawerDrag_vue_vue_type_template_id_0f0c4d13___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DrawerDrag.vue?vue&type=template&id=0f0c4d13& */ "./asset/app/components/DrawerDrag.vue?vue&type=template&id=0f0c4d13&");
+/* harmony import */ var _DrawerDrag_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DrawerDrag.vue?vue&type=script&lang=ts& */ "./asset/app/components/DrawerDrag.vue?vue&type=script&lang=ts&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DrawerDrag_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DrawerDrag_vue_vue_type_template_id_0f0c4d13___WEBPACK_IMPORTED_MODULE_0__.render,
+  _DrawerDrag_vue_vue_type_template_id_0f0c4d13___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "asset/app/components/DrawerDrag.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./asset/app/components/MessagingWriter.vue":
+/*!**************************************************!*\
+  !*** ./asset/app/components/MessagingWriter.vue ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MessagingWriter_vue_vue_type_template_id_71156b8e_scoped_true_lang_html___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html& */ "./asset/app/components/MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html&");
+/* harmony import */ var _MessagingWriter_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MessagingWriter.vue?vue&type=script&lang=ts& */ "./asset/app/components/MessagingWriter.vue?vue&type=script&lang=ts&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MessagingWriter_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MessagingWriter_vue_vue_type_template_id_71156b8e_scoped_true_lang_html___WEBPACK_IMPORTED_MODULE_0__.render,
+  _MessagingWriter_vue_vue_type_template_id_71156b8e_scoped_true_lang_html___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "71156b8e",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "asset/app/components/MessagingWriter.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "./asset/app/pages/application/AppIndex.vue":
 /*!**************************************************!*\
   !*** ./asset/app/pages/application/AppIndex.vue ***!
@@ -561,6 +883,30 @@ component.options.__file = "asset/app/pages/application/AppIndex.vue"
 
 /***/ }),
 
+/***/ "./asset/app/components/DrawerDrag.vue?vue&type=script&lang=ts&":
+/*!**********************************************************************!*\
+  !*** ./asset/app/components/DrawerDrag.vue?vue&type=script&lang=ts& ***!
+  \**********************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_lib_index_js_vue_loader_options_DrawerDrag_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/ts-loader/index.js??clonedRuleSet-6!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrawerDrag.vue?vue&type=script&lang=ts& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/DrawerDrag.vue?vue&type=script&lang=ts&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_lib_index_js_vue_loader_options_DrawerDrag_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./asset/app/components/MessagingWriter.vue?vue&type=script&lang=ts&":
+/*!***************************************************************************!*\
+  !*** ./asset/app/components/MessagingWriter.vue?vue&type=script&lang=ts& ***!
+  \***************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_lib_index_js_vue_loader_options_MessagingWriter_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/ts-loader/index.js??clonedRuleSet-6!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MessagingWriter.vue?vue&type=script&lang=ts& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/MessagingWriter.vue?vue&type=script&lang=ts&");
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_lib_index_js_vue_loader_options_MessagingWriter_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./asset/app/pages/application/AppIndex.vue?vue&type=script&lang=ts&":
 /*!***************************************************************************!*\
   !*** ./asset/app/pages/application/AppIndex.vue?vue&type=script&lang=ts& ***!
@@ -570,6 +916,38 @@ component.options.__file = "asset/app/pages/application/AppIndex.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/ts-loader/index.js??clonedRuleSet-6!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppIndex.vue?vue&type=script&lang=ts& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/application/AppIndex.vue?vue&type=script&lang=ts&");
  /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./asset/app/components/DrawerDrag.vue?vue&type=template&id=0f0c4d13&":
+/*!****************************************************************************!*\
+  !*** ./asset/app/components/DrawerDrag.vue?vue&type=template&id=0f0c4d13& ***!
+  \****************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DrawerDrag_vue_vue_type_template_id_0f0c4d13___WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DrawerDrag_vue_vue_type_template_id_0f0c4d13___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_DrawerDrag_vue_vue_type_template_id_0f0c4d13___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DrawerDrag.vue?vue&type=template&id=0f0c4d13& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/DrawerDrag.vue?vue&type=template&id=0f0c4d13&");
+
+
+/***/ }),
+
+/***/ "./asset/app/components/MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html&":
+/*!*******************************************************************************************************!*\
+  !*** ./asset/app/components/MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html& ***!
+  \*******************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MessagingWriter_vue_vue_type_template_id_71156b8e_scoped_true_lang_html___WEBPACK_IMPORTED_MODULE_0__.render; },
+/* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MessagingWriter_vue_vue_type_template_id_71156b8e_scoped_true_lang_html___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MessagingWriter_vue_vue_type_template_id_71156b8e_scoped_true_lang_html___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/components/MessagingWriter.vue?vue&type=template&id=71156b8e&scoped=true&lang=html&");
+
 
 /***/ }),
 

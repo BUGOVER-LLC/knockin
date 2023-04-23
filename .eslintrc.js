@@ -14,7 +14,7 @@ module.exports = {
         '@vue/eslint-config-prettier',
         '@vue/prettier',
         'prettier',
-        "plugin:jsdoc/recommended-error"
+        'plugin:jsdoc/recommended-error',
     ],
     env: {
         browser: true,
@@ -25,14 +25,13 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
     },
-    plugins: ['unused-imports', 'simple-import-sort', '@typescript-eslint', ],
+    plugins: ['unused-imports', 'simple-import-sort', '@typescript-eslint'],
     overrides: [
         {
             files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
         },
     ],
     rules: {
-
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
         'import/no-unresolved': 'error',
@@ -155,12 +154,12 @@ module.exports = {
 
         'dot-notation': 'error',
         'arrow-body-style': 'error',
-        "jsdoc/no-types": 1,
-        "jsdoc/require-param-type": 0,
-        "jsdoc/require-property-type": 0,
-        "jsdoc/require-returns-type": 0,
-        "jsdoc/require-returns-description": 1,
-        "jsdoc/check-alignment": 1,
-        "jsdoc/check-line-alignment": 1,
+        'jsdoc/no-types': 1,
+        'jsdoc/require-param-type': 0,
+        'jsdoc/require-property-type': 0,
+        'jsdoc/require-returns-type': 0,
+        'jsdoc/require-returns-description': 1,
+        'jsdoc/check-alignment': 1,
+        'jsdoc/check-line-alignment': 1,
     },
 };
