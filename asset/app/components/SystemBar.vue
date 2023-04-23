@@ -12,11 +12,8 @@
     </v-system-bar>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({})
-export default class SystemBar extends Vue {}
+<script lang="js">
+export default {}
 </script>
 
 <style scoped lang="scss"></style>

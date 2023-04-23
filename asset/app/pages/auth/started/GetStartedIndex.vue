@@ -2,14 +2,8 @@
 
 <template> </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({
-    components: {},
-    mixins: [],
-})
-export default class GetStartedIndex extends Vue {}
+<script lang="js">
+export default {}
 </script>
 
 <style scoped></style>

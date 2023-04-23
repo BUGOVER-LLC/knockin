@@ -2,7 +2,7 @@
 
 <template>
     <div class="auth-wrapper d-flex align-center justify-center pa-4">
-        <VCard class="auth-card pa-4 pt-7" max-width="448">
+        <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="448" outlined>
             <v-card-title class="justify-center">
                 <template #prepend>
                     <div class="d-flex">
@@ -19,8 +19,13 @@
             </VCardText>
 
             <VCardText>
-                <VForm @submit.prevent="() => {}" autocomplete="off">
+                <VForm autocomplete="off" @submit.prevent="() => {}">
                     <VRow>
+                        <!-- Workspace -->
+                        <VCol cols="12">
+                            <VTextField v-model="form.workspace" label="Workspace" type="text" outlined />
+                        </VCol>
+
                         <!-- email -->
                         <VCol cols="12">
                             <VTextField v-model="form.email" label="Email" type="email" outlined />
@@ -71,22 +76,8 @@
     </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-
-@Component({
-    mixins: [],
-})
-export default class AuthIndex extends Vue {
-    form = {
-        email: '',
-        password: '',
-        remember: false,
-    };
-
-    beforeRouteUpdate(to, from, next: string): void {}
-
-    created() {}
+<script lang="js">
+export default {
 }
 </script>
 
