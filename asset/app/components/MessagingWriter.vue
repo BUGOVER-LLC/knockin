@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template lang="html">
-    <v-footer app color="transparent" height="72" inset>
+    <v-footer app color="transparent" height="70" inset>
         <tiptap-vuetify v-model="content" :extensions="extensions" />
     </v-footer>
 </template>
