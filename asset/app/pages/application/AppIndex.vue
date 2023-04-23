@@ -12,7 +12,7 @@
             <v-icon>mdi-triangle</v-icon>
         </v-system-bar>
 
-        <v-app-bar app clipped-right flat height="72">
+        <v-app-bar app clipped-right flat height="70">
             <v-spacer></v-spacer>
 
             <v-responsive max-width="156">
@@ -46,31 +46,28 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-navigation-drawer app clipped right>
-            <v-list>
-                <v-list-item v-for="n in 5" :key="n" link>
-                    <v-list-item-content>
-                        <v-list-item-title>Item {{ n }}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>
+        <DrawerDrag :right="true" :width="300" />
 
         <v-main>
             <!--  -->
         </v-main>
 
-        <v-footer app color="transparent" height="72" inset>
-            <v-text-field background-color="grey lighten-1" dense flat hide-details rounded solo></v-text-field>
-        </v-footer>
+        <MessagingWriter></MessagingWriter>
     </v-app>
 </template>
 
 <script lang="js">
-import DrawerDrag from '@/app/components/DrawerDrag.vue'
+import DrawerDrag from '@/app/components/DrawerDrag.vue';
+import MessagingWriter from '@/app/components/MessagingWriter.vue';
 
 export default {
-    components: { DrawerDrag },
+    components: { MessagingWriter, DrawerDrag },
+
+    data () {
+        return{
+            drawer: null,
+        }
+    },
 }
 </script>
 

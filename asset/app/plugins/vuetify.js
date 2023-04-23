@@ -3,11 +3,17 @@
 import 'vuetify/dist/vuetify.min.css';
 import '@mdi/font/css/materialdesignicons.css'; // Ensure you are using css-loader
 
+import { TiptapVuetifyPlugin } from 'tiptap-vuetify';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
-Vue.use(Vuetify);
+const vuetify = new Vuetify();
 
+Vue.use(Vuetify);
+Vue.use(TiptapVuetifyPlugin, {
+    vuetify,
+    iconsGroup: 'mdiSvg',
+});
 // noinspection JSUnusedGlobalSymbols
 export default new Vuetify({
     iconfont: 'mdiSvg',

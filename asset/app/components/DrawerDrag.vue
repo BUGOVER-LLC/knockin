@@ -2,10 +2,10 @@
 
 <template>
     <div>
-        <v-navigation-drawer ref="drawer" v-model="navigation.shown" app :width="navigation.width">
-            <v-toolbar color="primary">
+        <v-navigation-drawer ref="drawer" v-model="navigation.shown" app :right="right" :width="navigation.width">
+            <v-toolbar color="grey lighten-4" height="70" @dblclick="toggle">
                 <v-toolbar-title class="headline text-uppercase">
-                    <span>t a</span><span class="font-weight-light"> b s </span>
+                    <span>f i</span><span class="font-weight-light"> l e s </span>
                 </v-toolbar-title>
             </v-toolbar>
             <v-tabs>
@@ -25,13 +25,28 @@
 
 <script>
 export default {
-    data: () => ({
-        navigation: {
-            shown: true,
-            width: 400,
-            borderSize: 3,
+    props: {
+        right: {
+            required: false,
+            type: Boolean,
+            default: false,
         },
-    }),
+        width: {
+            required: false,
+            type: [Number, String],
+            default: 400,
+        },
+    },
+
+    data() {
+        return {
+            navigation: {
+                shown: true,
+                width: this.width,
+                borderSize: 4,
+            },
+        };
+    },
 
     computed: {
         direction() {
@@ -89,6 +104,9 @@ export default {
                 },
                 false,
             );
+        },
+        toggle() {
+            this.navigation.shown = !this.navigation.shown;
         },
     },
 };
