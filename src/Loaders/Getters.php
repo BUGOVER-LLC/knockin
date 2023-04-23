@@ -35,8 +35,7 @@ trait Getters
     private function getModels(): array
     {
         if (!$this->models) {
-            $this->models[0] = "App\\User";
-            $path = app_path() . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR;
+            $path = base_path('src') . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR;
             recursive_loader($path, $this->models, true);
         }
 

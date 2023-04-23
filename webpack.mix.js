@@ -50,6 +50,7 @@ mix.webpackConfig(
                 chunks: 'all',
             },
         },
+        devtool: 'source-map',
     }),
 );
 
@@ -61,6 +62,6 @@ mix.extract({
 mix.options({
     terser: {
         extractComments: false,
-        runtimeChunkPath: 'builds/vendor',
     },
+    runtimeChunkPath: 'builds/vendor',
 });

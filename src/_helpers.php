@@ -76,3 +76,25 @@ if (!function_exists('uniqueMachineID')) {
         return hash('sha3-512', $salt . hash('sha3-512', $result));
     }
 }
+
+if (!function_exists('asset_mix')) {
+    /**
+     * @param string $path
+     * @return string|null
+     * @throws Exception
+     */
+    function asset_mix(string $path): ?string
+    {
+        try {
+            $asset = asset(mix($path));
+        } catch (Exception $e) {
+            if (!config('app.strict') || app()->environment('production')) {
+                $asset = asset($path);
+            } else {
+                throw new $e();
+            }
+        }
+
+        return $asset ?? null;
+    }
+}

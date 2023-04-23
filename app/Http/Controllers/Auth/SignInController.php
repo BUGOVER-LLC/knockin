@@ -8,7 +8,12 @@ use App\Http\Action;
 
 class SignInController extends Action
 {
+    public function __construct()
+    {
+    }
+
     public function __invoke()
     {
+        return view('app.signin');
     }
 }

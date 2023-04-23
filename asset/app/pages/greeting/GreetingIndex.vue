@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<template>
+<template lang="html">
     <div>
         <v-app-bar class="primary" dense>
             <v-app-bar-nav-icon />

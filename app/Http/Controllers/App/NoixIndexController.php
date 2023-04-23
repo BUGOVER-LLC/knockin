@@ -8,7 +8,12 @@ use App\Http\Action;
 
 class NoixIndexController extends Action
 {
+    public function __construct()
+    {
+    }
+
     public function __invoke()
     {
+        dd(111);
     }
 }

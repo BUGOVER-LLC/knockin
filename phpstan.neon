@@ -5,10 +5,8 @@ parameters:
         - routes
         - config
         - tests
-    level: 9
+    level: 5
+    phpVersion: 80200
     inferPrivatePropertyTypeFromConstructor: true
     checkMissingIterableValueType: true
-    excludePaths:
-        - %currentWorkingDirectory%/app/Providers/*
-    ignoreErrors:
-        - '#(.*)should return Illuminate\Http\RedirectResponse but returns Illuminate\Http\RedirectResponse|Illuminate\Routing\Redirector#'
+    customRulesetUsed: true

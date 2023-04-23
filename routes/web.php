@@ -17,14 +17,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::group(['middleware' => 'guest'], static fn () => [
+Route::group(['middleware' => 'guest'], static fn() => [
     Route::get('/', GreetingIndexController::class)->name('greeting-index'),
 ]);
 
-Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn () => [
-    Route::get('signin', SignInController::class)->name('sign-in-index'),
+Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn() => [
+    Route::get('/', SignInController::class)->name('sign-in-index'),
+    Route::get('{anyauth}', SignInController::class)->where('anyauth', '.*'),
 ]);
 
-Route::group(['middleware' => 'auth', 'prefix' => 'aloha'], static fn () => [
-    Route::get('noix/{id}', NoixIndexController::class)->name('index-noix'),
+Route::group(['middleware' => 'auth', 'prefix' => 'aloha'], static fn() => [
+    Route::get('{workspace_id}', NoixIndexController::class)->name('index-noix'),
+
+    Route::get('{any}', NoixIndexController::class)->where('any', '.*'),
 ]);

@@ -1,8 +1,8 @@
 <!-- @format -->
 
 <template>
-    <v-app-bar app clipped-right flat height="72">
-        <v-spacer />
+    <v-app-bar app clipped-right flat height="72" light>
+        <v-spacer  />
 
         <v-responsive max-width="156">
             <v-text-field dense flat hide-details rounded solo-inverted />

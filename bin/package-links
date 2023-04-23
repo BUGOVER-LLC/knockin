@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Please call this file in package json or "run npm run sync-packages"
+
+for item in 'app'; do
+    ln -sfn ../package.json asset/$item/
+    ln -sfn ../yarn.lock asset/$item/
+done
+
+exit

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Service\Models\Entity;
 
-use App\Models\PersonalAccessToken;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Service\Models\Traits\ScopeHelpers;
 use Service\Role\Traits\HasRoles;
+use Src\Models\PersonalAccessToken;
 
 /**
  * Class ServiceAuthenticable
