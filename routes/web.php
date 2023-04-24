@@ -23,11 +23,11 @@ Route::group(['middleware' => 'guest'], static fn() => [
 
 Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn() => [
     Route::get('/', SignInController::class)->name('sign-in-index'),
-    Route::get('{anyauth}', SignInController::class)->where('anyauth', '.*'),
+    Route::get('{auth-any}', SignInController::class)->where('auth-any', '.*'),
 ]);
 
 Route::group(['middleware' => [], 'prefix' => 'noix'], static fn() => [
     Route::get('/{workspace_id}', NoixIndexController::class)->name('index-noix'),
 
-    Route::get('{any}', NoixIndexController::class)->where('any', '.*'),
+    Route::get('{app-any}', NoixIndexController::class)->where('app-any', '.*'),
 ]);
