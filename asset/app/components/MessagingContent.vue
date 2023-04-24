@@ -2,15 +2,14 @@
 
 <template lang="html">
     <v-main>
-        <div v-for="(message, index) in messages" :key="index">
+        <div v-for="(message, index) in syncMessages" :key="index">
             {{ message.body }}
-            {{ message.createdAt }}
         </div>
     </v-main>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, PropSync } from 'vue-property-decorator';
 import Messages from '@/app/store/modules/Messages';
 
 @Component({
@@ -18,8 +17,9 @@ import Messages from '@/app/store/modules/Messages';
     mixins: [],
 })
 export default class MessagingContent extends Vue {
-    public get messages() {
-        console.log(432432432);
+    @PropSync('messages') syncMessages;
+
+    private get detonate() {
         return Messages.messages;
     }
 }

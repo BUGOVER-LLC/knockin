@@ -15,9 +15,6 @@
             <slot name="content"></slot>
             <slot name="footer"></slot>
         </v-navigation-drawer>
-        <!--        <v-layout justify-center>-->
-        <!--            <v-btn @click="navigation.shown = !navigation.shown">Toggle {{ direction }}</v-btn>-->
-        <!--        </v-layout>-->
     </div>
 </template>
 
