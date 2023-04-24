@@ -6,7 +6,7 @@ namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Action;
 
-class NoixIndexController extends Action
+class DashboardIndexController extends Action
 {
     public function __construct()
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\App\NoixIndexController;
+use App\Http\Controllers\App\DashboardIndexController;
 use App\Http\Controllers\App\SendMessage;
 use App\Http\Controllers\Auth\SignInController;
 use App\Http\Controllers\Greeting\GreetingIndexController;
@@ -28,8 +28,8 @@ Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn() => [
 ]);
 
 Route::group(['middleware' => [], 'prefix' => 'noix'], static fn() => [
-    Route::get('/{workspace_id}', NoixIndexController::class)->name('index-noix'),
+    Route::get('/{workspace_id}', DashboardIndexController::class)->name('index-noix'),
     Route::post('init-msg', SendMessage::class),
 
-    Route::get('{app-any}', NoixIndexController::class)->where('app-any', '.*'),
+    Route::get('{app-any}', DashboardIndexController::class)->where('app-any', '.*'),
 ]);

@@ -26,6 +26,15 @@ class Messages extends VuexModule {
         }
     }
 
+    @Mutation
+    private mutateDiscuss(payload: MessageModel) {
+        if (this.payload[payload.targetId]) {
+            this.payload[payload.targetId].unshift(payload);
+        } else {
+            this.payload[payload.targetId] = [payload];
+        }
+    }
+
     @Action
     public async initMessage(payload) {
         this.mutateMessage(payload);

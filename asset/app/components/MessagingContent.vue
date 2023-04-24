@@ -4,6 +4,7 @@
     <v-main>
         <div v-for="(message, index) in messages" :key="index">
             {{ message.body }}
+            {{ message.createdAt }}
         </div>
     </v-main>
 </template>
@@ -17,7 +18,7 @@ import Messages from '@/app/store/modules/Messages';
     mixins: [],
 })
 export default class MessagingContent extends Vue {
-    public get messages(): object {
+    public get messages() {
         console.log(432432432);
         return Messages.messages;
     }

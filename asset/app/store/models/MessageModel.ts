@@ -9,5 +9,6 @@ type MessageModel = {
     viewed: boolean;
     edited: boolean;
     editedAt: string;
+    discussion: [];
 };
 export default MessageModel;
