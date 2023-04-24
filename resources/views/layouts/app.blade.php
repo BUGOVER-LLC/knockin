@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="{{ mix('builds/app/css/app.css') }}">
 
     {{--Client APP Script--}}
-    <script src="{{ asset('builds/app/js/manifest.js') }}"></script>
+    <script src="{{ asset('builds/vendor/manifest.js') }}"></script>
     <script src="{{ asset('builds/vendor/vendor.js') }}"></script>
     <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>
-<body>
+<body id="main-content-app-knock">
 <div id="app-knock" style='height: 100%;'>
     <v-app>
         @yield('app-body')
