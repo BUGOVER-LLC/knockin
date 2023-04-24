@@ -2,24 +2,22 @@
 
 <template>
     <div>
-        <v-navigation-drawer ref="drawer" app right :width="navigation.width" v-model="navigation.shown">
-            <v-toolbar color="grey lighten-4" height="70">
-                <v-toolbar-title class="headline text-uppercase">
-                    <span>t a</span><span class="font-weight-light"> b s </span>
-                </v-toolbar-title>
-            </v-toolbar>
-            <v-tabs>
-                <v-tab v-for="n in 3" :key="n"> Item {{ n }} </v-tab>
-                <v-tab-item v-for="n in 3" :key="n">
-                    <v-card flat>
-                        <v-card-text>Content for tab {{ n }} would go here</v-card-text>
-                    </v-card>
-                </v-tab-item>
-            </v-tabs>
+        <v-navigation-drawer
+            ref="drawer"
+            app
+            :right="right"
+            :width="navigation.width"
+            v-model="navigation.shown"
+            :mini-variant="mini"
+            :absolute="absolute"
+        >
+            <slot name="toolbar"></slot>
+            <slot name="content"></slot>
+            <slot name="footer"></slot>
         </v-navigation-drawer>
-        <v-layout justify-center>
-            <v-btn @click="navigation.shown = !navigation.shown">Toggle {{ direction }}</v-btn>
-        </v-layout>
+        <!--        <v-layout justify-center>-->
+        <!--            <v-btn @click="navigation.shown = !navigation.shown">Toggle {{ direction }}</v-btn>-->
+        <!--        </v-layout>-->
     </div>
 </template>
 
@@ -31,8 +29,17 @@ import { Component, Vue, Ref, Prop } from 'vue-property-decorator';
     mixins: [],
 })
 export default class DrawerDrag extends Vue {
-    @Prop()
-    protected readonly navigationWidth: string | number = 300;
+    @Prop({ type: [Number, String], default: 300, required: false })
+    protected readonly navigationWidth: number | string = 300;
+
+    @Prop({ type: Boolean, default: false, required: false })
+    protected readonly mini!: boolean = false;
+
+    @Prop({ type: Boolean, default: true, required: false })
+    protected readonly right!: boolean = true;
+
+    @Prop({ type: Boolean, default: true, required: false })
+    protected readonly absolute!: boolean = true;
 
     @Ref()
     drawer: any;
@@ -53,15 +60,17 @@ export default class DrawerDrag extends Vue {
     }
 
     setBorderWidth(): void {
-        const i = this.drawer.$el.querySelector('.v-navigation-drawer__border');
-        i.style.width = this.navigation.borderSize + 'px';
-        i.style.cursor = 'ew-resize';
+        const drawers = this.drawer.$el.querySelectorAll('.v-navigation-drawer__border');
+        const drawer = 1 < drawers.length ? drawers[1] : drawers[0];
+        drawer.style.width = this.navigation.borderSize + 'px';
+        drawer.style.cursor = 'ew-resize';
     }
 
     setEvents(): void {
         const minSize = this.navigation.borderSize;
         const el = this.drawer.$el;
-        const drawerBorder = el.querySelector('.v-navigation-drawer__border');
+        const drawers = el.querySelectorAll('.v-navigation-drawer__border');
+        const drawerBorder = 1 < drawers.length ? drawers[1] : drawers[0];
         const vm = this;
         const direction = el.classList.contains('v-navigation-drawer--right') ? 'right' : 'left';
 
