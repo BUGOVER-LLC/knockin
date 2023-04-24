@@ -10,7 +10,7 @@
             <template v-slot:toolbar>
                 <v-toolbar color="grey lighten-4" class="pl-16" flat height="70">
                     <v-toolbar-title class="headline text-uppercase">
-                        <span>t a</span><span class="font-weight-light"> b s </span>
+                        <span>u s</span><span class="font-weight-light"> e r s </span>
                     </v-toolbar-title>
                 </v-toolbar>
             </template>
