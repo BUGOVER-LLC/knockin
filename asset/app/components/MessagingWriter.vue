@@ -10,8 +10,8 @@
             solo
             background-color="grey lighten-3"
             height="50"
-            v-model="messageData"
-            @keypress="13 === $event.keyCode ? emitMessage : null"
+            v-model="message"
+            @keypress="13 === $event.keyCode ? emitMessage() : null"
         >
             <template v-slot:append>
                 <v-btn icon large @click="emitMessage">
@@ -24,17 +24,37 @@
 
 <script lang="ts">
 import { Component, Vue, Emit } from 'vue-property-decorator';
+import Messages from '@/app/store/modules/Messages';
 
 @Component({
     components: {},
     mixins: [],
 })
 export default class MessagingWriter extends Vue {
-    private messageData: string = '';
+    private message: string = '';
+
+    async emitMessage() {
+        const date = new Date();
+
+        await Messages.initMessage({
+            body: this.message,
+            createdAt: `${date.toTimeString()} ${date.toDateString()}`,
+            targetId: 'target-1',
+            out: true,
+            in: false,
+            edited: false,
+            editedAt: '',
+        });
+
+        this.emitMsg();
+    }
 
     @Emit('initMsg')
-    emitMessage() {
-        return this.messageData;
+    private emitMsg() {
+        const message = this.message;
+        this.message = '';
+
+        return message;
     }
 }
 </script>

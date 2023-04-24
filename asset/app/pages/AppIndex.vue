@@ -63,7 +63,7 @@
 
         <MessagingContent></MessagingContent>
 
-        <MessagingWriter></MessagingWriter>
+        <MessagingWriter @initMsg="sendMessage"></MessagingWriter>
     </v-app>
 </template>
 
@@ -80,6 +80,8 @@ import SystemBar from '@/app/components/SystemBar.vue';
 })
 export default class GreetingIndex extends Vue {
     private drawer: boolean = true;
+
+    private sendMessage(message) {}
 }
 </script>
 
