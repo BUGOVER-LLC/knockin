@@ -9,11 +9,11 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
@@ -37,7 +37,11 @@ var AppBar = /*#__PURE__*/function (_Vue) {
     _classCallCheck(this, AppBar);
     return _super.apply(this, arguments);
   }
-  return _createClass(AppBar);
+  _createClass(AppBar, [{
+    key: "emitVideoCall",
+    value: function emitVideoCall() {}
+  }]);
+  return AppBar;
 }(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Vue);
 AppBar = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({
   components: {},
@@ -88,6 +92,9 @@ var DrawerDrag = /*#__PURE__*/function (_Vue) {
     }
     _this = _super.call.apply(_super, [this].concat(args));
     _defineProperty(_assertThisInitialized(_this), "navigationWidth", 300);
+    _defineProperty(_assertThisInitialized(_this), "mini", false);
+    _defineProperty(_assertThisInitialized(_this), "right", true);
+    _defineProperty(_assertThisInitialized(_this), "absolute", true);
     _defineProperty(_assertThisInitialized(_this), "drawer", void 0);
     _defineProperty(_assertThisInitialized(_this), "navigation", {
       shown: true,
@@ -110,16 +117,18 @@ var DrawerDrag = /*#__PURE__*/function (_Vue) {
   }, {
     key: "setBorderWidth",
     value: function setBorderWidth() {
-      var i = this.drawer.$el.querySelector('.v-navigation-drawer__border');
-      i.style.width = this.navigation.borderSize + 'px';
-      i.style.cursor = 'ew-resize';
+      var drawers = this.drawer.$el.querySelectorAll('.v-navigation-drawer__border');
+      var drawer = 1 < drawers.length ? drawers[1] : drawers[0];
+      drawer.style.width = this.navigation.borderSize + 'px';
+      drawer.style.cursor = 'ew-resize';
     }
   }, {
     key: "setEvents",
     value: function setEvents() {
       var minSize = this.navigation.borderSize;
       var el = this.drawer.$el;
-      var drawerBorder = el.querySelector('.v-navigation-drawer__border');
+      var drawers = el.querySelectorAll('.v-navigation-drawer__border');
+      var drawerBorder = 1 < drawers.length ? drawers[1] : drawers[0];
       var vm = this;
       var direction = el.classList.contains('v-navigation-drawer--right') ? 'right' : 'left';
       function resize(e) {
@@ -144,7 +153,26 @@ var DrawerDrag = /*#__PURE__*/function (_Vue) {
   }]);
   return DrawerDrag;
 }(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Vue);
-__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Prop)()], DrawerDrag.prototype, "navigationWidth", void 0);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Prop)({
+  type: [Number, String],
+  "default": 300,
+  required: false
+})], DrawerDrag.prototype, "navigationWidth", void 0);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Prop)({
+  type: Boolean,
+  "default": false,
+  required: false
+})], DrawerDrag.prototype, "mini", void 0);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Prop)({
+  type: Boolean,
+  "default": true,
+  required: false
+})], DrawerDrag.prototype, "right", void 0);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Prop)({
+  type: Boolean,
+  "default": true,
+  required: false
+})], DrawerDrag.prototype, "absolute", void 0);
 __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Ref)()], DrawerDrag.prototype, "drawer", void 0);
 DrawerDrag = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({
   components: {},
@@ -208,11 +236,9 @@ MessagingContent = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODUL
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/index.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
@@ -220,6 +246,9 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
@@ -233,11 +262,24 @@ var MessagingWriter = /*#__PURE__*/function (_Vue) {
   _inherits(MessagingWriter, _Vue);
   var _super = _createSuper(MessagingWriter);
   function MessagingWriter() {
+    var _this;
     _classCallCheck(this, MessagingWriter);
-    return _super.apply(this, arguments);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+    _this = _super.call.apply(_super, [this].concat(args));
+    _defineProperty(_assertThisInitialized(_this), "messageData", '');
+    return _this;
   }
-  return _createClass(MessagingWriter);
+  _createClass(MessagingWriter, [{
+    key: "emitMessage",
+    value: function emitMessage() {
+      return this.messageData;
+    }
+  }]);
+  return MessagingWriter;
 }(vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Vue);
+__decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Emit)('initMsg')], MessagingWriter.prototype, "emitMessage", null);
 MessagingWriter = __decorate([(0,vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__.Component)({
   components: {},
   mixins: []
@@ -380,17 +422,49 @@ var render = function render() {
       height: "70",
       light: ""
     }
-  }, [_c("v-spacer"), _vm._v(" "), _c("v-responsive", {
+  }, [_c("v-spacer"), _vm._v(" "), _c("v-btn", {
     attrs: {
-      "max-width": "156"
+      depressed: "",
+      icon: ""
+    },
+    on: {
+      click: _vm.emitVideoCall
+    }
+  }, [_c("v-icon", {
+    domProps: {
+      textContent: _vm._s("mdi-video")
+    }
+  })], 1), _vm._v(" "), _c("v-btn", {
+    attrs: {
+      depressed: "",
+      icon: ""
+    },
+    on: {
+      click: _vm.emitVideoCall
+    }
+  }, [_c("v-icon", {
+    domProps: {
+      textContent: _vm._s("mdi-phone")
+    }
+  })], 1), _vm._v(" "), _c("v-divider", {
+    staticClass: "mr-5 ml-3",
+    attrs: {
+      vertical: ""
+    }
+  }), _vm._v(" "), _c("v-responsive", {
+    staticClass: "mr-lg-10",
+    attrs: {
+      "max-width": "155"
     }
   }, [_c("v-text-field", {
+    staticClass: "rounded-lg",
     attrs: {
+      "append-icon": "mdi-search-web",
       dense: "",
       flat: "",
       "hide-details": "",
-      rounded: "",
-      "solo-inverted": ""
+      "solo-inverted": "",
+      placeholder: "search (ctrl+k)"
     }
   })], 1)], 1);
 };
@@ -419,8 +493,10 @@ var render = function render() {
     ref: "drawer",
     attrs: {
       app: "",
-      right: "",
-      width: _vm.navigation.width
+      right: _vm.right,
+      width: _vm.navigation.width,
+      "mini-variant": _vm.mini,
+      absolute: _vm.absolute
     },
     model: {
       value: _vm.navigation.shown,
@@ -429,38 +505,7 @@ var render = function render() {
       },
       expression: "navigation.shown"
     }
-  }, [_c("v-toolbar", {
-    attrs: {
-      color: "grey lighten-4",
-      height: "70"
-    }
-  }, [_c("v-toolbar-title", {
-    staticClass: "headline text-uppercase"
-  }, [_c("span", [_vm._v("t a")]), _c("span", {
-    staticClass: "font-weight-light"
-  }, [_vm._v(" b s ")])])], 1), _vm._v(" "), _c("v-tabs", [_vm._l(3, function (n) {
-    return _c("v-tab", {
-      key: n
-    }, [_vm._v(" Item " + _vm._s(n) + " ")]);
-  }), _vm._v(" "), _vm._l(3, function (n) {
-    return _c("v-tab-item", {
-      key: n
-    }, [_c("v-card", {
-      attrs: {
-        flat: ""
-      }
-    }, [_c("v-card-text", [_vm._v("Content for tab " + _vm._s(n) + " would go here")])], 1)], 1);
-  })], 2)], 1), _vm._v(" "), _c("v-layout", {
-    attrs: {
-      "justify-center": ""
-    }
-  }, [_c("v-btn", {
-    on: {
-      click: function click($event) {
-        _vm.navigation.shown = !_vm.navigation.shown;
-      }
-    }
-  }, [_vm._v("Toggle " + _vm._s(_vm.direction))])], 1)], 1);
+  }, [_vm._t("toolbar"), _vm._v(" "), _vm._t("content"), _vm._v(" "), _vm._t("footer")], 2)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -517,10 +562,46 @@ var render = function render() {
     staticClass: "rounded-lg",
     attrs: {
       autofocus: "",
-      "background-color": "grey lighten-3",
       flat: "",
       "hide-details": "",
-      solo: ""
+      solo: "",
+      "background-color": "grey lighten-3",
+      height: "50"
+    },
+    on: {
+      keypress: function keypress($event) {
+        13 === $event.keyCode ? _vm.emitMessage : null;
+      }
+    },
+    scopedSlots: _vm._u([{
+      key: "append",
+      fn: function fn() {
+        return [_c("v-btn", {
+          attrs: {
+            icon: "",
+            large: ""
+          },
+          on: {
+            click: _vm.emitMessage
+          }
+        }, [_c("v-icon", {
+          attrs: {
+            "x-large": "",
+            color: "grey darken-3"
+          },
+          domProps: {
+            textContent: _vm._s("mdi-send-variant-outline")
+          }
+        })], 1)];
+      },
+      proxy: true
+    }]),
+    model: {
+      value: _vm.messageData,
+      callback: function callback($$v) {
+        _vm.messageData = $$v;
+      },
+      expression: "messageData"
     }
   })], 1);
 };
@@ -576,71 +657,170 @@ var render = function render() {
     attrs: {
       id: "inspire"
     }
-  }, [_c("SystemBar"), _vm._v(" "), _c("AppBar"), _vm._v(" "), _c("v-navigation-drawer", {
+  }, [_c("SystemBar"), _vm._v(" "), _c("AppBar"), _vm._v(" "), _c("DrawerDrag", {
     attrs: {
-      app: "",
-      width: "300"
+      right: false
     },
-    model: {
-      value: _vm.drawer,
-      callback: function callback($$v) {
-        _vm.drawer = $$v;
+    scopedSlots: _vm._u([{
+      key: "toolbar",
+      fn: function fn() {
+        return [_c("v-toolbar", {
+          staticClass: "pl-16",
+          attrs: {
+            color: "grey lighten-4",
+            flat: "",
+            height: "70"
+          }
+        }, [_c("v-toolbar-title", {
+          staticClass: "headline text-uppercase"
+        }, [_c("span", [_vm._v("t a")]), _c("span", {
+          staticClass: "font-weight-light"
+        }, [_vm._v(" b s ")])])], 1)];
       },
-      expression: "drawer"
-    }
-  }, [_c("v-navigation-drawer", {
+      proxy: true
+    }, {
+      key: "content",
+      fn: function fn() {
+        return [_c("v-navigation-drawer", {
+          attrs: {
+            app: "",
+            color: "grey lighten-3",
+            "mini-variant": ""
+          },
+          model: {
+            value: _vm.drawer,
+            callback: function callback($$v) {
+              _vm.drawer = $$v;
+            },
+            expression: "drawer"
+          }
+        }, [_c("v-avatar", {
+          staticClass: "d-block text-center mx-auto mt-4",
+          attrs: {
+            color: "grey darken-1",
+            size: "36"
+          }
+        }), _vm._v(" "), _c("v-divider", {
+          staticClass: "mx-3 my-5"
+        }), _vm._v(" "), _vm._l(6, function (n) {
+          return _c("v-avatar", {
+            key: n,
+            staticClass: "d-block text-center mx-auto mb-9",
+            attrs: {
+              color: "grey lighten-1",
+              size: "28"
+            }
+          });
+        })], 2), _vm._v(" "), _c("v-list", {
+          staticClass: "pl-14",
+          attrs: {
+            shaped: ""
+          }
+        }, _vm._l(5, function (n) {
+          return _c("v-list-item", {
+            key: n,
+            attrs: {
+              link: "",
+              selectable: "",
+              "active-class": "green lighten-3"
+            }
+          }, [_c("v-list-item-content", [_c("v-list-item-title", [_vm._v("Item " + _vm._s(n))])], 1)], 1);
+        }), 1)];
+      },
+      proxy: true
+    }])
+  }), _vm._v(" "), _c("DrawerDrag", {
     attrs: {
-      absolute: "",
-      color: "grey lighten-3",
-      "mini-variant": ""
+      mini: true
     },
-    model: {
-      value: _vm.drawer,
-      callback: function callback($$v) {
-        _vm.drawer = $$v;
+    scopedSlots: _vm._u([{
+      key: "toolbar",
+      fn: function fn() {
+        return [_c("v-toolbar", {
+          attrs: {
+            color: "grey lighten-4",
+            height: "70"
+          }
+        }, [_c("v-toolbar-title", {
+          staticClass: "headline text-uppercase"
+        }, [_c("span", [_vm._v("t a")]), _c("span", {
+          staticClass: "font-weight-light"
+        }, [_vm._v(" b s ")])])], 1)];
       },
-      expression: "drawer"
-    }
-  }, [_c("v-avatar", {
-    staticClass: "d-block text-center mx-auto mt-4",
-    attrs: {
-      color: "grey darken-1",
-      size: "36"
-    }
-  }), _vm._v(" "), _c("v-divider", {
-    staticClass: "mx-3 my-5"
-  }), _vm._v(" "), _vm._l(6, function (n) {
-    return _c("v-avatar", {
-      key: n,
-      staticClass: "d-block text-center mx-auto mb-9",
-      attrs: {
-        color: "grey lighten-1",
-        size: "28"
-      }
-    });
-  })], 2), _vm._v(" "), _c("v-sheet", {
-    attrs: {
-      color: "grey lighten-5",
-      height: "128",
-      width: "100%"
-    }
-  }), _vm._v(" "), _c("v-list", {
-    staticClass: "pl-14",
-    attrs: {
-      shaped: ""
-    }
-  }, _vm._l(5, function (n) {
-    return _c("v-list-item", {
-      key: n,
-      attrs: {
-        link: ""
-      }
-    }, [_c("v-list-item-content", [_c("v-list-item-title", [_vm._v("Item " + _vm._s(n))])], 1)], 1);
-  }), 1)], 1), _vm._v(" "), _c("DrawerDrag"), _vm._v(" "), _c("MessagingContent"), _vm._v(" "), _c("MessagingWriter")], 1);
+      proxy: true
+    }, {
+      key: "content",
+      fn: function fn() {
+        return [_c("v-tabs", [_vm._l(3, function (n) {
+          return _c("v-tab", {
+            key: n
+          }, [_vm._v(" Item " + _vm._s(n) + " ")]);
+        }), _vm._v(" "), _vm._l(3, function (n) {
+          return _c("v-tab-item", {
+            key: n
+          }, [_c("v-card", {
+            attrs: {
+              flat: ""
+            }
+          }, [_c("v-card-text")], 1)], 1);
+        })], 2)];
+      },
+      proxy: true
+    }])
+  }), _vm._v(" "), _c("MessagingContent"), _vm._v(" "), _c("MessagingWriter")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
 
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.v-navigation-drawer[data-v-1ef25577] {\n    height: 100vh;\n    top: 0 !important;\n    max-height: 100% !important;\n    -webkit-transform: translateX(0%);\n            transform: translateX(0%);\n    width: 56px;\n}\n", "",{"version":3,"sources":["webpack://./asset/app/pages/AppIndex.vue"],"names":[],"mappings":";AAsFA;IACA,aAAA;IACA,iBAAA;IACA,2BAAA;IACA,iCAAA;YAAA,yBAAA;IACA,WAAA;AACA","sourcesContent":["<!-- @format -->\n\n<template>\n    <v-app id=\"inspire\">\n        <SystemBar></SystemBar>\n\n        <AppBar></AppBar>\n\n        <DrawerDrag :right=\"false\">\n            <template v-slot:toolbar>\n                <v-toolbar color=\"grey lighten-4\" class=\"pl-16\" flat height=\"70\">\n                    <v-toolbar-title class=\"headline text-uppercase\">\n                        <span>t a</span><span class=\"font-weight-light\"> b s </span>\n                    </v-toolbar-title>\n                </v-toolbar>\n            </template>\n\n            <template v-slot:content>\n                <v-navigation-drawer v-model=\"drawer\" app color=\"grey lighten-3\" mini-variant>\n                    <v-avatar class=\"d-block text-center mx-auto mt-4\" color=\"grey darken-1\" size=\"36\" />\n\n                    <v-divider class=\"mx-3 my-5\" />\n\n                    <v-avatar\n                        v-for=\"n in 6\"\n                        :key=\"n\"\n                        class=\"d-block text-center mx-auto mb-9\"\n                        color=\"grey lighten-1\"\n                        size=\"28\"\n                    />\n                </v-navigation-drawer>\n\n                <v-list class=\"pl-14\" shaped>\n                    <v-list-item v-for=\"n in 5\" :key=\"n\" link selectable active-class=\"green lighten-3\">\n                        <v-list-item-content>\n                            <v-list-item-title>Item {{ n }}</v-list-item-title>\n                        </v-list-item-content>\n                    </v-list-item>\n                </v-list>\n            </template>\n        </DrawerDrag>\n\n        <DrawerDrag :mini=\"true\">\n            <template v-slot:toolbar>\n                <v-toolbar color=\"grey lighten-4\" height=\"70\">\n                    <v-toolbar-title class=\"headline text-uppercase\">\n                        <span>t a</span><span class=\"font-weight-light\"> b s </span>\n                    </v-toolbar-title>\n                </v-toolbar>\n            </template>\n\n            <template v-slot:content>\n                <v-tabs>\n                    <v-tab v-for=\"n in 3\" :key=\"n\"> Item {{ n }} </v-tab>\n                    <v-tab-item v-for=\"n in 3\" :key=\"n\">\n                        <v-card flat>\n                            <v-card-text></v-card-text>\n                        </v-card>\n                    </v-tab-item>\n                </v-tabs>\n            </template>\n        </DrawerDrag>\n\n        <MessagingContent></MessagingContent>\n\n        <MessagingWriter></MessagingWriter>\n    </v-app>\n</template>\n\n<script lang=\"ts\">\nimport { Component, Vue } from 'vue-property-decorator';\nimport DrawerDrag from '@/app/components/DrawerDrag.vue';\nimport MessagingWriter from '@/app/components/MessagingWriter.vue';\nimport MessagingContent from '@/app/components/MessagingContent.vue';\nimport AppBar from '@/app/components/AppBar.vue';\nimport SystemBar from '@/app/components/SystemBar.vue';\n\n@Component({\n    components: { SystemBar, AppBar, MessagingContent, MessagingWriter, DrawerDrag },\n})\nexport default class GreetingIndex extends Vue {\n    private drawer: boolean = true;\n}\n</script>\n\n<style scoped>\n.v-navigation-drawer {\n    height: 100vh;\n    top: 0 !important;\n    max-height: 100% !important;\n    transform: translateX(0%);\n    width: 56px;\n}\n</style>\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_style_index_0_id_1ef25577_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_style_index_0_id_1ef25577_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_style_index_0_id_1ef25577_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -1164,15 +1344,17 @@ component.options.__file = "asset/app/components/SystemBar.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppIndex_vue_vue_type_template_id_1ef25577_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AppIndex.vue?vue&type=template&id=1ef25577&scoped=true& */ "./asset/app/pages/AppIndex.vue?vue&type=template&id=1ef25577&scoped=true&");
 /* harmony import */ var _AppIndex_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppIndex.vue?vue&type=script&lang=ts& */ "./asset/app/pages/AppIndex.vue?vue&type=script&lang=ts&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _AppIndex_vue_vue_type_style_index_0_id_1ef25577_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css& */ "./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _AppIndex_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
   _AppIndex_vue_vue_type_template_id_1ef25577_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
   _AppIndex_vue_vue_type_template_id_1ef25577_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
@@ -1354,6 +1536,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": function() { return /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_template_id_1ef25577_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns; }
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_template_id_1ef25577_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppIndex.vue?vue&type=template&id=1ef25577&scoped=true& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=template&id=1ef25577&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css&":
+/*!***********************************************************************************************!*\
+  !*** ./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css& ***!
+  \***********************************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AppIndex_vue_vue_type_style_index_0_id_1ef25577_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./asset/app/pages/AppIndex.vue?vue&type=style&index=0&id=1ef25577&scoped=true&lang=css&");
 
 
 /***/ }),

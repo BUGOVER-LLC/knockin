@@ -2,18 +2,41 @@
 
 <template lang="html">
     <v-footer app color="transparent" height="72" inset>
-        <v-text-field autofocus background-color="grey lighten-3" class="rounded-lg" flat hide-details solo />
+        <v-text-field
+            autofocus
+            class="rounded-lg"
+            flat
+            hide-details
+            solo
+            background-color="grey lighten-3"
+            height="50"
+            v-model="messageData"
+            @keypress="13 === $event.keyCode ? emitMessage : null"
+        >
+            <template v-slot:append>
+                <v-btn icon large @click="emitMessage">
+                    <v-icon x-large color="grey darken-3" v-text="'mdi-send-variant-outline'" />
+                </v-btn>
+            </template>
+        </v-text-field>
     </v-footer>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Emit } from 'vue-property-decorator';
 
 @Component({
     components: {},
     mixins: [],
 })
-export default class MessagingWriter extends Vue {}
+export default class MessagingWriter extends Vue {
+    private messageData: string = '';
+
+    @Emit('initMsg')
+    emitMessage() {
+        return this.messageData;
+    }
+}
 </script>
 
 <style scoped lang="scss"></style>

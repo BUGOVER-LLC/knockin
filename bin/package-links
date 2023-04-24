@@ -5,7 +5,6 @@
 for item in 'app'; do
     ln -sfn ../package.json asset/$item/
     ln -sfn ../yarn.lock asset/$item/
-    ln -sf ../node_modules asset/$item/
 done
 
 exit

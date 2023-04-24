@@ -8,7 +8,7 @@
 
         <DrawerDrag :right="false">
             <template v-slot:toolbar>
-                <v-toolbar color="grey lighten-4" class="pl-16" height="70">
+                <v-toolbar color="grey lighten-4" class="pl-16" flat height="70">
                     <v-toolbar-title class="headline text-uppercase">
                         <span>t a</span><span class="font-weight-light"> b s </span>
                     </v-toolbar-title>
@@ -30,10 +30,8 @@
                     />
                 </v-navigation-drawer>
 
-                <v-sheet color="grey lighten-5" height="128" width="100%" />
-
-                <v-list class="pl-16" shaped>
-                    <v-list-item v-for="n in 5" :key="n" link>
+                <v-list class="pl-14" shaped>
+                    <v-list-item v-for="n in 5" :key="n" link selectable active-class="green lighten-3">
                         <v-list-item-content>
                             <v-list-item-title>Item {{ n }}</v-list-item-title>
                         </v-list-item-content>
@@ -89,7 +87,7 @@ export default class GreetingIndex extends Vue {
 .v-navigation-drawer {
     height: 100vh;
     top: 0 !important;
-    max-height: calc(100% - 24px);
+    max-height: 100% !important;
     transform: translateX(0%);
     width: 56px;
 }

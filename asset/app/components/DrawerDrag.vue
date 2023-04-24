@@ -33,13 +33,13 @@ export default class DrawerDrag extends Vue {
     protected readonly navigationWidth: number | string = 300;
 
     @Prop({ type: Boolean, default: false, required: false })
-    protected readonly mini!: boolean = false;
+    protected readonly mini: boolean = false;
 
     @Prop({ type: Boolean, default: true, required: false })
-    protected readonly right!: boolean = true;
+    protected readonly right: boolean = true;
 
     @Prop({ type: Boolean, default: true, required: false })
-    protected readonly absolute!: boolean = true;
+    protected readonly absolute: boolean = true;
 
     @Ref()
     drawer: any;
