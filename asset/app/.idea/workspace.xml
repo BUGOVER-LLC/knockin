@@ -5,23 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc6729c-97c9-47a7-8791-cd2d2fe18d4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../app/Repositories/Workspace/WorkspaceContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/auth/started/GetStartedIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app/Http/Controllers/Auth/SignInController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/Http/Controllers/Auth/SignInController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app/Repositories/WorkspaceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/Repositories/Workspace/WorkspaceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/router/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../public/builds/app/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/app/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_plugins_validators_ts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_plugins_validators_ts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/Loaders/AutoLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Loaders/AutoLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/Loaders/ModelLoaderTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Loaders/ModelLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../src/Loaders/ObserverLoaderTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Loaders/ObserverLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../vagrant/server/knock.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../vagrant/server/knock.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AppBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AppBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DrawerDrag.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DrawerDrag.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MessagingWriter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MessagingWriter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/AppIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/AppIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/app/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/app/js/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_AppIndex_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_AppIndex_vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_AppIndex_vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_AppIndex_vue.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_auth_AuthIndex_vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_auth_AuthIndex_vue.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_auth_started_GetStartedIndex_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_auth_started_GetStartedIndex_vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_auth_started_GetStartedIndex_vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_auth_started_GetStartedIndex_vue.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_greeting_GreetingIndex_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_greeting_GreetingIndex_vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_greeting_GreetingIndex_vue.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../public/builds/chunks/asset_app_pages_greeting_GreetingIndex_vue.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +47,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LrkNGfz47kBTdo5RWwNYRfAyQa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,8 +57,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
-    "javascript.nodejs.core.library.configured.version": "18.14.0",
-    "javascript.nodejs.core.library.typings.version": "18.14.0",
+    "javascript.nodejs.core.library.configured.version": "18.16.0",
+    "javascript.nodejs.core.library.typings.version": "18.16.0",
     "js.linters.configure.manually.selectedeslint": "true",
     "last_opened_file_path": "/home/artak/work/projects/progress/webpack.mix.js",
     "node.js.detected.package.eslint": "true",
@@ -74,8 +71,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/home/artak/work/projects/progress/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.webpack",
-    "ts.external.directory.path": "/opt/WebStorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "settings.editor.selected.configurable": "settings.javascript.linters.tslint",
+    "ts.external.directory.path": "/home/artak/work/projects/progress/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -85,6 +82,9 @@
       <recent name="$PROJECT_DIR$/components" />
       <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$/router" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -102,6 +102,8 @@
       <workItem from="1677779123554" duration="5073000" />
       <workItem from="1677838678268" duration="1158000" />
       <workItem from="1677867336252" duration="3987000" />
+      <workItem from="1682318127696" duration="8456000" />
+      <workItem from="1682326614501" duration="1224000" />
     </task>
     <servers />
   </component>
@@ -109,8 +111,28 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/utils/consts.js" />
+        <option value="$PROJECT_DIR$/utils/bootstrap.js" />
         <option value="$PROJECT_DIR$/store/mutations.type.js" />
+        <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/store/actions.type.js" />
+        <option value="$PROJECT_DIR$/store/modules/WssClient.js" />
+        <option value="$PROJECT_DIR$/store/modules/PersonalMessages.js" />
+        <option value="$PROJECT_DIR$/store/modules/Participants.js" />
+        <option value="$PROJECT_DIR$/store/modules/Messages.js" />
+        <option value="$PROJECT_DIR$/store/modules/Countries.js" />
+        <option value="$PROJECT_DIR$/store/modules/Channels.js" />
+        <option value="$PROJECT_DIR$/store/modules/BoardTasks.js" />
+        <option value="$PROJECT_DIR$/store/modules/BoardStapes.js" />
+        <option value="$PROJECT_DIR$/store/modules/Boards.js" />
+        <option value="$PROJECT_DIR$/store/modules/AbstractStore.js" />
+        <option value="$PROJECT_DIR$/router/routes.js" />
+        <option value="$PROJECT_DIR$/router/middlewares.js" />
+        <option value="$PROJECT_DIR$/router/index.js" />
+        <option value="$PROJECT_DIR$/plugins/vuetify.js" />
+        <option value="$PROJECT_DIR$/plugins/validators.js" />
+        <option value="$PROJECT_DIR$/plugins/index.js" />
       </list>
     </option>
   </component>

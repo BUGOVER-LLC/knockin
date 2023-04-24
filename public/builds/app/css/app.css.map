@@ -1,1 +1,0 @@
-{"version":3,"file":"builds/app/css/app.css","mappings":"AAAA;AAEA;;EAEI;EACA;EACA;AAAJ,C","sources":["webpack://noix-app/./asset/app/style/app.scss"],"sourcesContent":["/** @format */\n\nhtml,\nbody {\n    overflow-y: hidden !important;\n    padding: 0;\n    margin: 0;\n}\n"],"names":[],"sourceRoot":""}
