@@ -12,6 +12,7 @@ import store from '../index';
     namespaced: true,
     stateFactory: true,
     store,
+    preserveState: null !== localStorage.getItem('vuex'),
 })
 class Messages extends VuexModule implements MessageModel {
     public payload = [];

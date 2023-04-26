@@ -36,6 +36,11 @@
                             <v-list-item-title>Item {{ n }}</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
+
+                    <div style="position: absolute; bottom: 10px; width: 80%; right: 1px">
+                        <v-divider />
+                        <v-skeleton-loader type="list-item-two-line" />
+                    </div>
                 </v-list>
             </template>
         </DrawerDrag>
@@ -98,7 +103,7 @@ export default class GreetingIndex extends Vue implements MainComponent {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .v-navigation-drawer {
     height: 100vh;
     top: 0 !important;
