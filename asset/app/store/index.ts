@@ -7,7 +7,7 @@ Vue.use(Vuex);
 import { MessageModel } from './models/MessageModel';
 
 export type ModulesState = {
-    messages: MessageModel;
+    moduleMessage: MessageModel;
 };
 
 export default new Vuex.Store<ModulesState>({});

@@ -25,12 +25,13 @@
 <script lang="ts">
 import { Component, Vue, Emit } from 'vue-property-decorator';
 import { MessageModule } from '@/app/store/modules/Messages';
+import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 @Component({
     components: {},
     mixins: [],
 })
-export default class MessagingWriter extends Vue {
+export default class MessagingWriter extends Vue implements MainComponent {
     private message: string = '';
 
     async emitMessage() {
@@ -55,6 +56,10 @@ export default class MessagingWriter extends Vue {
         this.message = '';
         return messageData;
     }
+
+    created(): void {}
+
+    mounted(): void {}
 }
 </script>
 

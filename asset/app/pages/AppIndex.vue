@@ -61,7 +61,7 @@
             </template>
         </DrawerDrag>
 
-        <MessagingContent :messages="messages" />
+        <MessagingContent />
 
         <MessagingWriter @initMsg="sendMessage($event)" />
     </v-app>
@@ -75,11 +75,12 @@ import MessagingContent from '@/app/components/MessagingContent.vue';
 import AppBar from '@/app/components/AppBar.vue';
 import SystemBar from '@/app/components/SystemBar.vue';
 import Workspace from '@/app/store/modules/Workspace';
+import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 @Component({
     components: { SystemBar, AppBar, MessagingContent, MessagingWriter, DrawerDrag },
 })
-export default class GreetingIndex extends Vue {
+export default class GreetingIndex extends Vue implements MainComponent {
     private drawer: boolean = true;
     private messages: object = [];
 
@@ -90,6 +91,10 @@ export default class GreetingIndex extends Vue {
     private getWorkspaceCount(): number {
         return Workspace.count;
     }
+
+    created(): void {}
+
+    mounted(): void {}
 }
 </script>
 

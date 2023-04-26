@@ -1,6 +1,6 @@
 /** @format */
 
-export interface MessageModel {
+export type MessageModel = {
     body: string;
     createdAt: string;
     targetId: string;
@@ -11,4 +11,4 @@ export interface MessageModel {
     editedAt: null | string;
     discussion: null | [];
     type: null | string;
-}
+};

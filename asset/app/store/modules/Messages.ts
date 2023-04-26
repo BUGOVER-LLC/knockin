@@ -8,7 +8,7 @@ import store from '../index';
 
 @Module({
     dynamic: true,
-    name: 'module/message',
+    name: 'moduleMessage',
     namespaced: true,
     stateFactory: true,
     store,
@@ -16,20 +16,22 @@ import store from '../index';
 class Messages extends VuexModule implements MessageModel {
     public payload = [];
     public detonate = 0;
-
-    body = '';
-    createdAt = '';
-    targetId = '';
-    in = false;
-    out = true;
-    viewed = false;
-    edited = false;
-    editedAt = null;
-    discussion = null;
-    type = '';
+    public body = '';
+    public createdAt = '';
+    public targetId = '';
+    public in = false;
+    public out = true;
+    public viewed = false;
+    public edited = false;
+    public editedAt = null;
+    public discussion = null;
+    public type = '';
 
     @Mutation
     private mutateMessage(payload: MessageModel) {
+        this.body = payload.body;
+        this.createdAt = payload.createdAt;
+
         if (this.payload[payload.targetId]) {
             // this.payload = { ...this.payload[payload.targetId], ...payload };
             // Vue.set(this.payload, payload.targetId, payload);
@@ -50,6 +52,14 @@ class Messages extends VuexModule implements MessageModel {
     public async initMessage(payload) {
         this.mutateMessage(payload);
         // await axios.post('/noix/init-msg', payload);
+    }
+
+    get getPayload() {
+        return this.payload;
+    }
+
+    get getDetonate() {
+        return this.detonate;
     }
 }
 
