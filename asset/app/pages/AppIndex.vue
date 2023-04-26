@@ -2,9 +2,9 @@
 
 <template>
     <v-app id="inspire">
-        <SystemBar></SystemBar>
+        <SystemBar />
 
-        <AppBar></AppBar>
+        <AppBar />
 
         <DrawerDrag :right="false">
             <template v-slot:toolbar>
@@ -16,7 +16,7 @@
             </template>
 
             <template v-slot:content>
-                <v-navigation-drawer v-model="drawer" app color="grey lighten-3" mini-variant>
+                <v-navigation-drawer v-if="getWorkspaceCount" v-model="drawer" app color="grey lighten-3" mini-variant>
                     <v-avatar class="d-block text-center mx-auto mt-4" color="grey darken-1" size="36" />
 
                     <v-divider class="mx-3 my-5" />
@@ -61,9 +61,9 @@
             </template>
         </DrawerDrag>
 
-        <MessagingContent :messages="messages"></MessagingContent>
+        <MessagingContent :messages="messages" />
 
-        <MessagingWriter @initMsg="sendMessage"></MessagingWriter>
+        <MessagingWriter @initMsg="sendMessage($event)" />
     </v-app>
 </template>
 
@@ -74,7 +74,7 @@ import MessagingWriter from '@/app/components/MessagingWriter.vue';
 import MessagingContent from '@/app/components/MessagingContent.vue';
 import AppBar from '@/app/components/AppBar.vue';
 import SystemBar from '@/app/components/SystemBar.vue';
-import Messages from '@/app/store/modules/Messages';
+import Workspace from '@/app/store/modules/Workspace';
 
 @Component({
     components: { SystemBar, AppBar, MessagingContent, MessagingWriter, DrawerDrag },
@@ -84,7 +84,11 @@ export default class GreetingIndex extends Vue {
     private messages: object = [];
 
     private sendMessage(message) {
-        this.messages = Messages.messages;
+        this.messages = message;
+    }
+
+    private getWorkspaceCount(): number {
+        return Workspace.count;
     }
 }
 </script>

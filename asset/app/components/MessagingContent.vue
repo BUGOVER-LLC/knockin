@@ -2,6 +2,7 @@
 
 <template lang="html">
     <v-main>
+        {{ syncMessages }}
         <div v-for="(message, index) in syncMessages" :key="index">
             {{ message.body }}
         </div>
@@ -10,18 +11,21 @@
 
 <script lang="ts">
 import { Component, Vue, PropSync } from 'vue-property-decorator';
-import Messages from '@/app/store/modules/Messages';
+import { MessageModule } from '@/app/store/modules/Messages';
 
 @Component({
     components: {},
     mixins: [],
 })
 export default class MessagingContent extends Vue {
-    @PropSync('messages') syncMessages;
+    @PropSync('message', { required: false, type: Object })
+    public syncMessages: object = {};
 
-    private get detonate() {
-        return Messages.messages;
+    public get detonator() {
+        return MessageModule.detonate;
     }
+
+    public mounted() {}
 }
 </script>
 

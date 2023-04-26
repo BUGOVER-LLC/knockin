@@ -1,10 +1,8 @@
 /** @format */
 
-import axios from 'axios';
-import Vue from 'vue';
-import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';
+import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
 
-import MessageModel from '@/app/store/models/MessageModel';
+import { MessageModel } from '@/app/store/models/MessageModel';
 
 import store from '../index';
 
@@ -15,9 +13,20 @@ import store from '../index';
     stateFactory: true,
     store,
 })
-class Messages extends VuexModule {
-    private payload = [];
-    private detonate = 1;
+class Messages extends VuexModule implements MessageModel {
+    public payload = [];
+    public detonate = 0;
+
+    body = '';
+    createdAt = '';
+    targetId = '';
+    in = false;
+    out = true;
+    viewed = false;
+    edited = false;
+    editedAt = null;
+    discussion = null;
+    type = '';
 
     @Mutation
     private mutateMessage(payload: MessageModel) {
@@ -37,20 +46,11 @@ class Messages extends VuexModule {
         this.detonate += 1;
     }
 
-    @Action
+    @Action({ commit: 'mutateDetonator' })
     public async initMessage(payload) {
         this.mutateMessage(payload);
-        this.mutateDetonator();
-        await axios.post('/noix/init-msg', payload);
-    }
-
-    public get messages() {
-        return this.payload['target-1'];
-    }
-
-    public get detonator() {
-        return this.detonate;
+        // await axios.post('/noix/init-msg', payload);
     }
 }
 
-export default getModule(Messages);
+export const MessageModule = getModule(Messages);

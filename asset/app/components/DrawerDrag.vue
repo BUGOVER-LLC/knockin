@@ -39,12 +39,12 @@ export default class DrawerDrag extends Vue {
     protected readonly absolute: boolean = true;
 
     @Ref()
-    drawer: any;
+    private drawer: any;
 
     private navigation: any = {
         shown: true,
         width: this.navigationWidth,
-        borderSize: 4,
+        borderSize: 3,
     };
 
     get direction(): string {

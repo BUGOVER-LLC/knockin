@@ -8,7 +8,7 @@
             <v-icon v-text="'mdi-video'" />
         </v-btn>
 
-        <v-btn depressed icon @click="emitVideoCall">
+        <v-btn depressed icon @click="emitAudioCall">
             <v-icon v-text="'mdi-phone'" />
         </v-btn>
 
@@ -23,6 +23,7 @@
                 hide-details
                 solo-inverted
                 placeholder="search (ctrl+k)"
+                @click="toggleSearch"
             />
         </v-responsive>
     </v-app-bar>
@@ -37,6 +38,9 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class AppBar extends Vue {
     emitVideoCall() {}
+    emitAudioCall() {}
+
+    toggleSearch() {}
 }
 </script>
 

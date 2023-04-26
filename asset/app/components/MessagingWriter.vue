@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { Component, Vue, Emit } from 'vue-property-decorator';
-import Messages from '@/app/store/modules/Messages';
+import { MessageModule } from '@/app/store/modules/Messages';
 
 @Component({
     components: {},
@@ -35,8 +35,7 @@ export default class MessagingWriter extends Vue {
 
     async emitMessage() {
         const date = new Date();
-
-        await Messages.initMessage({
+        const messageData = {
             body: this.message,
             createdAt: `${date.toTimeString()} ${date.toDateString()}`,
             targetId: 'target-1',
@@ -44,17 +43,17 @@ export default class MessagingWriter extends Vue {
             in: false,
             edited: false,
             editedAt: '',
-        });
+        };
 
-        this.emitMsg();
+        await MessageModule.initMessage(messageData);
+
+        this.emitMsg(messageData);
     }
 
     @Emit('initMsg')
-    private emitMsg() {
-        const message = this.message;
+    private emitMsg<T extends object>(messageData: T): T {
         this.message = '';
-
-        return message;
+        return messageData;
     }
 }
 </script>
