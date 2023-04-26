@@ -39,7 +39,7 @@
 
                     <div style="position: absolute; bottom: 10px; width: 80%; right: 1px">
                         <v-divider />
-                        <v-skeleton-loader type="list-item-two-line" />
+                        <v-skeleton-loader class="mt-2" type="list-item-avatar" />
                     </div>
                 </v-list>
             </template>
@@ -88,6 +88,10 @@ import { MainComponent } from '@/app/@core/Main/MainComponent';
 export default class GreetingIndex extends Vue implements MainComponent {
     private drawer: boolean = true;
     private messages: object = [];
+    private window = {
+        width: 0,
+        height: 0,
+    };
 
     private sendMessage(message) {
         this.messages = message;
@@ -97,9 +101,13 @@ export default class GreetingIndex extends Vue implements MainComponent {
         return Workspace.count;
     }
 
+    handleResize() {}
+
     created(): void {}
 
-    mounted(): void {}
+    mounted(): void {
+        window.addEventListener('resize', this.handleResize);
+    }
 }
 </script>
 
