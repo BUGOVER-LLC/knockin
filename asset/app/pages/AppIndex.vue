@@ -47,9 +47,4 @@ export default class GreetingIndex extends Vue implements MainComponent {
 }
 </script>
 
-<style scoped lang="scss">
-.selected-member-style {
-    background-color: #e0e0e0;
-    color: #343232;
-}
-</style>
+<style scoped lang="scss"></style>

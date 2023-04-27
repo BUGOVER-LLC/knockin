@@ -35,4 +35,8 @@ export default class extends Vue {
     width: 80%;
     right: 3px;
 }
+.selected-member-style {
+    background-color: #e0e0e0;
+    color: #343232;
+}
 </style>

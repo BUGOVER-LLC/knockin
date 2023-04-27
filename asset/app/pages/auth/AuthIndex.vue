@@ -1,15 +1,9 @@
 <!-- @format -->
 
-<template>
+<template lang="html">
     <div class="auth-wrapper d-flex align-center justify-center pa-4">
-        <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="448" outlined>
+        <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
             <v-card-title class="justify-center">
-                <template #prepend>
-                    <div class="d-flex">
-                        <div />
-                    </div>
-                </template>
-
                 <VCardTitle class="font-weight-semibold text-2xl text-uppercase"> NOIX </VCardTitle>
             </v-card-title>
 
@@ -22,28 +16,36 @@
                 <VForm autocomplete="off" @submit.prevent="() => {}">
                     <VRow>
                         <!-- Workspace -->
-                        <VCol cols="12">
-                            <VTextField v-model="form.workspace" label="Workspace" type="text" outlined />
+                        <VCol cols="12" class="pb-0">
+                            <VTextField v-model="form.workspace" label="Workspace" type="text" outlined color="grey" />
                         </VCol>
 
                         <!-- email -->
-                        <VCol cols="12">
-                            <VTextField v-model="form.email" label="Email" type="email" outlined />
+                        <VCol cols="12" class="pb-0">
+                            <ValidationProvider rules="min:6" v-slot="v">
+                                <VTextField v-model="form.email" label="Email" type="email" outlined color="grey" />
+                            </ValidationProvider>
                         </VCol>
 
                         <!-- password -->
                         <VCol cols="12">
-                            <VTextField v-model="form.password" label="Password" outlined />
+                            <VTextField v-model="form.pwd" label="Password" outlined color="grey" />
 
                             <!-- remember me checkbox -->
                             <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
-                                <VCheckbox v-model="form.remember" label="Remember me" />
+                                <VCheckbox v-model="form.remember" label="Remember me" color="grey darken-1" />
 
                                 <a class="ms-2 mb-1" href="javascript:void(0)"> Forgot Password? </a>
                             </div>
 
                             <!-- login button -->
-                            <VBtn block type="submit" to="/"> Login </VBtn>
+                            <VBtn block type="submit" depressed> accept </VBtn>
+                        </VCol>
+
+                        <VCol cols="12" class="d-flex align-center">
+                            <VDivider />
+                            <span class="mx-4">or</span>
+                            <VDivider />
                         </VCol>
 
                         <!-- create account -->
@@ -53,31 +55,32 @@
                                 Create an account
                             </RouterLink>
                         </VCol>
-
-                        <VCol cols="12" class="d-flex align-center">
-                            <VDivider />
-                            <span class="mx-4">or</span>
-                            <VDivider />
-                        </VCol>
-
-                        <!-- auth providers -->
-                        <VCol cols="12" class="text-center"> </VCol>
                     </VRow>
                 </VForm>
             </VCardText>
         </VCard>
-
-        <VImg class="auth-footer-start-tree d-none d-md-block" :width="250" />
-
-        <VImg class="auth-footer-end-tree d-none d-md-block" :width="350" />
-
-        <!-- bg img -->
-        <VImg class="auth-footer-mask d-none d-md-block" />
     </div>
 </template>
 
-<script lang="js">
-export default {
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import { ValidationProvider, extend } from 'vee-validate';
+import { required, min, max, email } from 'vee-validate/dist/rules';
+extend('required', required);
+extend('min', min);
+extend('max', max);
+extend('email', email);
+
+@Component({
+    components: { ValidationProvider },
+})
+export default class AuthIndex extends Vue {
+    private form = {
+        workspace: '',
+        email: '',
+        pwd: '',
+        remember: '',
+    };
 }
 </script>
 
