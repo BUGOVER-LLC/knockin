@@ -12,9 +12,9 @@
             :absolute="absolute"
             height="100%"
         >
-            <slot name="toolbar"></slot>
-            <slot name="content"></slot>
-            <slot name="footer"></slot>
+            <slot v-if="$slots['toolbar']" name="toolbar"></slot>
+            <slot v-if="$slots['content']" name="content"></slot>
+            <slot v-if="$slots['footer']" name="footer"></slot>
         </v-navigation-drawer>
     </div>
 </template>
@@ -22,10 +22,7 @@
 <script lang="ts">
 import { Component, Vue, Ref, Prop } from 'vue-property-decorator';
 
-@Component({
-    components: {},
-    mixins: [],
-})
+@Component({})
 export default class DrawerDrag extends Vue {
     @Prop({ type: [Number, String], default: 300, required: false })
     protected readonly navigationWidth: number | string = 300;

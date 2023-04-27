@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template lang="html">
-    <v-list class="pl-14" shaped>
+    <v-list class="pl-14 pr-3" shaped>
         <v-list-item-group v-model="selectedItem">
             <v-list-item v-for="n in 25" :key="n" link selectable active-class="selected-member-style">
                 <v-list-item-content>
@@ -11,7 +11,7 @@
         </v-list-item-group>
         <div class="sub-header-member-bottom">
             <v-divider />
-            <v-skeleton-loader class="mt-2" type="list-item-avatar" />
+            <v-skeleton-loader type="list-item-avatar" />
         </div>
     </v-list>
 </template>
@@ -31,8 +31,8 @@ export default class extends Vue {
 <style scoped lang="scss">
 .sub-header-member-bottom {
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     width: 80%;
-    right: 1px;
+    right: 3px;
 }
 </style>
