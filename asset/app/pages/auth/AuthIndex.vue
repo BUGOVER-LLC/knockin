@@ -16,20 +16,36 @@
                 <VForm autocomplete="off" @submit.prevent="() => {}">
                     <VRow>
                         <!-- Workspace -->
-                        <VCol cols="12" class="pb-0">
-                            <VTextField v-model="form.workspace" label="Workspace" type="text" outlined color="grey" />
+                        <VCol cols="12">
+                            <VTextField
+                                v-model="form.workspace"
+                                label="Workspace"
+                                type="text"
+                                outlined
+                                color="grey"
+                                hide-details
+                            />
                         </VCol>
 
                         <!-- email -->
-                        <VCol cols="12" class="pb-0">
-                            <ValidationProvider rules="min:6" v-slot="v">
-                                <VTextField v-model="form.email" label="Email" type="email" outlined color="grey" />
+                        <VCol cols="12">
+                            <ValidationProvider name="email" rules="min:6|email|required" v-slot="{ errors }">
+                                <VTextField
+                                    v-model="form.email"
+                                    label="Email"
+                                    type="email"
+                                    outlined
+                                    color="grey"
+                                    hide-details
+                                    name="email"
+                                />
+                                <span class="error">{{ errors[0] }}</span>
                             </ValidationProvider>
                         </VCol>
 
                         <!-- password -->
                         <VCol cols="12">
-                            <VTextField v-model="form.pwd" label="Password" outlined color="grey" />
+                            <VTextField v-model="form.pwd" label="Password" outlined color="grey" hide-details />
 
                             <!-- remember me checkbox -->
                             <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
@@ -39,7 +55,7 @@
                             </div>
 
                             <!-- login button -->
-                            <VBtn block type="submit" depressed> accept </VBtn>
+                            <VBtn block type="submit" text depressed> accept </VBtn>
                         </VCol>
 
                         <VCol cols="12" class="d-flex align-center">
@@ -75,11 +91,11 @@ extend('email', email);
     components: { ValidationProvider },
 })
 export default class AuthIndex extends Vue {
-    private form = {
+    public form: any[string] = {
         workspace: '',
         email: '',
         pwd: '',
-        remember: '',
+        remember: false,
     };
 }
 </script>
@@ -97,6 +113,7 @@ export default class AuthIndex extends Vue {
 
 .auth-card {
     z-index: 1 !important;
+    background-color: aliceblue;
 }
 
 .auth-footer-start-tree,
