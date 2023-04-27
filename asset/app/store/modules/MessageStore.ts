@@ -14,7 +14,7 @@ import store from '../index';
     store,
     preserveState: null !== localStorage.getItem('vuex'),
 })
-class Messages extends VuexModule implements MessageModel {
+class MessageStore extends VuexModule implements MessageModel {
     public payload = [];
     public detonate = 0;
     public body = '';
@@ -46,7 +46,7 @@ class Messages extends VuexModule implements MessageModel {
 
     @Mutation
     private mutateDetonator() {
-        this.detonate += 1;
+        ++this.detonate;
     }
 
     @Action({ commit: 'mutateDetonator' })
@@ -64,4 +64,4 @@ class Messages extends VuexModule implements MessageModel {
     }
 }
 
-export const MessageModule = getModule(Messages);
+export const MessageModule = getModule(MessageStore);

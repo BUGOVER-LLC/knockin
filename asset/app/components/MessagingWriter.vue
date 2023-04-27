@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { Component, Vue, Emit } from 'vue-property-decorator';
-import { MessageModule } from '@/app/store/modules/Messages';
+import { MessageModule } from '@/app/store/modules/MessageStore';
 import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 @Component({

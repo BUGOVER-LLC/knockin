@@ -4,11 +4,11 @@
     <v-system-bar app>
         <v-spacer />
 
-        <v-icon>mdi-square</v-icon>
+        <v-icon>mdi-alert</v-icon>
 
-        <v-icon>mdi-circle</v-icon>
+        <v-icon>mdi-clock</v-icon>
 
-        <v-icon>mdi-triangle</v-icon>
+        <v-icon>mdi-account</v-icon>
     </v-system-bar>
 </template>
 

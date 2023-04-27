@@ -31,6 +31,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { AbstractModule } from '@/app/store/modules/AbstractStore';
 
 @Component({
     components: {},
@@ -40,8 +41,10 @@ export default class AppBar extends Vue {
     emitVideoCall() {}
     emitAudioCall() {}
 
-    toggleSearch() {}
+    toggleSearch() {
+        AbstractModule.initTriggerSearch();
+    }
 }
 </script>
 
-<style scoped></style>
+<style lang="scss"></style>

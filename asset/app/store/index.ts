@@ -6,11 +6,14 @@ import VuexPersistence from 'vuex-persist';
 
 Vue.use(Vuex);
 
-import { MessageModel } from './models/MessageModel';
+import { AbstractModel } from '@/app/store/models/AbstractModel';
+import { MessageModel } from '@/app/store/models/MessageModel';
 
 export type ModulesState = {
+    abstractModule: AbstractModel;
     moduleMessage: MessageModel;
 };
+
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage,
 });

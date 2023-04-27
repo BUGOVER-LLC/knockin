@@ -6,6 +6,7 @@ const mix = require('laravel-mix');
 const environment = process.env.APP_ENV;
 const strictMode = 'true' === process.env.STRICT_MODE ?? false;
 const WebpackObfuscation = require('webpack-obfuscator');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 if ('local' !== environment) {
     /**
@@ -50,13 +51,14 @@ mix.webpackConfig(
                 chunks: 'all',
             },
         },
+        plugins: [new BundleAnalyzerPlugin()],
         devtool: 'source-map',
     }),
 );
 
 mix.extract({
     to: 'builds/vendor/vendor.js',
-    libraries: ['vue', 'vuex', 'vue-router', 'vuetify', 'vee-validate'],
+    libraries: ['vue', 'vuex', 'vue-router', 'vuetify', 'vee-validate', 'vuex-persist'],
 });
 
 mix.options({
