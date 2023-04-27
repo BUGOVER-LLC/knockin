@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Action;
-use Illuminate\Support\Str;
 
 class DashboardIndexController extends Action
 {
@@ -13,7 +12,7 @@ class DashboardIndexController extends Action
     {
     }
 
-    public function __invoke($workspace_id)
+    public function __invoke(string $workspace_id, ?string $target_id = null)
     {
         return view('app.dashboard');
     }

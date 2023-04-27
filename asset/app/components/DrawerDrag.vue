@@ -10,6 +10,7 @@
             v-model="navigation.shown"
             :mini-variant="mini"
             :absolute="absolute"
+            height="100%"
         >
             <slot name="toolbar"></slot>
             <slot name="content"></slot>

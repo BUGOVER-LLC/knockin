@@ -15,6 +15,7 @@ class Board extends ServiceModel
      * @var string
      */
     protected $primaryKey = 'board_id';
+
     /**
      * @var string[]
      */

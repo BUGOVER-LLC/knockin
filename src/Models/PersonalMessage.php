@@ -13,6 +13,7 @@ class PersonalMessage extends ServiceModel
      * @var string
      */
     protected $primaryKey = 'personal_message_id';
+
     /**
      * @var string[]
      */

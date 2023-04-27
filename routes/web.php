@@ -28,7 +28,7 @@ Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn() => [
 ]);
 
 Route::group(['middleware' => [], 'prefix' => 'noix'], static fn() => [
-    Route::get('/{workspace_id}', DashboardIndexController::class)->name('index-noix'),
+    Route::get('/{workspace_id}/{target_id?}', DashboardIndexController::class)->name('index-noix'),
     Route::post('init-msg', SendMessage::class),
 
     Route::get('{app-any}', DashboardIndexController::class)->where('app-any', '.*'),

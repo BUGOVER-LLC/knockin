@@ -15,6 +15,7 @@ class BoardTask extends ServiceModel
      * @var string
      */
     protected $primaryKey = 'board_task_id';
+
     /**
      * @var string[]
      */

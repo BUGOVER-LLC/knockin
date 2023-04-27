@@ -4,7 +4,7 @@ import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-dec
 
 import { MessageModel } from '@/app/store/models/MessageModel';
 
-import store from '../index';
+import store from '@/app/store/index';
 
 @Module({
     dynamic: true,

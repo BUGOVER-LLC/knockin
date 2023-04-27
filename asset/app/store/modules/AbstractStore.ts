@@ -1,8 +1,8 @@
 /** @format */
 
-import { Module, VuexModule, getModule, Action, Mutation } from 'vuex-module-decorators';
+import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
 
-import store from '../index';
+import store from '@/app/store/index';
 import { AbstractModel } from '@/app/store/models/AbstractModel';
 
 @Module({

@@ -8,11 +8,11 @@
 
         <LeftPanel />
 
-        <RigthPanel />
+        <RightPanel />
 
         <MessagingContent />
 
-        <MessagingWriter @initMsg="sendMessage($event)" />
+        <MessagingWriter />
     </v-app>
 </template>
 
@@ -37,10 +37,6 @@ export default class GreetingIndex extends Vue implements MainComponent {
         height: 0,
     };
 
-    private sendMessage(message) {
-        this.messages = message;
-    }
-
     handleResize() {}
 
     created(): void {}
@@ -52,14 +48,6 @@ export default class GreetingIndex extends Vue implements MainComponent {
 </script>
 
 <style scoped lang="scss">
-.v-navigation-drawer {
-    height: 100vh;
-    top: 0 !important;
-    max-height: 100% !important;
-    transform: translateX(0%);
-    width: 56px;
-}
-
 .selected-member-style {
     background-color: #e0e0e0;
     color: #343232;
