@@ -4,32 +4,25 @@
     <div class="auth-wrapper d-flex align-center justify-center pa-4">
         <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
             <v-card-title class="justify-center">
-                <VCardTitle class="font-weight-semibold text-2xl text-uppercase"> NOIX </VCardTitle>
+                <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/">NOIX</a> </VCardTitle>
             </v-card-title>
 
             <VCardText class="pt-2">
-                <h5 class="text-h5 font-weight-semibold mb-1"> Welcome to NOIX! 👋🏻 </h5>
-                <p class="mb-0"> Please sign-in to your account and start the adventure </p>
+                <h5 class="text-h5 font-weight-semibold mb-1 text-center"> Welcome to NOIX! 👋🏻 </h5>
+                <p class="mb-0 text-center"> Please sign-in to your account and start the adventure </p>
             </VCardText>
 
             <VCardText>
                 <VForm autocomplete="off" @submit.prevent="() => {}">
                     <VRow>
-                        <!-- Workspace -->
-                        <VCol cols="12">
-                            <VTextField
-                                v-model="form.workspace"
-                                label="Workspace"
-                                type="text"
-                                outlined
-                                color="grey"
-                                hide-details
-                            />
-                        </VCol>
-
                         <!-- email -->
-                        <VCol cols="12">
-                            <ValidationProvider name="email" rules="min:6|email|required" v-slot="{ errors }">
+                        <VCol cols="12" class="mb-3">
+                            <ValidationProvider
+                                name="email"
+                                rules="min:6|email|required"
+                                mode="passive"
+                                v-slot="{ errors }"
+                            >
                                 <VTextField
                                     v-model="form.email"
                                     label="Email"
@@ -45,17 +38,8 @@
 
                         <!-- password -->
                         <VCol cols="12">
-                            <VTextField v-model="form.pwd" label="Password" outlined color="grey" hide-details />
-
-                            <!-- remember me checkbox -->
-                            <div class="d-flex align-center justify-space-between flex-wrap mt-1 mb-4">
-                                <VCheckbox v-model="form.remember" label="Remember me" color="grey darken-1" />
-
-                                <a class="ms-2 mb-1" href="javascript:void(0)"> Forgot Password? </a>
-                            </div>
-
                             <!-- login button -->
-                            <VBtn block type="submit" text depressed> accept </VBtn>
+                            <VBtn block type="submit" text depressed @click="checkSend"> next </VBtn>
                         </VCol>
 
                         <VCol cols="12" class="d-flex align-center">
@@ -80,7 +64,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import { ValidationProvider, extend } from 'vee-validate';
+import { ValidationProvider, extend, validate } from 'vee-validate';
 import { required, min, max, email } from 'vee-validate/dist/rules';
 extend('required', required);
 extend('min', min);
@@ -97,6 +81,16 @@ export default class AuthIndex extends Vue {
         pwd: '',
         remember: false,
     };
+
+    mounted() {
+        console.log();
+    }
+
+    private checkSend() {
+        validate(this.form.email, 'required', { name: 'email' }).then(result => {
+            console.log(result);
+        });
+    }
 }
 </script>
 
@@ -113,7 +107,6 @@ export default class AuthIndex extends Vue {
 
 .auth-card {
     z-index: 1 !important;
-    background-color: aliceblue;
 }
 
 .auth-footer-start-tree,

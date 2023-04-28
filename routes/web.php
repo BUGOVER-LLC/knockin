@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use App\Http\Controllers\App\DashboardIndexController;
 use App\Http\Controllers\App\SendMessage;
+use App\Http\Controllers\Auth\CheckCodeController;
+use App\Http\Controllers\Auth\CheckEmailController;
 use App\Http\Controllers\Auth\SignInController;
 use App\Http\Controllers\Greeting\GreetingIndexController;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +24,11 @@ Route::group(['middleware' => 'guest'], static fn() => [
     Route::get('/', GreetingIndexController::class)->name('greeting-index'),
 ]);
 
-Route::group(['middleware' => 'guest', 'prefix' => 'signin'], static fn() => [
+Route::group(['middleware' => 'guest', 'prefix' => 'auth'], static fn() => [
     Route::get('/', SignInController::class)->name('sign-in-index'),
+    Route::post('check-email', CheckEmailController::class),
+    Route::post('check-code', CheckCodeController::class),
+
     Route::get('{auth-any}', SignInController::class)->where('auth-any', '.*'),
 ]);
 

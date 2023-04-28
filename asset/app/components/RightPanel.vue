@@ -4,16 +4,14 @@
     <DrawerDrag :mini="true">
         <template v-slot:toolbar>
             <v-toolbar color="grey lighten-4" height="70">
-                <v-toolbar-title class="headline text-uppercase">
-                    <span>t a</span><span class="font-weight-light"> b s </span>
-                </v-toolbar-title>
+                <v-toolbar-title class="headline text-uppercase"> </v-toolbar-title>
             </v-toolbar>
         </template>
 
         <template v-slot:content>
-            <v-tabs>
-                <v-tab v-for="n in 3" :key="n"> Item {{ n }} </v-tab>
-                <v-tab-item v-for="n in 3" :key="n">
+            <v-tabs height="35" color="grey">
+                <v-tab v-for="n in ['files', 'documents', 'images']" :key="n"> {{ n }} </v-tab>
+                <v-tab-item v-for="n in ['files', 'documents', 'images']" :key="n">
                     <v-card flat>
                         <v-card-text></v-card-text>
                     </v-card>

@@ -10,6 +10,8 @@
 
         <RightPanel />
 
+        <Search />
+
         <MessagingContent />
 
         <MessagingWriter />
@@ -26,9 +28,10 @@ import SystemBar from '@/app/components/SystemBar.vue';
 import { MainComponent } from '@/app/@core/Main/MainComponent';
 import LeftPanel from '@/app/components/LeftPanel.vue';
 import RightPanel from '@/app/components/RightPanel.vue';
+import Search from '@/app/components/Search.vue';
 
 @Component({
-    components: { RightPanel, LeftPanel, SystemBar, AppBar, MessagingContent, MessagingWriter, DrawerDrag },
+    components: { Search, RightPanel, LeftPanel, SystemBar, AppBar, MessagingContent, MessagingWriter, DrawerDrag },
 })
 export default class GreetingIndex extends Vue implements MainComponent {
     private messages: object = [];

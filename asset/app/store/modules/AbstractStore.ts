@@ -23,10 +23,8 @@ export default class AbstractStore extends VuexModule implements AbstractModel {
     }
 
     @Action({ rawError: true, commit: 'mutateTriggerSearch' })
-    public initTriggerSearch() {}
-
-    public getToggle() {
-        return this.searchToggle;
+    public initTriggerSearch() {
+        console.log(this.searchToggle);
     }
 }
 

@@ -2,13 +2,15 @@
 
 import './utils/bootstrap';
 
+import VueHotkey from 'v-hotkey';
+import VueMask from 'v-mask';
 import Vue from 'vue';
 
 import { vuetify } from './plugins';
 import { router } from './router';
 import store from './store';
-import VueHotkey from 'v-hotkey';
 
+Vue.use(VueMask);
 Vue.use(VueHotkey);
 
 const app = new Vue({
