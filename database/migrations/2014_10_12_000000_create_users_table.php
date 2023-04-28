@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->id('user_id')->index('users_index_user_id');
 
             $table->unsignedBigInteger('current_workspace_id')->nullable()->index('users_index_current_workspace_id');
+            $table->unsignedBigInteger('current_device_id')->nullable()->index('users_index_current_device_id');
             $table->uuid('uid')->unique();
             $table->string('phone', 25)->nullable()->unique();
             $table->string('email', 200)->unique();

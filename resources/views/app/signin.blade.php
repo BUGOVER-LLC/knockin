@@ -1,5 +1,7 @@
 @extends('layouts.auth')
 
-@section('app-body')
-    <router-view/>
-@endsection
+@guest
+    @section('app-body')
+        <router-view/>
+    @endsection
+@endguest

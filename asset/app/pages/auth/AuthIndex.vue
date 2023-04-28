@@ -17,29 +17,16 @@
                     <VRow>
                         <!-- email -->
                         <VCol cols="12" class="mb-3">
-                            <ValidationProvider
-                                name="email"
-                                rules="min:6|email|required"
-                                mode="passive"
-                                v-slot="{ errors }"
-                            >
-                                <VTextField
-                                    v-model="form.email"
-                                    label="Email"
-                                    type="email"
-                                    outlined
-                                    color="grey"
-                                    hide-details
-                                    name="email"
-                                />
-                                <span class="error">{{ errors[0] }}</span>
-                            </ValidationProvider>
+                            <v-window v-model="step">
+                                <v-window-item :value="1"><EmailSender /></v-window-item>
+                                <v-window-item :value="2"><ConfirmCode /></v-window-item>
+                            </v-window>
                         </VCol>
 
                         <!-- password -->
                         <VCol cols="12">
                             <!-- login button -->
-                            <VBtn block type="submit" text depressed @click="checkSend"> next </VBtn>
+                            <VBtn block type="submit" text depressed @click="checkSend" :loading="loader"> next </VBtn>
                         </VCol>
 
                         <VCol cols="12" class="d-flex align-center">
@@ -66,15 +53,21 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { ValidationProvider, extend, validate } from 'vee-validate';
 import { required, min, max, email } from 'vee-validate/dist/rules';
+import axios from 'axios';
+import { ValidateResult } from '@/app/@types/validateResult';
+import EmailSender from '@/app/pages/auth/started/EmailSender.vue';
+import ConfirmCode from '@/app/pages/auth/started/ConfirmCode.vue';
 extend('required', required);
 extend('min', min);
 extend('max', max);
 extend('email', email);
 
 @Component({
-    components: { ValidationProvider },
+    components: { ConfirmCode, EmailSender, ValidationProvider },
 })
 export default class AuthIndex extends Vue {
+    private step: number = 1;
+
     public form: any[string] = {
         workspace: '',
         email: '',
@@ -82,14 +75,26 @@ export default class AuthIndex extends Vue {
         remember: false,
     };
 
+    private loader: boolean = false;
+
     mounted() {
         console.log();
     }
 
     private checkSend() {
-        validate(this.form.email, 'required', { name: 'email' }).then(result => {
-            console.log(result);
-        });
+        // validate(this.form.email, 'required', { name: 'email' }).then((result: ValidateResult) => {
+        //     console.log(result);
+        //     if (result.valid) {
+        //         this.loader = true;
+        //         axios
+        //             .post('auth/check-email', { email: this.form.email })
+        //             .then(result => {})
+        //             .catch()
+        //             .finally(() => {
+        //                 this.loader = false;
+        //             });
+        //     }
+        // });
     }
 }
 </script>

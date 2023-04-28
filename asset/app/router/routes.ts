@@ -2,6 +2,9 @@
 
 import { RouteConfig } from 'vue-router';
 
+import emailSender from '@/app/pages/auth/started/EmailSender.vue';
+import { acceptCodePageCheck, auth } from '@/app/router/middlewares';
+
 const confirmCode = (): object => import('@/app/pages/auth/started/ConfirmCode.vue');
 const authIndex = (): object => import('@/app/pages/auth/AuthIndex.vue');
 const greeting = (): object => import('@/app/pages/greeting/GreetingIndex.vue');
@@ -22,9 +25,18 @@ export const Routes: RouteConfig[] = [
         children: [
             {
                 props: false,
+                name: 'emailSender',
+                path: '/started',
+                component: emailSender,
+            },
+            {
+                props: false,
                 name: 'authConfirm',
                 path: '/confirm',
                 component: confirmCode,
+                meta: {
+                    middleware: acceptCodePageCheck,
+                },
             },
         ],
     },
@@ -33,5 +45,8 @@ export const Routes: RouteConfig[] = [
         name: 'applicationIndex',
         path: '/noix/:id',
         component: application,
+        meta: {
+            middleware: auth,
+        },
     },
 ];

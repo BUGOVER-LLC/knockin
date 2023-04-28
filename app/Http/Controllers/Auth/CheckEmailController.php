@@ -24,7 +24,7 @@ class CheckEmailController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $accept_code =    Str::random(8);
+        $accept_code = Str::random(8);
 
         Mail::onQueue($view, '');
     }

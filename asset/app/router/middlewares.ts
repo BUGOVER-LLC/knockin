@@ -1,7 +1,9 @@
 /** @format */
 
-const auth = ({ next, to }) => {
-    return next();
+const auth = ({ next, to }) => next();
+
+const acceptCodePageCheck = ({ next, to }) => {
+    console.log(next, to);
 };
 
-export { auth };
+export { acceptCodePageCheck, auth };

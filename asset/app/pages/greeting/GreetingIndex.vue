@@ -10,7 +10,9 @@
             <v-spacer />
 
             <v-btn icon>
-                <v-icon v-text="'mdi-login'" />
+                <router-link :to="{ name: 'authIndex' }">
+                    <v-icon color="black" v-text="'mdi-login'" />
+                </router-link>
             </v-btn>
         </v-app-bar>
     </div>
