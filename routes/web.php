@@ -29,7 +29,7 @@ Route::group(['middleware' => 'guest', 'prefix' => 'auth'], static fn() => [
     Route::post('check-email', CheckEmailController::class),
     Route::post('check-code', CheckCodeController::class),
 
-    Route::get('{auth-any}', SignInController::class)->where('auth-any', '.*'),
+    Route::get('{any}', SignInController::class)->where('any', '.*'),
 ]);
 
 Route::group(['middleware' => [], 'prefix' => 'noix'], static fn() => [

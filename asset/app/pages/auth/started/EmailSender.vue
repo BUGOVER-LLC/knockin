@@ -28,7 +28,7 @@ extend('email', email);
     components: { ValidationProvider },
     mixins: [],
 })
-export default class extends Vue {
+export default class EmailSender extends Vue {
     public email: string = '';
 }
 </script>

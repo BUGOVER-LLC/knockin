@@ -2,9 +2,8 @@
 
 import { RouteConfig } from 'vue-router';
 
-import emailSender from '@/app/pages/auth/started/EmailSender.vue';
 import { acceptCodePageCheck, auth } from '@/app/router/middlewares';
-
+const emailSender = (): object => import('@/app/pages/auth/started/EmailSender.vue');
 const confirmCode = (): object => import('@/app/pages/auth/started/ConfirmCode.vue');
 const authIndex = (): object => import('@/app/pages/auth/AuthIndex.vue');
 const greeting = (): object => import('@/app/pages/greeting/GreetingIndex.vue');
