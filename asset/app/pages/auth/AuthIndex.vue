@@ -72,7 +72,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue, Watch, Prop } from 'vue-property-decorator';
 import { extend, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
 import EmailSender from '@/app/pages/auth/started/EmailSender.vue';
@@ -90,6 +90,12 @@ extend('email', email);
     components: { ConfirmCode, EmailSender, ValidationProvider },
 })
 export default class AuthIndex extends Vue implements MainComponent {
+    @Prop({ required: false })
+    private readonly email: string = '';
+
+    @Prop({ required: false })
+    private readonly code: string = '';
+
     private step: number = 1;
     private emailValidation = { valid: false, email: '', sent: false };
     private codeValidation = { valid: false, code: '', sent: false };
@@ -106,7 +112,9 @@ export default class AuthIndex extends Vue implements MainComponent {
     @Watch('codeValidation.valid')
     observeCode(val) {
         if (val && this.emailValidation.email && this.emailValidation.valid) {
-            axios.post('/auth/check-code').then();
+            axios
+                .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
+                .then();
         }
     }
 
@@ -121,7 +129,7 @@ export default class AuthIndex extends Vue implements MainComponent {
     }
 
     textBtn() {
-        if (this.emailValidation.email && this.emailValidation.valid && this.emailValidation.sent) {
+        if (this.emailValidation.email && this.emailValidation.sent) {
             return 'send code again';
         }
         return 'next';

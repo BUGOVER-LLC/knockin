@@ -11,15 +11,17 @@
             hide-details
             name="email"
             placeholder="example@gmail.com"
+            @input="emailTrigger"
         />
         <span class="error">{{ errors[0] }}</span>
     </ValidationProvider>
 </template>
 
 <script lang="ts">
-import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
+import { Component, Emit, Vue } from 'vue-property-decorator';
 import { extend, validate, ValidationProvider } from 'vee-validate';
 import { email, required } from 'vee-validate/dist/rules';
+import { ValidateResult } from '@/app/@types/validateResult';
 
 extend('required', required);
 extend('email', email);
@@ -33,9 +35,8 @@ export default class EmailSender extends Vue {
 
     protected valid: boolean = false;
 
-    @Watch('email')
     emailTrigger() {
-        validate(this.email, 'required|email', { name: 'email' }).then((result: object) => {
+        validate(this.email, 'required|email', { name: 'email' }).then((result: any) => {
             if (result && result.valid) {
                 this.valid = result.valid ?? false;
             }
