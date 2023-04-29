@@ -25,13 +25,13 @@ export const Routes: RouteConfig[] = [
             {
                 props: false,
                 name: 'emailSender',
-                path: '/started',
+                path: 'started',
                 component: emailSender,
             },
             {
                 props: false,
                 name: 'authConfirm',
-                path: '/confirm',
+                path: 'confirm',
                 component: confirmCode,
                 meta: {
                     middleware: acceptCodePageCheck,

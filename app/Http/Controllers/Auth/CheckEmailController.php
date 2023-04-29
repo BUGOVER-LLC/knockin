@@ -26,6 +26,7 @@ class CheckEmailController extends Controller
     {
         $accept_code = Str::random(8);
 
-        Mail::onQueue($view, '');
+        return response([]);
+//        Mail::onQueue($view, '');
     }
 }

@@ -4,7 +4,7 @@
     <div class="auth-wrapper d-flex align-center justify-center pa-4">
         <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
             <v-card-title class="justify-center">
-                <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/">NOIX</a> </VCardTitle>
+                <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/">NOIX</a></VCardTitle>
             </v-card-title>
 
             <VCardText class="pt-2">
@@ -16,29 +16,51 @@
                 <VForm autocomplete="off" @submit.prevent="() => {}">
                     <VRow>
                         <!-- email -->
-                        <VCol cols="12" class="mb-3">
+                        <VCol class="mb-3" cols="12">
                             <v-window v-model="step">
-                                <v-window-item :value="1"><EmailSender /></v-window-item>
-                                <v-window-item :value="2"><ConfirmCode /></v-window-item>
+                                <v-window-item :value="1">
+                                    <EmailSender @validEmail="emailValidation = $event" />
+                                </v-window-item>
+                                <v-window-item :value="2">
+                                    <ConfirmCode @codeValidation="codeValidation = $event" />
+                                </v-window-item>
                             </v-window>
                         </VCol>
+
+                        <v-col cols="12">
+                            <v-btn v-if="2 === step" icon @click="prevStep"><v-icon v-text="'mdi-arrow-left'" /></v-btn>
+                            <v-btn v-if="1 === step && emailValidation.sent" icon @click="nextStep" class="float-right">
+                                <v-icon v-text="'mdi-arrow-right'" />
+                            </v-btn>
+                        </v-col>
 
                         <!-- password -->
                         <VCol cols="12">
                             <!-- login button -->
-                            <VBtn block type="submit" text depressed @click="checkSend" :loading="loader"> next </VBtn>
+                            <VBtn
+                                v-if="1 === this.step"
+                                :disabled="!emailValidation.valid"
+                                :loading="loader"
+                                block
+                                depressed
+                                text
+                                type="submit"
+                                @click="checkSend"
+                                color="primary"
+                                v-text="textBtn()"
+                            />
                         </VCol>
 
-                        <VCol cols="12" class="d-flex align-center">
+                        <VCol class="d-flex align-center" cols="12">
                             <VDivider />
                             <span class="mx-4">or</span>
                             <VDivider />
                         </VCol>
 
                         <!-- create account -->
-                        <VCol cols="12" class="text-center text-base">
+                        <VCol class="text-center text-base" cols="12">
                             <span>New on our platform?</span>
-                            <RouterLink class="text-primary ms-2" :to="{ name: 'register' }">
+                            <RouterLink :to="{ name: 'register' }" class="text-primary ms-2">
                                 Create an account
                             </RouterLink>
                         </VCol>
@@ -50,13 +72,15 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
-import { ValidationProvider, extend, validate } from 'vee-validate';
-import { required, min, max, email } from 'vee-validate/dist/rules';
-import axios from 'axios';
-import { ValidateResult } from '@/app/@types/validateResult';
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import { extend, ValidationProvider } from 'vee-validate';
+import { email, max, min, required } from 'vee-validate/dist/rules';
 import EmailSender from '@/app/pages/auth/started/EmailSender.vue';
 import ConfirmCode from '@/app/pages/auth/started/ConfirmCode.vue';
+import axios from 'axios';
+import { MainComponent } from '@/app/@core/Main/MainComponent';
+import { AxiosResponse } from 'axios';
+
 extend('required', required);
 extend('min', min);
 extend('max', max);
@@ -65,41 +89,64 @@ extend('email', email);
 @Component({
     components: { ConfirmCode, EmailSender, ValidationProvider },
 })
-export default class AuthIndex extends Vue {
+export default class AuthIndex extends Vue implements MainComponent {
     private step: number = 1;
-
-    public form: any[string] = {
-        workspace: '',
-        email: '',
-        pwd: '',
-        remember: false,
-    };
-
+    private emailValidation = { valid: false, email: '', sent: false };
+    private codeValidation = { valid: false, code: '', sent: false };
     private loader: boolean = false;
 
-    mounted() {
-        console.log();
+    created() {
+        if ('authConfirm' === this.$router.currentRoute.name) {
+            this.step = 2;
+        }
     }
 
-    private checkSend() {
-        // validate(this.form.email, 'required', { name: 'email' }).then((result: ValidateResult) => {
-        //     console.log(result);
-        //     if (result.valid) {
-        //         this.loader = true;
-        //         axios
-        //             .post('auth/check-email', { email: this.form.email })
-        //             .then(result => {})
-        //             .catch()
-        //             .finally(() => {
-        //                 this.loader = false;
-        //             });
-        //     }
-        // });
+    mounted(): void {}
+
+    @Watch('codeValidation.valid')
+    observeCode(val) {
+        if (val && this.emailValidation.email && this.emailValidation.valid) {
+            axios.post('/auth/check-code').then();
+        }
+    }
+
+    prevStep() {
+        this.step = 1;
+        this.$router.push({ name: 'emailSender' });
+    }
+
+    nextStep() {
+        this.step = 2;
+        this.$router.push({ name: 'authConfirm' });
+    }
+
+    textBtn() {
+        if (this.emailValidation.email && this.emailValidation.valid && this.emailValidation.sent) {
+            return 'send code again';
+        }
+        return 'next';
+    }
+
+    private async checkSend() {
+        if (this.emailValidation.valid) {
+            axios
+                .post('/auth/check-email', { email: this.emailValidation.email })
+                .then((result: AxiosResponse) => {
+                    if (422 !== result.status) {
+                        this.nextStep();
+                        this.emailValidation.sent = true;
+                    }
+                })
+                .catch()
+                .finally(() => {
+                    this.loader = false;
+                });
+        }
     }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .auth-wrapper {
     min-block-size: calc(var(--vh, 1vh) * 100);
 }
