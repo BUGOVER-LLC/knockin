@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendMailQueue;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class CheckEmailController extends Controller
@@ -20,13 +20,14 @@ class CheckEmailController extends Controller
      * Handle the incoming request.
      *
      * @param Request $request
-     * @return Response
+     * @return JsonResponse
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): JsonResponse
     {
-        $accept_code = Str::random(8);
+        $accept_code = Str::random(6);
 
-        return response([]);
-//        Mail::onQueue($view, '');
+        SendMailQueue::dispatch('SendAcceptCodeEmail', ['accept_code' => $accept_code]);
+
+        return jsponse();
     }
 }

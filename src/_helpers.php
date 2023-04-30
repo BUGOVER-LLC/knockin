@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\ResponseFactory;
+
 if (!function_exists('recursive_loaders')) {
     /**
      * @param string $dir
@@ -96,5 +99,19 @@ if (!function_exists('asset_mix')) {
         }
 
         return $asset ?? null;
+    }
+}
+
+if (!function_exists('jsponse')) {
+    /**
+     * @param array $data
+     * @param int $status
+     * @param array $headers
+     * @param int $options
+     * @return JsonResponse
+     */
+    function jsponse($data = [], int $status = 200, array $headers = [], int $options = 0): JsonResponse
+    {
+        return resolve(ResponseFactory::class)->json($data, $status, $headers, $options);
     }
 }
