@@ -11,9 +11,11 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use Src\Core\MainConsts;
 
 /**
- * @method static dispatch(string $context, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
+ * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
  */
 class SendMailQueue implements ShouldQueue
 {
@@ -27,8 +29,11 @@ class SendMailQueue implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(private readonly string $context, private readonly array $body = [])
-    {
+    public function __construct(
+        private readonly string $context,
+        private readonly string $address,
+        private readonly array $body = []
+    ) {
     }
 
     /**
@@ -39,7 +44,7 @@ class SendMailQueue implements ShouldQueue
     public function handle(): void
     {
         switch ($this->context) {
-            case 'SendAcceptCodeEmail':
+            case Str::studly(MainConsts::SEND_ACCEPT_CODE_EMAIL):
                 Mail::send(new AcceptCode($this->body));
                 break;
         }

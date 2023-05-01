@@ -31,7 +31,7 @@ class SignInController extends Action
      */
     public function __invoke(Request $request): \Illuminate\Foundation\Application|View|Factory|Application
     {
-        $is_sent_code = $this->redis->hGet(MainConsts::SendAcceptCodeEmail, $request->email ?? '');
+        $is_sent_code = $this->redis->hGet(MainConsts::SEND_ACCEPT_CODE_EMAIL, $request->email ?? '');
 
         return view('app.signin', ['code' => (bool)$is_sent_code, 'email' => $request->email]);
     }

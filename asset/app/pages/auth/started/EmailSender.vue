@@ -3,6 +3,7 @@
 <template lang="html">
     <ValidationProvider name="email" rules="min:6|email|required" mode="passive" v-slot="{ errors }">
         <VTextField
+            autofocus
             v-model="email"
             label="Email"
             type="email"
@@ -21,6 +22,7 @@
 import { Component, Emit, Vue, Prop } from 'vue-property-decorator';
 import { extend, validate, ValidationProvider } from 'vee-validate';
 import { email, required } from 'vee-validate/dist/rules';
+import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 extend('required', required);
 extend('email', email);
@@ -29,12 +31,14 @@ extend('email', email);
     components: { ValidationProvider },
     mixins: [],
 })
-export default class EmailSender extends Vue {
+export default class EmailSender extends Vue implements MainComponent {
     @Prop({ required: false })
     private readonly emailValue: string = '';
 
     protected email: string = '';
     protected valid: boolean = false;
+
+    mounted(): void {}
 
     created() {
         this.email = this.emailValue;

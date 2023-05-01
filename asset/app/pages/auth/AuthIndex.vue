@@ -22,7 +22,10 @@
                                     <EmailSender :email-value="email" @validEmail="emailValidation = $event" />
                                 </v-window-item>
                                 <v-window-item :value="2">
-                                    <ConfirmCode @codeValidation="codeValidation = $event" />
+                                    <ConfirmCode
+                                        @codeValidation="codeValidation = $event"
+                                        :disabled-sync="disabledOtp"
+                                    />
                                 </v-window-item>
                             </v-window>
                         </VCol>
@@ -79,7 +82,7 @@ import { extend, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
 import EmailSender from '@/app/pages/auth/started/EmailSender.vue';
 import ConfirmCode from '@/app/pages/auth/started/ConfirmCode.vue';
-import axios, { AxiosResponse } from 'axios';
+import axios, { AxiosResponse, AxiosError } from 'axios';
 import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 extend('required', required);
@@ -98,9 +101,11 @@ export default class AuthIndex extends Vue implements MainComponent {
     private readonly email: string = '';
 
     private step: number = 1;
+    private loader: boolean = false;
+    private disabledOtp: boolean = false;
+
     private emailValidation = { valid: false, email: '', sent: false };
     private codeValidation = { valid: false, code: '', sent: false };
-    private loader: boolean = false;
 
     created() {
         if (this.code && 'authConfirm' !== this.$router.currentRoute.name) {
@@ -117,9 +122,12 @@ export default class AuthIndex extends Vue implements MainComponent {
     @Watch('codeValidation.valid')
     observeCode(val) {
         if (val && this.emailValidation.email && this.emailValidation.valid) {
+            this.disabledOtp = true;
             axios
                 .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
-                .then();
+                .then((response: AxiosResponse) => {})
+                .catch((error: AxiosError) => {})
+                .finally(() => {});
         }
     }
 
@@ -150,7 +158,7 @@ export default class AuthIndex extends Vue implements MainComponent {
                         this.emailValidation.sent = true;
                     }
                 })
-                .catch()
+                .catch((error: Error | AxiosError) => {})
                 .finally(() => {
                     this.loader = false;
                 });

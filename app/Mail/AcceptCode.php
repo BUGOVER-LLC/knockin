@@ -14,7 +14,7 @@ class AcceptCode extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(private readonly array $body)
+    public function __construct(private readonly array $body, private readonly string $address)
     {
     }
 
@@ -50,7 +50,9 @@ class AcceptCode extends Mailable
 
     public function build()
     {
-        return $this->from('ewfew@Mail.com', 'NOIX')
+        return $this
+            ->from('ewfew@Mail.com', 'NOIX')
+            ->to($this->address)
             ->with('body', $this->body);
     }
 }

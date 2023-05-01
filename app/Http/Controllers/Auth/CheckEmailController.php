@@ -34,10 +34,14 @@ class CheckEmailController extends Controller
     {
         $accept_code = Str::random(6);
 
-        $this->redis->hSet(MainConsts::SendAcceptCodeEmail, $request->email, igbinary_serialize($accept_code));
-        $this->redis->expire(MainConsts::SendAcceptCodeEmail . $request->email, 360);
+        $this->redis->hSet(MainConsts::SEND_ACCEPT_CODE_EMAIL, $request->email, igbinary_serialize($accept_code));
+        $this->redis->expire(MainConsts::SEND_ACCEPT_CODE_EMAIL . $request->email, 360);
 
-        SendMailQueue::dispatch(Str::studly(MainConsts::SendAcceptCodeEmail), ['accept_code' => $accept_code]);
+        SendMailQueue::dispatch(
+            Str::studly(MainConsts::SEND_ACCEPT_CODE_EMAIL),
+            $request->email,
+            ['accept_code' => $accept_code]
+        );
 
         return jsponse();
     }

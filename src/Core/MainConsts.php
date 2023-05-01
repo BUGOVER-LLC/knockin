@@ -6,5 +6,5 @@ namespace Src\Core;
 
 class MainConsts
 {
-    public const SendAcceptCodeEmail = 'send_accept_code_email';
+    public const SEND_ACCEPT_CODE_EMAIL = 'send_accept_code_email';
 }
