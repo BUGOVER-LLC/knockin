@@ -19,7 +19,7 @@
                         <VCol class="mb-3" cols="12">
                             <v-window v-model="step">
                                 <v-window-item :value="1">
-                                    <EmailSender @validEmail="emailValidation = $event" />
+                                    <EmailSender :email-value="email" @validEmail="emailValidation = $event" />
                                 </v-window-item>
                                 <v-window-item :value="2">
                                     <ConfirmCode @codeValidation="codeValidation = $event" />
@@ -28,8 +28,10 @@
                         </VCol>
 
                         <v-col cols="12">
-                            <v-btn v-if="2 === step" icon @click="prevStep"><v-icon v-text="'mdi-arrow-left'" /></v-btn>
-                            <v-btn v-if="1 === step && emailValidation.sent" icon @click="nextStep" class="float-right">
+                            <v-btn v-if="2 === step" icon @click="prevStep">
+                                <v-icon v-text="'mdi-arrow-left'" />
+                            </v-btn>
+                            <v-btn v-if="1 === step && emailValidation.sent" class="float-right" icon @click="nextStep">
                                 <v-icon v-text="'mdi-arrow-right'" />
                             </v-btn>
                         </v-col>
@@ -42,11 +44,11 @@
                                 :disabled="!emailValidation.valid"
                                 :loading="loader"
                                 block
+                                color="primary"
                                 depressed
                                 text
                                 type="submit"
                                 @click="checkSend"
-                                color="primary"
                                 v-text="textBtn()"
                             />
                         </VCol>
@@ -72,14 +74,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch, Prop } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { extend, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
 import EmailSender from '@/app/pages/auth/started/EmailSender.vue';
 import ConfirmCode from '@/app/pages/auth/started/ConfirmCode.vue';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { MainComponent } from '@/app/@core/Main/MainComponent';
-import { AxiosResponse } from 'axios';
 
 extend('required', required);
 extend('min', min);
@@ -90,11 +91,11 @@ extend('email', email);
     components: { ConfirmCode, EmailSender, ValidationProvider },
 })
 export default class AuthIndex extends Vue implements MainComponent {
-    @Prop({ required: false })
-    private readonly email: string = '';
+    @Prop({ required: true })
+    private readonly code: boolean = false;
 
     @Prop({ required: false })
-    private readonly code: string = '';
+    private readonly email: string = '';
 
     private step: number = 1;
     private emailValidation = { valid: false, email: '', sent: false };
@@ -102,8 +103,12 @@ export default class AuthIndex extends Vue implements MainComponent {
     private loader: boolean = false;
 
     created() {
-        if ('authConfirm' === this.$router.currentRoute.name) {
+        if (this.code && 'authConfirm' !== this.$router.currentRoute.name) {
+            this.nextStep();
+        } else if ('authConfirm' === this.$router.currentRoute.name && this.code) {
             this.step = 2;
+        } else if (1 === this.step && 'authConfirm' === this.$router.currentRoute.name) {
+            this.$router.push({ name: 'emailSender' });
         }
     }
 

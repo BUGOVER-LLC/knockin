@@ -18,10 +18,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Vue } from 'vue-property-decorator';
+import { Component, Emit, Vue, Prop } from 'vue-property-decorator';
 import { extend, validate, ValidationProvider } from 'vee-validate';
 import { email, required } from 'vee-validate/dist/rules';
-import { ValidateResult } from '@/app/@types/validateResult';
 
 extend('required', required);
 extend('email', email);
@@ -31,9 +30,15 @@ extend('email', email);
     mixins: [],
 })
 export default class EmailSender extends Vue {
-    protected email: string = '';
+    @Prop({ required: false })
+    private readonly emailValue: string = '';
 
+    protected email: string = '';
     protected valid: boolean = false;
+
+    created() {
+        this.email = this.emailValue;
+    }
 
     emailTrigger() {
         validate(this.email, 'required|email', { name: 'email' }).then((result: any) => {

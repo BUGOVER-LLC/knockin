@@ -16,6 +16,7 @@
     "ext-redis": "*",
     "ext-sockets": "*",
     "ext-swoole": "*",
+    "ext-igbinary": "*",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^1.0.0",

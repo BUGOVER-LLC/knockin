@@ -110,7 +110,7 @@ if (!function_exists('jsponse')) {
      * @param int $options
      * @return JsonResponse
      */
-    function jsponse($data = [], int $status = 200, array $headers = [], int $options = 0): JsonResponse
+    function jsponse(array $data = [], int $status = 200, array $headers = [], int $options = 0): JsonResponse
     {
         return resolve(ResponseFactory::class)->json($data, $status, $headers, $options);
     }
