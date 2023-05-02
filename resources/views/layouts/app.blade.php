@@ -16,7 +16,7 @@
     <script src="{{ asset('builds/vendor/vendor.js') }}"></script>
     <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>
-<body id="main-content-app-knock">
+<body id="main-content-app-knock q-app">
 <div id="app-knock" style='height: 100%;'>
     <v-app>
         @yield('app-body')

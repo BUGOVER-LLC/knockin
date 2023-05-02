@@ -1,7 +1,7 @@
 /** @format */
 
 import 'vuetify/dist/vuetify.min.css';
-import '@mdi/font/css/materialdesignicons.css'; // Ensure you are using css-loader
+import '@mdi/font/css/materialdesignicons.min.css';
 
 import Vue from 'vue';
 import Vuetify from 'vuetify';

@@ -24,7 +24,7 @@ Route::group(['middleware' => 'guest'], static fn() => [
     Route::get('/', GreetingIndexController::class)->name('greeting-index'),
 ]);
 
-Route::group(['middleware' => 'guest', 'prefix' => 'auth'], static fn() => [
+Route::group(['middleware' => ['guest', 'set_auth_payload'], 'prefix' => 'auth'], static fn() => [
     Route::get('/', SignInController::class)->name('sign-in-index'),
     Route::post('check-email', CheckEmailController::class),
     Route::post('check-code', CheckCodeController::class),

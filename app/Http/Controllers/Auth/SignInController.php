@@ -31,8 +31,19 @@ class SignInController extends Action
      */
     public function __invoke(Request $request): \Illuminate\Foundation\Application|View|Factory|Application
     {
-        $is_sent_code = $this->redis->hGet(MainConsts::SEND_ACCEPT_CODE_EMAIL, $request->email ?? '');
+        $is_sent_code = $this->redis->hMGet(
+            MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
+            ['auth', 'code', 'email']
+        );
 
-        return view('app.signin', ['code' => (bool)$is_sent_code, 'email' => $request->email]);
+        if (!$is_sent_code) {
+            $has_accept_code = false;
+        } elseif (!$is_sent_code['auth'] || !$is_sent_code['code'] || !$is_sent_code['email']) {
+            $has_accept_code = false;
+        } else {
+            $has_accept_code = !(igbinary_unserialize($is_sent_code['auth']) !== $request->cookie('authenticator'));
+        }
+
+        return view('app.signin', ['code' => (bool)$has_accept_code, 'email' => $request->email]);
     }
 }

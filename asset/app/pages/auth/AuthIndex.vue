@@ -127,7 +127,9 @@ export default class AuthIndex extends Vue implements MainComponent {
                 .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
                 .then((response: AxiosResponse) => {})
                 .catch((error: AxiosError) => {})
-                .finally(() => {});
+                .finally(() => {
+                    this.disabledOtp = false;
+                });
         }
     }
 
