@@ -43,7 +43,7 @@ class CheckCodeController extends Controller
         } else {
             $equal_all_data = igbinary_unserialize($is_sent_code['email']) === $request->email
                 && igbinary_unserialize($is_sent_code['code']) === $request->code
-                && !(igbinary_unserialize($is_sent_code['auth']) !== $request->cookie('authenticator'));
+                && igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
         }
 
         if (!$equal_all_data) {
