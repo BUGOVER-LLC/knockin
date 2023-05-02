@@ -46,10 +46,16 @@ class CheckCodeController extends Controller
                 && !(igbinary_unserialize($is_sent_code['auth']) !== $request->cookie('authenticator'));
         }
 
-
         if (!$equal_all_data) {
             return jsponse(['message' => 'Unauthorized', 'redirect' => true], 422);
         }
+
+        $this->redis->hDel(
+            MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
+            'auth',
+            'code',
+            'email'
+        );
 
         return jsponse(['message' => 'Successful', 'redirect' => false]);
     }
