@@ -32,8 +32,7 @@ extend('email', email);
     mixins: [],
 })
 export default class EmailSender extends Vue implements MainComponent {
-    @Prop({ required: false })
-    private readonly emailValue: string = '';
+    @Prop({ required: false }) private readonly emailValue: string = '';
 
     protected email: string = '';
     protected valid: boolean = false;

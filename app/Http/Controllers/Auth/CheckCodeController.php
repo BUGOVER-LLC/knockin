@@ -5,8 +5,14 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\JsonResponse;
+use App\Repositories\User\UserContract;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Redis;
 use RedisException;
 use Src\Core\MainConsts;
@@ -16,7 +22,7 @@ class CheckCodeController extends Controller
     /**
      * @throws RedisException
      */
-    public function __construct(protected readonly Redis $redis)
+    public function __construct(protected readonly Redis $redis, private readonly UserContract $userContract)
     {
         $this->redis->connect('localhost');
     }
@@ -26,11 +32,11 @@ class CheckCodeController extends Controller
      * Handle the incoming request.
      *
      * @param Request $request
-     * @return JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|Application|RedirectResponse|Redirector
      * @throws RedisException
      */
-    public function __invoke(Request $request): JsonResponse
-    {
+    public function __invoke(Request $request
+    ): \Illuminate\Contracts\Foundation\Application|Application|RedirectResponse|Redirector {
         $is_sent_code = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']
@@ -57,6 +63,19 @@ class CheckCodeController extends Controller
             'email'
         );
 
-        return jsponse(['message' => 'Successful', 'redirect' => false]);
+        $this->authorizeUser($request->email);
+
+        return redirect('noix.index-noix');
+    }
+
+    private function authorizeUser(string $email)
+    {
+        $user = $this->userContract->create(['email' => $email, 'verified_at' => now()]);
+
+        if (!$user) {
+            throw new AuthorizationException();
+        }
+
+        Auth::attempt(['email' => $email, 'password' => Str::random(32)], true);
     }
 }

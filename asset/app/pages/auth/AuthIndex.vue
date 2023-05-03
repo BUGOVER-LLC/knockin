@@ -65,9 +65,6 @@
                         <!-- create account -->
                         <VCol class="text-center text-base" cols="12">
                             <span>New on our platform?</span>
-                            <RouterLink :to="{ name: 'register' }" class="text-primary ms-2">
-                                Create an account
-                            </RouterLink>
                         </VCol>
                     </VRow>
                 </VForm>
@@ -94,11 +91,9 @@ extend('email', email);
     components: { ConfirmCode, EmailSender, ValidationProvider },
 })
 export default class AuthIndex extends Vue implements MainComponent {
-    @Prop({ required: true })
-    private readonly code: boolean = false;
+    @Prop({ required: true }) private readonly code: boolean = false;
 
-    @Prop({ required: false })
-    private readonly email: string = '';
+    @Prop({ required: false }) private readonly email: string = '';
 
     private step: number = 1;
     private loader: boolean = false;

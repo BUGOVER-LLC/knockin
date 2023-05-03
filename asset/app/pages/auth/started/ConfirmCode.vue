@@ -2,7 +2,6 @@
 
 <template>
     <div>
-        <q-icon></q-icon>
         <div class="text--accent-1">Accept code sent your email! (you have 10 minutes)</div>
         <v-otp-input autofocus :length="length" :disabled="disabled" @input="triggerOtp" v-model="code" />
     </div>
