@@ -65,7 +65,7 @@ class CheckCodeController extends Controller
 
         $this->authorizeUser($request->email);
 
-        return redirect('noix.index-noix');
+        return redirect('app.index-noix');
     }
 
     private function authorizeUser(string $email)

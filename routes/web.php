@@ -32,7 +32,7 @@ Route::group(['middleware' => ['guest', 'set_auth_payload'], 'prefix' => 'auth']
     Route::get('{any}', SignInController::class)->where('any', '.*'),
 ]);
 
-Route::group(['middleware' => [], 'prefix' => 'noix', 'name' => 'noix.'], static fn() => [
+Route::group(['middleware' => [], 'prefix' => 'app', 'name' => 'app.'], static fn() => [
     Route::get('/{workspace_id}/{target_id?}', DashboardIndexController::class)->name('index-noix'),
     Route::post('init-msg', SendMessage::class),
 

@@ -3,7 +3,7 @@
 import { Module, VuexModule } from 'vuex-module-decorators';
 
 @Module({
-    name: 'module/wss',
+    name: 'moduleWss',
     namespaced: true,
     stateFactory: true,
 })
