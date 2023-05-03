@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->unsignedBigInteger('current_device_id')->nullable()->index('users_index_current_device_id');
             $table->uuid('uid')->unique();
             $table->string('name', 150)->nullable()->unique();
-            $table->string('phone', 25)->nullable()->unique();
-            $table->string('email', 200)->unique();
+            $table->string('phone', 32)->nullable()->unique();
+            $table->string('email', 250)->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamp('verified_at')->nullable();

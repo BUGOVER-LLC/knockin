@@ -7,7 +7,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Repositories\User\UserContract;
 use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Foundation\Application;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
@@ -32,11 +32,11 @@ class CheckCodeController extends Controller
      * Handle the incoming request.
      *
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|Application|RedirectResponse|Redirector
+     * @return Redirector|RedirectResponse|JsonResponse
      * @throws RedisException
      */
     public function __invoke(Request $request
-    ): \Illuminate\Contracts\Foundation\Application|Application|RedirectResponse|Redirector {
+    ): Redirector|RedirectResponse|JsonResponse {
         $is_sent_code = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']
