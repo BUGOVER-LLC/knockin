@@ -20,6 +20,7 @@ class ServiceModel extends Model
      * @var string
      */
     protected $connection = 'pgsql_app';
+
     /**
      * @var string
      */

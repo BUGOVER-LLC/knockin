@@ -2,9 +2,7 @@
 
 <template lang="html">
     <div>
-        <v-app-bar class="primary" dense>
-            <v-app-bar-nav-icon />
-
+        <v-app-bar class="primary" dense fixed elevation="0">
             <v-toolbar-title>NOIX</v-toolbar-title>
 
             <v-spacer />
@@ -25,4 +23,4 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class GreetingIndex extends Vue {}
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

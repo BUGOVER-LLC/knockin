@@ -77,10 +77,9 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { extend, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
+import axios, { AxiosResponse, AxiosError } from 'axios';
 import EmailSender from '@/app/pages/auth/started/EmailSender.vue';
 import ConfirmCode from '@/app/pages/auth/started/ConfirmCode.vue';
-import axios, { AxiosResponse, AxiosError } from 'axios';
-import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 extend('required', required);
 extend('min', min);
@@ -90,7 +89,7 @@ extend('email', email);
 @Component({
     components: { ConfirmCode, EmailSender, ValidationProvider },
 })
-export default class AuthIndex extends Vue implements MainComponent {
+export default class AuthIndex extends Vue {
     @Prop({ required: true }) private readonly code: boolean = false;
 
     @Prop({ required: false }) private readonly email: string = '';
@@ -121,7 +120,7 @@ export default class AuthIndex extends Vue implements MainComponent {
             axios
                 .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
                 .then((response: AxiosResponse) => {})
-                .catch((error: AxiosError) => {})
+                .catch((error: Error | AxiosError) => {})
                 .finally(() => {
                     this.disabledOtp = false;
                 });

@@ -6,12 +6,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\User\UserContract;
+use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Redis;
 use RedisException;
@@ -47,6 +49,7 @@ class CheckCodeController extends Controller
         } elseif (!$is_sent_code['auth'] || !$is_sent_code['code'] || !$is_sent_code['email']) {
             $equal_all_data = false;
         } else {
+//            dd(igbinary_unserialize($is_sent_code['code']), $request->code);
             $equal_all_data = igbinary_unserialize($is_sent_code['email']) === $request->email
                 && igbinary_unserialize($is_sent_code['code']) === $request->code
                 && igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
@@ -63,14 +66,20 @@ class CheckCodeController extends Controller
             'email'
         );
 
-        $this->authorizeUser($request->email);
+        $this->authorizeUser($request->email, $request->code);
 
-        return redirect('app.index-noix');
+        return redirect()->route('app.index-noix');
     }
 
-    private function authorizeUser(string $email)
+    private function authorizeUser(string $email, string $code)
     {
-        $user = $this->userContract->create(['email' => $email, 'verified_at' => now()]);
+        try {
+            $user = $this->userContract->create(
+                ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
+            );
+        } catch (Exception $exception) {
+            dd($exception->getMessage());
+        }
 
         if (!$user) {
             throw new AuthorizationException();

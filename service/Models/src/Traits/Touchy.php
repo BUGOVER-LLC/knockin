@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Service\Models\Traits;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 /**
@@ -26,7 +27,7 @@ trait Touchy
         }
 
         $policy = app()->make($policies);
-        $user = user();
+        $user = Auth::user();
 
         if ($policy) {
             static::retrieved(static fn() => $user ? $policy->view(user(), self::class) : null);

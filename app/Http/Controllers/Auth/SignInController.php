@@ -41,9 +41,9 @@ class SignInController extends Action
         } elseif (!$is_sent_code['auth'] || !$is_sent_code['code'] || !$is_sent_code['email']) {
             $has_accept_code = false;
         } else {
-            $has_accept_code = !(igbinary_unserialize($is_sent_code['auth']) !== $request->cookie('authenticator'));
+            $has_accept_code = igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
         }
 
-        return view('app.signin', ['code' => (bool)$has_accept_code, 'email' => $request->email]);
+        return view('app.signin', ['code' => $has_accept_code, 'email' => $request->email]);
     }
 }

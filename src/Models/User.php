@@ -22,6 +22,11 @@ class User extends ServiceAuthenticable
     protected $primaryKey = 'user_id';
 
     /**
+     * @var string
+     */
+    protected string $uniqeuKey = 'uid';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -31,6 +36,7 @@ class User extends ServiceAuthenticable
         'password',
         'phone',
         'uid',
+        'verified_at',
     ];
 
     /**

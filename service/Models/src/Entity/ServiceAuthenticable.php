@@ -27,10 +27,12 @@ class ServiceAuthenticable extends Authenticable
      * @var string[]
      */
     public $socketAuth = [];
+
     /**
      * @var string
      */
     protected $connection = 'pgsql_app';
+
     /**
      * @var string
      */

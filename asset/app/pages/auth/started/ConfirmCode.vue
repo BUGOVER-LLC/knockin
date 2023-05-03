@@ -2,8 +2,8 @@
 
 <template>
     <div>
-        <div class="text--accent-1">Accept code sent your email! (you have 10 minutes)</div>
-        <v-otp-input v-model="code" :disabled="disabled" :length="length" autofocus @input="triggerOtp" />
+        <div class="text--accent-1">Accept code sent your email! (you have 5 minutes)</div>
+        <v-otp-input v-model="code" type="text" :disabled="disabled" :length="length" autofocus @input="triggerOtp" />
         <v-progress-circular v-if="loader" />
     </div>
 </template>

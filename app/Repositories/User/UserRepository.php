@@ -7,7 +7,6 @@ namespace App\Repositories\User;
 use Illuminate\Contracts\Container\Container;
 use Service\Repository\Repositories\BaseRepository;
 use Src\Models\User;
-use Src\Models\Workspace;
 
 class UserRepository extends BaseRepository implements UserContract
 {
@@ -19,6 +18,6 @@ class UserRepository extends BaseRepository implements UserContract
         $this->setContainer($container)
             ->setModel(User::class)
             ->setCacheDriver('redis')
-            ->setRepositoryId(Workspace::getTableName());
+            ->setRepositoryId(User::getTableName());
     }
 }

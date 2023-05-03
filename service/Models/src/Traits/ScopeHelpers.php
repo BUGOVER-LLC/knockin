@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use JetBrains\PhpStorm\Pure;
 use Service\Models\Custom\HasCustomRelations;
+use Service\Models\Entity\ServiceModel;
 use Service\Repository\Contracts\BaseRepositoryContract;
 use Service\Role\Traits\HasFranchise;
 use Service\Role\Traits\HasModules;
@@ -95,9 +96,9 @@ trait ScopeHelpers
 
     /**
      * @param $class
-     * @return mixed
+     * @return int|string
      */
-    public static function getClassId($class)
+    public static function getClassId($class): int|string
     {
         return (new static())->newModelQuery()
             ->where('type', '=', $class)
@@ -194,7 +195,9 @@ trait ScopeHelpers
         $lat_column = $this->getLatitudeColumn();
         $lut_column = $this->getLongitudeColumn();
 
-        return $query->whereRaw("$lat_column BETWEEN " . $min_lat . ' AND ' . $max_lat . " AND $lut_column BETWEEN " . $min_lon . ' AND ' . $max_lon . '    ');
+        return $query->whereRaw(
+            "$lat_column BETWEEN " . $min_lat . ' AND ' . $max_lat . " AND $lut_column BETWEEN " . $min_lon . ' AND ' . $max_lon . '    '
+        );
     }
 
     /**
