@@ -14,12 +14,12 @@
     {{--Client APP Script--}}
     <script src="{{ asset_mix('builds/vendor/vendor.js') }}"></script>
     <script src="{{ asset_mix('builds/vendor/manifest.js') }}"></script>
-    <script defer src="{{ asset_mix('builds/app/js/app.js') }}"></script>
+    <script defer src="{{ asset_mix('builds/auth/js/app.js') }}"></script>
 </head>
 <body>
-<div id="app-knock" style='height: 100%;'>
+<div id="auth-knock" style='height: 100%;'>
     <v-app>
-        @yield('app-body')
+        @yield('auth-body')
     </v-app>
 </div>
 </body>

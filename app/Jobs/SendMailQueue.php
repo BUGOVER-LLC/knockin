@@ -45,7 +45,7 @@ class SendMailQueue implements ShouldQueue
     {
         switch ($this->context) {
             case Str::studly(MainConsts::ACCEPT_CODE_EMAIL):
-                Mail::send(new AcceptCode($this->body));
+                Mail::to($this->address)->send(new AcceptCode($this->body));
                 break;
         }
     }

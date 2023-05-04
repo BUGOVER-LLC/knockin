@@ -42,7 +42,7 @@ export const Routes: RouteConfig[] = [
     {
         props: true,
         name: 'applicationIndex',
-        path: '/noix/:id',
+        path: '/app/:id/:id?',
         component: application,
         meta: {
             middleware: auth,

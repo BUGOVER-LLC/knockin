@@ -1,5 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.index')
 
-@section('app-body')
+@section('index-body')
     <router-view/>
 @endsection

@@ -13,8 +13,10 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Laravel\Octane\Exceptions\DdException;
 use Redis;
 use RedisException;
 use Src\Core\MainConsts;
@@ -28,7 +30,6 @@ class CheckCodeController extends Controller
     {
         $this->redis->connect('localhost');
     }
-
 
     /**
      * Handle the incoming request.
@@ -49,7 +50,6 @@ class CheckCodeController extends Controller
         } elseif (!$is_sent_code['auth'] || !$is_sent_code['code'] || !$is_sent_code['email']) {
             $equal_all_data = false;
         } else {
-//            dd(igbinary_unserialize($is_sent_code['code']), $request->code);
             $equal_all_data = igbinary_unserialize($is_sent_code['email']) === $request->email
                 && igbinary_unserialize($is_sent_code['code']) === $request->code
                 && igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
@@ -67,11 +67,18 @@ class CheckCodeController extends Controller
         );
 
         $this->authorizeUser($request->email, $request->code);
+        Cookie::forget('authenticator');
 
-        return redirect()->route('app.index-noix');
+        return redirect()->route('app.welcome-treatment');
     }
 
-    private function authorizeUser(string $email, string $code)
+    /**
+     * @param string $email
+     * @param string $code
+     * @return void
+     * @throws DdException
+     */
+    private function authorizeUser(string $email, string $code): void
     {
         try {
             $user = $this->userContract->create(

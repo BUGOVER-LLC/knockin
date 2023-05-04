@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @guest
-    @section('app-body')
+    @section('auth-body')
         <router-view code="{{ $code }}" email="{{ $email }}"/>
     @endsection
 @endguest

@@ -19,12 +19,12 @@
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "./asset/app/@types"
+      "./assets/app/@types"
     ],
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
-        "asset/*"
+        "assets/*"
       ]
     }
   },
@@ -33,6 +33,6 @@
   },
   "exclude": ["node_modules"],
   "include": [
-    "asset/**/*"
+    "assets/**/*"
   ]
 }

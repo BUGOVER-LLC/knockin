@@ -14,7 +14,8 @@ if ('local' !== environment) {
      * 💣    For complex build all bundles, Production or Development environments
      * =================================================================================================================
      */
-    require('./asset/app/webpack.prod');
+    require('./assets/auth/webpack.prod');
+    require('./assets/app/webpack.prod');
 
     mix.webpackConfig({
         plugins: [
@@ -30,7 +31,8 @@ if ('local' !== environment) {
      * 🤠    Uncomment the one, on which you work and run your ran watch, dev or prod, for local development environment
      * =================================================================================================================
      */
-    require('./asset/app/webpack.dev');
+    require('./assets/auth/webpack.dev');
+    require('./assets/app/webpack.dev');
 
     if (strictMode) {
         mix.sourceMaps();
@@ -43,7 +45,7 @@ mix.webpackConfig(
         resolve: {
             extensions: ['.js', '.ts', '.vue'],
             alias: {
-                '@': path.resolve(__dirname, './asset'),
+                '@': path.resolve(__dirname, './assets'),
             },
         },
         optimization: {

@@ -46,7 +46,7 @@ class CheckEmailController extends Controller
         $this->redis->expire(MainConsts::ACCEPT_CODE_EMAIL . $request->email, 360);
 
         SendMailQueue::dispatch(
-            Str::studly(MainConsts::ACCEPT_CODE_EMAIL),
+            MainConsts::ACCEPT_CODE_EMAIL,
             $request->email,
             ['accept_code' => $accept_code]
         );
