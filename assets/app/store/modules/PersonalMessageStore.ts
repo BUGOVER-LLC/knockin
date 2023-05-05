@@ -3,8 +3,8 @@
 import { Module, VuexModule } from 'vuex-module-decorators';
 
 @Module({
-    name: 'module/participant',
+    name: 'module/personalMessage',
     namespaced: true,
     stateFactory: true,
 })
-export default class Participants extends VuexModule {}
+export default class PersonalMessageStore extends VuexModule {}

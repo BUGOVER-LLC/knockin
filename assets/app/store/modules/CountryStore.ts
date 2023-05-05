@@ -3,8 +3,8 @@
 import { Module, VuexModule } from 'vuex-module-decorators';
 
 @Module({
-    name: 'module/personalMessage',
+    name: 'module/country',
     namespaced: true,
     stateFactory: true,
 })
-export default class PersonalMessages extends VuexModule {}
+export default class CountryStore extends VuexModule {}

@@ -15,7 +15,7 @@ type State = {
     namespaced: true,
     stateFactory: true,
 })
-export default class Boards extends VuexModule {
+export default class BoardStore extends VuexModule {
     /**
      * @type State
      * @private

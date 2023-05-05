@@ -7,4 +7,4 @@ import { Module, VuexModule } from 'vuex-module-decorators';
     namespaced: true,
     stateFactory: true,
 })
-export default class BoardTasks extends VuexModule {}
+export default class BoardTaskStore extends VuexModule {}

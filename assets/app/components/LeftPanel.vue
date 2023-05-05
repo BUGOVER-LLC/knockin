@@ -20,7 +20,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import DrawerDrag from '@/app/components/DrawerDrag.vue';
-import Workspace from '@/app/store/modules/Workspace';
+import Workspace from '@/app/store/modules/WorkspaceStore';
 import WorkspaceList from '@/app/components/WorkspaceList.vue';
 import MembersList from '@/app/components/MembersList.vue';
 

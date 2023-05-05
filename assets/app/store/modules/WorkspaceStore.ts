@@ -11,7 +11,7 @@ import store from '../index';
     stateFactory: true,
     store,
 })
-class Workspace extends VuexModule {
+class WorkspaceStore extends VuexModule {
     private payload = [];
 
     public get count() {
@@ -19,4 +19,4 @@ class Workspace extends VuexModule {
     }
 }
 
-export default getModule(Workspace);
+export default getModule(WorkspaceStore);

@@ -3,10 +3,8 @@
 import { Module, VuexModule } from 'vuex-module-decorators';
 
 @Module({
-    name: 'moduleWss',
+    name: 'module/boardStape',
     namespaced: true,
     stateFactory: true,
 })
-export default class WssClient extends VuexModule {
-    public emit = false;
-}
+export default class BoardStapeStore extends VuexModule {}
