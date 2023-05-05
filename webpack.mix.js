@@ -35,7 +35,12 @@ if ('local' !== environment) {
     require('./assets/app/webpack.dev');
 
     if (strictMode) {
-        mix.sourceMaps();
+        mix.sourceMaps().webpackConfig(
+            (module.exports = {
+                plugins: [new BundleAnalyzerPlugin()],
+                devtool: 'source-map',
+            }),
+        );
     }
 }
 
@@ -53,8 +58,6 @@ mix.webpackConfig(
                 chunks: 'all',
             },
         },
-        plugins: [new BundleAnalyzerPlugin()],
-        devtool: 'source-map',
     }),
 );
 
