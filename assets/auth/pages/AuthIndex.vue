@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template lang="html">
-    <v-main class="auth-wrapper d-flex align-center justify-center pa-4">
+    <div class="auth-wrapper d-flex align-center justify-center pa-4">
         <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
             <v-card-title class="justify-center">
                 <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/">NOIX</a></VCardTitle>
@@ -70,7 +70,7 @@
                 </VForm>
             </VCardText>
         </VCard>
-    </v-main>
+    </div>
 </template>
 
 <script lang="ts">
@@ -118,7 +118,11 @@ export default class AuthIndex extends Vue {
             this.disabledOtp = true;
             axios
                 .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
-                .then((response: AxiosResponse) => {})
+                .then((response: AxiosResponse) => {
+                    if (response.data.redirect ?? false) {
+                        window.location.replace(response.data.redirect);
+                    }
+                })
                 .catch((error: Error | AxiosError) => {})
                 .finally(() => {
                     this.disabledOtp = false;

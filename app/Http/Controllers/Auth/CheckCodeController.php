@@ -73,7 +73,7 @@ class CheckCodeController extends Controller
         $user = $this->authorizeUser($request->email, $request->code);
         Cookie::forget('authenticator');
 
-        return redirect()->route('app.index-noix', ['workspace_id' => str_replace('-', '', $user->uid)]);
+        return jsponse(['message' => 'successful', 'redirect' => route('app.index-noix', ['target_id' => $user->uid])]);
     }
 
     /**
@@ -101,7 +101,7 @@ class CheckCodeController extends Controller
         }
 
         Auth::getProvider()->retrieveByCredentials(['email' => $email]);
-        Auth::attempt($user, true);
+        Auth::attempt(['email' => $email, 'password' => $code], true);
         Auth::setUser($user);
 
         return $user;

@@ -11,13 +11,12 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
 use Src\Core\MainConsts;
 
 /**
  * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
  */
-class SendMailQueue /*implements ShouldQueue*/
+class SendMailQueue implements ShouldQueue
 {
     use Dispatchable;
     use InteractsWithQueue;

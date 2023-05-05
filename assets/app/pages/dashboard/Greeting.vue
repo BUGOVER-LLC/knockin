@@ -1,6 +1,10 @@
 <!-- @format -->
 
-<template lang="html"> </template>
+<template lang="html">
+    <div>
+        <h1>fewfew</h1>
+    </div>
+</template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
@@ -8,7 +12,11 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({
     components: {},
 })
-export default class extends Vue {}
+export default class Greeting extends Vue {
+    created() {
+        console.log('fwefefew');
+    }
+}
 </script>
 
 <style scoped lang="scss"></style>

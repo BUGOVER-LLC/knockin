@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-{{--@auth--}}
-@section('app-body')
-    <router-view/>
-@endsection
-{{--@endauth--}}
+@auth
+    @section('app-body')
+        <router-view/>
+    @endsection
+@endauth

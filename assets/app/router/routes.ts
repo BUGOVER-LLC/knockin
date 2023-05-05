@@ -10,7 +10,7 @@ export const Routes: RouteConfig[] = [
     {
         props: true,
         name: 'applicationGreeting',
-        path: 'app/greeting/:target_id',
+        path: '/app/greeting/:target_id',
         component: greeting,
     },
     {
