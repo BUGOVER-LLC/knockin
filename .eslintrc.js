@@ -9,7 +9,6 @@ module.exports = {
         'plugin:vue/strongly-recommended',
         'plugin:@typescript-eslint/recommended',
         '@vue/eslint-config-typescript/recommended',
-        'eslint:recommended',
         '@vue/eslint-config-typescript',
         '@vue/eslint-config-prettier',
         '@vue/prettier',
