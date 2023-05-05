@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template lang="html">
-    <v-main>
+    <div>
         <div v-for="(message, index) in messageContent" :key="index">
             <div
                 v-intersect="onIntersect"
@@ -12,7 +12,7 @@
                 <v-divider inset />
             </div>
         </div>
-    </v-main>
+    </div>
 </template>
 
 <script lang="ts">

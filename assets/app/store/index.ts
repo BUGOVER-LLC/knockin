@@ -8,10 +8,12 @@ Vue.use(Vuex);
 
 import { AbstractModel } from '@/app/store/models/AbstractModel';
 import { MessageModel } from '@/app/store/models/MessageModel';
+import { WorkspaceModels } from '@/app/store/models/WorkspaceModels';
 
 export type ModulesState = {
     abstractModule: AbstractModel;
     moduleMessage: MessageModel;
+    moduleWorkspace: WorkspaceModels;
 };
 
 const vuexLocal = new VuexPersistence({

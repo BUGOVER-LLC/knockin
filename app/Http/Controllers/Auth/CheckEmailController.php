@@ -42,7 +42,6 @@ class CheckEmailController extends Controller
                 'email' => igbinary_serialize($request->email),
             ]
         );
-
         $this->redis->expire(MainConsts::ACCEPT_CODE_EMAIL . $request->email, 360);
 
         SendMailQueue::dispatch(

@@ -302,9 +302,9 @@ interface BaseRepositoryContract extends WhereClauseContract
      *
      * @param array $attr
      *
-     * @return object|null
+     * @return Model|null
      */
-    public function findFirst($attr = ['*']): object|null;
+    public function findFirst($attr = ['*']): Model|null;
 
     /**
      * Find all entities.

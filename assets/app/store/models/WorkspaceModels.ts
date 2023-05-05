@@ -1,6 +1,6 @@
 /** @format */
 
-type WorkspaceModels = {
+export type WorkspaceModels = {
     id: number | string;
     name: string;
     image: string;
@@ -9,5 +9,3 @@ type WorkspaceModels = {
     messageCount: number;
     memberCount: number;
 };
-
-export default WorkspaceModels;

@@ -436,12 +436,12 @@ class BaseRepository extends Repository
     /**
      * {@inheritdoc}
      * @param string[] $attr
-     * @return object|null
+     * @return Model|null
      * @throws ContainerExceptionInterface
      * @throws JsonException
      * @throws NotFoundExceptionInterface
      */
-    public function findFirst($attr = ['*']): object|null
+    public function findFirst($attr = ['*']): Model|null
     {
         return $this->executeCallback(
             static::class,

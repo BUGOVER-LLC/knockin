@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\User\UserContract;
+use App\Repositories\Workspace\WorkspaceContract;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
@@ -15,19 +16,22 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Laravel\Octane\Exceptions\DdException;
 use Redis;
 use RedisException;
 use Src\Core\MainConsts;
+use Src\Models\User;
 
 class CheckCodeController extends Controller
 {
     /**
      * @throws RedisException
      */
-    public function __construct(protected readonly Redis $redis, private readonly UserContract $userContract)
-    {
+    public function __construct(
+        protected readonly Redis $redis,
+        protected readonly UserContract $userContract,
+        protected readonly WorkspaceContract $workspaceContract
+    ) {
         $this->redis->connect('localhost');
     }
 
@@ -36,7 +40,7 @@ class CheckCodeController extends Controller
      *
      * @param Request $request
      * @return Redirector|RedirectResponse|JsonResponse
-     * @throws RedisException
+     * @throws RedisException|DdException
      */
     public function __invoke(Request $request
     ): Redirector|RedirectResponse|JsonResponse {
@@ -66,32 +70,40 @@ class CheckCodeController extends Controller
             'email'
         );
 
-        $this->authorizeUser($request->email, $request->code);
+        $user = $this->authorizeUser($request->email, $request->code);
         Cookie::forget('authenticator');
 
-        return redirect()->route('app.welcome-treatment');
+        return redirect()->route('app.index-noix', ['workspace_id' => str_replace('-', '', $user->uid)]);
     }
 
     /**
      * @param string $email
      * @param string $code
-     * @return void
+     * @return null|User
      * @throws DdException
      */
-    private function authorizeUser(string $email, string $code): void
+    private function authorizeUser(string $email, string $code): ?User
     {
-        try {
-            $user = $this->userContract->create(
-                ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
-            );
-        } catch (Exception $exception) {
-            dd($exception->getMessage());
-        }
+        $user = $this->userContract->where('email', '=', $email)->findFirst();
 
         if (!$user) {
-            throw new AuthorizationException();
+            try {
+                $user = $this->userContract->create(
+                    ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
+                );
+            } catch (Exception $exception) {
+                dd($exception->getMessage());
+            }
+
+            if (!$user) {
+                throw new AuthorizationException();
+            }
         }
 
-        Auth::attempt(['email' => $email, 'password' => Str::random(32)], true);
+        Auth::getProvider()->retrieveByCredentials(['email' => $email]);
+        Auth::attempt($user, true);
+        Auth::setUser($user);
+
+        return $user;
     }
 }

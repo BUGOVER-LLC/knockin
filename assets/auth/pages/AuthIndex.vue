@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template lang="html">
-    <div class="auth-wrapper d-flex align-center justify-center pa-4">
+    <v-main class="auth-wrapper d-flex align-center justify-center pa-4">
         <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
             <v-card-title class="justify-center">
                 <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/">NOIX</a></VCardTitle>
@@ -70,7 +70,7 @@
                 </VForm>
             </VCardText>
         </VCard>
-    </div>
+    </v-main>
 </template>
 
 <script lang="ts">

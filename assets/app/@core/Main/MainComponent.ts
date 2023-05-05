@@ -1,6 +1,6 @@
 /** @format */
 
-export class MainComponent {
-    created(): void {}
-    mounted(): void {}
-}
+export type MainComponent = {
+    created(): void;
+    mounted(): void;
+};

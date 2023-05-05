@@ -16,11 +16,11 @@
     <script src="{{ asset('builds/vendor/vendor.js') }}"></script>
     <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>
-<body id="main-content-app-knock q-app">
-<div id="app-knock" style='height: 100%;'>
-    <v-app>
-        @yield('app-body')
-    </v-app>
+<body id="main-content-app-knock">
+<div id="app-knock">
+    <app-dashboard>
+        <template slot="content">@yield('app-body')</template>
+    </app-dashboard>
 </div>
 
 <script>

@@ -1,14 +1,12 @@
 /** @format */
 
-import axios from 'axios';
-import Vue from 'vue';
-import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';
+import { Module, VuexModule, getModule } from 'vuex-module-decorators';
 
 import store from '../index';
 
 @Module({
     dynamic: true,
-    name: 'module/message',
+    name: 'moduleWorkspace',
     namespaced: true,
     stateFactory: true,
     store,

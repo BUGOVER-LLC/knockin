@@ -17,7 +17,7 @@ use Src\Core\MainConsts;
 /**
  * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
  */
-class SendMailQueue implements ShouldQueue
+class SendMailQueue /*implements ShouldQueue*/
 {
     use Dispatchable;
     use InteractsWithQueue;
@@ -44,8 +44,8 @@ class SendMailQueue implements ShouldQueue
     public function handle(): void
     {
         switch ($this->context) {
-            case Str::studly(MainConsts::ACCEPT_CODE_EMAIL):
-                Mail::to($this->address)->send(new AcceptCode($this->body));
+            case MainConsts::ACCEPT_CODE_EMAIL:
+                Mail::to($this->address)->send(new AcceptCode($this->address, $this->body));
                 break;
         }
     }

@@ -2,50 +2,44 @@
 
 import { RouteConfig } from 'vue-router';
 
-import { acceptCodePageCheck, auth } from '@/app/router/middlewares';
-const emailSender = (): object => import('@/app/pages/auth/started/EmailSender.vue');
-const confirmCode = (): object => import('@/app/pages/auth/started/ConfirmCode.vue');
-const authIndex = (): object => import('@/app/pages/auth/AuthIndex.vue');
-const greeting = (): object => import('@/app/pages/greeting/GreetingIndex.vue');
-const application = (): object => import('@/app/pages/AppIndex.vue');
+const app = (): object => import('@/app/pages/App.vue');
+const greeting = (): object => import('@/app/pages/dashboard/Greeting.vue');
+const dashboard = (): object => import('@/app/pages/dashboard/Board.vue');
 
 export const Routes: RouteConfig[] = [
     {
         props: true,
-        name: 'greetingIndex',
-        path: '/',
+        name: 'applicationGreeting',
+        path: 'app/greeting/:target_id',
         component: greeting,
     },
     {
         props: true,
-        name: 'authIndex',
-        path: '/auth',
-        component: authIndex,
-        children: [
-            {
-                props: false,
-                name: 'emailSender',
-                path: 'started',
-                component: emailSender,
-            },
-            {
-                props: false,
-                name: 'authConfirm',
-                path: 'confirm',
-                component: confirmCode,
-                meta: {
-                    middleware: acceptCodePageCheck,
-                },
-            },
-        ],
-    },
-    {
-        props: true,
         name: 'applicationIndex',
-        path: '/app/:id/:id?',
-        component: application,
-        meta: {
-            middleware: auth,
-        },
+        path: '/app/client/:target_id/:second_target_id?/:thread_target_id?',
+        component: dashboard,
     },
+    // {
+    //     props: true,
+    //     name: 'application',
+    //     path: '/app',
+    //     component: app,
+    //     // meta: {
+    //     //     middleware: auth,
+    //     // },
+    //     children: [
+    //         // {
+    //         //     props: true,
+    //         //     name: 'applicationGreeting',
+    //         //     path: 'greeting/:target_id',
+    //         //     component: greeting,
+    //         // },
+    //         {
+    //             props: true,
+    //             name: 'applicationIndex',
+    //             path: 'client/:target_id/:second_target_id?/:thread_target_id?',
+    //             component: dashboard,
+    //         },
+    //     ],
+    // },
 ];

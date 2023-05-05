@@ -14,7 +14,6 @@ const BROADCAST = {
     wsPort: process.env.MIX_PUSHER_PORT,
     wssPort: process.env.MIX_PUSHER_PORT,
     forceTLS: process.env.MIX_PUSHER_TLS,
-    wsHost: window.location.hostname,
     encrypted: process.env.MIX_PUSHER_ENCRYPTED,
     enableStats: process.env.MIX_PUSHER_STATISTIC,
     disableStats: !process.env.MIX_PUSHER_STATISTIC,
@@ -27,6 +26,7 @@ const BROADCAST = {
     autoConnect: true,
     rejectUnauthorized: '-',
     perMessageDeflate: '-',
+    wsHost: window.location.hostname,
     httpHost: window.location.hostname,
     stats_host: window.location.hostname,
 };
