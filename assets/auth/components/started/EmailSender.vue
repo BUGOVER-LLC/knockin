@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template lang="html">
-    <ValidationProvider name="email" rules="min:6|email|required" mode="passive" v-slot="{ errors }">
+    <ValidationProvider name="email" rules="min:6|email|required|max:150" mode="passive" v-slot="{ errors }">
         <VTextField
             autofocus
             v-model="email"
@@ -21,11 +21,13 @@
 <script lang="ts">
 import { Component, Emit, Vue, Prop } from 'vue-property-decorator';
 import { extend, validate, ValidationProvider } from 'vee-validate';
-import { email, required } from 'vee-validate/dist/rules';
+import { email, required, min, max } from 'vee-validate/dist/rules';
 import { MainComponent } from '@/app/@core/Main/MainComponent';
 
 extend('required', required);
 extend('email', email);
+extend('min', min);
+extend('max', max);
 
 @Component({
     components: { ValidationProvider },
