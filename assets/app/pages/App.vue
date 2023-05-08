@@ -20,9 +20,7 @@ export default class App extends Vue implements MainComponent {
 
     handleResize() {}
 
-    created(): void {
-        console.log(34242);
-    }
+    created(): void {}
 
     mounted(): void {
         window.addEventListener('resize', this.handleResize);

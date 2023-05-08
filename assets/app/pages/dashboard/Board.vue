@@ -8,8 +8,6 @@
 
         <LeftPanel />
 
-        <RightPanel />
-
         <v-main>
             <v-container fluid>
                 <Search />
@@ -19,6 +17,8 @@
                 <MessagingWriter />
             </v-container>
         </v-main>
+
+        <RightPanel />
     </div>
 </template>
 

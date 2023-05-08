@@ -7,13 +7,10 @@ namespace Src\Core\Additional;
 use Detection\MobileDetect;
 use JetBrains\PhpStorm\Pure;
 
-use function array_key_exists;
-use function is_array;
-
 /**
  *
  */
-final class Devicer extends MobileDetect
+final class MainDevicer extends MobileDetect
 {
     /**
      * List of desktop devices.

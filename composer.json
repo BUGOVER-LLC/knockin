@@ -21,7 +21,6 @@
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^1.0.0",
     "laravel/tinker": "^2.0.0",
-    "mobiledetect/mobiledetectlib": "^3.74.0",
     "pda/pheanstalk": "^4.0.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
   },

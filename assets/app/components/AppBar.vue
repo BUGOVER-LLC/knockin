@@ -1,7 +1,7 @@
 <!-- @format -->
 
 <template>
-    <v-app-bar app clipped-right flat height="70" light>
+    <v-app-bar app clipped-right flat height="70" class="ml-0 pl-0" light>
         <v-spacer />
 
         <v-btn depressed icon @click="emitVideoCall">
