@@ -1,7 +1,8 @@
 {
   "require": {
     "laravel/jetstream": "^3.0.0",
-    "laravel/socialite": "^5.0.0"
+    "laravel/socialite": "^5.0.0",
+    "laravel/passport": "^11.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -10,9 +11,9 @@
   },
   "autoload": {
     "psr-4": {
-      "Module\\Auth\\": "./../../Modules/Auth/",
-      "Database\\Factories\\": "database/factories/",
-      "Database\\Seeders\\": "database/seeders/"
+      "Module\\Auth\\": "./../../Modules/Auth/src/",
+      "Database\\Factories\\": "./../../Modules/Auth/src/database/factories/",
+      "Database\\Seeders\\": "./../../Modules/Auth/src/database/seeders/"
     }
   },
   "scripts": {
