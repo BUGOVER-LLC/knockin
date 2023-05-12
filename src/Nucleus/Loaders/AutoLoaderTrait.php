@@ -1,8 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nucleus\Loaders;
 
 use Nucleus\Foundation\Facades\Apiato;
+use Src\Loaders\ModelLoader;
+use Src\Loaders\ObserverLoader;
+use Src\Loaders\RepositoryLoader;
 
 trait AutoLoaderTrait
 {
@@ -15,6 +20,9 @@ trait AutoLoaderTrait
     use CommandsLoaderTrait;
     use AliasesLoaderTrait;
     use HelpersLoaderTrait;
+    use RepositoryLoader;
+    use ModelLoader;
+    use ObserverLoader;
 
     /**
      * To be used from the `boot` function of the main service provider
@@ -27,6 +35,9 @@ trait AutoLoaderTrait
         $this->loadHelpersFromShip();
         $this->loadCommandsFromShip();
         $this->loadCommandsFromCore();
+        $this->loadContractRepo();
+        $this->loadMaps();
+        $this->loadObservers();
 
         // Iterate over all the containers folders and autoload most of the components
         foreach (Apiato::getAllContainerPaths() as $containerPath) {
@@ -38,6 +49,9 @@ trait AutoLoaderTrait
         }
     }
 
+    /**
+     * @return void
+     */
     public function runLoaderRegister(): void
     {
         $this->loadConfigsFromShip();

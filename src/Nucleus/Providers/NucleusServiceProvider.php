@@ -9,6 +9,7 @@ use Nucleus\Abstracts\Providers\MainServiceProvider as AbstractMainServiceProvid
 use Nucleus\Foundation\Apiato;
 use Nucleus\Loaders\AutoLoaderTrait;
 use Nucleus\Traits\ValidationTrait;
+use Src\Providers\RedisProvider;
 
 class NucleusServiceProvider extends AbstractMainServiceProvider
 {
@@ -23,6 +24,8 @@ class NucleusServiceProvider extends AbstractMainServiceProvider
         // Register Core Facade Classes, should not be registered in the $aliases property, since they are used
         // by the auto-loading scripts, before the $aliases property is executed.
         $this->app->alias(Apiato::class, 'Apiato');
+
+        $this->app->register(RedisProvider::class);
 
         // parent::register() should be called AFTER we bind 'Apiato'
         parent::register();

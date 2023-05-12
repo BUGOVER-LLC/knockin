@@ -120,7 +120,7 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', ''),
 
     'cipher' => 'AES-256-CBC',
 
@@ -138,7 +138,7 @@ return [
     */
     'maintenance' => [
         'driver' => 'file',
-         'store'  => 'redis',
+        'store' => 'redis',
     ],
 
     /*
@@ -182,12 +182,6 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        Src\Providers\MainServiceProvider::class,
     ],
 
     /*

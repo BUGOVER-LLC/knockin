@@ -48,10 +48,13 @@ class GeneratorsServiceProvider extends ServiceProvider
         }
     }
 
+    /**
+     * @return string[]
+     */
     private function getGeneratorCommands(): array
     {
         // add your generators here
-        return $generatorCommands = [
+        return [
             ActionGenerator::class,
             ConfigurationGenerator::class,
             ContainerGenerator::class,
