@@ -2,12 +2,21 @@
   "name": "nuclear/ship",
   "description": "Nuclear Ship folder where shared functionality resides",
   "require": {
+    "nucleus/core": "^0.1.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
     "barryvdh/laravel-ide-helper": "^2.12.3",
     "barryvdh/laravel-debugbar": "^3.6.7"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "name": "nucleus/core",
+      "url": "https://github.com/BUGOVER-LLC/nucleus.git",
+      "branch": "main"
+    }
+  ],
   "config": {
     "github-oauth": {
       "github.com": "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"
