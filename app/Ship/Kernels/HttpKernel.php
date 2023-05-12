@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Ship\Kernels;
 
-use Apiato\Core\Middlewares\Http\ProcessETagHeadersMiddleware;
-use Apiato\Core\Middlewares\Http\ProfilerMiddleware;
-use Apiato\Core\Middlewares\Http\ValidateJsonContent;
 use App\Ship\Middlewares\Authenticate;
 use App\Ship\Middlewares\EncryptCookies;
 use App\Ship\Middlewares\PreventRequestsDuringMaintenance;
@@ -26,6 +25,9 @@ use Illuminate\Routing\Middleware\ValidateSignature;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Nucleus\Middlewares\Http\ProcessETagHeadersMiddleware;
+use Nucleus\Middlewares\Http\ProfilerMiddleware;
+use Nucleus\Middlewares\Http\ValidateJsonContent;
 
 class HttpKernel extends LaravelHttpKernel
 {

@@ -2,9 +2,9 @@
 
 namespace App\Ship\Exceptions\Handlers;
 
-use Apiato\Core\Abstracts\Exceptions\Exception as CoreException;
-use Apiato\Core\Exceptions\AuthenticationException as CoreAuthenticationException;
-use Apiato\Core\Exceptions\Handlers\ExceptionsHandler as CoreExceptionsHandler;
+use Nucleus\Abstracts\Exceptions\Exception as CoreException;
+use Nucleus\Exceptions\AuthenticationException as CoreAuthenticationException;
+use Nucleus\Exceptions\Handlers\ExceptionsHandler as CoreExceptionsHandler;
 use App\Ship\Exceptions\NotAuthorizedResourceException;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Providers\RouteServiceProvider;
