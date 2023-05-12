@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Vendor\Repositories\User;
+namespace App\NoixContainers\Vendor\Repositories\User;
 
-use App\Vendor\Models\User;
+use App\NoixContainers\Vendor\Models\User;
 use Illuminate\Contracts\Container\Container;
 use Service\Repository\Repositories\BaseRepository;
 

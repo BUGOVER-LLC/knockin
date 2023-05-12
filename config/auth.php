@@ -61,7 +61,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => \App\vendor\Models\User::class,
+            'model' => \App\NoixContainers\Vendor\Models\User::class,
         ],
 
         // 'users' => [

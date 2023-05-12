@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Vendor\Repositories\Workspace;
+namespace App\NoixContainers\Vendor\Repositories\Workspace;
 
-use App\Vendor\Models\Workspace;
+use App\NoixContainers\Vendor\Models\Workspace;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Collection;
 use Service\Repository\Repositories\BaseRepository;

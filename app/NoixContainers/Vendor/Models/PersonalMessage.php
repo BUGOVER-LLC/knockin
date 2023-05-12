@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Vendor\Models;
+namespace App\NoixContainers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Service\Models\Entity\ServiceModel;
 
-class Message extends ServiceModel
+class PersonalMessage extends ServiceModel
 {
     /**
      * @var string
      */
-    protected $primaryKey = 'message_id';
+    protected $primaryKey = 'personal_message_id';
+
     /**
      * @var string[]
      */
-    protected $fillable = ['author_id', 'channel_id', 'workspace_id', 'parent_id', 'body'];
+    protected $fillable = ['author_id', 'participant_id', 'workspace_id', 'parent_id', 'body', 'viewed', 'viewed_at'];
 
     /**
      * @return BelongsTo
@@ -29,9 +30,9 @@ class Message extends ServiceModel
     /**
      * @return BelongsTo
      */
-    public function channel(): BelongsTo
+    public function participant(): BelongsTo
     {
-        return $this->belongsTo(Channel::class, 'channel_id', 'channel_id');
+        return $this->belongsTo(User::class, 'user_id', 'participant_id');
     }
 
     /**
