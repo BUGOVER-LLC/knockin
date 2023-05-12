@@ -180,7 +180,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Application Service Providers...
+         * @NOTE: all packages service providers registered inside their containers main service providers.
          */
     ],
 
