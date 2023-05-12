@@ -17,7 +17,8 @@
     "ext-redis": "*",
     "ext-sockets": "*",
     "ext-swoole": "*",
-    "nucleus/core": "1.*",
+    "nucleus/core": "^0.1.0",
+    "nucleus/repository": "^1.0.0",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^1.0.0",
@@ -54,6 +55,12 @@
       "type": "vcs",
       "name": "nucleus/core",
       "url": "https://github.com/BUGOVER-LLC/nucleus.git",
+      "branch": "main"
+    },
+    {
+      "type": "vcs",
+      "name": "nucleus/repository",
+      "url": "https://github.com/BUGOVER-LLC/repository.git",
       "branch": "main"
     }
   ],
