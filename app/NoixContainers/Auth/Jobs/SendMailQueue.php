@@ -7,7 +7,7 @@ namespace App\NoixContainers\Auth\Jobs;
 use App\NoixContainers\Auth\Mail\AcceptCode;
 use App\Ship\Parents\Jobs\Job;
 use Illuminate\Support\Facades\Mail;
-use Src\Core\MainConsts;
+use Src\MainConsts;
 
 /**
  * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable

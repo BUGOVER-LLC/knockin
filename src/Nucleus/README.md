@@ -1,2 +1,0 @@
-# APIATO Core Package
-
