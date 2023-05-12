@@ -2,7 +2,6 @@
   "name": "nuclear/ship",
   "description": "Nuclear Ship folder where shared functionality resides",
   "require": {
-    "nuclear/core": "^1.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

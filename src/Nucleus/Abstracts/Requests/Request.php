@@ -1,16 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nucleus\Abstracts\Requests;
 
+use Exception;
 use Illuminate\Foundation\Http\FormRequest as LaravelRequest;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Validation\Validator;
 use Nucleus\Abstracts\Models\UserModel as User;
 use Nucleus\Exceptions\IncorrectIdException;
 use Nucleus\Traits\HashIdTrait;
 use Nucleus\Traits\SanitizerTrait;
 use Nucleus\Traits\StateKeeperTrait;
+use RuntimeException;
 
 /**
  * Class Request
@@ -24,6 +29,21 @@ abstract class Request extends LaravelRequest
     use HashIdTrait;
     use StateKeeperTrait;
     use SanitizerTrait;
+
+    /**
+     * @var string
+     */
+    private const VALIDATE_FLOAT_OR_INT = '/^(?=.)([+-]?([0-9]*)(\.([0-9]+))?)$/';
+
+    /**
+     * @var string
+     */
+    private const VALIDATE_STRING_OR_INT = '/^[a-z0-9 ]+$/i';
+
+    /**
+     * @var bool
+     */
+    protected bool $strict = true;
 
     /**
      * To be used mainly from unit tests.
@@ -218,6 +238,44 @@ abstract class Request extends LaravelRequest
     }
 
     /**
+     * @return Validator
+     */
+    public function validator(): Validator
+    {
+        $v = Validator::make($this->input(), $this->rules(), $this->messages(), $this->attributes());
+
+        if (method_exists(static::class, 'moreValidation')) {
+            $this->moreValidation($v);
+        }
+
+        return $v;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    abstract public function rules(): array;
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    final public function messages(): array
+    {
+        return $this->errorMessages();
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    abstract public function errorMessages(): array;
+
+    /**
      * Used from the `authorize` function if the Request class.
      * To call functions and compare their bool responses to determine
      * if the user can proceed with the request or not.
@@ -258,5 +316,64 @@ abstract class Request extends LaravelRequest
         // if in_array returned `false` means all functions returned `true` thus return `true` to allow access.
         // return the final boolean
         return !in_array(false, $returns, true);
+    }
+
+    /**
+     * Handle a passed validation attempt.
+     *
+     * @throws Exception
+     */
+    protected function passedValidation(): void
+    {
+        if (!$this->strict) {
+            return;
+        }
+
+        if (!config('app.strict') || app()->isProduction()) {
+            return;
+        }
+
+        $all_with_dots = Arr::dot($this->all());
+        $validated_with_dots = Arr::dot($this->validated());
+
+        $not_validated_fields = array_keys(array_diff_key($all_with_dots, $validated_with_dots));
+
+        if (!empty($not_validated_fields)) {
+            throw new RuntimeException(
+                trans('validation.all_request_validation', ['fields' => implode(', ', $not_validated_fields)]),
+                423
+            );
+        }
+
+        $rules_with_dots = Arr::dot($this->rules());
+
+        $empty_rules = array_filter($rules_with_dots, static function ($rule) {
+            return empty($rule);
+        });
+
+        if (!empty($empty_rules)) {
+            throw new RuntimeException(
+                trans('validation.all_request_empty', ['fields' => implode(', ', array_keys($empty_rules))]),
+                423
+            );
+        }
+
+        parent::passedValidation();
+    }
+
+    /**
+     * @return string
+     */
+    protected function getFloatOrInPattern(): string
+    {
+        return self::VALIDATE_FLOAT_OR_INT;
+    }
+
+    /**
+     * @return string
+     */
+    protected function getStringOrIntPattern(): string
+    {
+        return self::VALIDATE_STRING_OR_INT;
     }
 }

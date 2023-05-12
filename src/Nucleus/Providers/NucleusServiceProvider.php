@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Nucleus\Providers;
 
 use Illuminate\Support\Facades\Schema;
@@ -8,7 +10,7 @@ use Nucleus\Foundation\Apiato;
 use Nucleus\Loaders\AutoLoaderTrait;
 use Nucleus\Traits\ValidationTrait;
 
-class ApiatoServiceProvider extends AbstractMainServiceProvider
+class NucleusServiceProvider extends AbstractMainServiceProvider
 {
     use AutoLoaderTrait;
     use ValidationTrait;
