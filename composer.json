@@ -52,6 +52,7 @@
     "psr-4": {
       "App\\": "app/",
       "Src\\": "src/",
+      "Nucleus\\": "src/Nucleus/",
       "Database\\Factories\\": "database/factories/",
       "Database\\Seeders\\": "database/seeders/"
     },
@@ -85,11 +86,11 @@
     },
     "merge-plugin": {
       "include": [
-        "service/*/composer.local.json",
-        "service/*/composer.json"
+        "app/Ship/composer.json",
+        "app/NoixContainers/*/composer.json"
       ],
       "require": [
-        "service/*/composer.json"
+        "src/service/*/composer.json"
       ],
       "recurse": true,
       "replace": false,

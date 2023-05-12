@@ -1,0 +1,19 @@
+{
+  "name": "nuclear/ship",
+  "description": "Nuclear Ship folder where shared functionality resides",
+  "require": {
+    "nuclear/core": "^1.0.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "barryvdh/laravel-ide-helper": "^2.12.3",
+    "barryvdh/laravel-debugbar": "^3.6.7"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+      "@php artisan ide-helper:generate",
+      "@php artisan ide-helper:meta"
+    ]
+  }
+}
