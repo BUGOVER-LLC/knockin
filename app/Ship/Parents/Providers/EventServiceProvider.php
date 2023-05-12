@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\Abstracts\Providers\EventServiceProvider as AbstractEventServiceProvider;
+use Nucleus\src\Abstracts\Providers\EventServiceProvider as AbstractEventServiceProvider;
 
 /**
  * Class EventServiceProvider

@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Transformers;
 
-use Nucleus\Abstracts\Transformers\Transformer as AbstractTransformer;
+use Nucleus\src\Abstracts\Transformers\Transformer as AbstractTransformer;
 use Illuminate\Support\Facades\Auth;
 
 abstract class Transformer extends AbstractTransformer

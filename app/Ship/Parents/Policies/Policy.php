@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Policies;
 
-use Nucleus\Abstracts\Policies\Policy as AbstractPolicy;
+use Nucleus\src\Abstracts\Policies\Policy as AbstractPolicy;
 use App\Ship\Parents\Models\UserModel;
 
 abstract class Policy extends AbstractPolicy

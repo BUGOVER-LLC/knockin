@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\Abstracts\Providers\RouteServiceProvider as AbstractRouteServiceProvider;
+use Nucleus\src\Abstracts\Providers\RouteServiceProvider as AbstractRouteServiceProvider;
 
 abstract class RouteServiceProvider extends AbstractRouteServiceProvider
 {

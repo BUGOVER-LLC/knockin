@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\Abstracts\Providers\MiddlewareServiceProvider as AbstractMiddlewareServiceProvider;
+use Nucleus\src\Abstracts\Providers\MiddlewareServiceProvider as AbstractMiddlewareServiceProvider;
 
 abstract class MiddlewareServiceProvider extends AbstractMiddlewareServiceProvider
 {

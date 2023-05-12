@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\Abstracts\Providers\AuthServiceProvider as AbstractAuthServiceProvider;
+use Nucleus\src\Abstracts\Providers\AuthServiceProvider as AbstractAuthServiceProvider;
 
 /**
  * Class ShipAuthServiceProvider

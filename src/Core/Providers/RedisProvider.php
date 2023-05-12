@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Providers;
+namespace Src\Core\Providers;
 
 use Illuminate\Redis\RedisServiceProvider;
 use Illuminate\Support\Arr;
