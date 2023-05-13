@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "038d1840bd647baff283e1d47143e86b",
+    "content-hash": "453a160d653d5df90cd7219330aa1fd3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4075,7 +4075,7 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BUGOVER-LLC/repository.git",
+                "url": "git@github.com:BUGOVER-LLC/repository.git",
                 "reference": "2e2c2f62d6cc2df7355edff4a3c067bcc752b568"
             },
             "dist": {
@@ -12533,12 +12533,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "61c471d69c76162ef7b1b4ef5cc4badc2cbc470e"
+                "reference": "d1af11449398214f9664514ce705c5154ead9c38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/61c471d69c76162ef7b1b4ef5cc4badc2cbc470e",
-                "reference": "61c471d69c76162ef7b1b4ef5cc4badc2cbc470e",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d1af11449398214f9664514ce705c5154ead9c38",
+                "reference": "d1af11449398214f9664514ce705c5154ead9c38",
                 "shasum": ""
             },
             "conflict": {
@@ -13051,7 +13051,7 @@
                 "wp-graphql/wp-graphql": "<0.3.5",
                 "wpanel/wpanel4-cms": "<=4.3.1",
                 "wpcloud/wp-stateless": "<3.2",
-                "wwbn/avideo": "<12.4",
+                "wwbn/avideo": "<=12.4",
                 "xataface/xataface": "<3",
                 "xpressengine/xpressengine": "<3.0.15",
                 "yeswiki/yeswiki": "<4.1",
@@ -13133,7 +13133,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-12T16:04:21+00:00"
+            "time": "2023-05-12T21:03:58+00:00"
         },
         {
             "name": "sebastian/cli-parser",

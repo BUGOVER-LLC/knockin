@@ -2,7 +2,8 @@
   "name": "nuclear/ship",
   "description": "Nuclear Ship folder where shared functionality resides",
   "require": {
-    "nucleus/core": "^0.1.0"
+    "nucleus/core": "^0.1.0",
+    "nucleus/socket": "^0.2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -14,6 +15,12 @@
       "type": "vcs",
       "name": "nucleus/core",
       "url": "https://github.com/BUGOVER-LLC/nucleus.git",
+      "branch": "main"
+    },
+    {
+      "type": "vcs",
+      "name": "nucleus/socket",
+      "url": "https://github.com/BUGOVER-LLC/socket.git",
       "branch": "main"
     }
   ],
