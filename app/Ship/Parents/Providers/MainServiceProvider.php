@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\src\Abstracts\Providers\MainServiceProvider as AbstractMainServiceProvider;
+use Nucleus\Abstracts\Providers\MainServiceProvider as AbstractMainServiceProvider;
 
 abstract class MainServiceProvider extends AbstractMainServiceProvider
 {

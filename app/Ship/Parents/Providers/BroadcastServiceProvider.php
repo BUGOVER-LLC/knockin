@@ -2,7 +2,7 @@
 
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\src\Abstracts\Providers\BroadcastServiceProvider as AbstractBroadcastServiceProvider;
+use Nucleus\Abstracts\Providers\BroadcastServiceProvider as AbstractBroadcastServiceProvider;
 use Illuminate\Support\Facades\Broadcast;
 
 /**

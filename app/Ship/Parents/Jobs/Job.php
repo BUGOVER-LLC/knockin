@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Ship\Parents\Jobs;
 
-use Nucleus\src\Abstracts\Jobs\Job as AbstractJob;
+use Nucleus\Abstracts\Jobs\Job as AbstractJob;
 
 /**
  * Class Job

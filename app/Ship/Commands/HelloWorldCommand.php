@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Ship\Commands;
 
 use App\Ship\Parents\Commands\ConsoleCommand;

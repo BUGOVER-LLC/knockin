@@ -9,14 +9,22 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^8.2",
-    "ext-fileinfo": "*",
-    "ext-igbinary": "*",
-    "ext-openssl": "*",
+    "php": "<=8.2.3",
+    "php-64bit": "<=8.2.3",
     "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "ext-zlib": "*",
     "ext-redis": "*",
-    "ext-sockets": "*",
+    "ext-pcntl": "*",
     "ext-swoole": "*",
+    "ext-bcmath": "*",
+    "ext-imagick": "*",
+    "ext-openssl": "*",
+    "ext-sockets": "*",
+    "ext-igbinary": "*",
+    "ext-mbstring": "*",
+    "ext-calendar": "*",
     "nucleus/devicer": "^0.2.0",
     "nucleus/repository": "^1.0.0",
     "guzzlehttp/guzzle": "^7.0.0",
@@ -107,7 +115,6 @@
       "merge-dev": true,
       "merge-extra": false,
       "merge-extra-deep": false,
-      "merge-replace": true,
       "merge-scripts": false
     }
   },
@@ -119,9 +126,28 @@
       "pestphp/pest-plugin": true,
       "wikimedia/composer-merge-plugin": true
     },
+    "platform": {
+      "php": "8.2"
+    },
     "github-oauth": {
       "github.com": "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"
     }
+  },
+  "provide": {
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "ext-zlib": "*",
+    "ext-redis": "*",
+    "ext-pcntl": "*",
+    "ext-swoole": "*",
+    "ext-bcmath": "*",
+    "ext-imagick": "*",
+    "ext-openssl": "*",
+    "ext-sockets": "*",
+    "ext-igbinary": "*",
+    "ext-mbstring": "*",
+    "ext-calendar": "*"
   },
   "minimum-stability": "stable",
   "prefer-stable": true

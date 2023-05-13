@@ -2,7 +2,7 @@
 
 namespace App\Ship\Exceptions\Handlers;
 
-use Nucleus\src\Abstracts\Exceptions\Exception as CoreException;
+use Nucleus\Abstracts\Exceptions\Exception as CoreException;
 use Nucleus\Exceptions\AuthenticationException as CoreAuthenticationException;
 use Nucleus\Exceptions\Handlers\ExceptionsHandler as CoreExceptionsHandler;
 use App\Ship\Exceptions\NotAuthorizedResourceException;

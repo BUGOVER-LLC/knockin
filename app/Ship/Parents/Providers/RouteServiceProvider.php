@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Ship\Parents\Providers;
 
-use Nucleus\src\Abstracts\Providers\RouteServiceProvider as AbstractRouteServiceProvider;
+use Nucleus\Abstracts\Providers\RouteServiceProvider as AbstractRouteServiceProvider;
 
 abstract class RouteServiceProvider extends AbstractRouteServiceProvider
 {
