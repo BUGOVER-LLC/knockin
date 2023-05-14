@@ -2,14 +2,14 @@
 
 namespace App\Ship\Exceptions\Handlers;
 
-use Nucleus\Abstracts\Exceptions\Exception as CoreException;
-use Nucleus\Exceptions\AuthenticationException as CoreAuthenticationException;
-use Nucleus\Exceptions\Handlers\ExceptionsHandler as CoreExceptionsHandler;
 use App\Ship\Exceptions\NotAuthorizedResourceException;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Providers\RouteServiceProvider;
 use Illuminate\Auth\AuthenticationException as LaravelAuthenticationException;
 use Illuminate\Http\JsonResponse;
+use Nucleus\Abstracts\Exceptions\Exception as CoreException;
+use Nucleus\Exceptions\AuthenticationException as CoreAuthenticationException;
+use Nucleus\Exceptions\Handlers\ExceptionsHandler as CoreExceptionsHandler;
 use Psr\Log\LogLevel;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;

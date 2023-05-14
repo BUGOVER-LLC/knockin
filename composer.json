@@ -11,6 +11,7 @@
   "require": {
     "php": "<=8.2.3",
     "php-64bit": "<=8.2.3",
+    "ext-gd": "*",
     "ext-pdo": "*",
     "ext-json": "*",
     "ext-curl": "*",
@@ -25,8 +26,6 @@
     "ext-igbinary": "*",
     "ext-mbstring": "*",
     "ext-calendar": "*",
-    "nucleus/devicer": "^0.2.0",
-    "nucleus/repository": "^1.0.0",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^1.0.0",
@@ -59,18 +58,6 @@
     "vimeo/psalm": "^5.0.0"
   },
   "repositories": [
-    {
-      "type": "vcs",
-      "name": "nucleus/repository",
-      "url": "https://github.com/BUGOVER-LLC/repository.git",
-      "branch": "main"
-    },
-    {
-      "type": "vcs",
-      "name": "nucleus/devicer",
-      "url": "https://github.com/BUGOVER-LLC/devicer.git",
-      "branch": "main"
-    }
   ],
   "autoload": {
     "psr-4": {

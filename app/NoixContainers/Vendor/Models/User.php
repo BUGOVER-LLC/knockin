@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Service\Models\Entity\ServiceAuthenticable;
-use Service\Models\Traits\UUID;
+use Nucleus\Models\Entity\ServiceAuthenticable;
+use Nucleus\Models\Traits\UUID;
 
 class User extends ServiceAuthenticable
 {
