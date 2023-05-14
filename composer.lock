@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eda350e69871b558618eec4a82dc734a",
+    "content-hash": "1462c6f86f1b97d3c04b03f0767096d6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4184,16 +4184,16 @@
         },
         {
             "name": "nucleus/repository",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:BUGOVER-LLC/repository.git",
-                "reference": "2e2c2f62d6cc2df7355edff4a3c067bcc752b568"
+                "reference": "f6b2211aee073c0596acc82c9e741970ad6859a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/repository/zipball/2e2c2f62d6cc2df7355edff4a3c067bcc752b568",
-                "reference": "2e2c2f62d6cc2df7355edff4a3c067bcc752b568",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/repository/zipball/f6b2211aee073c0596acc82c9e741970ad6859a4",
+                "reference": "f6b2211aee073c0596acc82c9e741970ad6859a4",
                 "shasum": ""
             },
             "require": {
@@ -4203,13 +4203,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Service\\Repository\\Provider"
+                        "Nucleus\\Repository\\Provider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Service\\Repository\\": "src/"
+                    "Nucleus\\Repository\\": "src/"
                 }
             },
             "license": [
@@ -4223,36 +4223,36 @@
             ],
             "description": "description",
             "support": {
-                "source": "https://github.com/BUGOVER-LLC/repository/tree/1.0.0",
+                "source": "https://github.com/BUGOVER-LLC/repository/tree/1.0.2",
                 "issues": "https://github.com/BUGOVER-LLC/repository/issues"
             },
-            "time": "2023-05-12T12:59:22+00:00"
+            "time": "2023-05-14T12:52:03+00:00"
         },
         {
             "name": "nucleus/role",
-            "version": "0.4.0",
+            "version": "0.4.8",
             "source": {
                 "type": "git",
                 "url": "git@github.com:BUGOVER-LLC/role.git",
-                "reference": "50db9ed774105abd3fcbcbb3b98a711e9f1e97c6"
+                "reference": "436666a81c141c747834a9da4d55eb8711abdc28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/role/zipball/50db9ed774105abd3fcbcbb3b98a711e9f1e97c6",
-                "reference": "50db9ed774105abd3fcbcbb3b98a711e9f1e97c6",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/role/zipball/436666a81c141c747834a9da4d55eb8711abdc28",
+                "reference": "436666a81c141c747834a9da4d55eb8711abdc28",
                 "shasum": ""
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Service\\Role\\RoleServiceProvider"
+                        "Nucleus\\Role\\RoleServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Service\\Role\\": "src/"
+                    "Nucleus\\Role\\": "src/"
                 }
             },
             "license": [
@@ -4266,23 +4266,23 @@
             ],
             "description": "description",
             "support": {
-                "source": "https://github.com/BUGOVER-LLC/role/tree/0.4.0",
+                "source": "https://github.com/BUGOVER-LLC/role/tree/0.4.8",
                 "issues": "https://github.com/BUGOVER-LLC/role/issues"
             },
-            "time": "2023-05-12T17:32:14+00:00"
+            "time": "2023-05-14T13:31:53+00:00"
         },
         {
             "name": "nucleus/socket",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:BUGOVER-LLC/socket.git",
-                "reference": "81f78a6077b8357482ab5a888a37d8357c58aff6"
+                "reference": "ed1595e74fd2d1819dbe8392c725237baee267d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/socket/zipball/81f78a6077b8357482ab5a888a37d8357c58aff6",
-                "reference": "81f78a6077b8357482ab5a888a37d8357c58aff6",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/socket/zipball/ed1595e74fd2d1819dbe8392c725237baee267d0",
+                "reference": "ed1595e74fd2d1819dbe8392c725237baee267d0",
                 "shasum": ""
             },
             "require": {
@@ -4296,13 +4296,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Service\\Socket\\Provider\\ManagerProvider"
+                        "Nucleus\\Socket\\Provider\\ManagerProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Service\\Socket\\": "src/"
+                    "Nucleus\\Socket\\": "src/"
                 }
             },
             "license": [
@@ -4316,10 +4316,10 @@
             ],
             "description": "description",
             "support": {
-                "source": "https://github.com/BUGOVER-LLC/socket/tree/0.2.0",
+                "source": "https://github.com/BUGOVER-LLC/socket/tree/0.2.1",
                 "issues": "https://github.com/BUGOVER-LLC/socket/issues"
             },
-            "time": "2023-05-12T14:20:45+00:00"
+            "time": "2023-05-14T12:47:00+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -15610,6 +15610,7 @@
     "platform": {
         "php": "<=8.2.3",
         "php-64bit": "<=8.2.3",
+        "ext-gd": "*",
         "ext-pdo": "*",
         "ext-json": "*",
         "ext-curl": "*",

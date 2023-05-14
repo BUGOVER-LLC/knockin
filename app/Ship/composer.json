@@ -54,11 +54,6 @@
       "branch": "main"
     }
   ],
-  "config": {
-    "github-oauth": {
-      "github.com": "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"
-    }
-  },
   "scripts": {
     "post-update-cmd": [
       "Illuminate\\Foundation\\ComposerScripts::postUpdate",

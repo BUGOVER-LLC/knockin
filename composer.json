@@ -121,6 +121,7 @@
     }
   },
   "provide": {
+    "ext-gd": "*",
     "ext-pdo": "*",
     "ext-json": "*",
     "ext-curl": "*",
