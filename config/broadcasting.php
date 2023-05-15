@@ -46,11 +46,6 @@ return [
             ],
         ],
 
-        'ably' => [
-            'driver' => 'ably',
-            'key' => env('ABLY_KEY'),
-        ],
-
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
@@ -64,5 +59,4 @@ return [
             'driver' => 'null',
         ],
     ],
-
 ];
