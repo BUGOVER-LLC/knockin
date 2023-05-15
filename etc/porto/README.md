@@ -71,9 +71,9 @@ large-scale enterprise application, **Porto** can help you build software that m
 <br>
 
 > **Note:** **Porto** started as an experimental architecture designed to solve common problems that web developers face
-when building large projects. Since its inception, **Porto** has become a beloved software architecture pattern among
-developers, offering a powerful set of tools for building scalable, maintainable, and reusable software. Feedbacks &
-Contributions are much appreciated.
+> when building large projects. Since its inception, **Porto** has become a beloved software architecture pattern among
+> developers, offering a powerful set of tools for building scalable, maintainable, and reusable software. Feedbacks &
+> Contributions are much appreciated.
 
 
 
@@ -879,22 +879,7 @@ SubAction that contains all the common code between both Actions.
 
 </Details>
 
-
-
-
-
-
-
 <br>
-
-
-
-
-
-
-
-
-
 
 <a id="Optional-Components"></a>
 
@@ -928,14 +913,6 @@ Feel free to add these components to your application as needed to improve its f
 
 
 <br>
-
-
-
-
-
-
-
-
 
 <a id="Typical-Container-Structure"></a>
 
@@ -1220,31 +1197,6 @@ and upgradability make Porto a great choice for projects that require flexibilit
 
 <a id="Implementations-Projects"></a>
 
-# Implementations
-
-> Feel free to list your implementation here.
-
-List of projects implementing the Porto architecture.
-
-- **PHP**
-    - **Laravel**
-        - [**Apiato**](http://apiato.io/) **(By the Porto creator)** A PHP Framework for building scalable API's on top
-          of Laravel.
-        - [**Laravel Large Project**](https://github.com/stasyanko/laravel-large-project) An example project to show how
-          to build large projects with Porto.
-    - **Zend Expressive**
-        - [**Expressive Porto**](https://github.com/lpj145/expressive-porto) An implementation of the Porto architecture
-          with Zend Expressive.
-- **JavaScript**
-- **Python**
-    - **Django**
-        - [**PyPorto**](https://github.com/discoroveryx/pyporto) A design for building scalable and testable
-          applications with Django Rest Framework.
-- **Ruby**
-- **Java**
-- **C#**
-- ...
-
 <a id="Feedback"></a>
 
 # Get in Touch
@@ -1274,16 +1226,6 @@ make it even better. If you have any suggestions or questions about **Porto**, f
      </tr>
   </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
 
 <a id="Donations"></a>
 
