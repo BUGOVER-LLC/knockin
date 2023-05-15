@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ship\Parents\Models;
 
-use Nucleus\Abstracts\Models\UserModel as AbstractUserModel;
-use Nucleus\Traits\CanOwnTrait;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Nucleus\Abstracts\Models\UserModel as AbstractUserModel;
+use Nucleus\Traits\CanOwnTrait;
 use Spatie\Permission\Traits\HasRoles;
 
 abstract class UserModel extends AbstractUserModel
