@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Commands;
+namespace Ship\Commands;
 
-use App\Ship\Parents\Commands\ConsoleCommand;
+use Ship\Parents\Commands\ConsoleCommand;
 
 class HelloWorldCommand extends ConsoleCommand
 {

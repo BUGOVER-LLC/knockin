@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Parents\Providers;
+namespace Ship\Parents\Providers;
 
 use Nucleus\Abstracts\Providers\RouteServiceProvider as AbstractRouteServiceProvider;
 

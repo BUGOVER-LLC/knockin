@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 use Service\Models\Entity\ServiceModel;
 
-class Country extends ServiceModel
+final class Country extends ServiceModel
 {
 }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Auth\Mail;
+namespace NoixContainers\Auth\Mail;
 
-use App\Ship\Parents\Mails\Mail;
+use Ship\Parents\Mails\Mail;
 
 class AcceptCode extends Mail
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Tests\PhpUnit;
+namespace Ship\Parents\Tests\PhpUnit;
 
 use Nucleus\Abstracts\Tests\PhpUnit\TestCase as AbstractTestCase;
 use Faker\Generator;

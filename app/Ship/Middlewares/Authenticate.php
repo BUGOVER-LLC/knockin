@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Ship\Middlewares;
+namespace Ship\Middlewares;
 
 use Nucleus\Middlewares\Http\Authenticate as CoreMiddleware;
-use App\Ship\Providers\RouteServiceProvider;
+use Ship\Providers\RouteServiceProvider;
 
 class Authenticate extends CoreMiddleware
 {

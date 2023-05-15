@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Criterias;
+namespace Ship\Parents\Criterias;
 
 use Nucleus\Abstracts\Criterias\Criteria as AbstractCriteria;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Kernels;
+namespace Ship\Kernels;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as LaravelConsoleKernel;

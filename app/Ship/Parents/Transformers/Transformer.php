@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Transformers;
+namespace Ship\Parents\Transformers;
 
 use Nucleus\Abstracts\Transformers\Transformer as AbstractTransformer;
 use Illuminate\Support\Facades\Auth;

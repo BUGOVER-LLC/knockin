@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Seeders;
+namespace Ship\Parents\Seeders;
 
 use Nucleus\Abstracts\Seeders\Seeder as AbstractSeeder;
 

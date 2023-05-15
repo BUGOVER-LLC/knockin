@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Models;
+namespace Ship\Parents\Models;
 
 use Nucleus\Abstracts\Models\Model as AbstractModel;
 use Nucleus\Traits\CanOwnTrait;

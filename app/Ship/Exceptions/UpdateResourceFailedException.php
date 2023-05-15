@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Ship\Exceptions;
+namespace Ship\Exceptions;
 
-use App\Ship\Parents\Exceptions\Exception;
+use Ship\Parents\Exceptions\Exception;
 use Symfony\Component\HttpFoundation\Response;
 
 class UpdateResourceFailedException extends Exception

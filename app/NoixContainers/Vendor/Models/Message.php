@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Service\Models\Entity\ServiceModel;
 
-class Message extends ServiceModel
+final class Message extends ServiceModel
 {
     /**
      * @var string

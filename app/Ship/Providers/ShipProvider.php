@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Providers;
+namespace Ship\Providers;
 
-use App\Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
+use Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 
 class ShipProvider extends ParentMainServiceProvider

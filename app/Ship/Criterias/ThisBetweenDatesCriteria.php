@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Ship\Criterias;
+namespace Ship\Criterias;
 
-use App\Ship\Parents\Criterias\Criteria;
+use Ship\Parents\Criterias\Criteria;
 use Carbon\Carbon;
 
 class ThisBetweenDatesCriteria extends Criteria

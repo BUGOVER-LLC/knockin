@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Service\Models\Entity\ServiceModel;
 
-class Participant extends ServiceModel
+final class Participant extends ServiceModel
 {
     protected $primaryKey = 'participant_id';
 

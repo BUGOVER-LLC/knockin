@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Controllers;
+namespace Ship\Parents\Controllers;
 
 use Nucleus\Abstracts\Controllers\ApiController as AbstractApiController;
 

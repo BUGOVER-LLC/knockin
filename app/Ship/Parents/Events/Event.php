@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Events;
+namespace Ship\Parents\Events;
 
 use Nucleus\Abstracts\Events\Event as AbstractEvent;
 

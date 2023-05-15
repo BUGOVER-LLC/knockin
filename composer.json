@@ -94,7 +94,7 @@
     "merge-plugin": {
       "include": [
         "app/Ship/composer.json",
-        "app/NoixContainers/*/composer.json"
+        "app/NoixContainer/*/composer.json"
       ],
       "recurse": true,
       "replace": false,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Middlewares;
+namespace Ship\Middlewares;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Factories;
+namespace Ship\Parents\Factories;
 
 use Nucleus\Abstracts\Factories\Factory as AbstractFactory;
 

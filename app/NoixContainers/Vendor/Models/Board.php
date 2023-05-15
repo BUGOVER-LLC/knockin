@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Service\Models\Entity\ServiceModel;
 
-class Board extends ServiceModel
+final class Board extends ServiceModel
 {
     /**
      * @var string

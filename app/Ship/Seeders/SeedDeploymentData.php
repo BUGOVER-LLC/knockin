@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Ship\Seeders;
+namespace Ship\Seeders;
 
-use App\Ship\Parents\Seeders\Seeder;
+use Ship\Parents\Seeders\Seeder;
 
 class SeedDeploymentData extends Seeder
 {

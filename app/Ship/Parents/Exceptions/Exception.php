@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Exceptions;
+namespace Ship\Parents\Exceptions;
 
 use Nucleus\Abstracts\Exceptions\Exception as AbstractException;
 

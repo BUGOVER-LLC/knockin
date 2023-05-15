@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Tasks;
+namespace Ship\Parents\Tasks;
 
 use Nucleus\Abstracts\Tasks\Task as AbstractTask;
 

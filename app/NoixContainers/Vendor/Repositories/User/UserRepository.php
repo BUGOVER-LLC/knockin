@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Repositories\User;
+namespace NoixContainers\Vendor\Repositories\User;
 
-use App\NoixContainers\Vendor\Models\User;
+use NoixContainers\Vendor\Models\User;
 use Illuminate\Contracts\Container\Container;
-use Service\Repository\Repositories\BaseRepository;
+use Nucleus\Repository\Repositories\BaseRepository;
 
 class UserRepository extends BaseRepository implements UserContract
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Service\Models\Entity\ServiceModel;
 
-class Channel extends ServiceModel
+final class Channel extends ServiceModel
 {
     /**
      * @var string

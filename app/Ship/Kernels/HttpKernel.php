@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Kernels;
+namespace Ship\Kernels;
 
-use App\Ship\Middlewares\Authenticate;
-use App\Ship\Middlewares\EncryptCookies;
-use App\Ship\Middlewares\PreventRequestsDuringMaintenance;
-use App\Ship\Middlewares\TrimStrings;
-use App\Ship\Middlewares\TrustProxies;
-use App\Ship\Middlewares\VerifyCsrfToken;
+use Ship\Middlewares\Authenticate;
+use Ship\Middlewares\EncryptCookies;
+use Ship\Middlewares\PreventRequestsDuringMaintenance;
+use Ship\Middlewares\TrimStrings;
+use Ship\Middlewares\TrustProxies;
+use Ship\Middlewares\VerifyCsrfToken;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Auth\Middleware\RequirePassword;

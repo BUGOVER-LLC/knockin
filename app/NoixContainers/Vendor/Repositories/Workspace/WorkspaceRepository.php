@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Repositories\Workspace;
+namespace NoixContainers\Vendor\Repositories\Workspace;
 
-use App\NoixContainers\Vendor\Models\Workspace;
+use NoixContainers\Vendor\Models\Workspace;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Collection;
-use Service\Repository\Repositories\BaseRepository;
+use Nucleus\Repository\Repositories\BaseRepository;
 
 class WorkspaceRepository extends BaseRepository implements WorkspaceContract
 {

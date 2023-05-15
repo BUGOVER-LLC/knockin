@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Requests;
+namespace Ship\Parents\Requests;
 
 use Nucleus\Abstracts\Requests\Request as AbstractRequest;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Actions;
+namespace Ship\Parents\Actions;
 
 use Nucleus\Abstracts\Actions\Action as AbstractAction;
 

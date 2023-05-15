@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Mails;
+namespace Ship\Parents\Mails;
 
 use Nucleus\Abstracts\Mails\Mail as AbstractMail;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Ship\Parents\Policies;
+namespace Ship\Parents\Policies;
 
 use Nucleus\Abstracts\Policies\Policy as AbstractPolicy;
-use App\Ship\Parents\Models\UserModel;
+use Ship\Parents\Models\UserModel;
 
 abstract class Policy extends AbstractPolicy
 {

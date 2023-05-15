@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Criterias;
+namespace Ship\Criterias;
 
-use App\Ship\Parents\Criterias\Criteria;
+use Ship\Parents\Criterias\Criteria;
 use Carbon\Carbon;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;
 

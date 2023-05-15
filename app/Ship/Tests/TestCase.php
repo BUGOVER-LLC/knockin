@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Ship\Tests;
+namespace Ship\Tests;
 
-use App\Ship\Parents\Tests\PhpUnit\TestCase as ShipTestCase;
+use Ship\Parents\Tests\PhpUnit\TestCase as ShipTestCase;
 
 class TestCase extends ShipTestCase
 {

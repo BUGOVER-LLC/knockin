@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1462c6f86f1b97d3c04b03f0767096d6",
+    "content-hash": "34a6ce94eb81cb7bd212253e554e9f22",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4227,49 +4227,6 @@
                 "issues": "https://github.com/BUGOVER-LLC/repository/issues"
             },
             "time": "2023-05-14T12:52:03+00:00"
-        },
-        {
-            "name": "nucleus/role",
-            "version": "0.4.8",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:BUGOVER-LLC/role.git",
-                "reference": "436666a81c141c747834a9da4d55eb8711abdc28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/role/zipball/436666a81c141c747834a9da4d55eb8711abdc28",
-                "reference": "436666a81c141c747834a9da4d55eb8711abdc28",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Nucleus\\Role\\RoleServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Nucleus\\Role\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "artak",
-                    "email": "email@example.com"
-                }
-            ],
-            "description": "description",
-            "support": {
-                "source": "https://github.com/BUGOVER-LLC/role/tree/0.4.8",
-                "issues": "https://github.com/BUGOVER-LLC/role/issues"
-            },
-            "time": "2023-05-14T13:31:53+00:00"
         },
         {
             "name": "nucleus/socket",

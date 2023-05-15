@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PersonalAccessToken extends \Laravel\Sanctum\PersonalAccessToken
+final class PersonalAccessToken extends \Laravel\Sanctum\PersonalAccessToken
 {
     /**
      * Get the tokenable model that the access token belongs to.

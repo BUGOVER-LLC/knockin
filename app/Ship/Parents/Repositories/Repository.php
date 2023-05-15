@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Repositories;
+namespace Ship\Parents\Repositories;
 
 use Nucleus\Abstracts\Repositories\Repository as AbstractRepository;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Providers;
+namespace Ship\Parents\Providers;
 
 use Nucleus\Abstracts\Providers\AuthServiceProvider as AbstractAuthServiceProvider;
 

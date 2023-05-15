@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Listeners;
+namespace Ship\Parents\Listeners;
 
 use Nucleus\Abstracts\Listeners\Listener as AbstractListener;
 

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Ship\Exceptions\Handlers;
+declare(strict_types=1);
 
-use App\Ship\Exceptions\NotAuthorizedResourceException;
-use App\Ship\Exceptions\NotFoundException;
-use App\Ship\Providers\RouteServiceProvider;
+namespace Ship\Exceptions\Handlers;
+
+use Ship\Exceptions\NotAuthorizedResourceException;
+use Ship\Exceptions\NotFoundException;
+use Ship\Providers\RouteServiceProvider;
 use Illuminate\Auth\AuthenticationException as LaravelAuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Nucleus\Abstracts\Exceptions\Exception as CoreException;
@@ -77,6 +79,10 @@ class ExceptionsHandler extends CoreExceptionsHandler
         });
     }
 
+    /**
+     * @param CoreException $e
+     * @return JsonResponse
+     */
     private function buildResponse(CoreException $e): JsonResponse
     {
         if (config('app.debug')) {
@@ -98,9 +104,14 @@ class ExceptionsHandler extends CoreExceptionsHandler
         return response()->json($response, (int)$e->getCode());
     }
 
-    protected function unauthenticated($request, LaravelAuthenticationException $e): JsonResponse|Response
+    /**
+     * @param $request
+     * @param LaravelAuthenticationException $e
+     * @return JsonResponse|Response
+     */
+    protected function unauthenticated($request, LaravelAuthenticationException $exception): JsonResponse|Response
     {
-        return $this->shouldReturnJson($request, $e)
+        return $this->shouldReturnJson($request, $exception)
             ? $this->buildResponse(new CoreAuthenticationException())
             : redirect()->guest(route(RouteServiceProvider::LOGIN));
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Values;
+namespace Ship\Parents\Values;
 
 use Nucleus\Abstracts\Values\Value as AbstractValue;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Ship\Criterias;
+namespace Ship\Criterias;
 
-use App\Ship\Parents\Criterias\Criteria;
+use Ship\Parents\Criterias\Criteria;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Prettus\Repository\Contracts\RepositoryInterface as PrettusRepositoryInterface;

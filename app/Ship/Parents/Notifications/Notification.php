@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ship\Parents\Notifications;
+namespace Ship\Parents\Notifications;
 
 use Nucleus\Abstracts\Notifications\Notification as AbstractNotification;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\NoixContainers\Vendor\Models;
+namespace NoixContainers\Vendor\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Nucleus\Models\Entity\ServiceAuthenticable;
 use Nucleus\Models\Traits\UUID;
 
-class User extends ServiceAuthenticable
+final class User extends ServiceAuthenticable
 {
     use UUID;
 
