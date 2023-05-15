@@ -1,160 +1,23 @@
 <?php
-/*
-|--------------------------------------------------------------------------
-| Prettus Repository Config
-|--------------------------------------------------------------------------
-|
-|
-*/
+
+declare(strict_types=1);
+
 return [
 
     /*
     |--------------------------------------------------------------------------
-    | Repository Pagination Limit Default
+    | Models Directory
     |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default models directory, just write
+    | directory name, like 'Models' not the full path.
+    |
+    | Default: 'Models'
     |
     */
-    'pagination' => [
+    'models' => 'Models',
 
-        'limit' => env('PAGINATION_LIMIT_DEFAULT', 10),
 
-        // if enabled it allows users to skip pagination by passing `?limit=0`.
-        'skip' => env('PAGINATION_SKIP', false),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Fractal Presenter Config
-    |--------------------------------------------------------------------------
-    |
-
-    Available serializers:
-    ArraySerializer
-    DataArraySerializer
-    JsonApiSerializer
-
-    */
-    'fractal' => [
-        'params' => [
-            'include' => 'include',
-        ],
-        'serializer' => League\Fractal\Serializer\DataArraySerializer::class,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Cache Config
-    |--------------------------------------------------------------------------
-    |
-    */
-    'cache' => [
-        /*
-         |--------------------------------------------------------------------------
-         | Cache Status
-         |--------------------------------------------------------------------------
-         |
-         | Enable or disable cache
-         |
-         */
-        'enabled' => env('ELOQUENT_QUERY_CACHE', false),
-
-        /*
-         |--------------------------------------------------------------------------
-         | Cache Minutes
-         |--------------------------------------------------------------------------
-         |
-         | Time of expiration cache
-         |
-         */
-        'minutes' => env('ELOQUENT_QUERY_CACHE_TIME', 30),
-
-        /*
-         |--------------------------------------------------------------------------
-         | Cache Repository
-         |--------------------------------------------------------------------------
-         |
-         | Instance of Illuminate\Contracts\Cache\Repository
-         |
-         */
-        'repository' => 'cache',
-
-        /*
-          |--------------------------------------------------------------------------
-          | Cache Clean Listener
-          |--------------------------------------------------------------------------
-          |
-          |
-          |
-          */
-        'clean' => [
-
-            /*
-              |--------------------------------------------------------------------------
-              | Enable clear cache on repository changes
-              |--------------------------------------------------------------------------
-              |
-              */
-            'enabled' => true,
-
-            /*
-              |--------------------------------------------------------------------------
-              | Actions in Repository
-              |--------------------------------------------------------------------------
-              |
-              | create : Clear Cache on create Entry in repository
-              | update : Clear Cache on update Entry in repository
-              | delete : Clear Cache on delete Entry in repository
-              |
-              */
-            'on' => [
-                'create' => true,
-                'update' => true,
-                'delete' => true,
-            ],
-        ],
-
-        'params' => [
-            /*
-            |--------------------------------------------------------------------------
-            | Skip Cache Params
-            |--------------------------------------------------------------------------
-            |
-            |
-            | Ex: http://prettus.local/?search=lorem&skipCache=true
-            |
-            */
-            'skipCache' => 'skipCache',
-        ],
-
-        /*
-        |--------------------------------------------------------------------------
-        | Methods Allowed
-        |--------------------------------------------------------------------------
-        |
-        | methods cacheable : all, paginate, find, findByField, findWhere, getByCriteria
-        |
-        | Ex:
-        |
-        | 'only'  =>['all','paginate'],
-        |
-        | or
-        |
-        | 'except'  =>['find'],
-        */
-        'allowed' => [
-            'only' => null,
-            'except' => null,
-        ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Criteria Config
-    |--------------------------------------------------------------------------
-    |
-    | Settings of request parameters names that will be used by Criteria
-    |
-    */
     'criteria' => [
         /*
         |--------------------------------------------------------------------------
@@ -176,6 +39,7 @@ return [
             'like',
             'in',
         ],
+
         /*
         |--------------------------------------------------------------------------
         | Request Params
@@ -186,64 +50,130 @@ return [
         | Params :
         |
         | - search : Searched value
-        |   Ex: http://prettus.local/?search=lorem
+        |   Ex: https://nyt.loc/?search=lorem
         |
         | - searchFields : Fields in which research should be carried out
         |   Ex:
-        |    http://prettus.local/?search=lorem&searchFields=name;email
-        |    http://prettus.local/?search=lorem&searchFields=name:like;email
-        |    http://prettus.local/?search=lorem&searchFields=name:like
+        |    https://nyt.loc/?search=lorem&searchFields=name;email
+        |    https://nyt.loc/?search=lorem&searchFields=name:like;email
+        |    https://nyt.loc/?search=lorem&searchFields=name:like
         |
         | - filter : Fields that must be returned to the response object
         |   Ex:
-        |   http://prettus.local/?search=lorem&filter=id,name
+        |   https://nyt.loc/?search=lorem&filter=id,name
         |
         | - orderBy : Order By
         |   Ex:
-        |   http://prettus.local/?search=lorem&orderBy=id
+        |   https://nyt.loc/?search=lorem&orderBy=id
         |
         | - sortedBy : Sort
         |   Ex:
-        |   http://prettus.local/?search=lorem&orderBy=id&sortedBy=asc
-        |   http://prettus.local/?search=lorem&orderBy=id&sortedBy=desc
+        |   https://nyt.loc/?search=lorem&orderBy=id&sortedBy=asc
+        |   https://nyt.loc/?search=lorem&orderBy=id&sortedBy=desc
         |
         | - searchJoin: Specifies the search method (AND / OR), by default the
         |               application searches each parameter with OR
         |   EX:
-        |   http://prettus.local/?search=lorem&searchJoin=and
-        |   http://prettus.local/?search=lorem&searchJoin=or
+        |   https://nyt.loc/?search=lorem&searchJoin=and
+        |   https://nyt.loc/?search=lorem&searchJoin=or
         |
         */
         'params' => [
             'search' => 'search',
             'searchFields' => 'searchFields',
-            'filter' => 'l5_filter', // we will override the filter in apiato (using fractal)
+            'filter' => 'filter',
             'orderBy' => 'orderBy',
             'sortedBy' => 'sortedBy',
-            'with' => 'l5_with', // use `include` instead (provided by fractal)
+            'with' => 'with',
             'searchJoin' => 'searchJoin',
             'withCount' => 'withCount',
         ],
     ],
+
     /*
-    |--------------------------------------------------------------------------
-    | Generator Config
-    |--------------------------------------------------------------------------
-    |
+       |--------------------------------------------------------------------------
+       | Caching Strategy
+       |--------------------------------------------------------------------------
     */
+    'cache' => [
+
+        /*
+        |--------------------------------------------------------------------------
+        | Cache Keys File
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify the cache keys file that is used only with cache
+        | drivers that does not support cache tags. It is mandatory to keep
+        | track of cache keys for later usage on cache flush process.
+        |
+        | Default: storage_path('framework/cache/repository.json')
+        |
+        */
+        'keys_file' => base_path('var/framework/cache/repository.json'),
+
+        /*
+        |--------------------------------------------------------------------------
+        | Cache Lifetime
+        |--------------------------------------------------------------------------
+        |
+        | Here you may specify the number of minutes that you wish the cache
+        | to be remembered before it expires. If you want the cache to be
+        | remembered forever, set this option to -1. 0 means disabled.
+        |
+        | Default: -1
+        |
+        */
+        'lifetime' => (int)env('QUERY_CACHE_LIFETIME', 2592000), //30 days
+
+        /*
+        |--------------------------------------------------------------------------
+        | Cache Clear
+        |--------------------------------------------------------------------------
+        |
+        | Specify which actions would you like to clear cache upon success.
+        | All repository cached data will be cleared accordingly.
+        |
+        | Default: ['CreateComponents', 'update', 'delete']
+        |
+        */
+        'clear_on' => [
+            'create',
+            'update',
+            'delete',
+        ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | Cache Skipping URI
+        |--------------------------------------------------------------------------
+        |
+        | For testing purposes, or maybe some certain situations, you may wish
+        | to skip caching layer and get fresh data result set just for the
+        | current request. This option allows you to specify custom
+        | URL parameter for skipping caching layer easily.
+        |
+        | Default: 'skipCache'
+        |
+        */
+        'skip_uri' => 'skipCache',
+    ],
+
+    /**
+     * Generators files path
+     */
     'generator' => [
-        'basePath' => env('SRC_PATH', app()->path()),
-        'rootNamespace' => env('ROOT_NAMESPACE', 'App').'\\',
+        'basePath' => app()->path(),
+        'rootNamespace' => 'Src\\',
         'stubsOverridePath' => app()->path(),
         'paths' => [
-            'models' => 'Entities',
+            'models' => 'Models',
             'repositories' => 'Repositories',
             'interfaces' => 'Repositories',
             'transformers' => 'Transformers',
             'presenters' => 'Presenters',
             'validators' => 'Validators',
             'controllers' => 'Http/Controllers',
-            'provider' => 'RepositoryServiceProvider',
+            'provider' => 'RepositoryModelProvider',
             'criteria' => 'Criteria',
         ],
     ],

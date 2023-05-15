@@ -20,3 +20,4 @@ yarn-error.log
 var
 .php-cs-fixer.cache
 app/*
+config/octane.php

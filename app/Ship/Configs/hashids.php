@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Copyright (c) Vincent Klaiber.
  *
@@ -8,7 +10,6 @@
  *
  * @see https://github.com/vinkla/laravel-hashids
  */
-
 return [
 
     /*
@@ -21,7 +22,6 @@ return [
     | connections at once using the manager class.
     |
     */
-
     'default' => 'main',
 
     /*
@@ -34,7 +34,6 @@ return [
     | you would like.
     |
     */
-
     'connections' => [
 
         'main' => [
@@ -44,9 +43,9 @@ return [
         ],
 
         'alternative' => [
-            'salt' => 'your-salt-string',
-            'length' => 'your-length-integer',
-            // 'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+            'salt' => env('HASH_ID_KEY', env('APP_KEY')),
+            'length' => env('HASH_ID_LENGTH', 64),
+            'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
         ],
 
     ],
