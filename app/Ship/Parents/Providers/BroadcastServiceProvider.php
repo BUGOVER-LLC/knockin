@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ship\Parents\Providers;
 
-use Nucleus\Abstracts\Providers\BroadcastServiceProvider as AbstractBroadcastServiceProvider;
 use Illuminate\Support\Facades\Broadcast;
+use Nucleus\Abstracts\Providers\BroadcastServiceProvider as AbstractBroadcastServiceProvider;
 
 /**
  * Class BroadcastServiceProvider

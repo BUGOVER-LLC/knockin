@@ -19,5 +19,5 @@ yarn-error.log
 /.vscode
 var
 .php-cs-fixer.cache
-app/*
+app/Ship
 config/octane.php
