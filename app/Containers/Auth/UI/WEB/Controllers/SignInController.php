@@ -36,6 +36,7 @@ class SignInController extends WebController
      */
     public function __invoke(Request $request): View|Factory
     {
+        dd(111);
         $is_sent_code = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']

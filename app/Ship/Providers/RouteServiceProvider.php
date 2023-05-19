@@ -8,6 +8,8 @@ use Ship\Parents\Providers\RouteServiceProvider as ParentRouteServiceProvider;
 
 class RouteServiceProvider extends ParentRouteServiceProvider
 {
+//    protected $namespace = '\Containers\Auth\UI\WEB\Controllers';
+
     /**
      * The name of the web "home" route for your application.
      *
