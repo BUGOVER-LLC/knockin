@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2bbe7937ba7eba48c1b86eb6e6b684d",
+    "content-hash": "fa0aac5586ba774a5ff9ca46211561ca",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4020,16 +4020,16 @@
         },
         {
             "name": "nucleus/core",
-            "version": "0.2.1",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:BUGOVER-LLC/nucleus.git",
-                "reference": "d15430dbcad313503f68c31a74feb8c7ef44bc9b"
+                "reference": "cce4b0983cce84bf66a942c35cee0e1395d26657"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/nucleus/zipball/d15430dbcad313503f68c31a74feb8c7ef44bc9b",
-                "reference": "d15430dbcad313503f68c31a74feb8c7ef44bc9b",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/nucleus/zipball/cce4b0983cce84bf66a942c35cee0e1395d26657",
+                "reference": "cce4b0983cce84bf66a942c35cee0e1395d26657",
                 "shasum": ""
             },
             "require": {
@@ -4095,10 +4095,10 @@
                 "nucleus core"
             ],
             "support": {
-                "source": "https://github.com/BUGOVER-LLC/nucleus/tree/0.2.1",
+                "source": "https://github.com/BUGOVER-LLC/nucleus/tree/0.4.1",
                 "issues": "https://github.com/BUGOVER-LLC/nucleus/issues"
             },
-            "time": "2023-05-16T20:58:54+00:00"
+            "time": "2023-05-18T23:53:52+00:00"
         },
         {
             "name": "nucleus/devicer",

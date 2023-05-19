@@ -10,7 +10,9 @@ class MainServiceProvider extends \Ship\Parents\Providers\MainServiceProvider
      * Container Service Providers.
      */
     public array $serviceProviders = [
-        AuthServiceProvider::class
+        AuthServiceProvider::class,
+        FortifyServiceProvider::class,
+        JetstreamWithTeamsServiceProvider::class,
     ];
 
     /**
