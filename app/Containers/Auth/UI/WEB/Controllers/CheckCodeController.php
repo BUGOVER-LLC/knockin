@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
-use Containers\Vendor\Models\User;
-use Containers\Vendor\Repositories\User\UserContract;
-use Containers\Vendor\Repositories\Workspace\WorkspaceContract;
+use App\Containers\Vendor\Models\User;
+use App\Containers\Vendor\Repositories\User\UserContract;
+use App\Containers\Vendor\Repositories\Workspace\WorkspaceContract;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
