@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\AppSection\Greeting\UI\WEB\Controllers;
 
-use Containers\Vendor\Repositories\Workspace\WorkspaceContract;
+use App\Containers\Vendor\Repositories\Workspace\WorkspaceContract;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;

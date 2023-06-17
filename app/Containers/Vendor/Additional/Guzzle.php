@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Src\Additional;
+namespace App\Containers\Vendor\Additional;
 
 
 use GuzzleHttp\Client;
