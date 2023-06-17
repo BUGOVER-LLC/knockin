@@ -4,16 +4,11 @@ declare(strict_types=1);
 
 namespace App\Containers\Vendor\Models;
 
-use App\Containers\Vendor\Models\Board;
-use App\Containers\Vendor\Models\BoardTask;
-use App\Containers\Vendor\Models\Channel;
-use App\Containers\Vendor\Models\User;
-use App\Containers\Vendor\Models\Worker;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 final class Workspace extends ServiceModel
 {

@@ -7,7 +7,7 @@ namespace App\Containers\Vendor\Models;
 use App\Containers\Vendor\Models\BoardTask;
 use App\Containers\Vendor\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 final class TaskExecution extends ServiceModel
 {

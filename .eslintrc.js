@@ -1,7 +1,6 @@
 /** @format */
 
 module.exports = {
-    parser: '@typescript-eslint/parser',
     extends: [
         'eslint:recommended',
         'plugin:vue/essential',
@@ -24,7 +23,7 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
     },
-    plugins: ['unused-imports', 'simple-import-sort', '@typescript-eslint'],
+    plugins: ['unused-imports', 'simple-import-sort', 'jsdoc', '@typescript-eslint'],
     overrides: [
         {
             files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
@@ -33,6 +32,13 @@ module.exports = {
     rules: {
         '@typescript-eslint/no-unused-vars': 'error',
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+        "jsdoc/no-types": 1,
+        "jsdoc/require-param-type": 0,
+        "jsdoc/require-property-type": 0,
+        "jsdoc/require-returns-type": 0,
+        "jsdoc/require-returns-description": 1,
+        "jsdoc/check-alignment": 1,
+        "jsdoc/check-line-alignment": 1,
         'import/no-unresolved': 'error',
         'accessor-pairs': 2,
         camelcase: [2, { properties: 'never' }],
@@ -153,12 +159,5 @@ module.exports = {
 
         'dot-notation': 'error',
         'arrow-body-style': 'error',
-        'jsdoc/no-types': 1,
-        'jsdoc/require-param-type': 0,
-        'jsdoc/require-property-type': 0,
-        'jsdoc/require-returns-type': 0,
-        'jsdoc/require-returns-description': 1,
-        'jsdoc/check-alignment': 1,
-        'jsdoc/check-line-alignment': 1,
     },
 };

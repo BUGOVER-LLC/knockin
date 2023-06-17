@@ -1,11 +1,12 @@
 parameters:
     paths:
-        - Asset
+        - app
         - src
+        - routes
         - config
         - tests
     level: 5
-    phpVersion: 80200
+    phpVersion: 80100
     inferPrivatePropertyTypeFromConstructor: true
     checkMissingIterableValueType: true
     customRulesetUsed: true
