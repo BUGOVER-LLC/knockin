@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
+use App\Containers\Vendor\MainConsts;
 use Containers\Auth\Jobs\SendMailQueue;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,7 +12,6 @@ use Illuminate\Support\Str;
 use Redis;
 use RedisException;
 use Ship\Parents\Controllers\WebController;
-use Src\MainConsts;
 
 class CheckEmailController extends WebController
 {

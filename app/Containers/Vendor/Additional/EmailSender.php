@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Additional;
+namespace App\Containers\Vendor\Additional;
 
 use Illuminate\Support\Facades\DB;
 

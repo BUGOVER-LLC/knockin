@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
+use App\Containers\Vendor\MainConsts;
 use App\Containers\Vendor\Models\User;
 use App\Containers\Vendor\Repositories\User\UserContract;
 use App\Containers\Vendor\Repositories\Workspace\WorkspaceContract;
@@ -20,7 +21,6 @@ use Laravel\Octane\Exceptions\DdException;
 use Redis;
 use RedisException;
 use Ship\Parents\Controllers\WebController;
-use Src\MainConsts;
 
 class CheckCodeController extends WebController
 {

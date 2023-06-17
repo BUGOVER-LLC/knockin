@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Src\Redis;
+namespace App\Containers\Vendor\Redis;
 
+use App\Containers\Vendor\Redis\Connectors\RedisConnector;
 use Closure;
 use Illuminate\Contracts\Redis\Connector;
 use Illuminate\Redis\Connectors\PredisConnector;
-use Src\Redis\Connectors\RedisConnector;
 
 /**
  *

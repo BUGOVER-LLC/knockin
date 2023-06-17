@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src;
+namespace App\Containers\Vendor;
 
 class MainConsts
 {

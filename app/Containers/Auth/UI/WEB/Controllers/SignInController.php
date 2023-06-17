@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
+use App\Containers\Vendor\MainConsts;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Redis;
 use RedisException;
 use Ship\Parents\Controllers\WebController;
-use Src\MainConsts;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**

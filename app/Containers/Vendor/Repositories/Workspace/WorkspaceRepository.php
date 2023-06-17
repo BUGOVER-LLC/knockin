@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\Vendor\Repositories\Workspace;
 
-use App\Containers\Vendor\Repositories\Workspace\WorkspaceContract;
 use App\Containers\Vendor\Models\Workspace;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Collection;

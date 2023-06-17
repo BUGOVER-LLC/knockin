@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Containers\Auth\Jobs;
 
+use App\Containers\Vendor\MainConsts;
 use Containers\Auth\Mail\AcceptCode;
 use Illuminate\Support\Facades\Mail;
 use Ship\Parents\Jobs\Job;
-use Src\MainConsts;
 
 /**
  * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
