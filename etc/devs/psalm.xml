@@ -3,14 +3,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
-    errorLevel="1"
-    errorBaseline="psalm-baseline.xml"
+    errorLevel="7"
     phpVersion="8.1"
-    findUnusedBaselineEntry="1"
+    findUnusedBaselineEntry="true"
+    checkForThrowsDocblock="true"
+    findUnusedCode="true"
+    findUnusedVariablesAndParams="true"
+    strictBinaryOperands="true"
+    maxStringLength="120"
+    includePhpVersionsInErrorBaseline="true"
 >
     <projectFiles>
         <directory name="app"/>
-        <directory name="src"/>
         <ignoreFiles>
             <directory name="vendor"/>
             <directory name="tests"/>
@@ -20,8 +24,4 @@
     <issueHandlers>
         <LessSpecificReturnType errorLevel="info"/>
     </issueHandlers>
-
-    <stubs>
-        <file name="stubs"/>
-    </stubs>
 </psalm>
