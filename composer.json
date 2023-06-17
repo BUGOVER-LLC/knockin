@@ -115,9 +115,6 @@
         "service/*/composer.local.json",
         "service/*/composer.json"
       ],
-      "require": [
-        "service/*/composer.json"
-      ],
       "recurse": true,
       "replace": false,
       "ignore-duplicates": false,
