@@ -1,12 +1,15 @@
 {
   "require": {
+    "php": "<=8.2.3",
+    "php-64bit": "<=8.2.3",
+    "nikic/php-parser": "^4.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
   },
   "autoload": {
     "psr-4": {
-      "Containers\\Vendor\\": ""
+      "Containers\\AppSection\\Greeting\\": ""
     }
   }
 }
