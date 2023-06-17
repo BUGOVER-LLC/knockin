@@ -9,14 +9,23 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^8.2",
-    "ext-fileinfo": "*",
-    "ext-igbinary": "*",
-    "ext-openssl": "*",
+    "php": "<=8.2.3",
+    "php-64bit": "<=8.2.3",
+    "ext-gd": "*",
     "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "ext-zlib": "*",
     "ext-redis": "*",
-    "ext-sockets": "*",
+    "ext-pcntl": "*",
     "ext-swoole": "*",
+    "ext-bcmath": "*",
+    "ext-imagick": "*",
+    "ext-openssl": "*",
+    "ext-sockets": "*",
+    "ext-igbinary": "*",
+    "ext-mbstring": "*",
+    "ext-calendar": "*",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^1.0.0",
@@ -31,6 +40,7 @@
     "beyondcode/laravel-query-detector": "^1.0.0",
     "fakerphp/faker": "^1.20.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",
+    "jetbrains/phpstorm-stubs": "^2023.1",
     "laravel/horizon": "^5.0.0",
     "laravel/pint": "^1.0.0",
     "laravel/sail": "^1.0.0",
@@ -63,6 +73,23 @@
     "psr-4": {
       "Tests\\": "tests/"
     }
+  },
+  "provide": {
+    "ext-gd": "*",
+    "ext-pdo": "*",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "ext-zlib": "*",
+    "ext-redis": "*",
+    "ext-pcntl": "*",
+    "ext-swoole": "*",
+    "ext-bcmath": "*",
+    "ext-imagick": "*",
+    "ext-openssl": "*",
+    "ext-sockets": "*",
+    "ext-igbinary": "*",
+    "ext-mbstring": "*",
+    "ext-calendar": "*"
   },
   "scripts": {
     "post-autoload-dump": [
@@ -108,6 +135,12 @@
     "allow-plugins": {
       "pestphp/pest-plugin": true,
       "wikimedia/composer-merge-plugin": true
+    },
+    "platform": {
+      "php": "8.2"
+    },
+    "github-oauth": {
+      "github.com": "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"
     }
   },
   "minimum-stability": "stable",
