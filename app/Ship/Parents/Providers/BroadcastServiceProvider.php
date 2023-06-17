@@ -10,7 +10,7 @@ use Nucleus\Abstracts\Providers\BroadcastServiceProvider as AbstractBroadcastSer
 /**
  * Class BroadcastServiceProvider
  *
- * A.K.A. app/Providers/BroadcastServiceProvider.php
+ * A.K.A. Asset/Providers/BroadcastServiceProvider.php
  */
 abstract class BroadcastServiceProvider extends AbstractBroadcastServiceProvider
 {

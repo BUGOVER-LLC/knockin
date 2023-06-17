@@ -1,8 +1,7 @@
 parameters:
     paths:
-        - app
+        - Asset
         - src
-        - routes
         - config
         - tests
     level: 5

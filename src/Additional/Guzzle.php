@@ -50,7 +50,7 @@ final class Guzzle extends Client
             'timeout' => 30,
             'verify' => false,
             'connect_timeout' => 30,
-            'http_errors' => !('production' === config('app.env')),
+            'http_errors' => !('production' === config('Asset.env')),
             'curl' => [
                 CURLOPT_SSL_VERIFYHOST => 0,
                 CURLOPT_SSL_VERIFYPEER => 0,

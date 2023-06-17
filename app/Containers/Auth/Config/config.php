@@ -6,10 +6,10 @@ return [
 
     /*
      * All models in these directories will be scanned for ER diagram generation.
-     * By default, the `app` directory will be scanned recursively for models.
+     * By default, the `Asset` directory will be scanned recursively for models.
      */
     'directories' => [
-        base_path('app' . DIRECTORY_SEPARATOR . 'Models'),
+        base_path('Asset' . DIRECTORY_SEPARATOR . 'Models'),
     ],
 
     /*

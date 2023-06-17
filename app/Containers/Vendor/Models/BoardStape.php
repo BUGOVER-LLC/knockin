@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\Vendor\Models;
 
-use App\Containers\Vendor\Models\Board;
-use App\Containers\Vendor\Models\BoardTask;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Service\Models\Entity\ServiceModel;

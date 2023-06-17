@@ -73,7 +73,7 @@ class CheckCodeController extends WebController
         $user = $this->authorizeUser($request->email, $request->code);
         Cookie::forget('authenticator');
 
-        return jsponse(['message' => 'successful', 'redirect' => route('app.index-noix', ['target_id' => $user->uid])]);
+        return jsponse(['message' => 'successful', 'redirect' => route('Asset.index-noix', ['target_id' => $user->uid])]);
     }
 
     /**

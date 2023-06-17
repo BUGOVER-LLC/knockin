@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ship\Seeders;
 
 use Ship\Parents\Seeders\Seeder;
