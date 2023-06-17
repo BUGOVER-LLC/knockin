@@ -33,6 +33,6 @@ class GreetingIndexController extends WebController
 
 //        $this->workspaceContract->join('users', 'users.user_id', '=', 'workspaces.creator_id')->findAll();
 
-        return view('appSection@greeting::index.layout');
+        return view('appSection@greeting::index');
     }
 }

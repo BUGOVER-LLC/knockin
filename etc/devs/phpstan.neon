@@ -1,14 +1,12 @@
 parameters:
     paths:
-        - Asset
+        - app
         - src
         - routes
         - config
         - tests
-    level: 9
+    level: 5
+    phpVersion: 80100
     inferPrivatePropertyTypeFromConstructor: true
     checkMissingIterableValueType: true
-    excludePaths:
-        - %currentWorkingDirectory%/Asset/Providers/*
-    ignoreErrors:
-        - '#(.*)should return Illuminate\Http\RedirectResponse but returns Illuminate\Http\RedirectResponse|Illuminate\Routing\Redirector#'
+    customRulesetUsed: true

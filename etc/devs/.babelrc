@@ -1,25 +1,25 @@
 {
   "plugins": [
     [
-      "@babel/proposal-decorators",
+      "@babel/plugin-proposal-do-expressions",
       {
         "legacy": true
       }
     ],
     [
-      "@babel/proposal-class-properties",
+      "@babel/plugin-proposal-async-do-expressions",
       {
         "loose": true
       }
     ],
     [
-      "@babel/plugin-proposal-private-methods",
+      "@babel/plugin-transform-property-mutators",
       {
         "loose": true
       }
     ],
     [
-      "@babel/plugin-proposal-private-property-in-object",
+      "@babel/plugin-transform-runtime",
       {
         "loose": true
       }

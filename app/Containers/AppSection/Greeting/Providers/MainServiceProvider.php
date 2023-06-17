@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\Auth\Providers;
+namespace Containers\AppSection\Greeting\Providers;
 
 class MainServiceProvider extends \Ship\Parents\Providers\MainServiceProvider
 {
@@ -10,7 +10,6 @@ class MainServiceProvider extends \Ship\Parents\Providers\MainServiceProvider
      * Container Service Providers.
      */
     public array $serviceProviders = [
-        AuthServiceProvider::class,
     ];
 
     /**

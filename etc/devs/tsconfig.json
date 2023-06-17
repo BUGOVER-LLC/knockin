@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "es2022",
+    "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": ".",
     "strict": true,
@@ -12,19 +12,19 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "types": [
       "webpack-env",
       "node"
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "./asset/app/@types"
+      "./assets/app/@types"
     ],
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
-        "asset/*"
+        "assets/*"
       ]
     }
   },
@@ -33,6 +33,6 @@
   },
   "exclude": ["node_modules"],
   "include": [
-    "asset/**/*"
+    "assets/**/*"
   ]
 }
