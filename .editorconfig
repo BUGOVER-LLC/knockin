@@ -35,6 +35,11 @@ tab_width = 2
 [.env]
 max_line_length = 300
 
-[{composer.json, package.json, tsconfig.json, *.yaml, *.yml}]
+[{composer.json, package.json}]
 indent_size = 2
 tab_width = 2
+
+[{*.yaml, *.yml}]
+tab_width = 2
+indent_size = 2
+max_line_length = 120

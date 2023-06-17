@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Containers\Vendor\Models;
 
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 final class SharedTask extends ServiceModel
 {

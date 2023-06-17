@@ -10,8 +10,8 @@ namespace App\Containers\Vendor\Secure;
 final class SSLEncrypter
 {
     /**
-     * @param  string  $pure_string
-     * @param  string  $encryption_key
+     * @param string $pure_string
+     * @param string $encryption_key
      * @return string
      */
     public static function encrypt(string $pure_string, string $encryption_key = ''): string
@@ -31,8 +31,8 @@ final class SSLEncrypter
     }
 
     /**
-     * @param  string  $encrypted_string
-     * @param  string  $encryption_key
+     * @param string $encrypted_string
+     * @param string $encryption_key
      * @return false|string|void
      */
     public static function decrypt(string $encrypted_string, string $encryption_key = '')
@@ -59,8 +59,8 @@ final class SSLEncrypter
     }
 
     /**
-     * @param  string  $known_string
-     * @param  string  $user_string
+     * @param string $known_string
+     * @param string $user_string
      * @return bool
      */
     private static function hash_equals_custom(string $known_string, string $user_string): bool

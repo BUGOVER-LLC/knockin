@@ -7,7 +7,7 @@ namespace App\Containers\Vendor\Models;
 use App\Containers\Vendor\Models\User;
 use App\Containers\Vendor\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 final class PersonalMessage extends ServiceModel
 {

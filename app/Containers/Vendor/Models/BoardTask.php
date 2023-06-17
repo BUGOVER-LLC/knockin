@@ -11,7 +11,7 @@ use App\Containers\Vendor\Models\TaskExecution;
 use App\Containers\Vendor\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 use Znck\Eloquent\Relations\BelongsToThrough;
 
 final class BoardTask extends ServiceModel
