@@ -1,6 +1,6 @@
 parameters:
     paths:
-        - app
+        - Asset
         - src
         - routes
         - config
@@ -9,6 +9,6 @@ parameters:
     inferPrivatePropertyTypeFromConstructor: true
     checkMissingIterableValueType: true
     excludePaths:
-        - %currentWorkingDirectory%/app/Providers/*
+        - %currentWorkingDirectory%/Asset/Providers/*
     ignoreErrors:
         - '#(.*)should return Illuminate\Http\RedirectResponse but returns Illuminate\Http\RedirectResponse|Illuminate\Routing\Redirector#'

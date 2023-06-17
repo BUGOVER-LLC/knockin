@@ -28,7 +28,7 @@ class RedisConnector extends PhpRedisConnector
             if ($client instanceof RedisFacade) {
                 throw new LogicException(
                     \extension_loaded('redis')
-                        ? 'Please remove or rename the Redis facade alias in your "app" configuration file in order to avoid collision with the PHP Redis extension.'
+                        ? 'Please remove or rename the Redis facade alias in your "Asset" configuration file in order to avoid collision with the PHP Redis extension.'
                         : 'Please make sure the PHP Redis extension is installed and enabled.'
                 );
             }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('Asset.name', 'Laravel') }}</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -9,12 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{--CLient App Style--}}
-    <link rel="stylesheet" href="{{ mix('builds/app/css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('builds/Asset/css/Asset.css') }}">
 
     {{--Client APP Script--}}
     <script src="{{ asset('builds/vendor/manifest.js') }}"></script>
     <script src="{{ asset('builds/vendor/vendor.js') }}"></script>
-    <script defer src="{{ asset('builds/index/js/app.js') }}"></script>
+    <script defer src="{{ asset('builds/index/js/Asset.js') }}"></script>
 </head>
 <body id="main-content-app-knock q-app">
 <div id="index-knock" style='height: 100%;'>

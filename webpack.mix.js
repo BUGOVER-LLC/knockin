@@ -15,7 +15,7 @@ if ('local' !== environment) {
      * =================================================================================================================
      */
     require('./assets/auth/webpack.prod');
-    require('./assets/app/webpack.prod');
+    require('./assets/Asset/webpack.prod');
 
     mix.webpackConfig({
         plugins: [
@@ -32,7 +32,7 @@ if ('local' !== environment) {
      * =================================================================================================================
      */
     require('./assets/auth/webpack.dev');
-    require('./assets/app/webpack.dev');
+    require('./assets/Asset/webpack.dev');
 
     if (strictMode) {
         mix.sourceMaps().webpackConfig(

@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\Vendor\Models;
 
-use App\Containers\Vendor\Models\BoardStape;
-use App\Containers\Vendor\Models\BoardTask;
-use App\Containers\Vendor\Models\SharedBoard;
-use App\Containers\Vendor\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;

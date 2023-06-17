@@ -9,7 +9,7 @@ use Nucleus\Abstracts\Jobs\Job as AbstractJob;
 /**
  * Class Job
  *
- * A.K.A. (app/Jobs/Job.php)
+ * A.K.A. (Asset/Jobs/Job.php)
  */
 abstract class Job extends AbstractJob
 {

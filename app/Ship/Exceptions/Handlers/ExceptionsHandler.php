@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Ship\Exceptions\Handlers;
 
-use Ship\Exceptions\NotAuthorizedResourceException;
-use Ship\Exceptions\NotFoundException;
-use Ship\Providers\RouteServiceProvider;
 use Illuminate\Auth\AuthenticationException as LaravelAuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Nucleus\Abstracts\Exceptions\Exception as CoreException;
 use Nucleus\Exceptions\AuthenticationException as CoreAuthenticationException;
 use Nucleus\Exceptions\Handlers\ExceptionsHandler as CoreExceptionsHandler;
 use Psr\Log\LogLevel;
+use Ship\Exceptions\NotAuthorizedResourceException;
+use Ship\Exceptions\NotFoundException;
+use Ship\Providers\RouteServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -21,7 +21,7 @@ use Throwable;
 /**
  * Class ExceptionsHandler
  *
- * A.K.A. (app/Exceptions/Handler.php)
+ * A.K.A. (Asset/Exceptions/Handler.php)
  */
 class ExceptionsHandler extends CoreExceptionsHandler
 {
@@ -85,7 +85,7 @@ class ExceptionsHandler extends CoreExceptionsHandler
      */
     private function buildResponse(CoreException $e): JsonResponse
     {
-        if (config('app.debug')) {
+        if (config('Asset.debug')) {
             $response = [
                 'message' => $e->getMessage(),
                 'errors' => $e->getErrors(),

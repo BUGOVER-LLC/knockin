@@ -7,7 +7,7 @@ use Nucleus\Abstracts\Providers\EventServiceProvider as AbstractEventServiceProv
 /**
  * Class EventServiceProvider
  *
- * A.K.A. app/Providers/EventServiceProvider.php
+ * A.K.A. Asset/Providers/EventServiceProvider.php
  */
 abstract class EventServiceProvider extends AbstractEventServiceProvider
 {

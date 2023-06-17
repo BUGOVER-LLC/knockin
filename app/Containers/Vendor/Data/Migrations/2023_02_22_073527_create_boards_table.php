@@ -21,7 +21,7 @@ return new class extends Migration {
             $table->string('title');
             $table->timestamps();
         });
-        DB::statement('ALTER TABLE app.boards ADD COLUMN terms daterange NULL');
+        DB::statement('ALTER TABLE Asset.boards ADD COLUMN terms daterange NULL');
     }
 
     /**

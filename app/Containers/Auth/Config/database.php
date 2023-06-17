@@ -61,7 +61,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => env('DB_SCHEMA_APP', 'app'),
+            'search_path' => env('DB_SCHEMA_APP', 'Asset'),
             'sslmode' => 'prefer',
         ],
     ],
