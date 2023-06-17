@@ -94,16 +94,15 @@
     "merge-plugin": {
       "include": [
         "app/Ship/composer.json",
-        "app/Containers/*/composer.json",
-        "app/Containers/*/*/composer.json"
+        "app/Containers/Auth/composer.json",
+        "app/Containers/AppSection/Greeting/composer.json"
       ],
       "recurse": true,
       "replace": false,
-      "ignore-duplicates": false,
       "merge-dev": true,
       "merge-extra": false,
       "merge-extra-deep": false,
-      "merge-scripts": false
+      "merge-scripts": true
     }
   },
   "config": {
