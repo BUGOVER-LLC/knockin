@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
-import { MainComponent } from '@/Asset/@core/Main/MainComponent';
+import { MainComponent } from '@/@core/Main/MainComponent';
 
 @Component({})
 export default class SystemBar extends Vue implements MainComponent {

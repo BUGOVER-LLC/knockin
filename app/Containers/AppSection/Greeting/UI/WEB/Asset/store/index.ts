@@ -6,9 +6,9 @@ import VuexPersistence from 'vuex-persist';
 
 Vue.use(Vuex);
 
-import { AbstractModel } from '@/Asset/store/models/AbstractModel';
-import { MessageModel } from '@/Asset/store/models/MessageModel';
-import { WorkspaceModels } from '@/Asset/store/models/WorkspaceModels';
+import { AbstractModel } from '@/store/models/AbstractModel';
+import { MessageModel } from '@/store/models/MessageModel';
+import { WorkspaceModels } from '@/store/models/WorkspaceModels';
 
 export type ModulesState = {
     abstractModule: AbstractModel;

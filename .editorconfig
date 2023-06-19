@@ -32,6 +32,11 @@ indent_size = 2
 max_line_length = 80
 tab_width = 2
 
+[tsconfig.json]
+indent_size = 2
+max_line_length = 80
+tab_width = 2
+
 [.env]
 max_line_length = 300
 

@@ -17,6 +17,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Laravel\Octane\Exceptions\DdException;
 use Redis;
 use RedisException;
@@ -31,7 +32,8 @@ class CheckCodeController extends WebController
         protected readonly Redis $redis,
         protected readonly UserContract $userContract,
         protected readonly WorkspaceContract $workspaceContract
-    ) {
+    )
+    {
         $this->redis->connect('localhost');
     }
 
@@ -42,8 +44,8 @@ class CheckCodeController extends WebController
      * @return Redirector|RedirectResponse|JsonResponse
      * @throws RedisException|DdException
      */
-    public function __invoke(Request $request
-    ): Redirector|RedirectResponse|JsonResponse {
+    public function __invoke(Request $request): Redirector|RedirectResponse|JsonResponse
+    {
         $is_sent_code = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']
@@ -92,7 +94,7 @@ class CheckCodeController extends WebController
                     ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
                 );
             } catch (Exception $exception) {
-                dd($exception->getMessage());
+                logging($exception);
             }
 
             if (!$user) {

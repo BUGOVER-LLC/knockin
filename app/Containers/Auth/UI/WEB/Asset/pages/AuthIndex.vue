@@ -43,7 +43,7 @@
                         <VCol cols="12">
                             <!-- login button -->
                             <VBtn
-                                v-if="1 === this.step"
+                                v-if="1 === step"
                                 :disabled="!emailValidation.valid"
                                 :loading="loader"
                                 block
@@ -74,12 +74,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import { extend, ValidationProvider } from 'vee-validate';
-import { email, max, min, required } from 'vee-validate/dist/rules';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import EmailSender from '@/auth/components/started/EmailSender.vue';
-import ConfirmCode from '@/auth/components/started/ConfirmCode.vue';
+import { ValidationProvider, extend } from 'vee-validate';
+import { email, max, min, required } from 'vee-validate/dist/rules';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+
+import ConfirmCode from '@/components/started/ConfirmCode.vue';
+import EmailSender from '@/components/started/EmailSender.vue';
 
 extend('required', required);
 extend('min', min);
@@ -93,9 +94,9 @@ export default class AuthIndex extends Vue {
     @Prop({ required: true }) private readonly code: boolean = false;
     @Prop({ required: false }) private readonly email: string = '';
 
-    private step: number = 1;
-    private loader: boolean = false;
-    private disabledOtp: boolean = false;
+    private step = 1;
+    private loader = false;
+    private disabledOtp = false;
 
     private emailValidation = { valid: false, email: '', sent: false };
     private codeValidation = { valid: false, code: '', sent: false };

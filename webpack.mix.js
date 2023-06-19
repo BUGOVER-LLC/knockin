@@ -14,8 +14,8 @@ if ('local' !== environment) {
      * 💣    For complex build all bundles, Production or Development environments
      * =================================================================================================================
      */
-    require('./assets/auth/webpack.prod');
-    require('./assets/Asset/webpack.prod');
+    require('./app/Containers/AppSection/Greeting/UI/WEB/Asset/webpack.prod');
+    require('./app/Containers/Auth/UI/WEB/Asset/webpack.prod');
 
     mix.webpackConfig({
         plugins: [
@@ -31,8 +31,8 @@ if ('local' !== environment) {
      * 🤠    Uncomment the one, on which you work and run your ran watch, dev or prod, for local development environment
      * =================================================================================================================
      */
-    require('./assets/auth/webpack.dev');
-    require('./assets/Asset/webpack.dev');
+    // require('./app/Containers/AppSection/Greeting/UI/WEB/Asset/webpack.dev');
+    require('./app/Containers/Auth/UI/WEB/Asset/webpack.dev');
 
     if (strictMode) {
         mix.sourceMaps().webpackConfig(
@@ -50,7 +50,8 @@ mix.webpackConfig(
         resolve: {
             extensions: ['.js', '.ts', '.vue'],
             alias: {
-                '@': path.resolve(__dirname, './assets'),
+                '@': path.resolve(__dirname, './app/Containers/AppSection/Greeting/UI/WEB/Asset'),
+                '@': path.resolve(__dirname, './app/Containers/Auth/UI/WEB/Asset'),
             },
         },
         optimization: {

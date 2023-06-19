@@ -1,8 +1,6 @@
 {
     "/builds/auth/js/app.js": "/builds/auth/js/app.js",
-    "/builds/app/js/app.js": "/builds/app/js/app.js",
     "/builds/vendor/manifest.js": "/builds/vendor/manifest.js",
     "/builds/vendor/vendor.js": "/builds/vendor/vendor.js",
-    "/builds/app/css/app.css": "/builds/app/css/app.css",
     "/builds/auth/css/app.css": "/builds/auth/css/app.css"
 }

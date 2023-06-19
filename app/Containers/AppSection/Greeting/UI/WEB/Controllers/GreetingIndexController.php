@@ -12,6 +12,9 @@ use Ship\Parents\Controllers\WebController;
 
 class GreetingIndexController extends WebController
 {
+    /**
+     * @param WorkspaceContract $workspaceContract
+     */
     public function __construct(protected WorkspaceContract $workspaceContract)
     {
     }
@@ -31,7 +34,7 @@ class GreetingIndexController extends WebController
 //        $this->workspaceContract->where('workspace_id', '!=', null)->deletes();
 //        $this->workspaceContract->whereIn('workspace_id', [33694, 33695, 33696, 33697, 33698, 33703, 33709, 33713, 33714, 33717, 33718])->findAll();
 
-//        $this->workspaceContract->join('users', 'users.user_id', '=', 'workspaces.creator_id')->findAll();
+        $this->workspaceContract->join('users', 'users.user_id', '=', 'workspaces.creator_id')->findAll();
 
         return view('appSection@greeting::index');
     }
