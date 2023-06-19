@@ -49,6 +49,6 @@ class SignInController extends WebController
             $has_accept_code = igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
         }
 
-        return view('auth::auth.layout', ['code' => $has_accept_code, 'email' => $request->email]);
+        return view('containers@auth::index', ['code' => $has_accept_code, 'email' => $request->email]);
     }
 }

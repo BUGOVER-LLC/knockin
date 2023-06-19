@@ -3,8 +3,8 @@
 const mix = require('laravel-mix');
 
 mix.vue({ version: 2 })
-    .ts('assets/auth/app.ts', 'public/builds/auth/js/app.js')
-    .sass('assets/auth/style/app.scss', 'public/builds/auth/css/app.css')
+    .ts('app/Containers/Auth/UI/WEB/Asset/app.ts', 'public/builds/auth/js/app.js')
+    .sass('app/Containers/Auth/UI/WEB/Asset/style/app.scss', 'public/builds/auth/css/app.css')
     .webpackConfig({
         output: {
             chunkFilename: 'builds/chunks/[name].js',

@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import DrawerDrag from '@/app/components/DrawerDrag.vue';
+import DrawerDrag from '@/components/DrawerDrag.vue';
 
 @Component({
     components: { DrawerDrag },

@@ -1,10 +1,10 @@
 <!-- @format -->
 
 <template lang="html">
-    <ValidationProvider name="email" rules="min:6|email|required|max:150" mode="passive" v-slot="{ errors }">
+    <ValidationProvider v-slot="{ errors }" name="email" rules="min:6|email|required|max:150" mode="passive">
         <VTextField
-            autofocus
             v-model="email"
+            autofocus
             label="Email"
             type="email"
             outlined
@@ -19,10 +19,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Vue, Prop } from 'vue-property-decorator';
-import { extend, validate, ValidationProvider } from 'vee-validate';
-import { email, required, min, max } from 'vee-validate/dist/rules';
-import { MainComponent } from '@/app/@core/Main/MainComponent';
+import { ValidationProvider, extend, validate } from 'vee-validate';
+import { email, max, min, required } from 'vee-validate/dist/rules';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+
+import { MainComponent } from '@/@core/Main/MainComponent';
 
 extend('required', required);
 extend('email', email);
@@ -36,8 +37,8 @@ extend('max', max);
 export default class EmailSender extends Vue implements MainComponent {
     @Prop({ required: false }) private readonly emailValue: string = '';
 
-    protected email: string = '';
-    protected valid: boolean = false;
+    protected email = '';
+    protected valid = false;
 
     mounted(): void {}
 

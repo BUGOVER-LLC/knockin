@@ -11,6 +11,7 @@ class MainServiceProvider extends \Ship\Parents\Providers\MainServiceProvider
      */
     public array $serviceProviders = [
         AuthServiceProvider::class,
+        MiddlewareServiceProvider::class
     ];
 
     /**

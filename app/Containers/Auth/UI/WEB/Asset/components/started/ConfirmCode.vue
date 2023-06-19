@@ -3,7 +3,7 @@
 <template>
     <div>
         <div class="text--accent-1">Accept code sent your email! (you have 5 minutes)</div>
-        <ValidationProvider name="code" rules="required|min:6|max:6" mode="passive" v-slot="{ errors }">
+        <ValidationProvider v-slot="{ errors }" name="code" rules="required|min:6|max:6" mode="passive">
             <v-otp-input
                 v-model="code"
                 type="text"
@@ -20,11 +20,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, PropSync, Vue, Watch } from 'vue-property-decorator';
-import { extend, validate, ValidationProvider } from 'vee-validate';
-import { min, max, required } from 'vee-validate/dist/rules';
 import { VueMaskDirective, VueMaskFilter } from 'v-mask';
-import { MainComponent } from '@/app/@core/Main/MainComponent';
+import { ValidationProvider, extend, validate } from 'vee-validate';
+import { max, min, required } from 'vee-validate/dist/rules';
+import { Component, Emit, PropSync, Vue, Watch } from 'vue-property-decorator';
+
+import { MainComponent } from '@/@core/Main/MainComponent';
 
 extend('required', required);
 extend('min', min);
@@ -36,10 +37,10 @@ extend('max', max);
     filters: { VMask: VueMaskFilter },
 })
 export default class ConfirmCode extends Vue implements MainComponent {
-    @PropSync('disabledSync') public disabled: boolean = false;
+    @PropSync('disabledSync') public disabled = false;
 
-    private loader: boolean = false;
-    private length: number = 6;
+    private loader = false;
+    private length = 6;
     private code: string | number = '';
 
     created(): void {}

@@ -2,19 +2,28 @@
 
 declare(strict_types=1);
 
+use Containers\Auth\UI\WEB\Controllers\CheckCodeController;
+use Containers\Auth\UI\WEB\Controllers\CheckEmailController;
 use Containers\Auth\UI\WEB\Controllers\SignInController;
 use Illuminate\Support\Facades\Route;
 
+$route_attributes = [
+    'prefix' => 'auth',
+    'name' => 'auth',
+    'as' => 'auth.',
+    'middleware' => ['guest'],
+    'namespace' => '\Containers\Auth\UI\WEB\Controllers'
+];
 
-Route::group(['middleware' => ['guest'], 'prefix' => 'auth', 'namespace' => '\Containers\Auth\UI\WEB\Controllers'],
-    static fn() => [
-        Route::get('/', SignInController::class)
-            ->name('auth.get_sign'),
+Route::group($route_attributes, static fn() => [
+    Route::get('/', SignInController::class)
+        ->name('auth.get_sign'),
 
-        Route::post('check-code', '\Containers\Auth\UI\WEB\Controllers\CheckCodeController')
-            ->name('auth.check-code'),
+    Route::post('check-code', CheckCodeController::class)
+        ->name('auth.check-code'),
 
-        Route::post('check-email', '\Containers\Auth\UI\WEB\Controllers\CheckEmailController')
-            ->name('auth.check-email'),
-    ]
-);
+    Route::post('check-email', CheckEmailController::class)
+        ->name('auth.check-email'),
+
+    Route::get('{any}', SignInController::class)->where('any', '.*'),
+]);
