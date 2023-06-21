@@ -23,6 +23,6 @@ class AcceptCode extends Mail
         return $this
             ->to($this->froms)
             ->with(['accept_code' => $this->body['accept_code']])
-            ->markdown('mails.accept-code', $this->body);
+            ->view('mails.accept-code', $this->body);
     }
 }

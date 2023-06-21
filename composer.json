@@ -58,8 +58,6 @@
     "swoole/ide-helper": "^5.0.0",
     "vimeo/psalm": "^5.0.0"
   },
-  "repositories": [
-  ],
   "autoload": {
     "psr-4": {
       "App\\": "app/",
@@ -117,7 +115,7 @@
       "php": "8.2"
     },
     "github-oauth": {
-      "github.com": "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"
+      "github.com": "${GITHUB_AUTH}"
     }
   },
   "provide": {
