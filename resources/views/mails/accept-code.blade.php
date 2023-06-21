@@ -8,6 +8,8 @@
 </head>
 <body>
 <h1>Your code is</h1>
-<code>{{ $accept_code }}</code>
+<h3>
+    <code>{{ $accept_code }}</code>
+</h3>
 </body>
 </html>

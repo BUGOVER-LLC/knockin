@@ -17,7 +17,6 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Laravel\Octane\Exceptions\DdException;
 use Redis;
 use RedisException;
@@ -29,8 +28,8 @@ class CheckCodeController extends WebController
      * @throws RedisException
      */
     public function __construct(
-        protected readonly Redis $redis,
-        protected readonly UserContract $userContract,
+        protected readonly Redis             $redis,
+        protected readonly UserContract      $userContract,
         protected readonly WorkspaceContract $workspaceContract
     )
     {
@@ -82,7 +81,6 @@ class CheckCodeController extends WebController
      * @param string $email
      * @param string $code
      * @return null|User
-     * @throws DdException
      */
     private function authorizeUser(string $email, string $code): ?User
     {

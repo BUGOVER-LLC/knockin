@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5288db5b7973461603b124ba7c2ab38",
+    "content-hash": "218e3d0d1ea7e486703b4473e838206c",
     "packages": [
         {
             "name": "beyondcode/laravel-websockets",
@@ -208,16 +208,16 @@
         },
         {
             "name": "defuse/php-encryption",
-            "version": "v2.3.1",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/defuse/php-encryption.git",
-                "reference": "77880488b9954b7884c25555c2a0ea9e7053f9d2"
+                "reference": "f53396c2d34225064647a05ca76c1da9d99e5828"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/defuse/php-encryption/zipball/77880488b9954b7884c25555c2a0ea9e7053f9d2",
-                "reference": "77880488b9954b7884c25555c2a0ea9e7053f9d2",
+                "url": "https://api.github.com/repos/defuse/php-encryption/zipball/f53396c2d34225064647a05ca76c1da9d99e5828",
+                "reference": "f53396c2d34225064647a05ca76c1da9d99e5828",
                 "shasum": ""
             },
             "require": {
@@ -226,7 +226,8 @@
                 "php": ">=5.6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4|^5|^6|^7|^8|^9"
+                "phpunit/phpunit": "^5|^6|^7|^8|^9|^10",
+                "yoast/phpunit-polyfills": "^2.0.0"
             },
             "bin": [
                 "bin/generate-defuse-key"
@@ -268,9 +269,9 @@
             ],
             "support": {
                 "issues": "https://github.com/defuse/php-encryption/issues",
-                "source": "https://github.com/defuse/php-encryption/tree/v2.3.1"
+                "source": "https://github.com/defuse/php-encryption/tree/v2.4.0"
             },
-            "time": "2021-04-09T23:57:26+00:00"
+            "time": "2023-06-19T06:10:36+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -801,16 +802,16 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v6.7.0",
+            "version": "v6.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/firebase/php-jwt.git",
-                "reference": "71278f20b0a623389beefe87a641d03948a38870"
+                "reference": "48b0210c51718d682e53210c24d25c5a10a2299b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/71278f20b0a623389beefe87a641d03948a38870",
-                "reference": "71278f20b0a623389beefe87a641d03948a38870",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/48b0210c51718d682e53210c24d25c5a10a2299b",
+                "reference": "48b0210c51718d682e53210c24d25c5a10a2299b",
                 "shasum": ""
             },
             "require": {
@@ -858,9 +859,9 @@
             ],
             "support": {
                 "issues": "https://github.com/firebase/php-jwt/issues",
-                "source": "https://github.com/firebase/php-jwt/tree/v6.7.0"
+                "source": "https://github.com/firebase/php-jwt/tree/v6.8.0"
             },
-            "time": "2023-06-14T15:29:26+00:00"
+            "time": "2023-06-20T16:45:35+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -3241,16 +3242,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.3.1",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "9b5daeaffce5b926cac47923798bba91059e60e2"
+                "reference": "e2392369686d420ca32df3803de28b5d6f76867d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/9b5daeaffce5b926cac47923798bba91059e60e2",
-                "reference": "9b5daeaffce5b926cac47923798bba91059e60e2",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e2392369686d420ca32df3803de28b5d6f76867d",
+                "reference": "e2392369686d420ca32df3803de28b5d6f76867d",
                 "shasum": ""
             },
             "require": {
@@ -3265,7 +3266,7 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "elasticsearch/elasticsearch": "^7 || ^8",
                 "ext-json": "*",
-                "graylog2/gelf-php": "^1.4.2 || ^2@dev",
+                "graylog2/gelf-php": "^1.4.2 || ^2.0",
                 "guzzlehttp/guzzle": "^7.4.5",
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
@@ -3273,7 +3274,7 @@
                 "phpstan/phpstan": "^1.9",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-strict-rules": "^1.4",
-                "phpunit/phpunit": "^9.5.26",
+                "phpunit/phpunit": "^10.1",
                 "predis/predis": "^1.1 || ^2",
                 "ruflin/elastica": "^7",
                 "symfony/mailer": "^5.4 || ^6",
@@ -3326,7 +3327,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.3.1"
+                "source": "https://github.com/Seldaek/monolog/tree/3.4.0"
             },
             "funding": [
                 {
@@ -3338,7 +3339,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-06T13:46:10+00:00"
+            "time": "2023-06-21T08:46:11+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -6042,16 +6043,16 @@
         },
         {
             "name": "staudenmeir/eloquent-has-many-deep",
-            "version": "v1.18",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/staudenmeir/eloquent-has-many-deep.git",
-                "reference": "26ec7056da877ee03e06d5d7535d1ba24c81b865"
+                "reference": "b3421d637de05d2cc62166c5decb9727a029185c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/staudenmeir/eloquent-has-many-deep/zipball/26ec7056da877ee03e06d5d7535d1ba24c81b865",
-                "reference": "26ec7056da877ee03e06d5d7535d1ba24c81b865",
+                "url": "https://api.github.com/repos/staudenmeir/eloquent-has-many-deep/zipball/b3421d637de05d2cc62166c5decb9727a029185c",
+                "reference": "b3421d637de05d2cc62166c5decb9727a029185c",
                 "shasum": ""
             },
             "require": {
@@ -6060,8 +6061,10 @@
                 "staudenmeir/eloquent-has-many-deep-contracts": "^1.1"
             },
             "require-dev": {
+                "awobaz/compoships": "^2.2",
                 "illuminate/pagination": "^10.0",
-                "phpunit/phpunit": "^9.5.27",
+                "korridor/laravel-has-many-merged": "^1.0",
+                "phpunit/phpunit": "^10.1",
                 "staudenmeir/eloquent-eager-limit": "^1.8",
                 "staudenmeir/eloquent-json-relations": "^1.8",
                 "staudenmeir/laravel-adjacency-list": "^1.13"
@@ -6085,7 +6088,7 @@
             "description": "Laravel Eloquent HasManyThrough relationships with unlimited levels",
             "support": {
                 "issues": "https://github.com/staudenmeir/eloquent-has-many-deep/issues",
-                "source": "https://github.com/staudenmeir/eloquent-has-many-deep/tree/v1.18"
+                "source": "https://github.com/staudenmeir/eloquent-has-many-deep/tree/v1.18.1"
             },
             "funding": [
                 {
@@ -6093,7 +6096,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-01-19T22:10:59+00:00"
+            "time": "2023-06-20T18:09:39+00:00"
         },
         {
             "name": "staudenmeir/eloquent-has-many-deep-contracts",
@@ -6138,16 +6141,16 @@
         },
         {
             "name": "staudenmeir/eloquent-json-relations",
-            "version": "v1.8.1",
+            "version": "v1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/staudenmeir/eloquent-json-relations.git",
-                "reference": "383d4c4889b79457c4d6799adf497192639e7d14"
+                "reference": "88919ad3232f4de12184411664dc271bad0e4af8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/staudenmeir/eloquent-json-relations/zipball/383d4c4889b79457c4d6799adf497192639e7d14",
-                "reference": "383d4c4889b79457c4d6799adf497192639e7d14",
+                "url": "https://api.github.com/repos/staudenmeir/eloquent-json-relations/zipball/88919ad3232f4de12184411664dc271bad0e4af8",
+                "reference": "88919ad3232f4de12184411664dc271bad0e4af8",
                 "shasum": ""
             },
             "require": {
@@ -6157,7 +6160,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.1",
-                "staudenmeir/eloquent-has-many-deep": "^1.18"
+                "staudenmeir/eloquent-has-many-deep": "^1.18.1"
             },
             "type": "library",
             "autoload": {
@@ -6178,7 +6181,7 @@
             "description": "Laravel Eloquent relationships with JSON keys",
             "support": {
                 "issues": "https://github.com/staudenmeir/eloquent-json-relations/issues",
-                "source": "https://github.com/staudenmeir/eloquent-json-relations/tree/v1.8.1"
+                "source": "https://github.com/staudenmeir/eloquent-json-relations/tree/v1.8.2"
             },
             "funding": [
                 {
@@ -6186,7 +6189,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-06-03T09:22:06+00:00"
+            "time": "2023-06-20T18:16:11+00:00"
         },
         {
             "name": "symfony/console",
@@ -10482,16 +10485,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.17.0",
+            "version": "v3.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "3f0ed862f22386c55a767461ef5083bddceeed79"
+                "reference": "b123395c9fa3a70801f816f13606c0f3a7ada8df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/3f0ed862f22386c55a767461ef5083bddceeed79",
-                "reference": "3f0ed862f22386c55a767461ef5083bddceeed79",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/b123395c9fa3a70801f816f13606c0f3a7ada8df",
+                "reference": "b123395c9fa3a70801f816f13606c0f3a7ada8df",
                 "shasum": ""
             },
             "require": {
@@ -10566,7 +10569,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.17.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.18.0"
             },
             "funding": [
                 {
@@ -10574,7 +10577,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-22T19:59:32+00:00"
+            "time": "2023-06-18T22:25:45+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -10677,16 +10680,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.16.1",
+            "version": "v5.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "ddd6a49063ba3bdfdf5f8ce885d27a8368ad03c4"
+                "reference": "569c7154033679a1ca05b43bfa640cc60aa3b37b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/ddd6a49063ba3bdfdf5f8ce885d27a8368ad03c4",
-                "reference": "ddd6a49063ba3bdfdf5f8ce885d27a8368ad03c4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/569c7154033679a1ca05b43bfa640cc60aa3b37b",
+                "reference": "569c7154033679a1ca05b43bfa640cc60aa3b37b",
                 "shasum": ""
             },
             "require": {
@@ -10749,22 +10752,22 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.16.1"
+                "source": "https://github.com/laravel/horizon/tree/v5.17.0"
             },
-            "time": "2023-05-29T15:03:42+00:00"
+            "time": "2023-06-13T20:49:30+00:00"
         },
         {
             "name": "laravel/pint",
-            "version": "v1.10.2",
+            "version": "v1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/pint.git",
-                "reference": "f78de1a1bbab7aa41a6ea211c5962b0530d1a301"
+                "reference": "c472786bca01e4812a9bb7933b23edfc5b6877b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/pint/zipball/f78de1a1bbab7aa41a6ea211c5962b0530d1a301",
-                "reference": "f78de1a1bbab7aa41a6ea211c5962b0530d1a301",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/c472786bca01e4812a9bb7933b23edfc5b6877b7",
+                "reference": "c472786bca01e4812a9bb7933b23edfc5b6877b7",
                 "shasum": ""
             },
             "require": {
@@ -10775,7 +10778,7 @@
                 "php": "^8.1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.17.0",
+                "friendsofphp/php-cs-fixer": "^3.18.0",
                 "illuminate/view": "^10.5.1",
                 "laravel-zero/framework": "^10.0.2",
                 "mockery/mockery": "^1.5.1",
@@ -10817,20 +10820,20 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
-            "time": "2023-06-12T10:50:04+00:00"
+            "time": "2023-06-20T15:55:03+00:00"
         },
         {
             "name": "laravel/sail",
-            "version": "v1.22.0",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56"
+                "reference": "a2e046f748e87d3ef8b2b381e0e5c5a11f34e46b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
-                "reference": "923e1e112b6a8598664dbb0ee79dd3137f1c9d56",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/a2e046f748e87d3ef8b2b381e0e5c5a11f34e46b",
+                "reference": "a2e046f748e87d3ef8b2b381e0e5c5a11f34e46b",
                 "shasum": ""
             },
             "require": {
@@ -10882,20 +10885,20 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-05-04T14:52:56+00:00"
+            "time": "2023-06-16T21:20:12+00:00"
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.14.6",
+            "version": "v4.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "8067e857ca3733f738666994f0b5cd305fa0ed59"
+                "reference": "572a19b4c9b09295848de9a2352737a756a0fb05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/8067e857ca3733f738666994f0b5cd305fa0ed59",
-                "reference": "8067e857ca3733f738666994f0b5cd305fa0ed59",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/572a19b4c9b09295848de9a2352737a756a0fb05",
+                "reference": "572a19b4c9b09295848de9a2352737a756a0fb05",
                 "shasum": ""
             },
             "require": {
@@ -10951,9 +10954,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.14.6"
+                "source": "https://github.com/laravel/telescope/tree/v4.15.0"
             },
-            "time": "2023-06-03T02:57:12+00:00"
+            "time": "2023-06-08T13:57:22+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -11887,16 +11890,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.19",
+            "version": "1.10.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "af5a296ff02610c1bfb4ddfac9fd4a08657b9046"
+                "reference": "c4c8adb56313fbd59ff5a5f4a496bbed1a6b8803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/af5a296ff02610c1bfb4ddfac9fd4a08657b9046",
-                "reference": "af5a296ff02610c1bfb4ddfac9fd4a08657b9046",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/c4c8adb56313fbd59ff5a5f4a496bbed1a6b8803",
+                "reference": "c4c8adb56313fbd59ff5a5f4a496bbed1a6b8803",
                 "shasum": ""
             },
             "require": {
@@ -11945,7 +11948,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-14T15:26:58+00:00"
+            "time": "2023-06-20T12:07:40+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
