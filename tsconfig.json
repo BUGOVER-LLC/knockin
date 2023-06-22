@@ -35,6 +35,6 @@
   "exclude": ["node_modules"],
   "include": [
     "app/Containers/AppSection/Greeting/UI/WEB/Asset",
-    "app/Containers/Auth/UI/WEB/Asset"
+    "app/Containers/GreetingSection/Auth/UI/WEB/Asset"
   ]
 }

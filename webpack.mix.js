@@ -15,7 +15,7 @@ if ('local' !== environment) {
      * =================================================================================================================
      */
     require('./app/Containers/AppSection/Greeting/UI/WEB/Asset/webpack.prod');
-    require('./app/Containers/Auth/UI/WEB/Asset/webpack.prod');
+    require('./app/Containers/GreetingSection/Auth/UI/WEB/Asset/webpack.prod');
 
     mix.webpackConfig({
         plugins: [
@@ -32,7 +32,7 @@ if ('local' !== environment) {
      * =================================================================================================================
      */
     // require('./app/Containers/AppSection/Greeting/UI/WEB/Asset/webpack.dev');
-    require('./app/Containers/Auth/UI/WEB/Asset/webpack.dev');
+    require('./app/Containers/GreetingSection/Auth/UI/WEB/Asset/webpack.dev');
 
     if (strictMode) {
         mix.sourceMaps().webpackConfig(

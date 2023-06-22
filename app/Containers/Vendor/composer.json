@@ -1,0 +1,17 @@
+{
+  "name": "vendor_name/Vendor",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "artak",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Containers\\Vendor\\": ""
+    }
+  }
+}
