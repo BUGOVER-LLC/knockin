@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\Auth\Actions\Fortify;
 
-use App\Containers\Vendor\Models\User;
+use Containers\Vendor\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;

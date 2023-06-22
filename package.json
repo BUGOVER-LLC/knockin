@@ -68,7 +68,7 @@
   "dependencies": {
     "crypto-js": "^4.1.1",
     "laravel-echo": "^1.15.1",
-    "pusher-js": "^8.0.2",
+    "pusher-js": "^8.2.0",
     "tiptap-vuetify": "^2.24.0",
     "v-hotkey": "^0.9.0",
     "v-mask": "^2.3.0",

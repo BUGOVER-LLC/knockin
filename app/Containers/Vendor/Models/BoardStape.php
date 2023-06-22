@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Models;
+namespace Containers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

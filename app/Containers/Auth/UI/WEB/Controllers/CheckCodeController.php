@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
-use App\Containers\Vendor\MainConsts;
-use App\Containers\Vendor\Models\User;
-use App\Containers\Vendor\Repositories\User\UserContract;
-use App\Containers\Vendor\Repositories\Workspace\WorkspaceContract;
+use Containers\Vendor\MainConsts;
+use Containers\Vendor\Models\User;
+use Containers\Vendor\Repositories\User\UserContract;
+use Containers\Vendor\Repositories\Workspace\WorkspaceContract;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
@@ -17,7 +17,6 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
-use Laravel\Octane\Exceptions\DdException;
 use Redis;
 use RedisException;
 use Ship\Parents\Controllers\WebController;
@@ -41,7 +40,7 @@ class CheckCodeController extends WebController
      *
      * @param Request $request
      * @return Redirector|RedirectResponse|JsonResponse
-     * @throws RedisException|DdException
+     * @throws RedisException
      */
     public function __invoke(Request $request): Redirector|RedirectResponse|JsonResponse
     {

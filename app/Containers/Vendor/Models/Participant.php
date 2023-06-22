@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Models;
+namespace Containers\Vendor\Models;
 
-use App\Containers\Vendor\Models\Channel;
-use App\Containers\Vendor\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Nucleus\Models\Entity\ServiceModel;
 

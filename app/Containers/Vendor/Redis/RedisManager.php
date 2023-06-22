@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Redis;
+namespace Containers\Vendor\Redis;
 
-use App\Containers\Vendor\Redis\Connectors\RedisConnector;
+use Containers\Vendor\Redis\Connectors\RedisConnector;
 use Closure;
 use Illuminate\Contracts\Redis\Connector;
 use Illuminate\Redis\Connectors\PredisConnector;

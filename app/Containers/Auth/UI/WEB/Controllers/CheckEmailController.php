@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
-use App\Containers\Vendor\MainConsts;
+use Containers\Vendor\MainConsts;
 use Containers\Auth\Jobs\SendMailQueue;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -32,7 +32,7 @@ class CheckEmailController extends WebController
      */
     public function __invoke(Request $request): JsonResponse
     {
-        $accept_code = Str::random(6);
+        $accept_code = Str::upper(Str::random(6));
 
         $this->redis->hMSet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),

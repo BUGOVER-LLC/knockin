@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Providers;
+namespace Containers\Vendor\Providers;
 
-use App\Containers\Vendor\Redis\RedisManager;
+use Containers\Vendor\Redis\RedisManager;
 use Illuminate\Redis\RedisServiceProvider;
 use Illuminate\Support\Arr;
 

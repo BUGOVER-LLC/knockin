@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\Auth\UI\WEB\Controllers;
 
-use App\Containers\Vendor\MainConsts;
+use Containers\Vendor\MainConsts;
+use Containers\Vendor\Repositories\User\UserContract;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -36,19 +37,21 @@ class SignInController extends WebController
      */
     public function __invoke(Request $request): View|Factory
     {
-        $is_sent_code = $this->redis->hMGet(
+        $auth_data = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']
         );
 
-        if (!$is_sent_code) {
+        $email = $auth_data && $auth_data['email'] ? igbinary_unserialize($auth_data['email']) : $request->email;
+
+        if (!$auth_data) {
             $has_accept_code = false;
-        } elseif (!$is_sent_code['auth'] || !$is_sent_code['code'] || !$is_sent_code['email']) {
+        } elseif (!$auth_data['auth'] || !$auth_data['code'] || !$auth_data['email']) {
             $has_accept_code = false;
         } else {
-            $has_accept_code = igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
+            $has_accept_code = igbinary_unserialize($auth_data['auth']) === $request->cookie('authenticator');
         }
 
-        return view('containers@auth::index', ['code' => $has_accept_code, 'email' => $request->email]);
+        return view('containers@auth::index', ['code' => $has_accept_code, 'email' => $email]);
     }
 }

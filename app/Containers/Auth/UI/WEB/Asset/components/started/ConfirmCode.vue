@@ -56,15 +56,19 @@ export default class ConfirmCode extends Vue implements MainComponent {
 
     @Emit('codeValidation')
     private triggerOtp(e: number | string) {
+        const payload = { code: this.code, valid: true };
         if (this.length === (e as string).length) {
             validate(this.code, 'required|min:6|max:6', { name: 'code' }).then((result: any) => {
                 if (result && result.valid) {
                     this.disabled = true;
                     this.loader = true;
-                    return { code: this.code, valid: true };
+                    payload.code = this.code;
+                    payload.valid = true;
                 }
             });
         }
+
+        return payload;
     }
 }
 </script>

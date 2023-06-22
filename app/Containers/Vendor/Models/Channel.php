@@ -2,14 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Models;
+namespace Containers\Vendor\Models;
 
-use App\Containers\Vendor\Models\BoardTask;
-use App\Containers\Vendor\Models\Participant;
-use App\Containers\Vendor\Models\SharedBoard;
-use App\Containers\Vendor\Models\SharedChannel;
-use App\Containers\Vendor\Models\User;
-use App\Containers\Vendor\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
