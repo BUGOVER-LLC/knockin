@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Containers\DashboardSection\Meeting\Providers;
 
-use App\Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
+use Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
 
 /**
  * The Main Service Provider of this container, it will be automatically registered in the framework.

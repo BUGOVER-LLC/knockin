@@ -19,13 +19,13 @@
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "./app/Containers/AppSection/Greeting/UI/WEB/Asset/@types"
+      "./app/Containers/DashboardSection/Asset/@types",
     ],
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
-        "app/Containers/AppSection/Greeting/UI/WEB/Asset/*",
-        "app/Containers/Auth/UI/WEB/Asset/*",
+        "app/Containers/GreetingSection/Auth/UI/WEB/Asset/*",
+        "app/Containers/DashboardSection/Asset/*",
       ]
     }
   },
@@ -34,7 +34,7 @@
   },
   "exclude": ["node_modules"],
   "include": [
-    "app/Containers/AppSection/Greeting/UI/WEB/Asset",
-    "app/Containers/GreetingSection/Auth/UI/WEB/Asset"
+    "app/Containers/GreetingSection/Auth/UI/WEB/Asset",
+    "app/Containers/DashboardSection/Asset"
   ]
 }
