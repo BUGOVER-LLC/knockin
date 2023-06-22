@@ -18,7 +18,7 @@
                         <!-- email -->
                         <VCol class="mb-3" cols="12">
                             <v-window v-model="step">
-                                <v-window-item :value="1">
+                                <v-window-item :value="1" :eager="true">
                                     <EmailSender :email-value="email" @validEmail="emailValidation = $event" />
                                 </v-window-item>
                                 <v-window-item :value="2">
@@ -113,9 +113,9 @@ export default class AuthIndex extends Vue {
         }
     }
 
-    @Watch('codeValidation.valid')
+    @Watch('codeValidation')
     observeCode(val) {
-        if (val && this.emailValidation.email && this.emailValidation.valid) {
+        if (val && this.emailValidation.valid && this.codeValidation) {
             this.disabledOtp = true;
             axios
                 .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })

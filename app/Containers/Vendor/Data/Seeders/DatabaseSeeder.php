@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Data\Seeders;
+namespace Containers\Vendor\Data\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;

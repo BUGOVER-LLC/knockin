@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Repositories\User;
+namespace Containers\Vendor\Repositories\User;
 
-use App\Containers\Vendor\Repositories\User\UserContract;
-use App\Containers\Vendor\Models\User;
+use Containers\Vendor\Repositories\User\UserContract;
+use Containers\Vendor\Models\User;
 use Illuminate\Contracts\Container\Container;
 use Nucleus\Repository\Repositories\BaseRepository;
 

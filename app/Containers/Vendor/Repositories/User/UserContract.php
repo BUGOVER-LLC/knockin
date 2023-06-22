@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Repositories\User;
+namespace Containers\Vendor\Repositories\User;
 
 use Nucleus\Repository\Contracts\BaseRepositoryContract;
 

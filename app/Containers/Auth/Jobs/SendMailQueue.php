@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\Auth\Jobs;
 
-use App\Containers\Vendor\MainConsts;
 use Containers\Auth\Mail\AcceptCode;
+use Containers\Vendor\MainConsts;
 use Illuminate\Support\Facades\Mail;
 use Ship\Parents\Jobs\Job;
 

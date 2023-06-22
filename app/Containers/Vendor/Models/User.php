@@ -2,23 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Models;
+namespace Containers\Vendor\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Containers\Vendor\Models\Board;
-use App\Containers\Vendor\Models\BoardTask;
-use App\Containers\Vendor\Models\Channel;
-use App\Containers\Vendor\Models\Participant;
-use App\Containers\Vendor\Models\PersonalMessage;
-use App\Containers\Vendor\Models\TaskExecution;
-use App\Containers\Vendor\Models\UserProfile;
-use App\Containers\Vendor\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Nucleus\Models\Entity\ServiceAuthenticable;
-use Service\Models\Traits\UUID;
+use Nucleus\Models\Traits\UUID;
 
 final class User extends ServiceAuthenticable
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Repositories\Workspace;
+namespace Containers\Vendor\Repositories\Workspace;
 
-use App\Containers\Vendor\Models\Workspace;
+use Containers\Vendor\Models\Workspace;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Collection;
 use Nucleus\Repository\Repositories\BaseRepository;

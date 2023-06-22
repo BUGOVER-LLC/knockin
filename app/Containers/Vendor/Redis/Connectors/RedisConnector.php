@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\Vendor\Redis\Connectors;
+namespace Containers\Vendor\Redis\Connectors;
 
 use Illuminate\Redis\Connectors\PhpRedisConnector;
 use Illuminate\Support\Facades\Redis as RedisFacade;
