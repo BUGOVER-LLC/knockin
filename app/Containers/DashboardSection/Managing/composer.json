@@ -1,0 +1,11 @@
+{
+  "name": "nucleus/managing",
+  "description": "Manager Container for nucleus.",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Containers\\DashboardSection\\Managing\\": "/"
+    }
+  }
+}
