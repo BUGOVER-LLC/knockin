@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 
 use Containers\Vendor\MainConsts;
-use Containers\Vendor\Repositories\User\UserContract;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;

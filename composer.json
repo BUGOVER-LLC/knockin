@@ -28,7 +28,7 @@
     "ext-calendar": "*",
     "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
-    "laravel/octane": "^1.0.0",
+    "laravel/octane": "^2.0.0",
     "laravel/tinker": "^2.0.0",
     "pda/pheanstalk": "^4.0.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
@@ -116,7 +116,7 @@
       "php": "8.2"
     },
     "github-oauth": {
-      "github.com": "${GITHUB_AUTH}"
+      "github.com": "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"
     }
   },
   "provide": {
