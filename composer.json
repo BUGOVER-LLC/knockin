@@ -26,8 +26,7 @@
     "ext-igbinary": "*",
     "ext-mbstring": "*",
     "ext-calendar": "*",
-    "nucleus/core": "^0.7.0",
-    "nucleus/socket": "^0.2.0",
+    "nucleus/socket": "^0.3.0",
     "nucleus/model": "^2.0.0",
     "nucleus/role": "^0.5.0",
     "nucleus/devicer": "^0.2.0",
@@ -98,12 +97,6 @@
     "ext-calendar": "*"
   },
   "repositories": [
-    {
-      "type": "vcs",
-      "name": "nucleus/core",
-      "url": "https://github.com/BUGOVER-LLC/nucleus.git",
-      "branch": "main"
-    },
     {
       "type": "vcs",
       "name": "nucleus/socket",
@@ -179,7 +172,7 @@
       "php": "8.2"
     },
     "github-oauth": {
-      "github.com": "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"
+      "github.com": "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"
     }
   },
   "minimum-stability": "stable",

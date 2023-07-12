@@ -7,12 +7,12 @@ namespace App\Providers;
 use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
-use Service\Socket\Provider\ManagerProvider;
-use Service\Socket\RouterHandler;
+use Nucleus\Socket\Provider\ManagerProvider;
+use Nucleus\Socket\RouterHandler;
 
 class BroadcastServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->register(ManagerProvider::class);
     }

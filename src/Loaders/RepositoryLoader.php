@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Src\Loaders;
 
 use DirectoryIterator;
-use Service\Repository\Provider;
+use Nucleus\Repository\Provider;
 
 trait RepositoryLoader
 {
@@ -16,7 +16,8 @@ trait RepositoryLoader
     {
         $this->app->register(Provider::class);
 
-        $_root_directory = base_path() . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Repositories' . DIRECTORY_SEPARATOR;
+        $_root_directory = base_path(
+            ) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Repositories' . DIRECTORY_SEPARATOR;
         $dir = new DirectoryIterator($_root_directory);
 
         $folders = [];

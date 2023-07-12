@@ -5,45 +5,6 @@ declare(strict_types=1);
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\ResponseFactory;
 
-if (!function_exists('recursive_loaders')) {
-    /**
-     * @param string $dir
-     * @param array $results
-     * @param bool $only_class
-     * @param bool $with_path
-     * @return void
-     */
-    function recursive_loader(
-        string $dir,
-        array &$results = [],
-        bool $only_class = false,
-        bool $with_path = false
-    ): void {
-        $files = scandir($dir);
-        $app_path = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app';
-        $app_name = substr($app_path, (strrpos($app_path, DIRECTORY_SEPARATOR) + 1));
-
-        foreach ($files as $value) {
-            $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
-
-            if (!is_dir($path)) {
-                $replacer_image = $app_name . substr($path, (strrpos($path, $app_name) + strlen($app_name)));
-                $replace = str_replace(['.php', DIRECTORY_SEPARATOR], ['', '\\'], $replacer_image);
-                $clean_class = ucfirst(substr($replace, strrpos($replace, $app_name)));
-
-                if ($only_class && class_exists($clean_class)) {
-                    $results[] = $clean_class;
-                } elseif (!$only_class) {
-                    $results[] = $path;
-                }
-            } elseif ('.' !== $value && '..' !== $value) {
-                recursive_loader($path, $results, $only_class, $with_path);
-                $with_path ? $results[] = $path : null;
-            }
-        }
-    }//end recursive_loader()
-}//end if
-
 if (!function_exists('uniqueMachineID')) {
     /**
      * Use this for encrypt a decrypt as a key @TODO. but be careful this is unique within the same machine

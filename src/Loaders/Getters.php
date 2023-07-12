@@ -27,7 +27,7 @@ trait Getters
         }
 
         return $this->observers;
-    }//end getObservers()
+    }
 
     /**
      * @return array
@@ -40,5 +40,5 @@ trait Getters
         }
 
         return $this->models;
-    }//end getModels()
+    }
 }
