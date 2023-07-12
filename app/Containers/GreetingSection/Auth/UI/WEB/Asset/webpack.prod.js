@@ -4,8 +4,8 @@ const mix = require('laravel-mix');
 const CompressionPlugin = require('compression-webpack-plugin');
 
 mix.vue({ version: 2 })
-    .ts('assets/auth/app.ts', 'public/builds/auth/js/app.ts')
-    .sass('assets/auth/style/app.scss', 'public/builds/auth/css/app.css')
+    .ts('app/Containers/GreetingSection/Auth/UI/WEB/Asset/app.ts', 'public/builds/auth/js/app.ts')
+    .sass('app/Containers/GreetingSection/Auth/UI/WEB/Asset/app.scss', 'public/builds/auth/css/app.css')
     .webpackConfig({
         output: {
             chunkFilename: 'builds/chunks/[name].[hash].js',

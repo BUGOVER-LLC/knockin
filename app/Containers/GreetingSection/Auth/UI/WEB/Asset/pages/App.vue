@@ -1,4 +1,3 @@
-<!-- @format -->
 <template>
     <v-app>
         <slot name="auth-content" />

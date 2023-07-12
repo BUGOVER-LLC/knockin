@@ -19,7 +19,7 @@ abstract class BroadcastServiceProvider extends AbstractBroadcastServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         Broadcast::routes();
 

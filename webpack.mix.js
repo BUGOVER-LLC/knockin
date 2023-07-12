@@ -50,8 +50,7 @@ mix.webpackConfig(
         resolve: {
             extensions: ['.js', '.ts', '.vue'],
             alias: {
-                // '@': path.resolve(__dirname, './app/Containers/DashboardSection/Asset'),
-                '@': path.resolve(__dirname, './app/Containers/*/*/UI/WEB/Asset'),
+                '@': path.resolve(__dirname, './app/Containers/GreetingSection/Auth/UI/WEB/Asset'),
             },
         },
         optimization: {

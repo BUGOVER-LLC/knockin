@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template lang="html">
     <div class="auth-wrapper d-flex align-center justify-center pa-4">
         <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
