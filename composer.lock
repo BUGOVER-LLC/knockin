@@ -12482,12 +12482,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "1e7ba87d020cf65f2573f7be3a5d27476c7f0d6e"
+                "reference": "63ff42acb7d25a9df64ee75e7b8312bd0b748d4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1e7ba87d020cf65f2573f7be3a5d27476c7f0d6e",
-                "reference": "1e7ba87d020cf65f2573f7be3a5d27476c7f0d6e",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/63ff42acb7d25a9df64ee75e7b8312bd0b748d4a",
+                "reference": "63ff42acb7d25a9df64ee75e7b8312bd0b748d4a",
                 "shasum": ""
             },
             "conflict": {
@@ -12829,6 +12829,7 @@
                 "phpxmlrpc/extras": "<0.6.1",
                 "phpxmlrpc/phpxmlrpc": "<4.9.2",
                 "pi/pi": "<=2.5",
+                "pimcore/admin-ui-classic-bundle": "<1.0.3",
                 "pimcore/customer-management-framework-bundle": "<3.4.1",
                 "pimcore/data-hub": "<1.2.4",
                 "pimcore/perspective-editor": "<1.5.1",
@@ -13106,7 +13107,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-11T23:04:27+00:00"
+            "time": "2023-07-12T18:04:45+00:00"
         },
         {
             "name": "sebastian/cli-parser",

@@ -23,6 +23,7 @@ class MessageStore extends VuexModule implements MessageModel {
     public in = false;
     public out = true;
     public viewed = false;
+    public viewedAt = '';
     public edited = false;
     public editedAt = null;
     public discussion = null;

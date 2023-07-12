@@ -27,11 +27,10 @@ class CheckCodeController extends WebController
      * @throws RedisException
      */
     public function __construct(
-        protected readonly Redis             $redis,
-        protected readonly UserContract      $userContract,
+        protected readonly Redis $redis,
+        protected readonly UserContract $userContract,
         protected readonly WorkspaceContract $workspaceContract
-    )
-    {
+    ) {
         $this->redis->connect('localhost');
     }
 
@@ -73,7 +72,10 @@ class CheckCodeController extends WebController
         $user = $this->authorizeUser($request->email, $request->code);
         Cookie::forget('authenticator');
 
-        return jsponse(['message' => 'successful', 'redirect' => route('Asset.index-noix', ['target_id' => $user->uid])]);
+        return jsponse([
+            'message' => 'successful',
+            'redirect' => route('Asset.index-noix', ['target_id' => $user->uid])
+        ]);
     }
 
     /**
