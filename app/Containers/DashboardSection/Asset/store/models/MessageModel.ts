@@ -7,6 +7,7 @@ export type MessageModel = {
     in: boolean;
     out: boolean;
     viewed: null | boolean;
+    viewedAt: null | string;
     edited: null | boolean;
     editedAt: null | string;
     discussion: null | [];

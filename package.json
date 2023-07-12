@@ -10,15 +10,15 @@
         "prod": "mix --production",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "install": "sh ./bin/package-links"
+        "install-sync": "sh ./bin/package-links"
     },
     "devDependencies": {
-        "@babel/core": "^7.22.8",
+        "@babel/core": "^7.22.9",
         "@babel/plugin-proposal-async-do-expressions": "^7.22.5",
         "@babel/plugin-proposal-do-expressions": "^7.22.5",
         "@babel/plugin-transform-property-mutators": "^7.22.5",
-        "@babel/plugin-transform-runtime": "^7.22.7",
-        "@babel/preset-env": "^7.22.7",
+        "@babel/plugin-transform-runtime": "^7.22.9",
+        "@babel/preset-env": "^7.22.9",
         "@mdi/font": "^7.2.96",
         "@mdi/js": "^7.2.96",
         "@types/node": "^20.4.1",
