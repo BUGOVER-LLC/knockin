@@ -5,8 +5,7 @@
     "laravel/socialite": "^5.0.0",
     "laravel/framework": "^10.0.0",
     "laravel/sanctum": "^3.0.0",
-    "laravel/passport": "^11.0.0",
-    "laravel/jetstream": "^3.0.0"
+    "laravel/passport": "^11.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
