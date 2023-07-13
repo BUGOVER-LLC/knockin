@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Containers\GreetingSection\Auth\Middlewares;
 
 use Closure;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -20,9 +21,9 @@ class RedirectIfAuthenticated extends Middleware
      * @param Request $request
      * @param Closure(Request): (Response|RedirectResponse) $next
      * @param string|null ...$guards
-     * @return Response|RedirectResponse
+     * @return Response|RedirectResponse|JsonResponse
      */
-    public function handle(Request $request, Closure $next, ...$guards): Response|RedirectResponse
+    public function handle(Request $request, Closure $next, ...$guards): Response|RedirectResponse|JsonResponse
     {
         $guards = empty($guards) ? [null] : $guards;
 
