@@ -17,7 +17,7 @@ class RouteServiceProvider extends ParentRouteServiceProvider
      *
      * @var string
      */
-    public const HOME = 'web_welcome_say_welcome';
+    public const HOME = '/';
 
     /**
      * The name of the web "login" route for your application.
