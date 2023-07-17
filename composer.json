@@ -93,8 +93,7 @@
       "include": [
         "app/Ship/composer.json",
         "app/Containers/*/composer.json",
-        "app/Containers/DashboardSection/*/composer.json",
-        "app/Containers/GreetingSection/*/composer.json"
+        "app/Containers/*/*/composer.json"
       ],
       "recurse": true,
       "replace": false,

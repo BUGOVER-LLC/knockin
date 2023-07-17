@@ -4,7 +4,7 @@
   "require": {
     "php": "<=8.2.3",
     "php-64bit": "<=8.2.3",
-    "nucleus/core": "^0.7.0",
+    "nucleus/core": "^0.8.0",
     "nucleus/socket": "^0.2.0",
     "nucleus/model": "^2.0.0",
     "nucleus/role": "^0.5.0",
