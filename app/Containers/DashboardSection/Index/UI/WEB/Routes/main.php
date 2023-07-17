@@ -9,6 +9,6 @@ $route_attributes = [
     'namespace' => '\Containers\DashboardSection\Index\UI\WEB\Controllers'
 ];
 
-Route::group($route_attributes, fn() => [
+Route::group($route_attributes, static fn() => [
     Route::get('/', MainBoardController::class)
 ]);

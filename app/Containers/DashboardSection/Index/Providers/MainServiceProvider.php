@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Containers\DashboardSection\Index\Providers;
 
 use Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
