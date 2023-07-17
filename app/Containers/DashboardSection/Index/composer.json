@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/user",
+  "name": "vendor_name/index",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -11,9 +11,9 @@
   ],
   "require": {
   },
-  "autoload": {
+  "autoload-dev": {
     "psr-4": {
-      "Containers\\GreetingSection\\User\\": "/"
+      "Containers\\DashboardSection\\Index\\": "/"
     }
   }
 }
