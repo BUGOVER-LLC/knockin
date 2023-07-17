@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\Vendor\Redis;
 
-use Containers\Vendor\Redis\Connectors\RedisConnector;
 use Closure;
+use Containers\Vendor\Redis\Connectors\RedisConnector;
 use Illuminate\Contracts\Redis\Connector;
 use Illuminate\Redis\Connectors\PredisConnector;
 
