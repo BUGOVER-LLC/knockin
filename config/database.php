@@ -61,7 +61,7 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => env('DB_SCHEMA_APP', 'public'),
+            'search_path' => env('DB_SCHEMA_APP', 'app'),
             'sslmode' => 'prefer',
         ],
     ],
@@ -89,11 +89,12 @@ return [
     |
     */
     'redis' => [
-        'client' => env('REDIS_CLIENT', 'phpredis'),
+        'client' => env('REDIS_CLIENT', 'predis'),
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . 'store_'),
+            'serializer' => env('REDIS_SERIALIZER', 'igbinary'),
         ],
 
         'default' => [

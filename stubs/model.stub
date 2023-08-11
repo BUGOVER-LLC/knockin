@@ -7,6 +7,6 @@ namespace {{ namespace }};
 use Illuminate\Database\Eloquent\Model;
 use ServiceEntity\Models\ServiceModel;
 
-class {{ class }} extends ServiceModel
+final class {{ class }} extends ServiceModel
 {
 }

@@ -1,6 +1,6 @@
 /.phpunit.cache
 /node_modules
-/public/build
+/public/builds
 /public/hot
 /public/storage
 /storage/*.key
@@ -17,8 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-var/debugbar
-var/framework
-var/logs
-var/swoole
+var
 .php-cs-fixer.cache
+app/Ship
+config/octane.php

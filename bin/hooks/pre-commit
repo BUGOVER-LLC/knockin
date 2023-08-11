@@ -1,0 +1,18 @@
+#!/bin/sh
+
+fileList=$(git diff --diff-filter=d --cached --name-only)
+
+phpFileList=$(echo "$fileList" | grep -E '\.(php)$')
+if [ ${#phpFileList} -gt 0 ]; then
+    PHP vendor/bin/phpcs --standard=phpcs.xml -p "$phpFileList"
+    PHP vendor/bin/php-cs-fixer "$phpFileList" --config=.php-cs-fixer.php
+    PHP vendor/bin/phpmd "$phpFileList" text phpmd.xml
+    PHP vendor/bin/phpstan analyse -c phpstan.neon "$phpFileList"
+    PHP vendor/bin/psalm psalm.xml "$phpFileList"
+fi
+
+#jsFileList=$(echo "$fileList" | grep -E '\.(js)$')
+#if [ ${#jsFileList} -gt 0 ]; then
+#    node-modules/eslint --check
+#    node-modules/prettier --config .prettierrc
+#fi
