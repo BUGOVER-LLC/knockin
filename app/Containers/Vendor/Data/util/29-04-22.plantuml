@@ -1,0 +1,224 @@
+@startuml
+
+!theme cerulean-outline
+top to bottom direction
+skinparam linetype ortho
+skinparam BackgroundColor DDDDDD
+skinparam shadowing true
+skinparam RoundCorner 20
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 454645
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 454645
+skinparam SequenceGroupBorderColor 454645
+skinparam SequenceGroupBorderThickness 1
+
+class board_stapes {
+   board_id: bigint
+   name: varchar(300)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   board_stape_id: bigint
+}
+class board_tasks {
+   stape_id: bigint
+   creator_id: bigint
+   channel_id: bigint
+   title: varchar(255)
+   body: jsonb
+   assigned: boolean
+   status: varchar(255)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   board_task_id: bigint
+}
+class boards {
+   workspace_id: bigint
+   title: varchar(255)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   terms: daterange
+   board_id: bigint
+}
+class channels {
+   workspace_id: bigint
+   creator_id: bigint
+   uid: uuid
+   name: varchar(500)
+   status: varchar(255)
+   total_connected: smallint
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   channel_id: bigint
+}
+class countries {
+   iso: char(2)
+   iso3: char(3)
+   name: varchar(80)
+   nice_name: varchar(80)
+   phone_code: smallint
+   phone_mask: varchar(32)
+   currency: varchar(50)
+   flag: varchar(30)
+   created_at: timestamp(0)
+   country_id: bigint
+}
+class messages {
+   workspace_id: bigint
+   channel_id: bigint
+   author_id: bigint
+   parent_id: bigint
+   body: json
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   message_id: bigint
+}
+class participants {
+   channel_id: bigint
+   user_id: bigint
+   created_id: timestamp(0)
+   participant_id: bigint
+}
+class personal_access_tokens {
+   user_id: bigint
+   name: varchar(255)
+   token: varchar(64)
+   abilities: text
+   last_used_at: timestamp(0)
+   expires_at: timestamp(0)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   personal_access_token_id: bigint
+}
+class personal_messages {
+   author_id: bigint
+   participant_id: bigint
+   workspace_id: bigint
+   parent_id: bigint
+   body: json
+   viewed: boolean
+   viewed_at: timestamp(0)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   personal_message_id: bigint
+}
+class personal_participants {
+   personal_id: bigint
+   participant_id: bigint
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   personal_participant_id: bigint
+}
+class shared_boards {
+   board_id: bigint
+   workspace_id: bigint
+   target_id: bigint
+   name: varchar(255)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   shared_board_id: bigint
+}
+class shared_channels {
+   channel_id: bigint
+   workspace_id: bigint
+   target_id: bigint
+   uid: uuid
+   name: varchar(255)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   shared_channel_id: bigint
+}
+class shared_tasks {
+   task_id: bigint
+   board_id: bigint
+   target_id: bigint
+   title: varchar(300)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   shared_task_id: bigint
+}
+class task_execution {
+   task_id: bigint
+   executor_id: bigint
+   created_at: timestamp(0)
+   task_execution_id: bigint
+}
+class users {
+   current_workspace_id: bigint
+   current_device_id: bigint
+   uid: uuid
+   phone: varchar(25)
+   email: varchar(200)
+   password: varchar(255)
+   remember_token: varchar(100)
+   verified_at: timestamp(0)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   user_id: bigint
+}
+class users_profile {
+   user_id: bigint
+   country_id: bigint
+   name: varchar(200)
+   viewed_name: varchar(300)
+   photo: varchar(300)
+   role: varchar(255)
+   t_zone: time(0) with time zone
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   user_profile_id: bigint
+}
+class workers {
+   workspace_id: bigint
+   user_id: bigint
+   created_id: timestamp(0)
+   worker_id: bigint
+}
+class workspaces {
+   creator_id: bigint
+   uid: uuid
+   name: varchar(500)
+   created_at: timestamp(0)
+   updated_at: timestamp(0)
+   workspace_id: bigint
+}
+
+board_stapes            -[#595959,plain]-^  boards                 : "board_id"
+board_tasks             -[#595959,plain]-^  board_stapes           : "stape_id:board_stape_id"
+board_tasks             -[#595959,plain]-^  channels               : "channel_id"
+board_tasks             -[#595959,plain]-^  users                  : "creator_id:user_id"
+boards                  -[#595959,plain]-^  workspaces             : "workspace_id"
+channels                -[#595959,plain]-^  users                  : "creator_id:user_id"
+channels                -[#595959,plain]-^  workspaces             : "workspace_id"
+messages                -[#595959,plain]-^  channels               : "channel_id"
+messages                -[#595959,plain]-^  messages               : "parent_id:message_id"
+messages                -[#595959,plain]-^  users                  : "author_id:user_id"
+messages                -[#595959,plain]-^  workspaces             : "workspace_id"
+participants            -[#595959,plain]-^  channels               : "channel_id"
+participants            -[#595959,plain]-^  users                  : "user_id"
+personal_access_tokens  -[#595959,plain]-^  users                  : "user_id"
+personal_messages       -[#595959,plain]-^  personal_messages      : "parent_id:personal_message_id"
+personal_messages       -[#595959,plain]-^  users                  : "author_id:user_id"
+personal_messages       -[#595959,plain]-^  users                  : "participant_id:user_id"
+personal_messages       -[#595959,plain]-^  workspaces             : "workspace_id"
+personal_participants   -[#595959,plain]-^  personal_messages      : "personal_id:personal_message_id"
+personal_participants   -[#595959,plain]-^  users                  : "participant_id:user_id"
+shared_boards           -[#595959,plain]-^  boards                 : "board_id"
+shared_boards           -[#595959,plain]-^  workspaces             : "target_id:workspace_id"
+shared_boards           -[#595959,plain]-^  workspaces             : "workspace_id"
+shared_channels         -[#595959,plain]-^  channels               : "channel_id"
+shared_channels         -[#595959,plain]-^  workspaces             : "workspace_id"
+shared_channels         -[#595959,plain]-^  workspaces             : "target_id:workspace_id"
+shared_tasks            -[#595959,plain]-^  board_tasks            : "task_id:board_task_id"
+shared_tasks            -[#595959,plain]-^  boards                 : "board_id"
+shared_tasks            -[#595959,plain]-^  boards                 : "target_id:board_id"
+task_execution          -[#595959,plain]-^  board_tasks            : "task_id:board_task_id"
+task_execution          -[#595959,plain]-^  users                  : "executor_id:user_id"
+users                   -[#595959,plain]-^  workspaces             : "current_workspace_id:workspace_id"
+users_profile           -[#595959,plain]-^  countries              : "country_id"
+users_profile           -[#595959,plain]-^  users                  : "user_id"
+workers                 -[#595959,plain]-^  users                  : "user_id"
+workers                 -[#595959,plain]-^  workspaces             : "workspace_id"
+workspaces              -[#595959,plain]-^  users                  : "creator_id:user_id"
+@enduml

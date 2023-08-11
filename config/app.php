@@ -20,6 +20,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Path with Container Path
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+    'path' => env('APP_PATH', base_path('app/')),
+
+    'container_name' => 'Containers',
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -120,7 +134,7 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-    'key' => env('APP_KEY'),
+    'key' => env('APP_KEY', ''),
 
     'cipher' => 'AES-256-CBC',
 
@@ -138,7 +152,7 @@ return [
     */
     'maintenance' => [
         'driver' => 'file',
-         'store'  => 'redis',
+        'store' => 'redis',
     ],
 
     /*
@@ -180,14 +194,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Application Service Providers...
+         * @NOTE: all packages service providers registered inside their containers main service providers.
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        Src\Providers\MainServiceProvider::class,
     ],
 
     /*
@@ -204,5 +212,4 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
 ];

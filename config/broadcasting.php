@@ -40,15 +40,11 @@ return [
                 'scheme' => env('PUSHER_SCHEME', 'https'),
                 'encrypted' => true,
                 'useTLS' => 'https' === env('PUSHER_SCHEME', 'https'),
+                'encryption_master_key_base64' => env('PUSHER_BASE_64_KEY', ''),
             ],
             'client_options' => [
                 // Guzzle client options: https://docs.guzzlephp.org/en/stable/request-options.html
             ],
-        ],
-
-        'ably' => [
-            'driver' => 'ably',
-            'key' => env('ABLY_KEY'),
         ],
 
         'redis' => [
@@ -64,5 +60,4 @@ return [
             'driver' => 'null',
         ],
     ],
-
 ];

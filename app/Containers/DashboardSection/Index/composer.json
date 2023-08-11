@@ -1,0 +1,19 @@
+{
+  "name": "vendor_name/index",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "artak",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Containers\\DashboardSection\\Index\\": "/"
+    }
+  }
+}

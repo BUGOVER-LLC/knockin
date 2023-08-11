@@ -6,6 +6,7 @@ const mix = require('laravel-mix');
 const environment = process.env.APP_ENV;
 const strictMode = 'true' === process.env.STRICT_MODE ?? false;
 const WebpackObfuscation = require('webpack-obfuscator');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 if ('local' !== environment) {
     /**
@@ -13,7 +14,8 @@ if ('local' !== environment) {
      * 💣    For complex build all bundles, Production or Development environments
      * =================================================================================================================
      */
-    require('./asset/app/webpack.prod');
+    require('./app/Containers/DashboardSection/Asset/webpack.prod');
+    require('./app/Containers/GreetingSection/Auth/UI/WEB/Asset/webpack.prod');
 
     mix.webpackConfig({
         plugins: [
@@ -29,15 +31,18 @@ if ('local' !== environment) {
      * 🤠    Uncomment the one, on which you work and run your ran watch, dev or prod, for local development environment
      * =================================================================================================================
      */
-    require('./asset/app/webpack.dev');
+    require('./app/Containers/DashboardSection/Asset/webpack.dev');
+    require('./app/Containers/GreetingSection/Auth/UI/WEB/Asset/webpack.dev');
 
     if (strictMode) {
-        mix.sourceMaps();
+        mix.sourceMaps().webpackConfig(
+            (module.exports = {
+                plugins: [new BundleAnalyzerPlugin()],
+                devtool: 'source-map',
+            }),
+        );
     }
 }
-
-// Global dependencies for all bundles
-mix.version();
 
 // Global webpack config for all bundles
 mix.webpackConfig(
@@ -45,7 +50,8 @@ mix.webpackConfig(
         resolve: {
             extensions: ['.js', '.ts', '.vue'],
             alias: {
-                '@': path.resolve(__dirname, './asset'),
+                '@': path.resolve(__dirname, './app/Containers/GreetingSection/Auth/UI/WEB/Asset'),
+                '@': path.resolve(__dirname, './app/Containers/DashboardSection/Asset'),
             },
         },
         optimization: {
@@ -58,12 +64,12 @@ mix.webpackConfig(
 
 mix.extract({
     to: 'builds/vendor/vendor.js',
-    libraries: ['vue', 'vuex', 'vuetify', 'vee-validate'],
+    libraries: ['vue', 'vuex', 'vue-router', 'vuetify', 'vee-validate', 'vuex-persist'],
 });
 
 mix.options({
     terser: {
         extractComments: false,
-        runtimeChunkPath: 'builds/vendor',
     },
+    runtimeChunkPath: 'builds/vendor',
 });

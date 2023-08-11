@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "es2022",
+    "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": ".",
     "strict": true,
@@ -12,19 +12,20 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "types": [
       "webpack-env",
       "node"
     ],
     "typeRoots": [
       "./node_modules/@types",
-      "./asset/app/@types"
+      "./app/Containers/DashboardSection/Asset/@types",
     ],
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
-        "asset/*"
+        "app/Containers/GreetingSection/Auth/UI/WEB/Asset/*",
+        "app/Containers/DashboardSection/Asset/*",
       ]
     }
   },
@@ -33,6 +34,7 @@
   },
   "exclude": ["node_modules"],
   "include": [
-    "asset/**/*"
+    "app/Containers/GreetingSection/Auth/UI/WEB/Asset",
+    "app/Containers/DashboardSection/Asset"
   ]
 }

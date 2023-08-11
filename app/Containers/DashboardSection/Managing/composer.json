@@ -1,0 +1,12 @@
+{
+  "name": "nucleus/managing",
+  "description": "Manager Container for nucleus.",
+  "require": {
+    "laravel/framework": "^10.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Containers\\DashboardSection\\Managing\\": "/"
+    }
+  }
+}
