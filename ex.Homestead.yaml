@@ -1,0 +1,40 @@
+ip: 192.168.56.60
+memory: 2048
+cpus: 1
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+  - ~/.ssh/id_rsa
+folders:
+  - map: /home/artak/work/projects/noix/knock
+    to: /home/vagrant/noix
+sites:
+  - map: noix.loc
+    to: /home/vagrant/noix/public
+    php: "8.2"
+    schedule: true
+databases:
+  - noix
+features:
+  - minio: true
+  - postgresql: true
+  - mysql: false
+  - php5.6: false
+  - php7.0: false
+  - php7.1: false
+  - php7.2: false
+  - php7.3: false
+  - php7.4: false
+  - mariadb: false
+  - postgresql: false
+  - ohmyzsh: false
+  - docker: false
+  - webdriver: false
+  - node: false
+  - memcached: false
+  - wp-cli: false
+  - elasticsearch: false
+services:
+  - enabled: [ postgresql ]
+name: noix
+hostname: noix
