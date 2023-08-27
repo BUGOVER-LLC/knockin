@@ -30,7 +30,8 @@ class CheckCodeController extends WebController
         protected readonly Redis $redis,
         protected readonly UserContract $userContract,
         protected readonly WorkspaceContract $workspaceContract
-    ) {
+    )
+    {
         $this->redis->connect('localhost');
     }
 
@@ -74,7 +75,7 @@ class CheckCodeController extends WebController
 
         return jsponse([
             'message' => 'successful',
-            'redirect' => route('Asset.index-noix', ['target_id' => $user->uid])
+            'redirect' => route('Asset.index-noix', ['target_id' => $user->uid]),
         ]);
     }
 

@@ -6,5 +6,4 @@ use Nucleus\Abstracts\Middlewares\Middleware as AbstractMiddleware;
 
 abstract class Middleware extends AbstractMiddleware
 {
-
 }

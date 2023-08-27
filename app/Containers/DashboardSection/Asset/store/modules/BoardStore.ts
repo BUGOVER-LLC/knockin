@@ -1,6 +1,6 @@
 /** @format */
 
-import { Module, Mutation, VuexModule } from 'vuex-module-decorators';
+import {Module, Mutation, VuexModule} from 'vuex-module-decorators';
 
 type State = {
     id: number | null;

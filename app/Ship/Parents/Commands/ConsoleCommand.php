@@ -8,5 +8,4 @@ use Nucleus\Abstracts\Commands\ConsoleCommand as AbstractConsoleCommand;
 
 abstract class ConsoleCommand extends AbstractConsoleCommand
 {
-
 }

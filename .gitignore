@@ -21,3 +21,4 @@ var
 .php-cs-fixer.cache
 app/Ship
 config/octane.php
+.vagrant

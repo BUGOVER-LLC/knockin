@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use Redis;
 use RedisException;
 use Ship\Parents\Controllers\WebController;
-use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route(name="auth_get_sign", path="auth", methods={"GET"})

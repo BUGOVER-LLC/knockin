@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Containers\Vendor\Repositories\User;
 
-use Containers\Vendor\Repositories\User\UserContract;
 use Containers\Vendor\Models\User;
 use Illuminate\Contracts\Container\Container;
 use Nucleus\Repository\Repositories\BaseRepository;

@@ -4,12 +4,6 @@ declare(strict_types=1);
 
 namespace Ship\Kernels;
 
-use Ship\Middlewares\Authenticate;
-use Ship\Middlewares\EncryptCookies;
-use Ship\Middlewares\PreventRequestsDuringMaintenance;
-use Ship\Middlewares\TrimStrings;
-use Ship\Middlewares\TrustProxies;
-use Ship\Middlewares\VerifyCsrfToken;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Auth\Middleware\RequirePassword;
@@ -28,6 +22,12 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Nucleus\Middlewares\Http\ProcessETagHeadersMiddleware;
 use Nucleus\Middlewares\Http\ProfilerMiddleware;
 use Nucleus\Middlewares\Http\ValidateJsonContent;
+use Ship\Middlewares\Authenticate;
+use Ship\Middlewares\EncryptCookies;
+use Ship\Middlewares\PreventRequestsDuringMaintenance;
+use Ship\Middlewares\TrimStrings;
+use Ship\Middlewares\TrustProxies;
+use Ship\Middlewares\VerifyCsrfToken;
 
 class HttpKernel extends LaravelHttpKernel
 {

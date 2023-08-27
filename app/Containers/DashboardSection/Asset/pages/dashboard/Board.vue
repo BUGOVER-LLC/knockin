@@ -2,28 +2,28 @@
 
 <template lang="html">
     <div>
-        <SystemBar />
+        <SystemBar/>
 
-        <AppBar />
+        <AppBar/>
 
-        <LeftPanel />
+        <LeftPanel/>
 
         <v-main>
             <v-container fluid>
-                <Search />
+                <Search/>
 
-                <MessagingContent />
+                <MessagingContent/>
 
-                <MessagingWriter />
+                <MessagingWriter/>
             </v-container>
         </v-main>
 
-        <RightPanel />
+        <RightPanel/>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 import MessagingContent from '@/components/MessagingContent.vue';
 import Search from '@/components/Search.vue';
 import RightPanel from '@/components/RightPanel.vue';
@@ -33,11 +33,12 @@ import AppBar from '@/components/AppBar.vue';
 import MessagingWriter from '@/components/MessagingWriter.vue';
 
 @Component({
-    components: { MessagingWriter, AppBar, SystemBar, LeftPanel, RightPanel, Search, MessagingContent },
+    components: {MessagingWriter, AppBar, SystemBar, LeftPanel, RightPanel, Search, MessagingContent},
 })
 export default class Board extends Vue {
-    created() {}
+    created() {
+    }
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

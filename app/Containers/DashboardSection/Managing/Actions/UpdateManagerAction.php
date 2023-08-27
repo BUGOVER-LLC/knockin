@@ -2,13 +2,13 @@
 
 namespace Containers\DashboardSection\Managing\Actions;
 
-use Nucleus\Exceptions\IncorrectIdException;
-use Containers\DashboardSection\Managing\Models\Manager;
-use Containers\DashboardSection\Managing\Tasks\UpdateManagerTask;
-use Containers\DashboardSection\Managing\UI\WEB\Requests\UpdateManagerRequest;
 use App\Ship\Exceptions\NotFoundException;
 use App\Ship\Exceptions\UpdateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
+use Containers\DashboardSection\Managing\Models\Manager;
+use Containers\DashboardSection\Managing\Tasks\UpdateManagerTask;
+use Containers\DashboardSection\Managing\UI\WEB\Requests\UpdateManagerRequest;
+use Nucleus\Exceptions\IncorrectIdException;
 
 class UpdateManagerAction extends ParentAction
 {

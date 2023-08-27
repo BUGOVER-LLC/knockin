@@ -13,13 +13,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 
 @Component({
     components: {},
     mixins: [],
 })
-export default class ChannelsNavigation extends Vue {}
+export default class ChannelsNavigation extends Vue {
+}
 </script>
 
 <style scoped></style>

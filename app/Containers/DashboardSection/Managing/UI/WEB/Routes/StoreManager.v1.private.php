@@ -5,4 +5,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('managers/store', [CreateManagerController::class, 'store'])
     ->middleware(['auth:web']);
-

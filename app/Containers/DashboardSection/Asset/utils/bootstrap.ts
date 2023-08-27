@@ -10,7 +10,7 @@ import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
 import Vue from 'vue';
 
-import { BROADCAST, cRef } from './consts';
+import {BROADCAST, cRef} from './consts';
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.common['X-CSRF-TOKEN'] = cRef;
