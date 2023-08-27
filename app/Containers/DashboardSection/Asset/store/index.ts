@@ -3,12 +3,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
+import {AbstractModel} from '@/store/models/AbstractModel';
+import {MessageModel} from '@/store/models/MessageModel';
+import {WorkspaceModels} from '@/store/models/WorkspaceModels';
 
 Vue.use(Vuex);
-
-import { AbstractModel } from '@/store/models/AbstractModel';
-import { MessageModel } from '@/store/models/MessageModel';
-import { WorkspaceModels } from '@/store/models/WorkspaceModels';
 
 export type ModulesState = {
     abstractModule: AbstractModel;

@@ -3,7 +3,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "../../../..",
     "strict": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
@@ -18,23 +18,23 @@
       "node"
     ],
     "typeRoots": [
-      "./node_modules/@types",
-      "./app/Containers/DashboardSection/Asset/@types",
+      "../../../../node_modules/@types",
+      "./app/Containers/DashboardSection/Asset/@types"
     ],
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
         "app/Containers/GreetingSection/Auth/UI/WEB/Asset/*",
-        "app/Containers/DashboardSection/Asset/*",
+        "app/Containers/DashboardSection/Asset/*"
       ]
     }
   },
   "vueCompilerOptions": {
     "target": 2.7
   },
-  "exclude": ["node_modules"],
+  "exclude": ["../../../../node_modules"],
   "include": [
-    "app/Containers/GreetingSection/Auth/UI/WEB/Asset",
+    "../../GreetingSection/Auth/UI/WEB/Asset",
     "app/Containers/DashboardSection/Asset"
   ]
 }

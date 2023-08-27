@@ -1,8 +1,8 @@
 /** @format */
 
-import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
+import {Action, getModule, Module, Mutation, VuexModule} from 'vuex-module-decorators';
 
-import { MessageModel } from '@/store/models/MessageModel';
+import {MessageModel} from '@/store/models/MessageModel';
 
 import store from '@/store/index';
 
@@ -29,6 +29,20 @@ class MessageStore extends VuexModule implements MessageModel {
     public discussion = null;
     public type = '';
 
+    get getPayload() {
+        return this.payload;
+    }
+
+    get getDetonate() {
+        return this.detonate;
+    }
+
+    @Action({commit: 'mutateDetonator'})
+    public async initMessage(payload) {
+        this.mutateMessage(payload);
+        // await axios.post('/noix/init-msg', payload);
+    }
+
     @Mutation
     private mutateMessage(payload: MessageModel) {
         this.body = payload.body;
@@ -48,20 +62,6 @@ class MessageStore extends VuexModule implements MessageModel {
     @Mutation
     private mutateDetonator() {
         ++this.detonate;
-    }
-
-    @Action({ commit: 'mutateDetonator' })
-    public async initMessage(payload) {
-        this.mutateMessage(payload);
-        // await axios.post('/noix/init-msg', payload);
-    }
-
-    get getPayload() {
-        return this.payload;
-    }
-
-    get getDetonate() {
-        return this.detonate;
     }
 }
 

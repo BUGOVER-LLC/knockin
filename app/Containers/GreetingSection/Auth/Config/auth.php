@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Containers\Vendor\Models\User;
+
 return [
 
     /*
@@ -61,7 +63,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => \Containers\Vendor\Models\User::class,
+            'model' => User::class,
         ],
 
         // 'users' => [

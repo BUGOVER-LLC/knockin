@@ -31,4 +31,4 @@ const BROADCAST = {
     stats_host: window.location.hostname,
 };
 
-export { BROADCAST, cRef };
+export {BROADCAST, cRef};

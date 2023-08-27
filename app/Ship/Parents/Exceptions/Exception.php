@@ -6,5 +6,4 @@ use Nucleus\Abstracts\Exceptions\Exception as AbstractException;
 
 abstract class Exception extends AbstractException
 {
-
 }

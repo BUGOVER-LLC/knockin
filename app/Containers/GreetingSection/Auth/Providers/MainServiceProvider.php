@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\GreetingSection\Auth\Providers;
 
+use App\Containers\GreetingSection\Auth\Providers\FortifyServiceProvider;
+
 class MainServiceProvider extends \Ship\Parents\Providers\MainServiceProvider
 {
     /**
@@ -11,7 +13,8 @@ class MainServiceProvider extends \Ship\Parents\Providers\MainServiceProvider
      */
     public array $serviceProviders = [
         AuthServiceProvider::class,
-        MiddlewareServiceProvider::class
+        MiddlewareServiceProvider::class,
+        FortifyServiceProvider::class
     ];
 
     /**

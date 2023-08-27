@@ -1,15 +1,16 @@
 <!-- @format -->
 
-<template lang="html"> </template>
+<template lang="html"></template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 
 @Component({
     components: {},
     mixins: [],
 })
-export default class extends Vue {}
+export default class extends Vue {
+}
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

@@ -4,12 +4,12 @@
     <div>
         <v-navigation-drawer
             ref="drawer"
-            app
+            v-model="navigation.shown"
+            :absolute="absolute"
+            :mini-variant="mini"
             :right="right"
             :width="navigation.width"
-            v-model="navigation.shown"
-            :mini-variant="mini"
-            :absolute="absolute"
+            app
             height="100%"
         >
             <slot v-if="$slots['toolbar']" name="toolbar"></slot>
@@ -20,20 +20,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Ref, Prop } from 'vue-property-decorator';
+import {Component, Prop, Ref, Vue} from 'vue-property-decorator';
 
 @Component({})
 export default class DrawerDrag extends Vue {
-    @Prop({ type: [Number, String], default: 300, required: false })
+    @Prop({type: [Number, String], default: 300, required: false})
     protected readonly navigationWidth: number | string = 300;
 
-    @Prop({ type: Boolean, default: false, required: false })
+    @Prop({type: Boolean, default: false, required: false})
     protected readonly mini: boolean = false;
 
-    @Prop({ type: Boolean, default: true, required: false })
+    @Prop({type: Boolean, default: true, required: false})
     protected readonly right: boolean = true;
 
-    @Prop({ type: Boolean, default: true, required: false })
+    @Prop({type: Boolean, default: true, required: false})
     protected readonly absolute: boolean = true;
 
     @Ref()

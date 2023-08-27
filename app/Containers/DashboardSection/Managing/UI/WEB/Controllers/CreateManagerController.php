@@ -2,10 +2,10 @@
 
 namespace Containers\DashboardSection\Managing\UI\WEB\Controllers;
 
+use App\Ship\Parents\Controllers\WebController;
 use Containers\DashboardSection\Managing\Actions\CreateManagerAction;
 use Containers\DashboardSection\Managing\UI\WEB\Requests\CreateManagerRequest;
 use Containers\DashboardSection\Managing\UI\WEB\Requests\StoreManagerRequest;
-use App\Ship\Parents\Controllers\WebController;
 
 class CreateManagerController extends WebController
 {
