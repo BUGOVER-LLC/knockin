@@ -101,7 +101,7 @@ class ExceptionsHandler extends CoreExceptionsHandler
             ];
         }
 
-        return response()->json($response, (int)$e->getCode());
+        return response()->json($response, (int) $e->getCode());
     }
 
     /**

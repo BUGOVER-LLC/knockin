@@ -1,10 +1,11 @@
 /** @format */
 
-import { Module, VuexModule } from 'vuex-module-decorators';
+import {Module, VuexModule} from 'vuex-module-decorators';
 
 @Module({
     name: 'module/boardStape',
     namespaced: true,
     stateFactory: true,
 })
-export default class BoardStapeStore extends VuexModule {}
+export default class BoardStapeStore extends VuexModule {
+}

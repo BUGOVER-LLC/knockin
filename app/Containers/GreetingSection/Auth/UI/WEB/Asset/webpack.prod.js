@@ -3,7 +3,7 @@
 const mix = require('laravel-mix');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-mix.vue({ version: 2 })
+mix.vue({version: 2})
     .ts('app/Containers/GreetingSection/Auth/UI/WEB/Asset/app.ts', 'public/builds/auth/js/app.ts')
     .sass('app/Containers/GreetingSection/Auth/UI/WEB/Asset/app.scss', 'public/builds/auth/css/app.css')
     .webpackConfig({

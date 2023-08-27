@@ -2,31 +2,13 @@
 
 namespace Ship\Parents\Tests\PhpUnit;
 
-use Nucleus\Abstracts\Tests\PhpUnit\TestCase as AbstractTestCase;
 use Faker\Generator;
 use Illuminate\Contracts\Console\Kernel as ApiatoConsoleKernel;
 use Illuminate\Foundation\Application;
+use Nucleus\Abstracts\Tests\PhpUnit\TestCase as AbstractTestCase;
 
 abstract class TestCase extends AbstractTestCase
 {
-    /**
-     * Setup the test environment, before each test.
-     *
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-    }
-
-    /**
-     * Reset the test environment, after each test.
-     */
-    protected function tearDown(): void
-    {
-        parent::tearDown();
-    }
-
     /**
      * Creates the application.
      *
@@ -47,5 +29,23 @@ abstract class TestCase extends AbstractTestCase
         $this->faker = $app->make(Generator::class);
 
         return $app;
+    }
+
+    /**
+     * Setup the test environment, before each test.
+     *
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+    }
+
+    /**
+     * Reset the test environment, after each test.
+     */
+    protected function tearDown(): void
+    {
+        parent::tearDown();
     }
 }

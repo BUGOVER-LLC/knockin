@@ -14,7 +14,8 @@ class UpdateManagerTask extends ParentTask
 {
     public function __construct(
         protected ManagerRepository $repository
-    ) {
+    )
+    {
     }
 
     /**

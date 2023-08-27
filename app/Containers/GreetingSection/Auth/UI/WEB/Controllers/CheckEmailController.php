@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 
-use Containers\Vendor\MainConsts;
 use Containers\GreetingSection\Auth\Jobs\SendMailQueue;
+use Containers\Vendor\MainConsts;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

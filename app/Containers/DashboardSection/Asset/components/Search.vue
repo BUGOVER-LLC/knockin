@@ -1,14 +1,14 @@
 <!-- @format -->
 
 <template lang="html">
-    <v-dialog eager v-if="isView" v-model="isView" no-click-animation>
+    <v-dialog v-if="isView" v-model="isView" eager no-click-animation>
         <h1>SEARCH</h1>
     </v-dialog>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
-import { AbstractModule } from '@/store/modules/AbstractStore';
+import {Component, Vue} from 'vue-property-decorator';
+import {AbstractModule} from '@/store/modules/AbstractStore';
 
 @Component({
     components: {},
@@ -21,4 +21,4 @@ export default class Search extends Vue {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

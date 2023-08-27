@@ -18,9 +18,9 @@ class RedisManager extends \Illuminate\Redis\RedisManager
     /**
      * Subscribe to a set of given channels for messages.
      *
-     * @param  array|string  $channels
-     * @param  Closure  $callback
-     * @param  string  $method
+     * @param array|string $channels
+     * @param Closure $callback
+     * @param string $method
      * @return void
      */
     public function createSubscription($channels, Closure $callback, $method = 'subscribe'): void

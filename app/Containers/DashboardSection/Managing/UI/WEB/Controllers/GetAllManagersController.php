@@ -2,9 +2,9 @@
 
 namespace Containers\DashboardSection\Managing\UI\WEB\Controllers;
 
+use App\Ship\Parents\Controllers\WebController;
 use Containers\DashboardSection\Managing\Actions\GetAllManagersAction;
 use Containers\DashboardSection\Managing\UI\WEB\Requests\GetAllManagersRequest;
-use App\Ship\Parents\Controllers\WebController;
 
 class GetAllManagersController extends WebController
 {

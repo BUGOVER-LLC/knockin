@@ -7,13 +7,9 @@ use Ship\Parents\Transformers\Transformer as ParentTransformer;
 
 class IndexTransformer extends ParentTransformer
 {
-    protected array $defaultIncludes = [
+    protected array $defaultIncludes = [];
 
-    ];
-
-    protected array $availableIncludes = [
-
-    ];
+    protected array $availableIncludes = [];
 
     public function transform(Index $index): array
     {

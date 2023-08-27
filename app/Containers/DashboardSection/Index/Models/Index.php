@@ -6,17 +6,11 @@ use Ship\Parents\Models\Model as ParentModel;
 
 class Index extends ParentModel
 {
-    protected $fillable = [
+    protected $fillable = [];
 
-    ];
+    protected $hidden = [];
 
-    protected $hidden = [
-
-    ];
-
-    protected $casts = [
-
-    ];
+    protected $casts = [];
 
     /**
      * A resource key to be used in the serialized responses.
