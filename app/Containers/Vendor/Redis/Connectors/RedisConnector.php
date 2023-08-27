@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Redis as RedisFacade;
 use LogicException;
 use Redis;
 
+use function constant;
+use function defined;
+use function extension_loaded;
+
 /**
  *
  */
@@ -27,7 +31,7 @@ class RedisConnector extends PhpRedisConnector
         return tap(new Redis(), function ($client) use ($config) {
             if ($client instanceof RedisFacade) {
                 throw new LogicException(
-                    \extension_loaded('redis')
+                    extension_loaded('redis')
                         ? 'Please remove or rename the Redis facade alias in your "Asset" configuration file in order to avoid collision with the PHP Redis extension.'
                         : 'Please make sure the PHP Redis extension is installed and enabled.'
                 );
@@ -61,8 +65,8 @@ class RedisConnector extends PhpRedisConnector
 
             if (!empty($config['serializer'])) {
                 $serializer = 'Redis::SERIALIZER_' . strtoupper($config['serializer']);
-                if (\defined($serializer)) {
-                    $serializer_const = \constant($serializer);
+                if (defined($serializer)) {
+                    $serializer_const = constant($serializer);
                     $client->setOption(Redis::OPT_SERIALIZER, $serializer_const);
                 }
             }

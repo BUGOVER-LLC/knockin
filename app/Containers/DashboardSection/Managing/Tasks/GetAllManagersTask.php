@@ -11,7 +11,8 @@ class GetAllManagersTask extends ParentTask
 {
     public function __construct(
         protected ManagerRepository $repository
-    ) {
+    )
+    {
     }
 
     /**

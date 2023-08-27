@@ -1,7 +1,7 @@
 {
-  "name": "laravel/laravel",
+  "name": "sea/to-sea",
   "type": "project",
-  "description": "The Laravel Framework.",
+  "description": "sea to sea project.",
   "version": "0.0.2",
   "keywords": [
     "framework",
@@ -41,6 +41,7 @@
     "fakerphp/faker": "^1.20.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",
     "jetbrains/phpstorm-stubs": "^2023.1",
+    "laravel/homestead": "^14.4",
     "laravel/horizon": "^5.0.0",
     "laravel/pint": "^1.0.0",
     "laravel/sail": "^1.0.0",
@@ -115,7 +116,7 @@
       "php": "8.2"
     },
     "github-oauth": {
-      "github.com": "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"
+      "github.com": "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"
     }
   },
   "provide": {

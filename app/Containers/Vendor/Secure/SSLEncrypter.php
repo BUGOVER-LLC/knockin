@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Containers\Vendor\Secure;
 
+use function function_exists;
+use function ord;
+use function strlen;
+
 /**
  * Encryptor SSL
  */
@@ -49,7 +53,7 @@ final class SSLEncrypter
         $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $encryption_key, $options, $iv);
         $calcmac = hash_hmac($hash_algo, $ciphertext_raw, $encryption_key, true);
 
-        if (\function_exists('hash_equals')) {
+        if (function_exists('hash_equals')) {
             if (hash_equals($hmac, $calcmac)) {
                 return $original_plaintext;
             }
@@ -65,12 +69,12 @@ final class SSLEncrypter
      */
     private static function hash_equals_custom(string $known_string, string $user_string): bool
     {
-        if (\function_exists('mb_strlen')) {
+        if (function_exists('mb_strlen')) {
             $k_len = mb_strlen($known_string, '8bit');
             $u_len = mb_strlen($user_string, '8bit');
         } else {
-            $k_len = \strlen($known_string);
-            $u_len = \strlen($user_string);
+            $k_len = strlen($known_string);
+            $u_len = strlen($user_string);
         }
 
         if ($k_len !== $u_len) {
@@ -79,7 +83,7 @@ final class SSLEncrypter
 
         $result = 0;
         for ($i = 0; $i < $k_len; $i++) {
-            $result |= (\ord($known_string[$i]) ^ \ord($user_string[$i]));
+            $result |= (ord($known_string[$i]) ^ ord($user_string[$i]));
         }
 
         return 0 === $result;

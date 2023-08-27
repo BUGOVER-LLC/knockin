@@ -1,14 +1,15 @@
 <template>
     <v-app>
-        <slot name="auth-content" />
+        <slot name="auth-content"/>
     </v-app>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 
 @Component({})
-export default class App extends Vue {}
+export default class App extends Vue {
+}
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

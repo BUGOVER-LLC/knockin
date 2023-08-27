@@ -2,11 +2,11 @@
 
 namespace Containers\DashboardSection\Managing\UI\WEB\Controllers;
 
+use App\Ship\Parents\Controllers\WebController;
 use Containers\DashboardSection\Managing\Actions\FindManagerByIdAction;
 use Containers\DashboardSection\Managing\Actions\UpdateManagerAction;
 use Containers\DashboardSection\Managing\UI\WEB\Requests\EditManagerRequest;
 use Containers\DashboardSection\Managing\UI\WEB\Requests\UpdateManagerRequest;
-use App\Ship\Parents\Controllers\WebController;
 
 class UpdateManagerController extends WebController
 {

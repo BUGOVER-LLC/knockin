@@ -23,7 +23,8 @@ class SendMailQueue extends Job
         private readonly string $context,
         private readonly string $address,
         private readonly array $body = []
-    ) {
+    )
+    {
     }
 
     /**
