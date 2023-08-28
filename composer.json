@@ -41,7 +41,7 @@
     "fakerphp/faker": "^1.20.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",
     "jetbrains/phpstorm-stubs": "^2023.1",
-    "laravel/homestead": "^14.4",
+    "laravel/homestead": "^14.4.0",
     "laravel/horizon": "^5.0.0",
     "laravel/pint": "^1.0.0",
     "laravel/sail": "^1.0.0",
@@ -116,7 +116,7 @@
       "php": "8.2"
     },
     "github-oauth": {
-      "github.com": "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"
+      "github.com": "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"
     }
   },
   "provide": {

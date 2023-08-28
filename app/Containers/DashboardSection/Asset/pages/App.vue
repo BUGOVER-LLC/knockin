@@ -2,14 +2,14 @@
 
 <template lang="html">
     <v-app>
-        <slot name="content"/>
+        <slot name="content" />
     </v-app>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
-import {MainComponent} from '@/@core/Main/MainComponent';
+import { MainComponent } from '@/@core/Main/MainComponent';
 
 @Component
 export default class App extends Vue implements MainComponent {
@@ -19,11 +19,9 @@ export default class App extends Vue implements MainComponent {
         height: 0,
     };
 
-    handleResize() {
-    }
+    handleResize() {}
 
-    created(): void {
-    }
+    created(): void {}
 
     mounted(): void {
         window.addEventListener('resize', this.handleResize);
