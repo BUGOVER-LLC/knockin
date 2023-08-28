@@ -6,7 +6,7 @@ namespace App\Repositories\Workspace;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Collection;
-use Service\Repository\Repositories\BaseRepository;
+use Nucleus\Repository\Repositories\BaseRepository;
 use Src\Models\Workspace;
 
 class WorkspaceRepository extends BaseRepository implements WorkspaceContract

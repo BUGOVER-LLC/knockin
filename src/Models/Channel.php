@@ -7,7 +7,7 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 class Channel extends ServiceModel
 {

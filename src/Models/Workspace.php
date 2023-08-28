@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 class Workspace extends ServiceModel
 {

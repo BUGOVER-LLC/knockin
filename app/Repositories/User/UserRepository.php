@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Repositories\User;
 
 use Illuminate\Contracts\Container\Container;
-use Service\Repository\Repositories\BaseRepository;
+use Nucleus\Repository\Repositories\BaseRepository;
 use Src\Models\User;
 
 class UserRepository extends BaseRepository implements UserContract

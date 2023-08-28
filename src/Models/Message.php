@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Src\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 class Message extends ServiceModel
 {

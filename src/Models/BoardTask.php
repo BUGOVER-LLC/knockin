@@ -6,7 +6,7 @@ namespace Src\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 use Znck\Eloquent\Relations\BelongsToThrough;
 
 class BoardTask extends ServiceModel

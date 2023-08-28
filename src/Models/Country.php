@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Src\Models;
 
-use Service\Models\Entity\ServiceModel;
+use Nucleus\Models\Entity\ServiceModel;
 
 class Country extends ServiceModel
 {
