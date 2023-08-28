@@ -19,11 +19,11 @@
 </template>
 
 <script lang="ts">
-import {extend, validate, ValidationProvider} from 'vee-validate';
-import {email, max, min, required} from 'vee-validate/dist/rules';
-import {Component, Emit, Prop, Vue} from 'vue-property-decorator';
+import { extend, validate, ValidationProvider } from 'vee-validate';
+import { email, max, min, required } from 'vee-validate/dist/rules';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
-import {MainComponent} from '@/@core/Main/MainComponent';
+import { MainComponent } from '@/@core/Main/MainComponent';
 
 extend('required', required);
 extend('email', email);
@@ -31,23 +31,22 @@ extend('min', min);
 extend('max', max);
 
 @Component({
-    components: {ValidationProvider},
+    components: { ValidationProvider },
     mixins: [],
 })
 export default class EmailSender extends Vue implements MainComponent {
     protected email = '';
     protected valid = false;
-    @Prop({required: false}) private readonly emailValue: string = '';
+    @Prop({ required: false }) private readonly emailValue: string = '';
 
-    mounted(): void {
-    }
+    mounted(): void {}
 
     created() {
         this.email = this.emailValue;
     }
 
     emailTrigger() {
-        validate(this.email, 'required|email', {name: 'email'}).then((result: any) => {
+        validate(this.email, 'required|email', { name: 'email' }).then((result: any) => {
             if (result && result.valid) {
                 this.valid = result.valid ?? false;
             }
@@ -57,7 +56,7 @@ export default class EmailSender extends Vue implements MainComponent {
 
     @Emit('validEmail')
     emitter() {
-        return {email: this.email, valid: this.valid};
+        return { email: this.email, valid: this.valid };
     }
 }
 </script>

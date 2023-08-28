@@ -18,8 +18,8 @@
       "node"
     ],
     "typeRoots": [
-      "../../../../node_modules/@types",
-      "./app/Containers/DashboardSection/Asset/@types"
+      "node_modules/@types",
+      "app/Containers/Vendor/UI/WEB/Asset/@types"
     ],
     "resolveJsonModule": true,
     "paths": {
@@ -32,9 +32,9 @@
   "vueCompilerOptions": {
     "target": 2.7
   },
-  "exclude": ["../../../../node_modules"],
+  "exclude": ["node_modules"],
   "include": [
-    "../../GreetingSection/Auth/UI/WEB/Asset",
+    "app/Containers/GreetingSection/Auth/UI/WEB/Asset",
     "app/Containers/DashboardSection/Asset"
   ]
 }

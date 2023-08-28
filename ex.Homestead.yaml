@@ -6,15 +6,15 @@ authorize: ~/.ssh/id_rsa.pub
 keys:
   - ~/.ssh/id_rsa
 folders:
-  - map: /home/artak/work/projects/noix/knock
-    to: /home/vagrant/noix
+  - map: /home/username/projects/projectname
+    to: /home/vagrant/projectname
 sites:
-  - map: noix.loc
-    to: /home/vagrant/noix/public
+  - map: projectname.loc
+    to: /home/vagrant/projectname/public
     php: "8.2"
     schedule: true
 databases:
-  - noix
+  - dbname
 features:
   - minio: true
   - postgresql: true
@@ -36,5 +36,5 @@ features:
   - elasticsearch: false
 services:
   - enabled: [ postgresql ]
-name: noix
-hostname: noix
+name: projectname
+hostname: projectname

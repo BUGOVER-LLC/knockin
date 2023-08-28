@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Laravel\Fortify\Features;
+use Ship\Providers\RouteServiceProvider;
 
 return [
 
@@ -62,7 +63,7 @@ return [
     |
     */
 
-    'home' => '/',
+    'home' => RouteServiceProvider::HOME,
 
     /*
     |--------------------------------------------------------------------------
