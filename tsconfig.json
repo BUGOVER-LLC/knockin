@@ -25,7 +25,8 @@
     "paths": {
       "@/*": [
         "app/Containers/GreetingSection/Auth/UI/WEB/Asset/*",
-        "app/Containers/DashboardSection/Asset/*"
+        "app/Containers/DashboardSection/Asset/*",
+        "app/Containers/Vendor/Asset/*"
       ]
     }
   },

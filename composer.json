@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "<=8.2.3",
+    "PHP": "<=8.2.3",
     "php-64bit": "<=8.2.3",
     "ext-gd": "*",
     "ext-pdo": "*",
@@ -113,10 +113,10 @@
       "wikimedia/composer-merge-plugin": true
     },
     "platform": {
-      "php": "8.2"
+      "PHP": "8.2"
     },
     "github-oauth": {
-      "github.com": "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"
+      "github.com": "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"
     }
   },
   "provide": {
