@@ -1,8 +1,8 @@
 /** @format */
 
-import {RouteConfig} from 'vue-router';
+import { RouteConfig } from 'vue-router';
 
-import {acceptCodePageCheck} from '@/router/middlewares';
+import { acceptCodePageCheck } from '@/router/middlewares';
 
 const emailSender = (): object => import('@/components/started/EmailSender.vue');
 const confirmCode = (): object => import('@/components/started/ConfirmCode.vue');
