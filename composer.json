@@ -2,7 +2,7 @@
   "name": "sea/to-sea",
   "type": "project",
   "description": "sea to sea project.",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "keywords": [
     "framework",
     "laravel"
@@ -84,7 +84,8 @@
     ],
     "post-create-project-cmd": [
       "@php artisan key:generate --ansi"
-    ]
+    ],
+    "hook-test": "sh bin/package-links"
   },
   "extra": {
     "laravel": {

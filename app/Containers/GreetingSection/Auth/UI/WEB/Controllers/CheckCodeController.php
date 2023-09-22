@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 
+use App\Containers\Vendor\Repositories\UserRepository;
+use App\Containers\Vendor\Repositories\WorkspaceRepository;
 use Containers\Vendor\MainConsts;
 use Containers\Vendor\Models\User;
-use Containers\Vendor\Repositories\User\UserContract;
-use Containers\Vendor\Repositories\Workspace\WorkspaceContract;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
@@ -28,10 +28,9 @@ class CheckCodeController extends WebController
      */
     public function __construct(
         protected readonly Redis $redis,
-        protected readonly UserContract $userContract,
-        protected readonly WorkspaceContract $workspaceContract
-    )
-    {
+        protected readonly UserRepository $userRepository,
+        protected readonly WorkspaceRepository $workspaceRepository
+    ) {
         $this->redis->connect('localhost');
     }
 
@@ -86,11 +85,11 @@ class CheckCodeController extends WebController
      */
     private function authorizeUser(string $email, string $code): ?User
     {
-        $user = $this->userContract->where('email', '=', $email)->findFirst();
+        $user = $this->userRepository->where('email', '=', $email)->findFirst();
 
         if (!$user) {
             try {
-                $user = $this->userContract->create(
+                $user = $this->userRepository->create(
                     ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
                 );
             } catch (Exception $exception) {

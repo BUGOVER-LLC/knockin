@@ -7,9 +7,9 @@ namespace Containers\Vendor\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Nucleus\Models\Entity\ServiceModel;
+use Ship\Parents\Models\Model;
 
-final class Channel extends ServiceModel
+final class Channel extends Model
 {
     /**
      * @var string

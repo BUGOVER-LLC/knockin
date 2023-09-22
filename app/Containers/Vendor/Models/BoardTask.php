@@ -6,10 +6,10 @@ namespace Containers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Nucleus\Models\Entity\ServiceModel;
+use Ship\Parents\Models\Model;
 use Znck\Eloquent\Relations\BelongsToThrough;
 
-final class BoardTask extends ServiceModel
+final class BoardTask extends Model
 {
     /**
      * @var string

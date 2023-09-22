@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Please call this file in package json or "run npm run sync-packages"
+
+ln -sfn ../package.json resources/assets/dashboard
+ln -sfn ../yarn.lock resources/assets/dashboard
+
+ln -sfn ../package.json resources/assets/auth
+ln -sfn ../yarn.lock resources/assets/auth
+
+exit

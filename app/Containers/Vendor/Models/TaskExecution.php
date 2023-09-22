@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Containers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Nucleus\Models\Entity\ServiceModel;
+use Ship\Parents\Models\Model;
 
-final class TaskExecution extends ServiceModel
+final class TaskExecution extends Model
 {
     /**
      * @var string
