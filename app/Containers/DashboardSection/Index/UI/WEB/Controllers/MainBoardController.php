@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Containers\DashboardSection\Index\UI\WEB\Controllers;
 
-use Containers\Vendor\Repositories\User\UserContract;
+use App\Containers\Vendor\Repositories\UserRepository;
 use Illuminate\Contracts\View\View;
 use Ship\Parents\Controllers\WebController;
 
 class MainBoardController extends WebController
 {
     /**
-     * @param UserContract $userContract
+     * @param UserRepository $userRepository
      */
-    public function __construct(private readonly UserContract $userContract)
+    public function __construct(private readonly UserRepository $userRepository)
     {
     }
 

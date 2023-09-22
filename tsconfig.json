@@ -19,14 +19,12 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "app/Containers/Vendor/UI/WEB/Asset/@types"
+      "resources/assets/@types"
     ],
     "resolveJsonModule": true,
     "paths": {
       "@/*": [
-        "app/Containers/GreetingSection/Auth/UI/WEB/Asset/*",
-        "app/Containers/DashboardSection/Asset/*",
-        "app/Containers/Vendor/Asset/*"
+        "resources/assets/*",
       ]
     }
   },
@@ -35,7 +33,6 @@
   },
   "exclude": ["node_modules"],
   "include": [
-    "app/Containers/GreetingSection/Auth/UI/WEB/Asset",
-    "app/Containers/DashboardSection/Asset"
+    "resources/assets"
   ]
 }

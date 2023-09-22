@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\Vendor\Models;
 
-use Nucleus\Models\Entity\ServiceModel;
+use Ship\Parents\Models\Model;
 
-final class SharedBoard extends ServiceModel
+final class SharedBoard extends Model
 {
 }

@@ -10,14 +10,14 @@
             </v-list-item>
         </v-list-item-group>
         <div class="sub-header-member-bottom">
-            <v-divider/>
-            <v-skeleton-loader type="list-item-avatar"/>
+            <v-divider />
+            <v-skeleton-loader type="list-item-avatar" />
         </div>
     </v-list>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
     components: {},

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # If you would like to do some extra provisioning you may
 # add any commands you wish to this file and they will
@@ -7,7 +7,6 @@
 # If you have user-specific configurations you would like
 # to apply, you may also create user-customizations.sh,
 # which will be run after this script.
-
 
 # If you're not quite ready for the latest Node.js version,
 # uncomment these lines to roll back to a previous version

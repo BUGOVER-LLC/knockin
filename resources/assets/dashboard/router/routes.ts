@@ -1,9 +1,9 @@
 /** @format */
 
-import {RouteConfig} from 'vue-router';
+import { RouteConfig } from 'vue-router';
 
-const greeting = (): object => import('@/pages/dashboard/Greeting.vue');
-const dashboard = (): object => import('@/pages/dashboard/Board.vue');
+const greeting = (): object => import('@/dashboard/pages/dashboard/Greeting.vue');
+const dashboard = (): object => import('@/dashboard/pages/dashboard/Board.vue');
 
 export const Routes: RouteConfig[] = [
     {

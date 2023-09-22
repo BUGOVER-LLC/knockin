@@ -6,9 +6,9 @@ namespace Containers\Vendor\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Nucleus\Models\Entity\ServiceModel;
+use Ship\Parents\Models\Model;
 
-final class BoardStape extends ServiceModel
+final class BoardStape extends Model
 {
     /**
      * @var string

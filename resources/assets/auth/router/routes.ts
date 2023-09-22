@@ -2,11 +2,11 @@
 
 import { RouteConfig } from 'vue-router';
 
-import { acceptCodePageCheck } from '@/router/middlewares';
+import { acceptCodePageCheck } from '@/auth/router/middlewares';
 
-const emailSender = (): object => import('@/components/started/EmailSender.vue');
-const confirmCode = (): object => import('@/components/started/ConfirmCode.vue');
-const authIndex = (): object => import('@/pages/AuthIndex.vue');
+const emailSender = (): object => import('@/auth/components/started/EmailSender.vue');
+const confirmCode = (): object => import('@/auth/components/started/ConfirmCode.vue');
+const authIndex = (): object => import('@/auth/pages/AuthIndex.vue');
 
 export const Routes: RouteConfig[] = [
     {

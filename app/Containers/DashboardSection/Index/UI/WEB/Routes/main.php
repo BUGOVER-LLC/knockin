@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Containers\DashboardSection\Index\UI\WEB\Controllers\MainBoardController;
+use Illuminate\Support\Facades\Route;
 
 $route_attributes = [
     'middleware' => ['auth:web'],
