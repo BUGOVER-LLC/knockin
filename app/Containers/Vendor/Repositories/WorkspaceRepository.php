@@ -6,7 +6,7 @@ namespace App\Containers\Vendor\Repositories;
 
 use Containers\Vendor\Models\Workspace;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Collection;
 use Ship\Parents\Repositories\Repository;
 
 class WorkspaceRepository extends Repository

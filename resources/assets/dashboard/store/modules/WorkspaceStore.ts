@@ -1,6 +1,6 @@
 /** @format */
 
-import {getModule, Module, VuexModule} from 'vuex-module-decorators';
+import { getModule, Module, VuexModule } from 'vuex-module-decorators';
 
 import store from '../index';
 

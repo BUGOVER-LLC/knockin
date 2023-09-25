@@ -20,20 +20,20 @@
 </template>
 
 <script lang="ts">
-import {Component, Prop, Ref, Vue} from 'vue-property-decorator';
+import { Component, Prop, Ref, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class DrawerDrag extends Vue {
-    @Prop({type: [Number, String], default: 300, required: false})
+    @Prop({ type: [Number, String], default: 300, required: false })
     protected readonly navigationWidth: number | string = 300;
 
-    @Prop({type: Boolean, default: false, required: false})
+    @Prop({ type: Boolean, default: false, required: false })
     protected readonly mini: boolean = false;
 
-    @Prop({type: Boolean, default: true, required: false})
+    @Prop({ type: Boolean, default: true, required: false })
     protected readonly right: boolean = true;
 
-    @Prop({type: Boolean, default: true, required: false})
+    @Prop({ type: Boolean, default: true, required: false })
     protected readonly absolute: boolean = true;
 
     @Ref()
@@ -57,7 +57,7 @@ export default class DrawerDrag extends Vue {
     setBorderWidth(): void {
         const drawers = this.drawer.$el.querySelectorAll('.v-navigation-drawer__border');
         const drawer = 1 < drawers.length ? drawers[1] : drawers[0];
-        drawer.style.width = this.navigation.borderSize + 'px';
+        drawer.style.width = `${this.navigation.borderSize}px`;
         drawer.style.cursor = 'ew-resize';
     }
 
@@ -69,15 +69,19 @@ export default class DrawerDrag extends Vue {
         const vm = this;
         const direction = el.classList.contains('v-navigation-drawer--right') ? 'right' : 'left';
 
+        /**
+         *
+         * @param e
+         */
         function resize(e) {
             document.body.style.cursor = 'ew-resize';
-            let f = 'right' === direction ? document.body.scrollWidth - e.clientX : e.clientX;
-            el.style.width = f + 'px';
+            const f = 'right' === direction ? document.body.scrollWidth - e.clientX : e.clientX;
+            el.style.width = `${f}px`;
         }
 
         drawerBorder.addEventListener(
             'mousedown',
-            function (e) {
+            e => {
                 if (e.offsetX < minSize) {
                     const mPos = e.x;
                     el.style.transition = 'initial';
@@ -89,7 +93,7 @@ export default class DrawerDrag extends Vue {
 
         document.addEventListener(
             'mouseup',
-            function () {
+            () => {
                 el.style.transition = '';
                 vm.navigation.width = el.style.width;
                 document.body.style.cursor = '';

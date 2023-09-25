@@ -1,9 +1,9 @@
 /** @format */
 
-import {Action, getModule, Module, Mutation, VuexModule} from 'vuex-module-decorators';
+import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';
 
 import store from '@/store/index';
-import {AbstractModel} from '@/store/models/AbstractModel';
+import { AbstractModel } from '@/store/models/AbstractModel';
 
 @Module({
     name: 'moduleAbstract',
@@ -17,7 +17,7 @@ export default class AbstractStore extends VuexModule implements AbstractModel {
     public searchToggle = false;
     public searchBody = '';
 
-    @Action({rawError: true, commit: 'mutateTriggerSearch'})
+    @Action({ rawError: true, commit: 'mutateTriggerSearch' })
     public initTriggerSearch() {
         console.log(this.searchToggle);
     }
