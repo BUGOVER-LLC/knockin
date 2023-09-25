@@ -15,7 +15,7 @@
         >
             <template #append>
                 <v-btn icon large @click="emitMessage">
-                    <v-icon color="grey darken-3" x-large v-text="'mdi-send-variant-outline'"/>
+                    <v-icon color="grey darken-3" x-large v-text="'mdi-send-variant-outline'" />
                 </v-btn>
             </template>
         </v-text-field>
@@ -23,10 +23,10 @@
 </template>
 
 <script lang="ts">
-import {Component, Emit, Vue} from 'vue-property-decorator';
+import { Component, Emit, Vue } from 'vue-property-decorator';
 
-import {MainComponent} from '@/@core/Main/MainComponent';
-import {MessageModule} from '@/store/modules/MessageStore';
+import { MainComponent } from '@/@core/Main/MainComponent';
+import { MessageModule } from '@/store/modules/MessageStore';
 
 @Component({
     components: {},
@@ -52,11 +52,9 @@ export default class MessagingWriter extends Vue implements MainComponent {
         this.emitMsg(messageData);
     }
 
-    created(): void {
-    }
+    created(): void {}
 
-    mounted(): void {
-    }
+    mounted(): void {}
 
     @Emit('initMsg')
     private emitMsg<T extends object>(messageData: T): T {

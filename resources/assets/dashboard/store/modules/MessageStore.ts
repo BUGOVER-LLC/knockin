@@ -1,10 +1,9 @@
 /** @format */
 
-import {Action, getModule, Module, Mutation, VuexModule} from 'vuex-module-decorators';
-
-import {MessageModel} from '@/store/models/MessageModel';
+import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
 
 import store from '@/store/index';
+import { MessageModel } from '@/store/models/MessageModel';
 
 @Module({
     dynamic: true,
@@ -37,7 +36,7 @@ class MessageStore extends VuexModule implements MessageModel {
         return this.detonate;
     }
 
-    @Action({commit: 'mutateDetonator'})
+    @Action({ commit: 'mutateDetonator' })
     public async initMessage(payload) {
         this.mutateMessage(payload);
         // await axios.post('/noix/init-msg', payload);

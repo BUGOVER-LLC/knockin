@@ -2,17 +2,17 @@
 
 <template>
     <v-app-bar app class="ml-0 pl-0" clipped-right flat height="70" light>
-        <v-spacer/>
+        <v-spacer />
 
         <v-btn depressed icon @click="emitVideoCall">
-            <v-icon v-text="'mdi-video'"/>
+            <v-icon v-text="'mdi-video'" />
         </v-btn>
 
         <v-btn depressed icon @click="emitAudioCall">
-            <v-icon v-text="'mdi-phone'"/>
+            <v-icon v-text="'mdi-phone'" />
         </v-btn>
 
-        <v-divider class="mr-5 ml-3" vertical/>
+        <v-divider class="mr-5 ml-3" vertical />
 
         <v-responsive class="mr-lg-10" max-width="155">
             <v-text-field
@@ -30,19 +30,18 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
-import {AbstractModule} from '@/store/modules/AbstractStore';
+import { Component, Vue } from 'vue-property-decorator';
+
+import { AbstractModule } from '@/store/modules/AbstractStore';
 
 @Component({
     components: {},
     mixins: [],
 })
 export default class AppBar extends Vue {
-    emitVideoCall() {
-    }
+    emitVideoCall() {}
 
-    emitAudioCall() {
-    }
+    emitAudioCall() {}
 
     toggleSearch() {
         AbstractModule.initTriggerSearch();

@@ -6,7 +6,7 @@
             Connection failed. Please check your internet connection !
         </div>
 
-        <v-spacer/>
+        <v-spacer />
 
         <v-icon>mdi-alert</v-icon>
 
@@ -17,8 +17,9 @@
 </template>
 
 <script lang="ts">
-import {Component, Emit, Vue, Watch} from 'vue-property-decorator';
-import {MainComponent} from '@/@core/Main/MainComponent';
+import { Component, Emit, Vue, Watch } from 'vue-property-decorator';
+
+import { MainComponent } from '@/@core/Main/MainComponent';
 
 @Component({})
 export default class SystemBar extends Vue implements MainComponent {
@@ -55,7 +56,7 @@ export default class SystemBar extends Vue implements MainComponent {
     }
 
     private updateOnlineStatus(event: Event) {
-        const {type} = event;
+        const { type } = event;
         this.onLine = 'online' === type;
 
         this.emitStatus();

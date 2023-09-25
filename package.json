@@ -10,10 +10,10 @@
         "prod": "mix --production",
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "install-sync": "sh ./bin/package-links"
+        "install-sync": "sh ./bin/package_links"
     },
     "devDependencies": {
-        "@babel/core": "^7.22.20",
+        "@babel/core": "^7.23.0",
         "@babel/plugin-proposal-async-do-expressions": "^7.22.5",
         "@babel/plugin-proposal-do-expressions": "^7.22.5",
         "@babel/plugin-transform-property-mutators": "^7.22.15",
@@ -21,7 +21,7 @@
         "@babel/preset-env": "^7.22.20",
         "@mdi/font": "^7.2.96",
         "@mdi/js": "^7.2.96",
-        "@types/node": "^20.5.7",
+        "@types/node": "^20.6.5",
         "@types/webpack-env": "^1.18.1",
         "@typescript-eslint/eslint-plugin": "^6.0.0",
         "@typescript-eslint/parser": "^6.0.0",
