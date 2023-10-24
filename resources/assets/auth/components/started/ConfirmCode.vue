@@ -21,11 +21,11 @@
 
 <script lang="ts">
 import { VueMaskDirective, VueMaskFilter } from 'v-mask';
-import { extend, validate, ValidationProvider } from 'vee-validate';
+import { ValidationProvider, extend, validate } from 'vee-validate';
 import { max, min, required } from 'vee-validate/dist/rules';
 import { Component, Emit, PropSync, Vue, Watch } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/Main/MainComponent';
+import { MainComponent } from '@/@core/MainComponent';
 
 extend('required', required);
 extend('min', min);

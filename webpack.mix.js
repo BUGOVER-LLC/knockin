@@ -32,7 +32,7 @@ if ('local' !== environment) {
      * =================================================================================================================
      */
     require('./resources/assets/auth/webpack.dev');
-    require('./resources/assets/dashboard/webpack.dev');
+    // require('./resources/assets/dashboard/webpack.dev');
 
     if (strictMode) {
         mix.sourceMaps().webpackConfig(

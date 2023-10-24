@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 
+use App\Containers\DashboardSection\User\Models\User;
 use App\Containers\Vendor\Repositories\UserRepository;
 use App\Containers\Vendor\Repositories\WorkspaceRepository;
 use Containers\Vendor\MainConsts;
-use Containers\Vendor\Models\User;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;

@@ -19,11 +19,11 @@ Route::group($route_attributes, static fn() => [
     Route::get('/', SignInController::class)
         ->name('auth.get_sign'),
 
-    Route::post('check-code', CheckCodeController::class)
-        ->name('auth.check-code'),
-
     Route::post('check-email', CheckEmailController::class)
         ->name('auth.check-email'),
+
+    Route::post('check-code', CheckCodeController::class)
+        ->name('auth.check-code'),
 
     Route::get('{any}', SignInController::class)->where('any', '.*'),
 ]);

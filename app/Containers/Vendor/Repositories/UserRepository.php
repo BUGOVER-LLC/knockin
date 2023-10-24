@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace App\Containers\Vendor\Repositories;
 
-use Containers\Vendor\Models\User;
+use App\Containers\DashboardSection\User\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Ship\Parents\Repositories\Repository;
 
 class UserRepository extends Repository
@@ -25,5 +26,13 @@ class UserRepository extends Repository
     public function __call(string $name, array $arguments): User
     {
         return $this->user;
+    }
+
+    /**
+     * @return Collection|array
+     */
+    public function getAllUsers(): Collection|array
+    {
+        return $this->createModelBuilder()->get();
     }
 }

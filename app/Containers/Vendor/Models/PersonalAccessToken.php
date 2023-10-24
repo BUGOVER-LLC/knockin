@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\Vendor\Models;
 
+use App\Containers\DashboardSection\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 final class PersonalAccessToken extends \Laravel\Sanctum\PersonalAccessToken

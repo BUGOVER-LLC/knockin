@@ -3,4 +3,4 @@
 import vuetify from './vuetify';
 // const validators = import('./validators');
 
-export {vuetify};
+export { vuetify };

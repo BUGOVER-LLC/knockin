@@ -20,3 +20,14 @@
 # More info: https://github.com/nodesource/distributions/blob/master/README.md#debinstall
 #curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #sudo apt-get install -y nodejs
+
+sudo apt update
+sudo apt upgrade
+
+sudo cp /etc/ssl/certs/ca.homestead.ssa.crt /home/vagrant/noix/.etc/ssl
+sudo cp /etc/ssl/certs/ca.homestead.ssa.key /home/vagrant/noix/.etc/ssl
+
+sudo cp -r /home/vagrant/noix/.etc/nginx/noix.loc /etc/nginx/sites-available/
+
+sudo cp -r /home/vagrant/noix/.etc/supervisor/queue-base.conf /etc/supervisor/conf.d/
+sudo cp -r /home/vagrant/noix/.etc/supervisor/swoole-http.conf /etc/supervisor/conf.d/
