@@ -4,7 +4,7 @@
     <div class="auth-wrapper d-flex align-center justify-center pa-4">
         <VCard class="auth-card pa-4 pt-7 rounded-lg" max-width="460" outlined>
             <v-card-title class="justify-center">
-                <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/public">NOIX</a></VCardTitle>
+                <VCardTitle class="font-weight-semibold text-2xl text-uppercase"><a href="/">NOIX</a></VCardTitle>
             </v-card-title>
 
             <VCardText class="pt-2">
@@ -19,7 +19,7 @@
                         <VCol class="mb-3" cols="12">
                             <v-window v-model="step">
                                 <v-window-item :eager="true" :value="1">
-                                    <EmailSender :email-value="email" @validEmail="emailValidation = $event"/>
+                                    <EmailSender :email-value="email" @validEmail="emailValidation = $event" />
                                 </v-window-item>
                                 <v-window-item :value="2">
                                     <ConfirmCode
@@ -32,10 +32,10 @@
 
                         <v-col cols="12">
                             <v-btn v-if="2 === step" icon @click="prevStep">
-                                <v-icon v-text="'mdi-arrow-left'"/>
+                                <v-icon v-text="'mdi-arrow-left'" />
                             </v-btn>
                             <v-btn v-if="1 === step && emailValidation.sent" class="float-right" icon @click="nextStep">
-                                <v-icon v-text="'mdi-arrow-right'"/>
+                                <v-icon v-text="'mdi-arrow-right'" />
                             </v-btn>
                         </v-col>
 
@@ -57,9 +57,9 @@
                         </VCol>
 
                         <VCol class="d-flex align-center" cols="12">
-                            <VDivider/>
+                            <VDivider />
                             <span class="mx-4">or</span>
-                            <VDivider/>
+                            <VDivider />
                         </VCol>
 
                         <!-- create account -->
@@ -74,10 +74,10 @@
 </template>
 
 <script lang="ts">
-import axios, {AxiosError, AxiosResponse} from 'axios';
-import {extend, ValidationProvider} from 'vee-validate';
-import {email, max, min, required} from 'vee-validate/dist/rules';
-import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
+import axios, { AxiosError, AxiosResponse } from 'axios';
+import { extend, ValidationProvider } from 'vee-validate';
+import { email, max, min, required } from 'vee-validate/dist/rules';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 import ConfirmCode from '../components/started/ConfirmCode.vue';
 import EmailSender from '../components/started/EmailSender.vue';
@@ -88,18 +88,18 @@ extend('max', max);
 extend('email', email);
 
 @Component({
-    components: {ConfirmCode, EmailSender, ValidationProvider},
+    components: { ConfirmCode, EmailSender, ValidationProvider },
 })
 export default class AuthIndex extends Vue {
-    @Prop({required: true}) private readonly code: boolean = false;
-    @Prop({required: false}) private readonly email: string = '';
+    @Prop({ required: true }) private readonly code: boolean = false;
+    @Prop({ required: false }) private readonly email: string = '';
 
     private step = 1;
     private loader = false;
     private disabledOtp = false;
 
-    private emailValidation = {valid: false, email: '', sent: false};
-    private codeValidation = {valid: false, code: '', sent: false};
+    private emailValidation = { valid: false, email: '', sent: false };
+    private codeValidation = { valid: false, code: '', sent: false };
 
     created() {
         'emailSender' !== this.$router.currentRoute.name ? this.prevStep() : null;
@@ -109,7 +109,7 @@ export default class AuthIndex extends Vue {
         } else if ('authConfirm' === this.$router.currentRoute.name && this.code) {
             this.step = 2;
         } else if (1 === this.step && 'authConfirm' === this.$router.currentRoute.name) {
-            this.$router.push({name: 'emailSender'});
+            this.$router.push({ name: 'emailSender' });
         }
     }
 
@@ -118,14 +118,13 @@ export default class AuthIndex extends Vue {
         if (val && this.emailValidation.valid && this.codeValidation) {
             this.disabledOtp = true;
             axios
-                .post('/auth/check-code', {email: this.emailValidation.email, code: this.codeValidation.code})
+                .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
                 .then((response: AxiosResponse) => {
                     if (response.data.redirect ?? false) {
                         window.location.replace(response.data.redirect);
                     }
                 })
-                .catch((error: Error | AxiosError) => {
-                })
+                .catch((error: Error | AxiosError) => {})
                 .finally(() => {
                     this.disabledOtp = false;
                 });
@@ -134,12 +133,12 @@ export default class AuthIndex extends Vue {
 
     prevStep() {
         this.step = 1;
-        this.$router.push({name: 'emailSender'});
+        this.$router.push({ name: 'emailSender' });
     }
 
     nextStep() {
         this.step = 2;
-        this.$router.push({name: 'authConfirm'});
+        this.$router.push({ name: 'authConfirm' });
     }
 
     textBtn() {
@@ -152,15 +151,14 @@ export default class AuthIndex extends Vue {
     private async checkSend() {
         if (this.emailValidation.valid) {
             axios
-                .post('/auth/check-email', {email: this.emailValidation.email})
+                .post('/auth/check-email', { email: this.emailValidation.email })
                 .then((result: AxiosResponse) => {
                     if (422 !== result.status) {
                         this.nextStep();
                         this.emailValidation.sent = true;
                     }
                 })
-                .catch((error: Error | AxiosError) => {
-                })
+                .catch((error: Error | AxiosError) => {})
                 .finally(() => {
                     this.loader = false;
                 });

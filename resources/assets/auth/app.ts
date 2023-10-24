@@ -4,8 +4,8 @@ import VueHotkey from 'v-hotkey';
 import VueMask from 'v-mask';
 import Vue from 'vue';
 
-import {vuetify} from '@/plugins';
-import {router} from '@/router';
+import { vuetify } from '@/auth/plugins';
+import { router } from '@/auth/router';
 
 import App from './pages/App.vue';
 

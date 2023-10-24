@@ -30,7 +30,7 @@
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^2.0.0",
     "laravel/tinker": "^2.0.0",
-    "pda/pheanstalk": "^4.0.0",
+    "pda/pheanstalk": "^5.0.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
   },
   "require-dev": {
@@ -38,10 +38,10 @@
     "barryvdh/laravel-ide-helper": "^2.0.0",
     "beyondcode/laravel-er-diagram-generator": "^2.0.0",
     "beyondcode/laravel-query-detector": "^1.0.0",
-    "fakerphp/faker": "^1.20.0",
+    "fakerphp/faker": "^1.0.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",
     "jetbrains/phpstorm-stubs": "^2023.1",
-    "laravel/homestead": "^14.4.0",
+    "laravel/homestead": "^14.5.0",
     "laravel/horizon": "^5.0.0",
     "laravel/pint": "^1.0.0",
     "laravel/sail": "^1.0.0",
@@ -117,7 +117,7 @@
       "PHP": "8.2"
     },
     "github-oauth": {
-      "github.com": "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"
+      "github.com": "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"
     }
   },
   "provide": {

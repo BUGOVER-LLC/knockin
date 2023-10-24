@@ -9,10 +9,8 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/Main/MainComponent';
-
-@Component
-export default class App extends Vue implements MainComponent {
+@Component({})
+export default class App extends Vue {
     private messages: object = [];
     private window = {
         width: 0,

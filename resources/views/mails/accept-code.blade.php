@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Your code is</h1>
+<h1>Your accept code</h1>
 <h3>
-    <code>{{ $accept_code }}</code>
+    <code class="text-center">{{ $accept_code }}</code>
 </h3>
 </body>
 </html>

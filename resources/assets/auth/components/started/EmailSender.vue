@@ -37,6 +37,7 @@ extend('max', max);
 export default class EmailSender extends Vue implements MainComponent {
     protected email = '';
     protected valid = false;
+
     @Prop({ required: false }) private readonly emailValue: string = '';
 
     mounted(): void {}
