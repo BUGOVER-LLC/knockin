@@ -57,7 +57,7 @@ return [
             'database' => env('DB_DATABASE_APP', 'forge'),
             'username' => env('DB_USERNAME_APP', 'forge'),
             'password' => env('DB_PASSWORD_APP', ''),
-            'schema' => env('DB_SCHEMA_APP', 'public'),
+            'schema' => env('DB_SCHEMA_APP', 'app'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,

@@ -1,7 +1,0 @@
-node >= 16
-defaults and supports es6-module
-Firefox > 43
-Chrome > 71
-ChromeAndroid 90
-IOS >= 9
-> 0.2% and not dead

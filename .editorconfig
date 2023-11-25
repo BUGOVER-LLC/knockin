@@ -8,7 +8,7 @@ max_line_length = 120
 tab_width = 4
 trim_trailing_whitespace = true
 
-[{.babelrc, .prettierrc, .stylelintrc, .eslintrc, jest.config, .jsb3, .jsb2, *.bowerrc}]
+[{.babelrc,.prettierrc,.stylelintrc,.eslintrc,jest.config,.jsb3,.jsb2,*.bowerrc}]
 indent_size = 2
 
 [*.blade.*]
@@ -27,7 +27,7 @@ indent_size = tab
 [*.js]
 indent_size = tab
 
-[{*.less, *.scss, *.json, *.js.map, *.css}]
+[{*.less,*.scss,*.json,*.js.map,*.css}]
 indent_size = 2
 max_line_length = 80
 tab_width = 2
@@ -40,12 +40,12 @@ tab_width = 2
 [.env]
 max_line_length = 300
 
-[{composer.json, package.json}]
+[{composer.json,package.json}]
 indent_size = 2
 tab_width = 2
 max_line_length = 80
 
-[{*.yaml, *.yml}]
+[{*.yaml,*.yml}]
 tab_width = 2
 indent_size = 2
 max_line_length = 120

@@ -1,2 +1,0 @@
-### Apiato Manager Container
-

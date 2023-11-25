@@ -30,8 +30,7 @@ class ExceptionsHandler extends CoreExceptionsHandler
      *
      * @var array<class-string<Throwable>, LogLevel::*>
      */
-    protected $levels = [
-        //
+    protected $levels = [//
     ];
 
     /**
@@ -39,8 +38,7 @@ class ExceptionsHandler extends CoreExceptionsHandler
      *
      * @var array<int, class-string<Throwable>>
      */
-    protected $dontReport = [
-        //
+    protected $dontReport = [//
     ];
 
     /**
@@ -73,9 +71,9 @@ class ExceptionsHandler extends CoreExceptionsHandler
         });
 
         $this->renderable(function (AccessDeniedHttpException $e, $request) {
-            return $this->shouldReturnJson($request, $e)
-                ? $this->buildResponse(new NotAuthorizedResourceException())
-                : redirect()->guest(route(RouteServiceProvider::UNAUTHORIZED));
+            return $this->shouldReturnJson($request, $e) ? $this->buildResponse(
+                new NotAuthorizedResourceException()
+            ) : redirect()->guest(route(RouteServiceProvider::UNAUTHORIZED));
         });
     }
 
@@ -85,7 +83,7 @@ class ExceptionsHandler extends CoreExceptionsHandler
      */
     private function buildResponse(CoreException $e): JsonResponse
     {
-        if (config('Asset.debug')) {
+        if (config('app.debug')) {
             $response = [
                 'message' => $e->getMessage(),
                 'errors' => $e->getErrors(),
@@ -101,18 +99,18 @@ class ExceptionsHandler extends CoreExceptionsHandler
             ];
         }
 
-        return response()->json($response, (int) $e->getCode());
+        return response()->json($response, (int)$e->getCode());
     }
 
     /**
      * @param $request
-     * @param LaravelAuthenticationException $e
+     * @param LaravelAuthenticationException $exception
      * @return JsonResponse|Response
      */
     protected function unauthenticated($request, LaravelAuthenticationException $exception): JsonResponse|Response
     {
-        return $this->shouldReturnJson($request, $exception)
-            ? $this->buildResponse(new CoreAuthenticationException())
-            : redirect()->guest(route(RouteServiceProvider::LOGIN));
+        return $this->shouldReturnJson($request, $exception) ? $this->buildResponse(
+            new CoreAuthenticationException()
+        ) : redirect()->guest(route(RouteServiceProvider::LOGIN));
     }
 }
