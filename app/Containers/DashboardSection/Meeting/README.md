@@ -1,2 +1,0 @@
-### Apiato Meeting Container
-

@@ -4,10 +4,40 @@ declare(strict_types=1);
 
 namespace Containers\Vendor\Models;
 
+use App\Containers\DashboardSection\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Nucleus\Models\Entity\ServiceModel;
+use Ship\Parents\Models\Model;
 
-final class Message extends ServiceModel
+/**
+ * Containers\Vendor\Models\Message
+ *
+ * @property-read User|null $author
+ * @property-read \Containers\Vendor\Models\Channel|null $channel
+ * @property-read \Containers\Vendor\Models\Workspace|null $workspace
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message all($columns = [])
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message avg($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message cache(array $tags = [])
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message cachedValue(array $arguments, string $cacheKey)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message count($columns = '*')
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model disableCache()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message disableModelCaching()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message exists()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message flushCache(array $tags = [])
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message getModelCacheCooldown(\Illuminate\Database\Eloquent\Model $instance)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message inRandomOrder($seed = '')
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message insert(array $values)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message isCachable()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message max($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message min($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message query()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message sum($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message truncate()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model withCacheCooldownSeconds(?int $seconds = null)
+ * @mixin \Eloquent
+ */
+final class Message extends Model
 {
     /**
      * @var string

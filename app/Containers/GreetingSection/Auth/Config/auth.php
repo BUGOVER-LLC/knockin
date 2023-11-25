@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Containers\Vendor\Models\User;
+use App\Containers\DashboardSection\User\Models\User;
 
 return [
 

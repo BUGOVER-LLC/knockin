@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noUnusedParameters": false,
+    "types": [
+      "webpack-env",
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "resources/assets/@types"
+    ],
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": [
+        "resources/assets/*",
+      ]
+    }
+  },
+  "vueCompilerOptions": {
+    "target": 2.7
+  },
+  "exclude": ["node_modules"],
+  "include": [
+    "resources/assets"
+  ]
+}

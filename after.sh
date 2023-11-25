@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # If you would like to do some extra provisioning you may
 # add any commands you wish to this file and they will
@@ -7,7 +7,6 @@
 # If you have user-specific configurations you would like
 # to apply, you may also create user-customizations.sh,
 # which will be run after this script.
-
 
 # If you're not quite ready for the latest Node.js version,
 # uncomment these lines to roll back to a previous version
@@ -21,3 +20,17 @@
 # More info: https://github.com/nodesource/distributions/blob/master/README.md#debinstall
 #curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 #sudo apt-get install -y nodejs
+
+sudo apt update
+sudo apt upgrade
+
+#copy certificates
+sudo cp /etc/ssl/certs/ca.homestead.noix.crt /home/vagrant/noix/.etc/ssl
+sudo cp /etc/ssl/certs/ca.homestead.noix.key /home/vagrant/noix/.etc/ssl
+
+#copy nginx configs
+sudo cp -r /home/vagrant/noix/.etc/nginx/noix.loc /etc/nginx/sites-available/
+
+#copy supervisor configs
+sudo cp -r /home/vagrant/noix/.etc/supervisor/queue-base.conf /etc/supervisor/conf.d/
+sudo cp -r /home/vagrant/noix/.etc/supervisor/swoole-http.conf /etc/supervisor/conf.d/
