@@ -10,6 +10,44 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Ship\Parents\Models\Model;
 
+/**
+ * Containers\Vendor\Models\Channel
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\Vendor\Models\SharedBoard> $boards
+ * @property-read int|null $boards_count
+ * @property-read User|null $creator
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, User> $participant
+ * @property-read int|null $participant_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\Vendor\Models\SharedChannel> $shared
+ * @property-read int|null $shared_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\Vendor\Models\SharedBoard> $tBoards
+ * @property-read int|null $t_boards_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\Vendor\Models\BoardTask> $tasks
+ * @property-read int|null $tasks_count
+ * @property-read \Containers\Vendor\Models\Workspace|null $workspace
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel all($columns = [])
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel avg($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel cache(array $tags = [])
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel cachedValue(array $arguments, string $cacheKey)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel count($columns = '*')
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model disableCache()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel disableModelCaching()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel exists()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel flushCache(array $tags = [])
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel getModelCacheCooldown(\Illuminate\Database\Eloquent\Model $instance)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel inRandomOrder($seed = '')
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel insert(array $values)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel isCachable()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel max($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel min($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel newModelQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel newQuery()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel query()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel sum($column)
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel truncate()
+ * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model withCacheCooldownSeconds(?int $seconds = null)
+ * @mixin \Eloquent
+ */
 final class Channel extends Model
 {
     /**

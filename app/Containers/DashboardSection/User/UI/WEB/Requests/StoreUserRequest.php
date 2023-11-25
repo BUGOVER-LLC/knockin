@@ -48,4 +48,9 @@ class StoreUserRequest extends ParentRequest
             'hasAccess',
         ]);
     }
+
+    public function errorMessages(): array
+    {
+        return [];
+    }
 }

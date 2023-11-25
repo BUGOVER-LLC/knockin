@@ -22,11 +22,14 @@ return new class extends Migration {
             $table->string('phone', 32)->nullable()->unique();
             $table->string('email', 250)->unique();
             $table->string('password');
+            $table->string('two_factor_secret', 1000)->nullable();
+            $table->string('two_factor_recovery_codes', 1000)->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
 
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('verified_at')->nullable();
+            $table->timestamp('two_factor_confirmed_at')->nullable();
             $table->rememberToken();
 
             $table->timestamps();

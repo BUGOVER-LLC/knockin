@@ -48,4 +48,9 @@ class DeleteUserRequest extends ParentRequest
             'hasAccess',
         ]);
     }
+
+    public function errorMessages(): array
+    {
+        return [];
+    }
 }

@@ -48,4 +48,9 @@ class GetAllUsersRequest extends ParentRequest
             'hasAccess',
         ]);
     }
+
+    public function errorMessages(): array
+    {
+        return [];
+    }
 }

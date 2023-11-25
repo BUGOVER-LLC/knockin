@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Containers\DashboardSection\User\Tasks;
 
 use Containers\DashboardSection\User\Data\Repositories\UserRepository;
-use Containers\DashboardSection\User\Models\User;
 use Ship\Exceptions\NotFoundException;
 use Ship\Exceptions\UpdateResourceFailedException;
 use Ship\Parents\Tasks\Task as ParentTask;
@@ -21,10 +22,10 @@ class UpdateUserTask extends ParentTask
      * @throws NotFoundException
      * @throws UpdateResourceFailedException
      */
-    public function run(array $data, $id): User
+    public function run(array $data, $id): int
     {
         try {
-            return $this->repository->update($data, $id);
+            return $this->repository->createModelBuilder()->update($data, $id);
         } catch (ModelNotFoundException) {
             throw new NotFoundException();
         } catch (Exception) {
