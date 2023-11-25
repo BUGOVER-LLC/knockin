@@ -48,4 +48,9 @@ class UpdateUserRequest extends ParentRequest
             'hasAccess',
         ]);
     }
+
+    public function errorMessages(): array
+    {
+        return [];
+    }
 }

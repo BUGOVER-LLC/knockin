@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Containers\DashboardSection\User\UI\WEB\Requests;
 
 use Ship\Parents\Requests\Request as ParentRequest;
@@ -47,5 +49,10 @@ class CreateUserRequest extends ParentRequest
         return $this->check([
             'hasAccess',
         ]);
+    }
+
+    public function errorMessages(): array
+    {
+        return [];
     }
 }

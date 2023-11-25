@@ -7,7 +7,7 @@ use Containers\GreetingSection\Auth\UI\WEB\Controllers\CheckEmailController;
 use Containers\GreetingSection\Auth\UI\WEB\Controllers\SignInController;
 use Illuminate\Support\Facades\Route;
 
-$route_attributes = [
+$_attributes = [
     'prefix' => 'auth',
     'name' => 'auth',
     'as' => 'auth.',
@@ -15,7 +15,7 @@ $route_attributes = [
     'namespace' => '\Containers\GreetingSection\Auth\UI\WEB\Controllers'
 ];
 
-Route::group($route_attributes, static fn() => [
+Route::group($_attributes, static fn() => [
     Route::get('/', SignInController::class)
         ->name('auth.get_sign'),
 

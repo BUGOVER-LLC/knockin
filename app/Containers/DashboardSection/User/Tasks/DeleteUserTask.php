@@ -23,7 +23,7 @@ class DeleteUserTask extends ParentTask
     public function run($id): int
     {
         try {
-            return $this->repository->delete($id);
+            return $this->repository->createModelBuilder()->delete($id);
         } catch (ModelNotFoundException) {
             throw new NotFoundException();
         } catch (Exception) {

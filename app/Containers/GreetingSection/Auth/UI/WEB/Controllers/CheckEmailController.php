@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 
 use Containers\GreetingSection\Auth\Jobs\SendMailQueue;
+use Containers\GreetingSection\Auth\UI\WEB\Requests\CheckEmailRequest;
 use Containers\Vendor\MainConsts;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Redis;
 use RedisException;
@@ -26,11 +26,11 @@ class CheckEmailController extends WebController
     /**
      * Handle the incoming request.
      *
-     * @param Request $request
+     * @param CheckEmailRequest $request
      * @return JsonResponse
      * @throws RedisException
      */
-    public function __invoke(Request $request): JsonResponse
+    public function __invoke(CheckEmailRequest $request): JsonResponse
     {
         $accept_code = Str::upper(Str::random(6));
 
@@ -44,12 +44,12 @@ class CheckEmailController extends WebController
         );
         $this->redis->expire(MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'), 360);
 
-        SendMailQueue::dispatchSync(
+        SendMailQueue::dispatch(
             MainConsts::ACCEPT_CODE_EMAIL,
             $request->email,
             ['accept_code' => $accept_code]
         );
 
-        return jsponse();
+        return jsponse(['message' => trans('messages.accept_code_sent', ['email' => $request->email])]);
     }
 }

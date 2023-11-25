@@ -7,12 +7,12 @@ namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 use App\Containers\DashboardSection\User\Models\User;
 use App\Containers\Vendor\Repositories\UserRepository;
 use App\Containers\Vendor\Repositories\WorkspaceRepository;
+use Containers\GreetingSection\Auth\UI\WEB\Requests\CheckAcceptCodeRequest;
 use Containers\Vendor\MainConsts;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
@@ -37,11 +37,11 @@ class CheckCodeController extends WebController
     /**
      * Handle the incoming request.
      *
-     * @param Request $request
+     * @param CheckAcceptCodeRequest $request
      * @return Redirector|RedirectResponse|JsonResponse
      * @throws RedisException
      */
-    public function __invoke(Request $request): Redirector|RedirectResponse|JsonResponse
+    public function __invoke(CheckAcceptCodeRequest $request): Redirector|RedirectResponse|JsonResponse
     {
         $is_sent_code = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
@@ -74,22 +74,22 @@ class CheckCodeController extends WebController
 
         return jsponse([
             'message' => 'successful',
-            'redirect' => route('Asset.index-noix', ['target_id' => $user->uid]),
+            'redirect' => route('app.index-noix', ['target_id' => $user->uid]),
         ]);
     }
 
     /**
      * @param string $email
      * @param string $code
-     * @return null|User
+     * @return User
      */
-    private function authorizeUser(string $email, string $code): ?User
+    private function authorizeUser(string $email, string $code): User
     {
-        $user = $this->userRepository->where('email', '=', $email)->findFirst();
+        $user = $this->userRepository->createModelBuilder()->where('email', '=', $email)->first();
 
         if (!$user) {
             try {
-                $user = $this->userRepository->create(
+                $user = $this->userRepository->createModelBuilder()->create(
                     ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
                 );
             } catch (Exception $exception) {

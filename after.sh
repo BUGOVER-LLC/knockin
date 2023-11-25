@@ -24,10 +24,13 @@
 sudo apt update
 sudo apt upgrade
 
-sudo cp /etc/ssl/certs/ca.homestead.ssa.crt /home/vagrant/noix/.etc/ssl
-sudo cp /etc/ssl/certs/ca.homestead.ssa.key /home/vagrant/noix/.etc/ssl
+#copy certificates
+sudo cp /etc/ssl/certs/ca.homestead.noix.crt /home/vagrant/noix/.etc/ssl
+sudo cp /etc/ssl/certs/ca.homestead.noix.key /home/vagrant/noix/.etc/ssl
 
+#copy nginx configs
 sudo cp -r /home/vagrant/noix/.etc/nginx/noix.loc /etc/nginx/sites-available/
 
+#copy supervisor configs
 sudo cp -r /home/vagrant/noix/.etc/supervisor/queue-base.conf /etc/supervisor/conf.d/
 sudo cp -r /home/vagrant/noix/.etc/supervisor/swoole-http.conf /etc/supervisor/conf.d/

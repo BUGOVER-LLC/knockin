@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Containers\DashboardSection\User\UI\API\Transformers;
 
-use Containers\DashboardSection\User\Models\User;
+use App\Containers\DashboardSection\User\Models\User;
 use Ship\Parents\Transformers\Transformer as ParentTransformer;
 
 class UserTransformer extends ParentTransformer
@@ -15,7 +17,7 @@ class UserTransformer extends ParentTransformer
 
     ];
 
-    public function transform(User $user): array
+    public function transform($user, callable $callback, $default = null): array
     {
         $response = [
             'object' => $user->getResourceKey(),

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Containers\DashboardSection\User\Tasks;
 
 use Nucleus\Exceptions\CoreInternalErrorException;
@@ -20,6 +22,6 @@ class GetAllUsersTask extends ParentTask
      */
     public function run(): mixed
     {
-        return $this->addRequestCriteria()->repository->paginate();
+        return $this->addRequestCriteria()->repository->createModelBuilder()->paginate();
     }
 }
