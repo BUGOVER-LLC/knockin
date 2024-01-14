@@ -22,3 +22,6 @@ var
 app/Ship
 config/octane.php
 .vagrant
+.etc/phpmyadmin
+.etc/ssl/
+!.etc/ssl/.gitkeep

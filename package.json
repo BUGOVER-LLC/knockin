@@ -67,7 +67,7 @@
     "webpack-obfuscator": "^3.5.1"
   },
   "dependencies": {
-    "crypto-js": "^4.1.1",
+    "crypto-js": "^4.2.0",
     "laravel-echo": "^1.15.3",
     "pusher-js": "^8.3.0",
     "tiptap-vuetify": "^2.24.0",
