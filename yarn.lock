@@ -1550,26 +1550,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-3.0.0.tgz#798622546b63847e82389e473fd67f2707d82247"
   integrity sha512-hBI9tfBtuPIi885ZsZ32IMEU/5nlZH/KOVYJCOh7gyMxaVLGmLedYqFN6Ui1LXkI8JlC8IsuC0rF0btcRZKd5g==
 
-"@datadog/browser-core@5.4.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@datadog/browser-core/-/browser-core-5.4.0.tgz#c9d55357d75a6ce25a95d235795d6b68c6f85e17"
-  integrity sha512-8HlKAcKXm7cJmzWQTVGnZiBs21BXkmRiknDaH9NbO6UT5JqYupXe/3zEesoX6Kxad2EzGlPVpBV816luWfqepw==
-
-"@datadog/browser-rum-core@5.4.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@datadog/browser-rum-core/-/browser-rum-core-5.4.0.tgz#8400eb0eecc16b4280ff1928f32c11e33f7016f9"
-  integrity sha512-K5+VDmumSeRe5/gkyb8QDVAv65SLyyVQUTyHwwOJBMwC8k3wOr4oEOVgnez1rtFQp4xKatqod1eIf93GJacSuQ==
-  dependencies:
-    "@datadog/browser-core" "5.4.0"
-
-"@datadog/browser-rum@^5.4.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@datadog/browser-rum/-/browser-rum-5.4.0.tgz#a3ec5463b4fd257972ccddfdae477c5077466ee0"
-  integrity sha512-gOYQE6RxM8wSYBekWnvNqb8ZEwjtDc9gNsb5xeGxsv40CHVSN5ccvilaRjGPqBO6z21eRqqBnbYjWHrYWnovCg==
-  dependencies:
-    "@datadog/browser-core" "5.4.0"
-    "@datadog/browser-rum-core" "5.4.0"
-
 "@discoveryjs/json-ext@0.5.7", "@discoveryjs/json-ext@^0.5.0":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -3596,10 +3576,10 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-crypto-js@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
-  integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
+crypto-js@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.2.0.tgz#4d931639ecdfd12ff80e8186dba6af2c2e856631"
+  integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
 
 css-declaration-sorter@^6.3.1:
   version "6.4.1"
@@ -4494,10 +4474,10 @@ flatted@^3.0.5, flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-flow-bin@^0.218.0:
-  version "0.218.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.218.0.tgz#f91acd8a31d472cd8568442819d925c0881081f7"
-  integrity sha512-u4E0+AIoKKMSuv09Co2mNiQB2DqCcakWtMAPbMkVvvTTNoBSo+gYKrYKoRrmb0QqhdyHy1mRXQXjESW8Lml/MA==
+flow-bin@^0.222.0:
+  version "0.222.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.222.0.tgz#b4ca588c77fbd79db1edf38615cd04d114c1e933"
+  integrity sha512-U2047+pOX1EutHGykcjtamAlP8UIHrxbkexB5zPVQ8PH+WcVmD4PtRE6J8Jc3S6odyo0AqVnQsI4rE/2x2fGmQ==
 
 follow-redirects@^1.0.0, follow-redirects@^1.15.0:
   version "1.15.2"
