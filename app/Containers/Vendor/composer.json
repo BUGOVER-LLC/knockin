@@ -11,8 +11,7 @@
   ],
   "require": {
     "nucleus/socket": "^0.2.0",
-    "nucleus/role": "^0.5.0",
-    "nucleus/devicer": "^0.2.0"
+    "nucleus/role": "^0.5.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
