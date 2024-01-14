@@ -10,8 +10,6 @@
     }
   ],
   "require": {
-    "nucleus/socket": "^0.2.0",
-    "nucleus/role": "^0.5.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
@@ -22,23 +20,5 @@
     }
   },
   "repositories": [
-    {
-      "type": "vcs",
-      "name": "nucleus/socket",
-      "url": "https://github.com/BUGOVER-LLC/socket.git",
-      "branch": "main"
-    },
-    {
-      "type": "vcs",
-      "name": "nucleus/role",
-      "url": "https://github.com/BUGOVER-LLC/role.git",
-      "branch": "main"
-    },
-    {
-      "type": "vcs",
-      "name": "nucleus/devicer",
-      "url": "https://github.com/BUGOVER-LLC/devicer.git",
-      "branch": "main"
-    }
   ]
 }
