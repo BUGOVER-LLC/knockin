@@ -67,3 +67,9 @@ pip install superlance
 wget https://launchpad.net/ubuntu/+archive/primary/+files/beanstalkd_1.12-2_amd64.deb
 sudo dpkg -i beanstalkd_1.12-2_amd64.deb
 sudo rm -rf beanstalkd_1.12-2_amd64.deb
+
+#cd ~/noix
+#composer config github-oauth.github.com awk -F= '$1 == "APP_URL" {print $2}' .env
+#
+composer install
+yarn install

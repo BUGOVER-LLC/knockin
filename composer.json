@@ -9,7 +9,7 @@
   ],
   "license": "MIT",
   "require": {
-    "PHP": "<=8.2.3",
+    "php": "<=8.2.3",
     "php-64bit": "<=8.2.3",
     "ext-gd": "*",
     "ext-pdo": "*",
@@ -86,7 +86,7 @@
     "post-create-project-cmd": [
       "@php artisan key:generate --ansi"
     ],
-    "hook-test": "sh bin/package-links"
+    "hook-test": "sh bin/package_links"
   },
   "extra": {
     "laravel": {

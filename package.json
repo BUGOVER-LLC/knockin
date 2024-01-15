@@ -63,7 +63,7 @@
     "vue-template-compiler": "^2.7.14",
     "vuetify-loader": "^1.9.2",
     "vuex-module-decorators": "^2.0.0",
-    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-obfuscator": "^3.5.1"
   },
   "dependencies": {
