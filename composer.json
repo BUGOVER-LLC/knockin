@@ -26,12 +26,11 @@
     "ext-igbinary": "*",
     "ext-mbstring": "*",
     "ext-calendar": "*",
-    "guzzlehttp/guzzle": "^7.0.0",
     "laravel/framework": "^10.0.0",
     "laravel/octane": "^2.0.0",
     "laravel/tinker": "^2.0.0",
     "pda/pheanstalk": "^5.0.0",
-    "shipyard/manager": "^1.0.0",
+    "shipyard/manager": "^0.2.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
   },
   "require-dev": {
