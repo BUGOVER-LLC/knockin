@@ -7,7 +7,6 @@ const WebpackObfuscation = require('webpack-obfuscator');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CompressionPlugin = require('compression-webpack-plugin');
 const fs = require('fs');
-const { execSync } = require('child_process');
 
 const bObfuscate = !('false' === process.env.WEBPACK_OBFUSCATE);
 const bMinify = bObfuscate || 'true' === process.env.WEBPACK_MINIFY;
