@@ -8,23 +8,9 @@
 # to apply, you may also create user-customizations.sh,
 # which will be run after this script.
 
-# If you're not quite ready for the latest Node.js version,
-# uncomment these lines to roll back to a previous version
-
-# Remove current Node.js version:
-#sudo apt-get -y purge nodejs
-#sudo rm -rf /usr/lib/node_modules/npm/lib
-#sudo rm -rf //etc/apt/sources.list.d/nodesource.list
-
-# Install Node.js Version desired (i.e. v13)
-# More info: https://github.com/nodesource/distributions/blob/master/README.md#debinstall
-#curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-#sudo apt-get install -y nodejs
-
-sudo apt-get install unzip
-
 # Install phpmyadmin
 if [[ ! -d "./.etc/phpmyadmin/" ]]; then
+  sudo apt-get install unzip
   wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
   unzip phpMyAdmin-5.2.1-all-languages.zip -d ~/noix/.etc/
   sudo mv ~/noix/.etc/phpMyAdmin-5.2.1-all-languages ~/noix/.etc/phpmyadmin
@@ -49,6 +35,7 @@ update-alternatives: using /usr/bin/php-config8.2
 update-alternatives: using /usr/bin/phpize8.2
 sudo phpenmod xdebug
 
+# Add PPA repository
 sudo add-apt-repository ppa:ondrej/nginx -y
 sudo add-apt-repository ppa:redislabs/redis -y
 
@@ -62,6 +49,10 @@ sudo apt install libc-ares-dev libcurl4-openssl-dev -y
 
 pip install --upgrade supervisor
 pip install superlance
+
+sudo apt install php-gmp
+sudo apt install php-bcmath
+sudo apt install php-igbinary
 
 # Install new version beanstalkd, for queue on prod test
 wget https://launchpad.net/ubuntu/+archive/primary/+files/beanstalkd_1.12-2_amd64.deb
