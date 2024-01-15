@@ -112,13 +112,11 @@
     "sort-packages": true,
     "allow-plugins": {
       "pestphp/pest-plugin": true,
-      "wikimedia/composer-merge-plugin": true
+      "wikimedia/composer-merge-plugin": true,
+      "composer/installers": true
     },
     "platform": {
       "PHP": "8.2"
-    },
-    "github-oauth": {
-      "github.com": "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"
     }
   },
   "provide": {

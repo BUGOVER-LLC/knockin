@@ -25,3 +25,4 @@ config/octane.php
 .etc/phpmyadmin
 .etc/ssl/
 !.etc/ssl/.gitkeep
+auth.json
