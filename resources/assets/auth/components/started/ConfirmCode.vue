@@ -11,10 +11,11 @@
                 autofocus
                 name="code"
                 type="text"
-                @input="triggerOtp"
+                @input.native="triggerOtp"
             />
             <span class="error">{{ errors[0] }}</span>
         </ValidationProvider>
+        <a @click="triggerOtp">Resend again</a>
         <v-progress-circular v-if="loader" />
     </div>
 </template>
@@ -55,9 +56,9 @@ export default class ConfirmCode extends Vue implements MainComponent {
     }
 
     @Emit('codeValidation')
-    private triggerOtp(e: number | string) {
-        const payload = { code: this.code, valid: true };
-        if (this.length === (e as string).length) {
+    private triggerOtp() {
+        const payload = { code: this.code, valid: false };
+        if (this.length === (this.code as string).length) {
             validate(this.code, 'required|min:6|max:6', { name: 'code' }).then((result: any) => {
                 if (result && result.valid) {
                     this.disabled = true;
@@ -73,4 +74,4 @@ export default class ConfirmCode extends Vue implements MainComponent {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

@@ -4,9 +4,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
 
-import { AbstractModel } from '@/store/models/AbstractModel';
-import { MessageModel } from '@/store/models/MessageModel';
-import { WorkspaceModels } from '@/store/models/WorkspaceModels';
+import { AbstractModel } from '@/dashboard/store/models/AbstractModel';
+import { MessageModel } from '@/dashboard/store/models/MessageModel';
+import { WorkspaceModels } from '@/dashboard/store/models/WorkspaceModels';
 
 Vue.use(Vuex);
 

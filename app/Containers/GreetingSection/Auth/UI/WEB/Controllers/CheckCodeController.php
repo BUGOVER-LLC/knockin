@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\GreetingSection\Auth\UI\WEB\Controllers;
 
-use App\Containers\DashboardSection\User\Models\User;
-use App\Containers\Vendor\Repositories\UserRepository;
-use App\Containers\Vendor\Repositories\WorkspaceRepository;
+use Containers\DashboardSection\User\Data\Repositories\UserRepository;
+use Containers\DashboardSection\User\Models\User;
 use Containers\GreetingSection\Auth\UI\WEB\Requests\CheckAcceptCodeRequest;
 use Containers\Vendor\MainConsts;
 use Exception;
@@ -16,10 +15,10 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Hash;
 use Redis;
 use RedisException;
 use Ship\Parents\Controllers\WebController;
+use Src\Core\Additional\MainDevicer;
 
 class CheckCodeController extends WebController
 {
@@ -29,7 +28,6 @@ class CheckCodeController extends WebController
     public function __construct(
         protected readonly Redis $redis,
         protected readonly UserRepository $userRepository,
-        protected readonly WorkspaceRepository $workspaceRepository
     ) {
         $this->redis->connect('localhost');
     }
@@ -85,13 +83,11 @@ class CheckCodeController extends WebController
      */
     private function authorizeUser(string $email, string $code): User
     {
-        $user = $this->userRepository->createModelBuilder()->where('email', '=', $email)->first();
+        $user = $this->userRepository->findByEmail($email);
 
         if (!$user) {
             try {
-                $user = $this->userRepository->createModelBuilder()->create(
-                    ['email' => $email, 'password' => Hash::make($code), 'verified_at' => now()]
-                );
+                $user = $this->userRepository->createUserForAuthByCode($email, $code);
             } catch (Exception $exception) {
                 logging($exception);
             }

@@ -2,8 +2,8 @@
 
 import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
 
-import store from '@/store/index';
-import { MessageModel } from '@/store/models/MessageModel';
+import store from '@/dashboard/store/index';
+import { MessageModel } from '@/dashboard/store/models/MessageModel';
 
 @Module({
     dynamic: true,

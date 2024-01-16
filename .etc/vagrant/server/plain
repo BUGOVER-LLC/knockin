@@ -3,3 +3,9 @@ innodb_log_spin_cpu_abs_lwm = 80
 innodb_log_spin_cpu_pct_hwm = 50
 innodb_log_wait_for_flush_spin_hwm = 400
 innodb_parallel_read_threads = 4
+
+opcache.enable=1
+opcache.enable_cli=1
+opcache.jit_buffer_size=256M
+
+composer require ayesh/composer-preload

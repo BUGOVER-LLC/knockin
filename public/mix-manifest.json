@@ -1,8 +1,6 @@
 {
-    "/builds/auth/js/app.js": "/builds/auth/js/app.js?id=2d475c308cb44be050d9f5cd61e5fe7c",
-    "/builds/dashboard/js/app.js": "/builds/dashboard/js/app.js?id=1239017e1b9961cade174c4579dc1a3c",
-    "/builds/vendor/manifest.js": "/builds/vendor/manifest.js?id=743e686bdc6fb5b99ed507bebfeb2c8f",
-    "/builds/vendor/vendor.js": "/builds/vendor/vendor.js?id=022f5335c07201154c84816ab22f62f4",
-    "/builds/dashboard/css/app.css": "/builds/dashboard/css/app.css?id=e04a200a84947d3749502404e51ac719",
+    "/builds/auth/js/app.js": "/builds/auth/js/app.js?id=6679fc8e5a2b5eae02bbb588430d5cae",
+    "/builds/vendor/manifest.js": "/builds/vendor/manifest.js?id=4f5c9c70a743860cbe2b69b1e34ec5c2",
+    "/builds/vendor/vendor.js": "/builds/vendor/vendor.js?id=9d962c59596a3c05b797cfd5673d8636",
     "/builds/auth/css/app.css": "/builds/auth/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940"
 }

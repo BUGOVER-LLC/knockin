@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\DashboardSection\User\UI\API\Transformers;
 
-use App\Containers\DashboardSection\User\Models\User;
+use Containers\DashboardSection\User\Models\User;
 use Ship\Parents\Transformers\Transformer as ParentTransformer;
 
 class UserTransformer extends ParentTransformer

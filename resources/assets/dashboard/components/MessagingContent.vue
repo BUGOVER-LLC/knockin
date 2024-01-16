@@ -18,8 +18,8 @@
 <script lang="ts">
 import { Component, Prop, ProvideReactive, Vue, Watch } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/Main/MainComponent';
-import { MessageModule } from '@/store/modules/MessageStore';
+import { MainComponent } from '@/@core/MainComponent';
+import { MessageModule } from '@/dashboard/store/modules/MessageStore';
 
 @Component({
     components: {},

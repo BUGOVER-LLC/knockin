@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DashboardSection\User\Models;
+namespace Containers\DashboardSection\User\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Containers\Vendor\Models\Board;
@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Ship\Parents\Models\UserModel;
 
 /**
- * App\Containers\DashboardSection\User\Models\User
+ * Containers\DashboardSection\User\Models\User
  *
  * @property string $uid
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Board> $boards
@@ -39,7 +39,7 @@ use Ship\Parents\Models\UserModel;
  * @property-read int|null $personal_messages_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, PersonalMessage> $personalParticipants
  * @property-read int|null $personal_participants_count
- * @property-read \App\Containers\DashboardSection\User\Models\UserProfile|null $profile
+ * @property-read \Containers\DashboardSection\User\Models\UserProfile|null $profile
  * @property-read \Illuminate\Database\Eloquent\Collection<int, BoardTask> $tasks
  * @property-read int|null $tasks_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Passport\Token> $tokens
@@ -84,7 +84,7 @@ final class User extends UserModel
     /**
      * @var string
      */
-    protected string $uniqeuKey = 'uid';
+    protected string $uniqueKey = 'uid';
 
     /**
      * The attributes that are mass assignable.
@@ -188,5 +188,13 @@ final class User extends UserModel
     public function currentWorkspace(): BelongsTo
     {
         return $this->belongsTo(Workspace::class, 'workspace_id', 'current_workspace_id');
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function devices(): HasMany
+    {
+        return $this->hasMany(UserDevices::class, 'user_id', 'user_id');
     }
 }

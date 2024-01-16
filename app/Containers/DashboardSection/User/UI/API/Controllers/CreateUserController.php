@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Containers\DashboardSection\User\UI\API\Controllers;
 
 use Nucleus\Exceptions\IncorrectIdException;
