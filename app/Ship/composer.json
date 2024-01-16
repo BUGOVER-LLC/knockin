@@ -1,11 +1,14 @@
 {
-  "name": "nuclear/ship",
+  "name": "shipyard/manager",
+  "version": "0.3.0",
   "description": "Nuclear Ship folder where shared functionality resides",
+  "license": "MIT",
   "require": {
-    "PHP": "<=8.2.3",
+    "php": "<=8.2.3",
     "php-64bit": "<=8.2.3",
-    "genealabs/laravel-model-caching": "^0.13.4",
-    "nucleus/core": "^1.0.0"
+    "nucleus/core": "^0.3.0",
+    "nucleus/devicer": "^0.2.0",
+    "composer/installers": "^2.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -17,11 +20,24 @@
       "Ship\\": ""
     }
   },
+  "extra": {
+    "installer-paths": {
+      "app/": [
+        "app/Ship"
+      ]
+    }
+  },
   "repositories": [
     {
       "type": "vcs",
       "name": "nucleus/core",
       "url": "https://github.com/BUGOVER-LLC/nucleus.git",
+      "branch": "main"
+    },
+    {
+      "type": "vcs",
+      "name": "nucleus/devicer",
+      "url": "https://github.com/BUGOVER-LLC/devicer.git",
       "branch": "main"
     }
   ],
