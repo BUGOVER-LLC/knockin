@@ -1,0 +1,62 @@
+ip: 192.168.56.60
+memory: 2048
+cpus: 2
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+  - ~/.ssh/id_rsa
+
+folders:
+  - map: ~/work/projects/noix
+    to: /home/vagrant/noix
+
+  - map: ~/work/projects/noix/.etc/phpmyadmin
+    to: /home/vagrant/phpmyadmin
+
+sites:
+  - map: noix.loc
+    to: /home/vagrant/noix/public
+    php: "8.2"
+    schedule: true
+    type: laravel
+
+  - map: noix.phpmyadmin.loc
+    to: /home/vagrant/noix/.etc/phpmyadmin
+    php: "8.2"
+
+databases:
+  - noix
+  - noix_test
+
+features:
+  - postgresql:
+      version: 16.0
+  - elasticsearch:
+      version: 8.0.0
+  - golang: true
+  - minio: true
+  - python: true
+  - trader: true
+  - webdriver: true
+  - mysql: false
+  - mariadb: false
+  - php5.6: false
+  - php7.0: false
+  - php7.1: false
+  - php7.2: false
+  - php7.3: false
+  - php7.4: false
+  - php8.0: false
+  - php8.1: true
+  - php8.2: true
+  - php8.3: true
+
+services:
+  - enabled:
+      - "postgresql"
+  - disabled:
+      - "elasticsearch"
+
+name: noix
+hostname: noix.loc
+hosts_file_additions: true
