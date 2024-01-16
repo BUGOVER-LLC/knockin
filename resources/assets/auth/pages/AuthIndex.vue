@@ -111,6 +111,10 @@ export default class AuthIndex extends Vue {
         } else if (1 === this.step && 'authConfirm' === this.$router.currentRoute.name) {
             this.$router.push({ name: 'emailSender' });
         }
+
+        if (this.email) {
+            this.emailValidation = { valid: true, email: this.email, sent: false };
+        }
     }
 
     @Watch('codeValidation')

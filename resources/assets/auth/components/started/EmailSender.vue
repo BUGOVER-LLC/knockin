@@ -23,7 +23,7 @@ import { extend, validate, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/Main/MainComponent';
+import { MainComponent } from '@/@core/MainComponent';
 
 extend('required', required);
 extend('email', email);

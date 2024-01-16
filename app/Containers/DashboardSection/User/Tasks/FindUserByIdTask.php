@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\DashboardSection\User\Tasks;
 
-use App\Containers\DashboardSection\User\Models\User;
+use Containers\DashboardSection\User\Models\User;
 use Containers\DashboardSection\User\Data\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;

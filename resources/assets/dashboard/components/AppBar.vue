@@ -32,7 +32,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import { AbstractModule } from '@/store/modules/AbstractStore';
+import { AbstractModule } from '@/dashboard/store/modules/AbstractStore';
 
 @Component({
     components: {},

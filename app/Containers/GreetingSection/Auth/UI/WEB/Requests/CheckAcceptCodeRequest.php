@@ -6,7 +6,7 @@ namespace Containers\GreetingSection\Auth\UI\WEB\Requests;
 
 use Ship\Parents\Requests\Request as ParentRequest;
 
-class CheckEmailRequest extends ParentRequest
+class CheckAcceptCodeRequest extends ParentRequest
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -37,7 +37,8 @@ class CheckEmailRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'email:strict']
+            'email' => ['required', 'email:strict,dns,rfc'],
+            'code' => ['required', 'max:6', 'min:6'],
         ];
     }
 

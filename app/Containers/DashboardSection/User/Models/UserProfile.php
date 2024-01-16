@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DashboardSection\User\Models;
+namespace Containers\DashboardSection\User\Models;
 
-use Nucleus\Models\Entity\ServiceModel;
 use Ship\Parents\Models\Model;
 
 /**
- * App\Containers\DashboardSection\User\Models\UserProfile
+ * Containers\DashboardSection\User\Models\UserProfile
  *
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|UserProfile all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|UserProfile avg($column)
