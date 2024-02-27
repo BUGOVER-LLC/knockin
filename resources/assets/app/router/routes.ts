@@ -2,14 +2,14 @@
 
 import { RouteConfig } from 'vue-router';
 
-const greeting = (): object => import('@/app/pages/dashboard/Greeting.vue');
-const dashboard = (): object => import('@/app/pages/dashboard/Board.vue');
+const greeting = (): object => import('@/dashboard/pages/dashboard/Greeting.vue');
+const dashboard = (): object => import('@/dashboard/pages/dashboard/Board.vue');
 
 export const Routes: RouteConfig[] = [
     {
         props: true,
         name: 'applicationGreeting',
-        path: '/app/greeting/:target_id',
+        path: '/',
         component: greeting,
     },
     {

@@ -12,7 +12,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Workspace from '@/app/store/modules/WorkspaceStore';
+
+import Workspace from '@/dashboard/store/modules/WorkspaceStore';
 
 @Component({
     components: {},
@@ -27,4 +28,4 @@ export default class extends Vue {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

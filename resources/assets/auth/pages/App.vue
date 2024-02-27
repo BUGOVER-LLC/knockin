@@ -1,15 +1,16 @@
 <!-- @format -->
 
-<template lang="html"></template>
+<template>
+    <v-app>
+        <slot name="auth-content" />
+    </v-app>
+</template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component({
-    components: {},
-    mixins: [],
-})
-export default class extends Vue {}
+@Component({})
+export default class App extends Vue {}
 </script>
 
 <style lang="scss" scoped></style>

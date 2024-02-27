@@ -4,11 +4,11 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
 
-Vue.use(Vuex);
+import { AbstractModel } from '@/dashboard/store/models/AbstractModel';
+import { MessageModel } from '@/dashboard/store/models/MessageModel';
+import { WorkspaceModels } from '@/dashboard/store/models/WorkspaceModels';
 
-import { AbstractModel } from '@/app/store/models/AbstractModel';
-import { MessageModel } from '@/app/store/models/MessageModel';
-import { WorkspaceModels } from '@/app/store/models/WorkspaceModels';
+Vue.use(Vuex);
 
 export type ModulesState = {
     abstractModule: AbstractModel;

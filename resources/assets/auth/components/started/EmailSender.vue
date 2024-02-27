@@ -1,17 +1,17 @@
 <!-- @format -->
 
 <template lang="html">
-    <ValidationProvider name="email" rules="min:6|email|required|max:150" mode="passive" v-slot="{ errors }">
+    <ValidationProvider v-slot="{ errors }" mode="passive" name="email" rules="min:6|email|required|max:150">
         <VTextField
-            autofocus
             v-model="email"
-            label="Email"
-            type="email"
-            outlined
+            autofocus
             color="grey"
             hide-details
+            label="Email"
             name="email"
+            outlined
             placeholder="example@gmail.com"
+            type="email"
             @input="emailTrigger"
         />
         <span class="error">{{ errors[0] }}</span>
@@ -19,10 +19,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Emit, Vue, Prop } from 'vue-property-decorator';
 import { extend, validate, ValidationProvider } from 'vee-validate';
-import { email, required, min, max } from 'vee-validate/dist/rules';
-import { MainComponent } from '@/app/@core/Main/MainComponent';
+import { email, max, min, required } from 'vee-validate/dist/rules';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+
+import { MainComponent } from '@/@core/MainComponent';
 
 extend('required', required);
 extend('email', email);
@@ -34,10 +35,10 @@ extend('max', max);
     mixins: [],
 })
 export default class EmailSender extends Vue implements MainComponent {
-    @Prop({ required: false }) private readonly emailValue: string = '';
+    protected email = '';
+    protected valid = false;
 
-    protected email: string = '';
-    protected valid: boolean = false;
+    @Prop({ required: false }) private readonly emailValue: string = '';
 
     mounted(): void {}
 
@@ -61,4 +62,4 @@ export default class EmailSender extends Vue implements MainComponent {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss" scoped></style>

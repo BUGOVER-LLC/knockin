@@ -2,15 +2,15 @@
 
 <template lang="html">
     <DrawerDrag :right="false">
-        <template v-slot:toolbar>
-            <v-toolbar color="grey lighten-4" class="pl-16" flat height="70">
+        <template #toolbar>
+            <v-toolbar class="pl-16" color="grey lighten-4" flat height="70">
                 <v-toolbar-title class="headline text-uppercase">
                     <span>u s</span><span class="font-weight-light"> e r s </span>
                 </v-toolbar-title>
             </v-toolbar>
         </template>
 
-        <template v-slot:content>
+        <template #content>
             <WorkspaceList />
             <MembersList />
         </template>
@@ -19,10 +19,10 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import DrawerDrag from '@/app/components/DrawerDrag.vue';
-import Workspace from '@/app/store/modules/WorkspaceStore';
-import WorkspaceList from '@/app/components/WorkspaceList.vue';
-import MembersList from '@/app/components/MembersList.vue';
+
+import DrawerDrag from '@/dashboard/components/DrawerDrag.vue';
+import MembersList from '@/dashboard/components/MembersList.vue';
+import WorkspaceList from '@/dashboard/components/WorkspaceList.vue';
 
 @Component({
     components: { MembersList, WorkspaceList, DrawerDrag },
@@ -31,7 +31,7 @@ import MembersList from '@/app/components/MembersList.vue';
 export default class LeftPanel extends Vue {}
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .v-navigation-drawer {
     height: 100vh;
     top: 0 !important;

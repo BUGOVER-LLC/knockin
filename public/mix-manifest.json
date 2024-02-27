@@ -1,5 +1,8 @@
 {
-    "/builds/auth/js/app.js": "/builds/auth/js/app.js?id=0e3c09714d47acffe4c38b7a669d1d48",
-    "/builds/vendor/manifest.js": "/builds/vendor/manifest.js?id=9f73e36163448599799c0ba369b82b17",
-    "/builds/vendor/vendor.js": "/builds/vendor/vendor.js?id=c7f8a69ef8d08ac48f2fad1d42ab4ce3"
+    "/builds/app/js/app.js": "/builds/app/js/app.js?id=17d626de604445f8a6da0b3b40051251",
+    "/builds/auth/js/app.js": "/builds/auth/js/app.js?id=ed7cc5f996e6a5ae223260d1d14b8213",
+    "/builds/vendor/manifest.js": "/builds/vendor/manifest.js?id=8d222d33d2bc7ae9786b142a0a6e1225",
+    "/builds/vendor/vendor.js": "/builds/vendor/vendor.js?id=d8ec36cc19d0df559490fa43c8de663f",
+    "/builds/app/css/app.css": "/builds/app/css/app.css?id=e04a200a84947d3749502404e51ac719",
+    "/builds/auth/css/app.css": "/builds/auth/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940"
 }
