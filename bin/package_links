@@ -3,8 +3,8 @@
 # Please call this file in package json or "run npm run sync-packages"
 
 for item in 'app' 'auth'; do
-    ln -sfn ../package.json assets/$item/
-    ln -sfn ../yarn.lock assets/$item/
+    ln -sfn ../package.json resources/assets/$item/
+    ln -sfn ../yarn.lock resources/assets/$item/
 done
 
 exit

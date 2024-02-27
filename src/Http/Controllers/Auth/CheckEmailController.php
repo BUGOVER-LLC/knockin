@@ -44,7 +44,7 @@ class CheckEmailController extends Controller
         );
         $this->redis->expire(MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'), 360);
 
-        SendMailQueue::dispatchSync(
+        SendMailQueue::dispatch(
             MainConsts::ACCEPT_CODE_EMAIL,
             $request->email,
             ['accept_code' => $accept_code]

@@ -26,8 +26,6 @@ import { ValidationProvider, extend, validate } from 'vee-validate';
 import { max, min, required } from 'vee-validate/dist/rules';
 import { Component, Emit, PropSync, Vue, Watch } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/MainComponent';
-
 extend('required', required);
 extend('min', min);
 extend('max', max);
@@ -37,16 +35,12 @@ extend('max', max);
     directives: { mask: VueMaskDirective },
     filters: { VMask: VueMaskFilter },
 })
-export default class ConfirmCode extends Vue implements MainComponent {
+export default class ConfirmCode extends Vue {
     @PropSync('disabledSync') public disabled = false;
 
     private loader = false;
     private length = 6;
-    private code: string | number = '';
-
-    created(): void {}
-
-    mounted(): void {}
+    private code: string | number;
 
     @Watch('disabled')
     observeDisabled() {

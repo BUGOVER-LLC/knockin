@@ -2,8 +2,8 @@
 
 import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';
 
-import store from '@/dashboard/store/index';
-import { AbstractModel } from '@/dashboard/store/models/AbstractModel';
+import store from '@/app/store/index';
+import { AbstractModel } from '@/app/store/models/AbstractModel';
 
 @Module({
     name: 'moduleAbstract',

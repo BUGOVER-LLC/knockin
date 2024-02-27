@@ -118,7 +118,7 @@ export default class AuthIndex extends Vue {
     }
 
     @Watch('codeValidation')
-    observeCode(val) {
+    observeCode(val: string | number) {
         if (val && this.emailValidation.valid && this.codeValidation) {
             this.disabledOtp = true;
             axios

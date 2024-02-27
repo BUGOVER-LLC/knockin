@@ -23,8 +23,6 @@ import { extend, validate, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/MainComponent';
-
 extend('required', required);
 extend('email', email);
 extend('min', min);
@@ -34,13 +32,11 @@ extend('max', max);
     components: { ValidationProvider },
     mixins: [],
 })
-export default class EmailSender extends Vue implements MainComponent {
+export default class EmailSender extends Vue {
     protected email = '';
     protected valid = false;
 
     @Prop({ required: false }) private readonly emailValue: string = '';
-
-    mounted(): void {}
 
     created() {
         this.email = this.emailValue;

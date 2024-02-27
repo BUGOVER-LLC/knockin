@@ -13,7 +13,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import Workspace from '@/dashboard/store/modules/WorkspaceStore';
+import Workspace from '@/app/store/modules/WorkspaceStore';
 
 @Component({
     components: {},

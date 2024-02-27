@@ -25,13 +25,13 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import AppBar from '@/dashboard/components/AppBar.vue';
-import LeftPanel from '@/dashboard/components/LeftPanel.vue';
-import MessagingContent from '@/dashboard/components/MessagingContent.vue';
-import MessagingWriter from '@/dashboard/components/MessagingWriter.vue';
-import RightPanel from '@/dashboard/components/RightPanel.vue';
-import Search from '@/dashboard/components/Search.vue';
-import SystemBar from '@/dashboard/components/SystemBar.vue';
+import AppBar from '@/app/components/AppBar.vue';
+import LeftPanel from '@/app/components/LeftPanel.vue';
+import MessagingContent from '@/app/components/MessagingContent.vue';
+import MessagingWriter from '@/app/components/MessagingWriter.vue';
+import RightPanel from '@/app/components/RightPanel.vue';
+import Search from '@/app/components/Search.vue';
+import SystemBar from '@/app/components/SystemBar.vue';
 
 @Component({
     components: { MessagingWriter, AppBar, SystemBar, LeftPanel, RightPanel, Search, MessagingContent },

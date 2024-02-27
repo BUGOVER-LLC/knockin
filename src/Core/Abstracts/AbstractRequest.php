@@ -6,6 +6,8 @@ namespace Src\Core\Abstracts;
 
 use Exception;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Validator;
 use RuntimeException;
 
 /**
@@ -51,6 +53,8 @@ abstract class AbstractRequest extends FormRequest
      */
     abstract public function rules(): array;
 
+    abstract public function toDTO(): object;
+
     /**
      * Get custom messages for validator errors.
      *
@@ -66,7 +70,10 @@ abstract class AbstractRequest extends FormRequest
      *
      * @return array
      */
-    abstract public function errorMessages(): array;
+    public function errorMessages(): array
+    {
+        return [];
+    }
 
     /**
      * Handle a passed validation attempt.

@@ -19,7 +19,7 @@
 import { Component, Prop, ProvideReactive, Vue, Watch } from 'vue-property-decorator';
 
 import { MainComponent } from '@/@core/MainComponent';
-import { MessageModule } from '@/dashboard/store/modules/MessageStore';
+import { MessageModule } from '@/app/store/modules/MessageStore';
 
 @Component({
     components: {},

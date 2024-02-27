@@ -17,8 +17,19 @@ class UserRepository extends AbstractRepository
         parent::__construct($user);
     }
 
-    public function findById()
+    /**
+     * @param string $email
+     * @return User|null
+     */
+    public function findByEmail(string $email): ?User
     {
-        $this->createModelBuilder();
+        return $this->createModelBuilder()
+            ->where('email', '=', $email)
+            ->first();
+    }
+
+    public function store(array $attrs)
+    {
+        $this->createModelBuilder()->create($attrs);
     }
 }

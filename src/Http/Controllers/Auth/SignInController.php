@@ -42,8 +42,9 @@ class SignInController extends AbstractAction
             $has_accept_code = false;
         } else {
             $has_accept_code = igbinary_unserialize($is_sent_code['auth']) === $request->cookie('authenticator');
+            $email = igbinary_unserialize($is_sent_code['email']);
         }
 
-        return view('app.signin', ['code' => $has_accept_code, 'email' => $request->email]);
+        return view('app.signin', ['code' => $has_accept_code, 'email' => $email ?? '']);
     }
 }
