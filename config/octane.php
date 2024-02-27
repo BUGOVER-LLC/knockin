@@ -183,9 +183,8 @@ return [
     |
     */
     'watch' => [
-        'app',
+        'infrastructure',
         'src',
-        'service',
         'bootstrap',
         'config',
         'database',

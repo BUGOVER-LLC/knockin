@@ -7,14 +7,15 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Nucleus\Models\Entity\ServiceModel;
+use Src\Core\Abstracts\AbstractModel;
 
-class Channel extends ServiceModel
+class Channel extends AbstractModel
 {
     /**
      * @var string
      */
     protected $primaryKey = 'channel_id';
+
     /**
      * @var string[]
      */

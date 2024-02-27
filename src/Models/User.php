@@ -9,13 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Service\Models\Entity\ServiceAuthenticable;
-use Service\Models\Traits\UUID;
+use Src\Core\Abstracts\AbstractAuthModel;
 
-class User extends ServiceAuthenticable
+class User extends AbstractAuthModel
 {
-    use UUID;
-
     /**
      * @var string
      */

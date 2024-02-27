@@ -46,6 +46,10 @@ return [
      * In development state STRICT_MODE enable please, and level 3,2,1
      */
     'strict' => env('STRICT_MODE', false),
+
+    /**
+     * Strict level when strict mode is true
+     */
     'strict_level' => env('STRICT_LEVEL', 3),
 
     /*
@@ -138,7 +142,7 @@ return [
     */
     'maintenance' => [
         'driver' => 'file',
-         'store'  => 'redis',
+        'store' => 'redis',
     ],
 
     /*
@@ -182,12 +186,12 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        Src\Providers\MainServiceProvider::class,
+        Infrastructure\Providers\AppServiceProvider::class,
+        Infrastructure\Providers\AuthServiceProvider::class,
+        Infrastructure\Providers\BroadcastServiceProvider::class,
+        Infrastructure\Providers\EventServiceProvider::class,
+        Infrastructure\Providers\RouteServiceProvider::class,
+        Infrastructure\Providers\MainServiceProvider::class,
     ],
 
     /*
@@ -204,5 +208,4 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
 ];

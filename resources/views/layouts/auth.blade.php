@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{--CLient App Style--}}
-    <link rel="stylesheet" href="{{ asset_mix('builds/app/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset_mix('builds/auth/css/app.css') }}">
 
     {{--Client APP Script--}}
     <script src="{{ asset_mix('builds/vendor/vendor.js') }}"></script>

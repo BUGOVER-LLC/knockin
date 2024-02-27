@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Nucleus\Models\Entity\ServiceModel;
+use Src\Core\Abstracts\AbstractModel;
 
-class Workspace extends ServiceModel
+class Workspace extends AbstractModel
 {
     /**
      * @var string
@@ -58,7 +58,8 @@ class Workspace extends ServiceModel
         return $this->belongsToMany(User::class, Worker::class, 'user_id', 'workspace_id');
     }
 
-    /**@TODO FIX THIS RELATION
+    /**
+* @TODO FIX THIS RELATION
      * @return HasManyThrough
      */
     public function tasks(): HasManyThrough

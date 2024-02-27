@@ -21,6 +21,9 @@ fi
 sudo cp -r /etc/ssl/certs/ca.homestead.noix.crt /home/vagrant/noix/.etc/ssl
 sudo cp -r /etc/ssl/certs/ca.homestead.noix.key /home/vagrant/noix/.etc/ssl
 
+sudo cp -r /etc/ssl/certs/noix.loc.crt /home/vagrant/noix/.etc/ssl
+sudo cp -r /etc/ssl/certs/noix.loc.key /home/vagrant/noix/.etc/ssl
+
 # Copy NGINX config
 sudo cp -r /home/vagrant/noix/.etc/nginx/noix.loc /etc/nginx/sites-available/
 
@@ -28,6 +31,10 @@ sudo cp -r /home/vagrant/noix/.etc/nginx/noix.loc /etc/nginx/sites-available/
 #sudo cp -r /home/vagrant/noix/.etc/supervisor/memmon.conf /etc/supervisor/conf.d/
 sudo cp -r /home/vagrant/noix/.etc/supervisor/queue-base.conf /etc/supervisor/conf.d/
 sudo cp -r /home/vagrant/noix/.etc/supervisor/swoole-http.conf /etc/supervisor/conf.d/
+
+sudo supervisorctl reread
+sudo supervisorctl restart all
+sudo supervisorctl reload
 
 # Set PHP version
 update-alternatives: using /usr/bin/php8.2
@@ -44,15 +51,13 @@ sudo apt upgrade -y
 
 sudo apt install cron -y
 sudo apt install nginx-extras -y
-
-sudo apt install libc-ares-dev libcurl4-openssl-dev -y
-
-pip install --upgrade supervisor
-pip install superlance
-
 sudo apt install php-gmp
 sudo apt install php-bcmath
 sudo apt install php-igbinary
+sudo apt install libc-ares-dev libcurl4-openssl-dev
+
+pip install --upgrade supervisor
+pip install superlance
 
 # Install new version beanstalkd, for queue on prod test
 wget https://launchpad.net/ubuntu/+archive/primary/+files/beanstalkd_1.12-2_amd64.deb
@@ -64,3 +69,7 @@ sudo rm -rf beanstalkd_1.12-2_amd64.deb
 #
 composer install
 yarn install
+
+cd public || exit
+unlink storage
+ln -s ../storage/public storage
