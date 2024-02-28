@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use Src\Http\Controllers\App\DashboardIndexController;
-use Src\Http\Controllers\Auth\CheckCodeAbstractController;
-use Src\Http\Controllers\Auth\CheckEmailAbstractController;
+use Src\Http\Controllers\Auth\CheckCodeController;
+use Src\Http\Controllers\Auth\CheckEmailController;
 use Src\Http\Controllers\Auth\CreateWorkspaceController;
 use Src\Http\Controllers\Auth\GetWorkspaceController;
 use Src\Http\Controllers\Auth\SignInController;
@@ -29,10 +29,10 @@ Route::group(['middleware' => ['guest', 'set_auth_payload'], 'prefix' => 'auth']
     Route::get('/', SignInController::class)
         ->name('signInIndex'),
 
-    Route::post('check-email', CheckEmailAbstractController::class)
+    Route::post('check-email', CheckEmailController::class)
         ->name('checkEmail'),
 
-    Route::post('check-code', CheckCodeAbstractController::class)
+    Route::post('check-code', CheckCodeController::class)
         ->name('checkCode'),
 
     Route::get('workspaces', GetWorkspaceController::class)

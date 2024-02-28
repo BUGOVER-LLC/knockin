@@ -7,6 +7,17 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Src\Core\Abstracts\AbstractModel;
 
+/**
+ * Src\Models\PersonalMessage
+ *
+ * @property-read \Src\Models\User|null $author
+ * @property-read \Src\Models\User|null $participant
+ * @property-read \Src\Models\Workspace|null $workspace
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage query()
+ * @mixin \Eloquent
+ */
 class PersonalMessage extends AbstractModel
 {
     /**

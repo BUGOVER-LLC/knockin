@@ -8,12 +8,14 @@ import { vuetify } from '@/auth/plugins';
 import { router } from '@/auth/router';
 
 import App from './pages/App.vue';
+import store from './store';
 
 Vue.use(VueMask);
 Vue.use(VueHotkey);
 Vue.component('AuthPage', App);
 
 const app = new Vue({
+    store,
     router,
     vuetify,
 });

@@ -10,7 +10,7 @@ use Src\Core\Abstracts\AbstractController;
 use Src\Http\Action\CheckAcceptCodeAction;
 use Src\Http\Request\CheckAcceptCodeRequest;
 
-class CheckCodeAbstractController extends AbstractController
+class CheckCodeController extends AbstractController
 {
     /**
      * Handle the incoming request.

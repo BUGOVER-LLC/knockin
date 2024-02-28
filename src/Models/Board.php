@@ -9,6 +9,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Src\Core\Abstracts\AbstractModel;
 
+/**
+ * Src\Models\Board
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\SharedBoard> $shared
+ * @property-read int|null $shared_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\BoardStape> $stapes
+ * @property-read int|null $stapes_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\BoardTask> $tasks
+ * @property-read int|null $tasks_count
+ * @property-read \Src\Models\Workspace|null $workspace
+ * @method static \Illuminate\Database\Eloquent\Builder|Board newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Board newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Board query()
+ * @mixin \Eloquent
+ */
 class Board extends AbstractModel
 {
     /**

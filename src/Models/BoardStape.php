@@ -8,6 +8,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Src\Core\Abstracts\AbstractModel;
 
+/**
+ * Src\Models\BoardStape
+ *
+ * @property-read \Src\Models\Board|null $board
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\BoardTask> $tasks
+ * @property-read int|null $tasks_count
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape query()
+ * @mixin \Eloquent
+ */
 class BoardStape extends AbstractModel
 {
     /**

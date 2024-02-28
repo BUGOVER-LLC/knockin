@@ -104,13 +104,7 @@ export default class AuthIndex extends Vue {
     created() {
         'emailSender' !== this.$router.currentRoute.name ? this.prevStep() : null;
 
-        if (this.code && 'authConfirm' !== this.$router.currentRoute.name) {
-            this.nextStep();
-        } else if ('authConfirm' === this.$router.currentRoute.name && this.code) {
-            this.step = 2;
-        } else if (1 === this.step && 'authConfirm' === this.$router.currentRoute.name) {
-            this.$router.push({ name: 'emailSender' });
-        }
+        this.reDirector();
 
         if (this.email) {
             this.emailValidation = { valid: true, email: this.email, sent: false };
@@ -150,6 +144,16 @@ export default class AuthIndex extends Vue {
             return 'send code again';
         }
         return 'next';
+    }
+
+    private reDirector() {
+        if (this.code && 'authConfirm' !== this.$router.currentRoute.name) {
+            this.nextStep();
+        } else if ('authConfirm' === this.$router.currentRoute.name && this.code) {
+            this.step = 2;
+        } else if (1 === this.step && 'authConfirm' === this.$router.currentRoute.name) {
+            this.$router.push({ name: 'emailSender' });
+        }
     }
 
     private async checkSend() {

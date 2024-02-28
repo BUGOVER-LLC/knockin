@@ -9,6 +9,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Src\Core\Abstracts\AbstractModel;
 
+/**
+ * Src\Models\Channel
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\SharedBoard> $boards
+ * @property-read int|null $boards_count
+ * @property-read \Src\Models\User|null $creator
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\User> $participant
+ * @property-read int|null $participant_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\SharedChannel> $shared
+ * @property-read int|null $shared_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\SharedBoard> $tBoards
+ * @property-read int|null $t_boards_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\BoardTask> $tasks
+ * @property-read int|null $tasks_count
+ * @property-read \Src\Models\Workspace|null $workspace
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel query()
+ * @mixin \Eloquent
+ */
 class Channel extends AbstractModel
 {
     /**

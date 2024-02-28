@@ -7,6 +7,16 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Src\Core\Abstracts\AbstractModel;
 
+/**
+ * Src\Models\TaskExecution
+ *
+ * @property-read \Src\Models\User|null $executor
+ * @property-read \Src\Models\BoardTask|null $task
+ * @method static \Illuminate\Database\Eloquent\Builder|TaskExecution newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TaskExecution newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TaskExecution query()
+ * @mixin \Eloquent
+ */
 class TaskExecution extends AbstractModel
 {
     /**

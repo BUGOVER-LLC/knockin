@@ -12,6 +12,54 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Src\Core\Abstracts\AbstractAuthModel;
 use Src\Core\Traits\Uuid;
 
+/**
+ * Src\Models\User
+ *
+ * @property int $user_id
+ * @property int|null $current_workspace_id
+ * @property int|null $current_device_id
+ * @property string|null $uid
+ * @property string|null $name
+ * @property string|null $phone
+ * @property string $email
+ * @property string|null $password
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $verified_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\Board> $boards
+ * @property-read int|null $boards_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\Channel> $channels
+ * @property-read int|null $channels_count
+ * @property-read \Src\Models\Workspace|null $currentWorkspace
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\BoardTask> $executeTasks
+ * @property-read int|null $execute_tasks_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\Channel> $participants
+ * @property-read int|null $participants_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\PersonalMessage> $personalMessages
+ * @property-read int|null $personal_messages_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\PersonalMessage> $personalParticipants
+ * @property-read int|null $personal_participants_count
+ * @property-read \Src\Models\UserProfile|null $profile
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Src\Models\BoardTask> $tasks
+ * @property-read int|null $tasks_count
+ * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|User query()
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereCurrentDeviceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereCurrentWorkspaceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereUid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereVerifiedAt($value)
+ * @mixin \Eloquent
+ */
 class User extends AbstractAuthModel
 {
     use Uuid;

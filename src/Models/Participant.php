@@ -7,6 +7,16 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Src\Core\Abstracts\AbstractModel;
 
+/**
+ * Src\Models\Participant
+ *
+ * @property-read \Src\Models\Channel|null $channel
+ * @property-read \Src\Models\User|null $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant query()
+ * @mixin \Eloquent
+ */
 class Participant extends AbstractModel
 {
     protected $primaryKey = 'participant_id';

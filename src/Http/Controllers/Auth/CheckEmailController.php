@@ -10,7 +10,7 @@ use Src\Core\Abstracts\AbstractController;
 use Src\Http\Action\CheckEmailAction;
 use Src\Http\Request\CheckEmailRequest;
 
-class CheckEmailAbstractController extends AbstractController
+class CheckEmailController extends AbstractController
 {
     /**
      * Handle the incoming request.

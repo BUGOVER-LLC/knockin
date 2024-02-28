@@ -16,7 +16,8 @@ class WorkspaceResource extends AbstractResource
     public function toSchema($request): AbstractSchema
     {
         return new WorkspaceSchema(
-
+            $this->resource->uid,
+            $this->resource->name,
         );
     }
 }
