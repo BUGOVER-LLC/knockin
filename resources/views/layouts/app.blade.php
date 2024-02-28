@@ -17,10 +17,10 @@
     <script defer src="{{ asset('builds/app/js/app.js') }}"></script>
 </head>
 <body id="main-content-app-knock">
-<div id="app-knock">
-    <app-dashboard>
+<div id="app-board">
+    <app>
         <template slot="content">@yield('app-body')</template>
-    </app-dashboard>
+    </app>
 </div>
 
 <script>

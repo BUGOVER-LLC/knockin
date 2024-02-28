@@ -28,8 +28,9 @@ import { MessageModule } from '@/app/store/modules/MessageStore';
 export default class MessagingContent extends Vue implements MainComponent {
     @ProvideReactive()
     messageContent = [];
+
     @Prop({ required: false, type: String, default: 'target-1' })
-    protected readonly target: string = 'target-1';
+    protected readonly target: string;
 
     public get messageBody() {
         return MessageModule.body;

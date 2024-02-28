@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Src\Models;
 
-use Nucleus\Models\Entity\ServiceModel;
+use Src\Core\Abstracts\AbstractModel;
 
-class Worker extends ServiceModel
+class Worker extends AbstractModel
 {
 }

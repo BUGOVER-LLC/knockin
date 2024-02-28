@@ -7,9 +7,10 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Nucleus\Models\Entity\ServiceModel;
+use Src\Core\Abstracts\AbstractModel;
 use Znck\Eloquent\Relations\BelongsToThrough;
 
-class BoardTask extends ServiceModel
+class BoardTask extends AbstractModel
 {
     /**
      * @var string

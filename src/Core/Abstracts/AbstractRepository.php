@@ -63,8 +63,6 @@ abstract class AbstractRepository
         $index_by = null
     ): EloquentBuilder
     {
-        return $this->model::query()->select($columns)->from($this->getTable(), $alias)->useIndex(
-            $index_by
-        );
+        return $this->model::query()->select($columns)->from($this->getTable(), $alias);
     }
 }

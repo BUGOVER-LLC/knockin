@@ -124,8 +124,8 @@ export default class AuthIndex extends Vue {
             axios
                 .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
                 .then((response: AxiosResponse) => {
-                    if (response.data.redirect ?? false) {
-                        window.location.replace(response.data.redirect);
+                    if (response.data.next ?? false) {
+                        this.$router.push({ name: 'selectWorkspace' });
                     }
                 })
                 .catch((error: Error | AxiosError) => {})

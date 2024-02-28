@@ -11,10 +11,6 @@ use Src\Core\Abstracts\AbstractAction;
 
 class DashboardIndexController extends AbstractAction
 {
-    public function __construct()
-    {
-    }
-
     /**
      * @param string $workspace_id
      * @param string|null $target_id

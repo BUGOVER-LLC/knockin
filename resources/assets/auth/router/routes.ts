@@ -7,6 +7,7 @@ import { acceptCodePageCheck } from '@/auth/router/middlewares';
 const emailSender = (): object => import('@/auth/components/started/EmailSender.vue');
 const confirmCode = (): object => import('@/auth/components/started/ConfirmCode.vue');
 const authIndex = (): object => import('@/auth/pages/AuthIndex.vue');
+const selectWorkspace = (): object => import('@/auth/pages/SelectWorkspace.vue');
 
 export const Routes: RouteConfig[] = [
     {
@@ -29,6 +30,12 @@ export const Routes: RouteConfig[] = [
                 meta: {
                     middleware: acceptCodePageCheck,
                 },
+            },
+            {
+                props: true,
+                path: 'workspace',
+                name: 'selectWorkspace',
+                component: selectWorkspace,
             },
         ],
     },

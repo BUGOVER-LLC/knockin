@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use Src\Http\Controllers\App\DashboardIndexController;
-use Src\Http\Controllers\Auth\CheckCodeController;
-use Src\Http\Controllers\Auth\CheckEmailController;
+use Src\Http\Controllers\Auth\CheckCodeAbstractController;
+use Src\Http\Controllers\Auth\CheckEmailAbstractController;
+use Src\Http\Controllers\Auth\CreateWorkspaceController;
+use Src\Http\Controllers\Auth\GetWorkspaceController;
 use Src\Http\Controllers\Auth\SignInController;
 use Src\Http\Controllers\Greeting\GreetingIndexController;
 
@@ -27,13 +29,20 @@ Route::group(['middleware' => ['guest', 'set_auth_payload'], 'prefix' => 'auth']
     Route::get('/', SignInController::class)
         ->name('signInIndex'),
 
-    Route::post('check-email', CheckEmailController::class)
+    Route::post('check-email', CheckEmailAbstractController::class)
         ->name('checkEmail'),
 
-    Route::post('check-code', CheckCodeController::class)
+    Route::post('check-code', CheckCodeAbstractController::class)
         ->name('checkCode'),
 
-    Route::get('{any}', SignInController::class)->where('any', '.*'),
+    Route::get('workspaces', GetWorkspaceController::class)
+        ->name('workspaces'),
+
+    Route::post('createWorkspace', CreateWorkspaceController::class)
+        ->name('createWorkspace'),
+
+    Route::get('{any}', SignInController::class)
+        ->where('any', '.*'),
 ]);
 
 Route::group(

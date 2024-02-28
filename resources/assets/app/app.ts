@@ -13,11 +13,11 @@ import store from './store';
 
 Vue.use(VueMask);
 Vue.use(VueHotkey);
-Vue.component('GreetingPage', App);
+Vue.component('App', App);
 
 const app = new Vue({
     store,
     router,
     vuetify,
 });
-app.$mount('#app-greeting');
+app.$mount('#app-board');

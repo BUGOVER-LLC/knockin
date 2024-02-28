@@ -22,10 +22,11 @@ class WorkspaceRepository extends AbstractRepository
      * @param string $email
      * @return Collection|Workspace
      */
-    public function getWorkspaceByUserEmail(string $email): Collection|Workspace
+    public function getWorkspacesByUserEmail(string $email): Collection|Workspace
     {
         return $this
+            ->createModelBuilder()
             ->whereHas('workers', fn($query) => $query->where('email', '=', $email))
-            ->findAll();
+            ->get();
     }
 }

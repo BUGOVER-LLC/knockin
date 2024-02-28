@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Src\Core\Abstracts;
 
 use Illuminate\Support\Facades\DB;
-use Src\Http\Controllers\Controller;
 use Throwable;
 
-abstract class AbstractAction extends Controller
+abstract class AbstractAction extends AbstractController
 {
     /**
      * @throws Throwable

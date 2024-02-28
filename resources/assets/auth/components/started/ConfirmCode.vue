@@ -40,7 +40,7 @@ export default class ConfirmCode extends Vue {
 
     private loader = false;
     private length = 6;
-    private code: string | number;
+    private code: string | number = '';
 
     @Watch('disabled')
     observeDisabled() {

@@ -19,6 +19,10 @@ export default class Search extends Vue {
     get isView() {
         return AbstractModule.searchToggle;
     }
+
+    created() {
+        console.log(this.isView);
+    }
 }
 </script>
 

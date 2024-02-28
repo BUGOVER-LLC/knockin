@@ -10,18 +10,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Src\Core\Abstracts\AbstractAuthModel;
+use Src\Core\Traits\Uuid;
 
 class User extends AbstractAuthModel
 {
+    use Uuid;
+
+    protected $connection = 'pgsql_app';
+
     /**
      * @var string
      */
     protected $primaryKey = 'user_id';
-
-    /**
-     * @var string
-     */
-    protected string $uniqeuKey = 'uid';
 
     /**
      * The attributes that are mass assignable.

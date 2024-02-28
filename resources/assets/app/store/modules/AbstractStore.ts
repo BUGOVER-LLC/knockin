@@ -14,13 +14,11 @@ import { AbstractModel } from '@/app/store/models/AbstractModel';
     preserveState: null !== localStorage.getItem('vuex'),
 })
 export default class AbstractStore extends VuexModule implements AbstractModel {
-    public searchToggle = false;
-    public searchBody = '';
+    public searchToggle: boolean = false;
+    public searchBody: string = '';
 
     @Action({ rawError: true, commit: 'mutateTriggerSearch' })
-    public initTriggerSearch() {
-        console.log(this.searchToggle);
-    }
+    public initTriggerSearch() {}
 
     @Mutation
     private mutateTriggerSearch() {

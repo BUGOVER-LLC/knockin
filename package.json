@@ -39,7 +39,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vue": "^9.15.1",
-    "flow-bin": "^0.228.0",
+    "flow-bin": "^0.229.2",
     "fs": "^0.0.1-security",
     "javascript-obfuscator": "^4.1.0",
     "laravel-mix": "^6.0.49",

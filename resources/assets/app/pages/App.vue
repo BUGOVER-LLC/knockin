@@ -12,6 +12,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({})
 export default class App extends Vue {
     private messages: object = [];
+
     private window = {
         width: 0,
         height: 0,

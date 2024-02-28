@@ -12,6 +12,7 @@ use RuntimeException;
 
 /**
  * Class BookkeepingCompanyPaginateRequest
+ *
  * @package Src\Http\Requests\SystemWorker
  * @method moreValidation(\Illuminate\Validation\Validator $validator)
  */
@@ -53,8 +54,6 @@ abstract class AbstractRequest extends FormRequest
      */
     abstract public function rules(): array;
 
-    abstract public function toDTO(): object;
-
     /**
      * Get custom messages for validator errors.
      *
@@ -74,6 +73,11 @@ abstract class AbstractRequest extends FormRequest
     {
         return [];
     }
+
+    /**
+     * @return object
+     */
+    abstract public function toDTO(): object;
 
     /**
      * Handle a passed validation attempt.

@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Src\Http\Action;
 
 use Exception;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Event;
@@ -19,7 +17,6 @@ use Src\Exception\CreateUserException;
 use Src\Http\DTO\CheckAcceptCodeDTO;
 use Src\Models\User;
 use Src\Repositories\UserRepository;
-use Src\Repositories\WorkspaceRepository;
 
 class CheckAcceptCodeAction
 {
@@ -36,10 +33,10 @@ class CheckAcceptCodeAction
 
     /**
      * @param CheckAcceptCodeDTO $dto
-     * @return User
+     * @return bool
      * @throws RedisException
      */
-    public function execute(CheckAcceptCodeDTO $dto): User
+    public function execute(CheckAcceptCodeDTO $dto): bool
     {
         $is_sent_code = $this->redis->hMGet(
             MainConsts::ACCEPT_CODE_EMAIL . ':' . $dto->authenticator,
@@ -67,10 +64,10 @@ class CheckAcceptCodeAction
             'email'
         );
 
-        $user = $this->authorizeUser($dto->email, $dto->acceptCode);
+//        $user = $this->authorizeUser($dto->email, $dto->acceptCode);
         Cookie::forget('authenticator');
 
-        return $user;
+        return true;
     }
 
     /**

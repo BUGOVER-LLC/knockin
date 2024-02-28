@@ -12,9 +12,9 @@
             app
             height="100%"
         >
-            <slot v-if="$slots['toolbar']" name="toolbar"></slot>
-            <slot v-if="$slots['content']" name="content"></slot>
-            <slot v-if="$slots['footer']" name="footer"></slot>
+            <slot v-if="$slots['toolbar']" name="toolbar" />
+            <slot v-if="$slots['content']" name="content" />
+            <slot v-if="$slots['footer']" name="footer" />
         </v-navigation-drawer>
     </div>
 </template>
@@ -25,16 +25,16 @@ import { Component, Prop, Ref, Vue } from 'vue-property-decorator';
 @Component({})
 export default class DrawerDrag extends Vue {
     @Prop({ type: [Number, String], default: 300, required: false })
-    protected readonly navigationWidth: number | string = 300;
+    protected readonly navigationWidth: number | string = 350;
 
     @Prop({ type: Boolean, default: false, required: false })
-    protected readonly mini: boolean = false;
+    protected readonly mini: boolean;
 
     @Prop({ type: Boolean, default: true, required: false })
-    protected readonly right: boolean = true;
+    protected readonly right: boolean;
 
     @Prop({ type: Boolean, default: true, required: false })
-    protected readonly absolute: boolean = true;
+    protected readonly absolute: boolean;
 
     @Ref()
     private drawer: any;

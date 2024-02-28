@@ -6,9 +6,9 @@ namespace Src\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Nucleus\Models\Entity\ServiceModel;
+use Src\Core\Abstracts\AbstractModel;
 
-class BoardStape extends ServiceModel
+class BoardStape extends AbstractModel
 {
     /**
      * @var string

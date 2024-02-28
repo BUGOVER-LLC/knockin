@@ -6,11 +6,11 @@ namespace Src\Http\Controllers\Auth;
 
 use Illuminate\Http\JsonResponse;
 use RedisException;
+use Src\Core\Abstracts\AbstractController;
 use Src\Http\Action\CheckAcceptCodeAction;
-use Src\Http\Controllers\Controller;
 use Src\Http\Request\CheckAcceptCodeRequest;
 
-class CheckCodeController extends Controller
+class CheckCodeAbstractController extends AbstractController
 {
     /**
      * Handle the incoming request.
@@ -23,11 +23,11 @@ class CheckCodeController extends Controller
     public function __invoke(CheckAcceptCodeRequest $request, CheckAcceptCodeAction $action): JsonResponse
     {
         $dto = $request->toDTO();
-        $user = $action->execute($dto);
+        $action->execute($dto);
 
         return jsponse([
             'message' => 'successful',
-            'redirect' => route('app.indexNoix', ['target_id' => $user->uid]),
+            'next' => true,
         ]);
     }
 }

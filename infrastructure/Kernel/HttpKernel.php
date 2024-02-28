@@ -67,6 +67,6 @@ class HttpKernel extends BaseHttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         // Custom
-        'set_auth_payload' => \Infrastructure\Http\Middleware\SetAuthData::class
+        'set_auth_payload' => \Infrastructure\Http\Middleware\SetAuthData::class,
     ];
 }

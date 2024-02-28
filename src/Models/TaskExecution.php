@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Src\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Nucleus\Models\Entity\ServiceModel;
+use Src\Core\Abstracts\AbstractModel;
 
-class TaskExecution extends ServiceModel
+class TaskExecution extends AbstractModel
 {
     /**
      * @var string
