@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Src\Core\Traits;
+namespace Src\Core\Trait;
 
 use Illuminate\Support\Collection;
-use Src\Core\Abstracts\AbstractSchema;
+use Src\Core\Abstract\AbstractSchema;
 
 trait ConvertsSchemaToArray
 {

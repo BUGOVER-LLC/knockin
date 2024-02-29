@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Core\Traits;
+namespace Src\Core\Trait;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;

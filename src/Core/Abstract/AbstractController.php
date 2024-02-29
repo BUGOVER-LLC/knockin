@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Core\Abstracts;
+namespace Src\Core\Abstract;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;

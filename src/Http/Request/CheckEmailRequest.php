@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Src\Http\Request;
 
-use Src\Core\Abstracts\AbstractRequest;
+use Src\Core\Abstract\AbstractRequest;
 use Src\Http\DTO\CheckEmailDTO;
 
 /**

@@ -6,7 +6,9 @@ namespace Src\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Src\Core\Abstracts\AbstractModel;
+use Src\Core\Abstract\AbstractModel;
+use Src\Core\Attribute\ModelEntity;
+use Src\Repositories\BoardRepository;
 
 /**
  * Src\Models\BoardStape
@@ -19,6 +21,7 @@ use Src\Core\Abstracts\AbstractModel;
  * @method static \Illuminate\Database\Eloquent\Builder|BoardStape query()
  * @mixin \Eloquent
  */
+#[ModelEntity()]
 class BoardStape extends AbstractModel
 {
     /**

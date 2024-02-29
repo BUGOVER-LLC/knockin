@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Infrastructure\Schema;
 
 use OpenApi\Attributes\Property;
-use Src\Core\Abstracts\AbstractSchema;
+use Src\Core\Abstract\AbstractSchema;
 
 class WorkspaceSchema extends AbstractSchema
 {

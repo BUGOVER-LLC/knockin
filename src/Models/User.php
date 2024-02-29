@@ -9,8 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Src\Core\Abstracts\AbstractAuthModel;
-use Src\Core\Traits\Uuid;
+use Src\Core\Abstract\AbstractAuthModel;
+use Src\Core\Attribute\ModelEntity;
+use Src\Core\Trait\Uuid;
+use Src\Repositories\UserRepository;
 
 /**
  * Src\Models\User
@@ -60,6 +62,7 @@ use Src\Core\Traits\Uuid;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereVerifiedAt($value)
  * @mixin \Eloquent
  */
+#[ModelEntity(repositoryClass: UserRepository::class)]
 class User extends AbstractAuthModel
 {
     use Uuid;

@@ -7,7 +7,7 @@ namespace Src\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Src\Core\Abstracts\AbstractModel;
+use Src\Core\Abstract\AbstractModel;
 
 /**
  * Src\Models\Channel

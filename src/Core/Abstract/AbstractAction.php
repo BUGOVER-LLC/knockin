@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Src\Core\Abstracts;
+namespace Src\Core\Abstract;
 
 use Illuminate\Support\Facades\DB;
 use Throwable;

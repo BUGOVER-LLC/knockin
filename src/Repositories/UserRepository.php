@@ -45,7 +45,7 @@ class UserRepository extends EloquentRepository
     public function createUserOnRegister(string $email, string $password): User
     {
         try {
-            $result = $this->create([
+            $user = $this->create([
                 'email' => $email,
                 'password' => $password,
                 'verified_at' => now(),
@@ -54,6 +54,6 @@ class UserRepository extends EloquentRepository
             logging($exception);
         }
 
-        return $result;
+        return $user;
     }
 }

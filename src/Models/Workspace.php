@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Src\Core\Abstracts\AbstractModel;
+use Src\Core\Abstract\AbstractModel;
+use Src\Core\Attribute\ModelEntity;
+use Src\Repositories\BoardRepository;
+use Src\Repositories\WorkspaceRepository;
 
 /**
  * Src\Models\Workspace
@@ -27,6 +30,7 @@ use Src\Core\Abstracts\AbstractModel;
  * @method static \Illuminate\Database\Eloquent\Builder|Workspace query()
  * @mixin \Eloquent
  */
+#[ModelEntity(repositoryClass: WorkspaceRepository::class)]
 class Workspace extends AbstractModel
 {
     /**

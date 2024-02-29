@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Src\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Src\Core\Abstracts\AbstractModel;
+use Src\Core\Abstract\AbstractModel;
 
 /**
  * Src\Models\Message

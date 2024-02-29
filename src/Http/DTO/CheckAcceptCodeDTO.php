@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Src\Http\DTO;
 
-use Src\Core\Abstracts\AbstractDTO;
+use Src\Core\Abstract\AbstractDTO;
 
 class CheckAcceptCodeDTO extends AbstractDTO
 {

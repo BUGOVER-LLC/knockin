@@ -10,8 +10,8 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Redis;
 use RedisException;
-use Src\Core\Abstracts\AbstractAction;
-use Src\Core\MainConsts;
+use Src\Core\Abstract\AbstractAction;
+use Src\Core\Enum\EmailType;
 
 class SignInController extends AbstractAction
 {
@@ -32,7 +32,7 @@ class SignInController extends AbstractAction
     public function __invoke(Request $request): \Illuminate\Foundation\Application|View|Factory|Application
     {
         $is_sent_code = $this->redis->hMGet(
-            MainConsts::ACCEPT_CODE_EMAIL . ':' . $request->cookie('authenticator'),
+            EmailType::acceptCodeEmail->value . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']
         );
 

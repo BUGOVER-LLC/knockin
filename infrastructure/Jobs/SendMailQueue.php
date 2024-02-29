@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Infrastructure\Jobs;
 
-use Infrastructure\Mail\AcceptCode;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
-use Src\Core\MainConsts;
+use Infrastructure\Mail\AcceptCode;
+use Src\Core\Enum\EmailType;
 
 /**
  * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
@@ -43,7 +43,7 @@ class SendMailQueue implements ShouldQueue
     public function handle(): void
     {
         switch ($this->context) {
-            case MainConsts::ACCEPT_CODE_EMAIL:
+            case EmailType::acceptCodeEmail->value:
                 Mail::to($this->address)->send(new AcceptCode($this->address, $this->body));
                 break;
         }

@@ -7,7 +7,7 @@ namespace Src\Http\Controllers\App;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Src\Core\Abstracts\AbstractAction;
+use Src\Core\Abstract\AbstractAction;
 
 class DashboardIndexController extends AbstractAction
 {

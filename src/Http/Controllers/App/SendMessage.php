@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Src\Http\Controllers\App;
 
 use Illuminate\Http\Request;
-use Src\Core\Abstracts\AbstractController;
+use Src\Core\Abstract\AbstractController;
 
 class SendMessage extends AbstractController
 {

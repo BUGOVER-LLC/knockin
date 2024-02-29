@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Infrastructure\Http\Resource;
 
 use Infrastructure\Schema\WorkspaceSchema;
-use Src\Core\Abstracts\AbstractResource;
-use Src\Core\Abstracts\AbstractSchema;
-use Src\Core\Traits\ConvertsSchemaToArray;
+use Src\Core\Abstract\AbstractResource;
+use Src\Core\Abstract\AbstractSchema;
+use Src\Core\Trait\ConvertsSchemaToArray;
 
 class WorkspaceResource extends AbstractResource
 {

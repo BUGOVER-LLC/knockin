@@ -6,7 +6,6 @@ namespace Src\Http\Action;
 
 use Redis;
 use RedisException;
-use Src\Core\MainConsts;
 
 class SignInAction
 {

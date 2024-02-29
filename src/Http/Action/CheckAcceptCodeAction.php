@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\UnauthorizedException;
 use Redis;
 use RedisException;
-use Src\Core\MainConsts;
+use Src\Core\Enum\EmailType;
 use Src\Exception\CreateUserException;
 use Src\Http\DTO\CheckAcceptCodeDTO;
 use Src\Models\User;
@@ -27,8 +27,7 @@ class CheckAcceptCodeAction
     public function __construct(
         protected readonly Redis $redis,
         protected readonly UserRepository $userRepository,
-    )
-    {
+    ) {
     }
 
     /**
@@ -39,7 +38,7 @@ class CheckAcceptCodeAction
     public function execute(CheckAcceptCodeDTO $dto): bool
     {
         $is_sent_code = $this->redis->hMGet(
-            MainConsts::ACCEPT_CODE_EMAIL . ':' . $dto->authenticator,
+            EmailType::acceptCodeEmail->value . ':' . $dto->authenticator,
             ['auth', 'code', 'email']
         );
 
@@ -58,7 +57,7 @@ class CheckAcceptCodeAction
         }
 
         $this->redis->hDel(
-            MainConsts::ACCEPT_CODE_EMAIL . ':' . $dto->authenticator,
+            EmailType::acceptCodeEmail->value . ':' . $dto->authenticator,
             'auth',
             'code',
             'email'
@@ -68,32 +67,5 @@ class CheckAcceptCodeAction
         Cookie::forget('authenticator');
 
         return true;
-    }
-
-    /**
-     * @param string $email
-     * @param string $code
-     * @return User
-     */
-    private function authorizeUser(string $email, string $code): User
-    {
-        $user = $this->userRepository->findByEmail($email);
-
-        if (!$user) {
-            try {
-                $this->userRepository->createUserOnRegister($email, Hash::make($code));
-            } catch (Exception $exception) {
-                logging($exception);
-
-                throw new CreateUserException();
-            }
-        }
-        Event::dispatch('auth.User.authentication', [$user->id]);
-
-        Auth::getProvider()->retrieveByCredentials(['email' => $email]);
-        Auth::attempt(['email' => $email, 'password' => $code], true);
-        Auth::setUser($user);
-
-        return $user;
     }
 }

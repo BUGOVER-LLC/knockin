@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Src\Models;
 
-use Src\Core\Abstracts\AbstractModel;
+use Src\Core\Abstract\AbstractModel;
 
 /**
  * Src\Models\Worker

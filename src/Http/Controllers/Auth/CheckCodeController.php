@@ -6,7 +6,7 @@ namespace Src\Http\Controllers\Auth;
 
 use Illuminate\Http\JsonResponse;
 use RedisException;
-use Src\Core\Abstracts\AbstractController;
+use Src\Core\Abstract\AbstractController;
 use Src\Http\Action\CheckAcceptCodeAction;
 use Src\Http\Request\CheckAcceptCodeRequest;
 
