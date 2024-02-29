@@ -18,19 +18,18 @@
 <script lang="ts">
 import { Component, Prop, ProvideReactive, Vue, Watch } from 'vue-property-decorator';
 
-import { MainComponent } from '@/@core/MainComponent';
 import { MessageModule } from '@/app/store/modules/MessageStore';
 
 @Component({
     components: {},
     mixins: [],
 })
-export default class MessagingContent extends Vue implements MainComponent {
+export default class MessagingContent extends Vue {
     @ProvideReactive()
     messageContent = [];
 
     @Prop({ required: false, type: String, default: 'target-1' })
-    protected readonly target: string;
+    protected readonly target: string = '';
 
     public get messageBody() {
         return MessageModule.body;

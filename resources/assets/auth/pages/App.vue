@@ -1,15 +1,11 @@
 <!-- @format -->
 
-<template>
-    <v-app>
-        <slot name="auth-content" />
-    </v-app>
-</template>
-
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component({})
+@Component({
+    template: '<v-app><slot name="auth-content" /></v-app>',
+})
 export default class App extends Vue {}
 </script>
 

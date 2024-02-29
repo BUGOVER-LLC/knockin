@@ -79,8 +79,8 @@ import { extend, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
-import ConfirmCode from '../components/started/ConfirmCode.vue';
-import EmailSender from '../components/started/EmailSender.vue';
+import ConfirmCode from '@/auth/components/started/ConfirmCode.vue';
+import EmailSender from '@/auth/components/started/EmailSender.vue';
 
 extend('required', required);
 extend('min', min);

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model as EloquentModel;
 
 abstract class AbstractModel extends EloquentModel
 {
-
+    protected $connection = 'pgsql_app';
 }

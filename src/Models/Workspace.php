@@ -33,11 +33,11 @@ class Workspace extends AbstractModel
      * @var string
      */
     protected $primaryKey = 'workspace_id';
+
     /**
      * @var string[]
      */
     protected $fillable = [
-        'workspace_id',
         'creator_id',
         'uid',
         'name',
@@ -76,7 +76,6 @@ class Workspace extends AbstractModel
     }
 
     /**
-* @TODO FIX THIS RELATION
      * @return HasManyThrough
      */
     public function tasks(): HasManyThrough

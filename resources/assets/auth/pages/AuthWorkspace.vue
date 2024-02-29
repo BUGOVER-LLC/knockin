@@ -6,7 +6,7 @@ import ChoiceComponent from '@/auth/components/workspace/ChoiceComponent.vue';
 import axios from 'axios';
 
 @Component({
-    name: 'SelectWorkspace',
+    name: 'AuthWorkspace',
     components: {
         CreateComponent,
         ChoiceComponent,
@@ -27,7 +27,7 @@ export default class SelectWorkspace extends Vue {
     private workspaces: object = {};
 
     created() {
-        console.log(111);
+        console.log(11122);
         axios.get(`'/workspaces'`).then().catch();
     }
 }

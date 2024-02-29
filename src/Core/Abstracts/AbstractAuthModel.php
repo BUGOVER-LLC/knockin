@@ -8,4 +8,5 @@ use Illuminate\Foundation\Auth\User as EloquentAuthenticatableModel;
 
 abstract class AbstractAuthModel extends EloquentAuthenticatableModel
 {
+    protected $connection = 'pgsql_app';
 }

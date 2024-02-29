@@ -81,12 +81,7 @@ class CheckAcceptCodeAction
 
         if (!$user) {
             try {
-                $user = new User();
-                $user->email = $email;
-                $user->password = Hash::make($code);
-                $user->verified_at = now();
-
-                $user->save();
+                $this->userRepository->createUserOnRegister($email, Hash::make($code));
             } catch (Exception $exception) {
                 logging($exception);
 

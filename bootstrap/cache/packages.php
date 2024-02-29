@@ -31,6 +31,13 @@
       0 => 'BeyondCode\\QueryDetector\\QueryDetectorServiceProvider',
     ),
   ),
+  'bugover/laravel-repository' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Service\\Repository\\RepositoryServiceProvider',
+    ),
+  ),
   'bugover/laravel-websocket' => 
   array (
     'providers' => 
