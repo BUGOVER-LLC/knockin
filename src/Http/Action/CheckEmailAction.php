@@ -24,9 +24,9 @@ class CheckEmailAction
     /**
      * @throws RedisException
      */
-    public function execute(CheckEmailDTO $dto)
+    public function execute(CheckEmailDTO $dto): void
     {
-        $accept_code = Str::random(6);
+        $accept_code = Str::upper(Str::random(6));
 
         $this->redis->hMSet(
             EmailType::acceptCodeEmail->value . ':' . $dto->authenticator,
@@ -36,7 +36,7 @@ class CheckEmailAction
                 'email' => igbinary_serialize($dto->email),
             ]
         );
-        $this->redis->expire(EmailType::acceptCodeEmail->value . ':' . $dto->authenticator, 360);
+        $this->redis->expire(EmailType::acceptCodeEmail->value . ':' . $dto->authenticator, 1800);
 
         SendMailQueue::dispatch(
             EmailType::acceptCodeEmail->value,

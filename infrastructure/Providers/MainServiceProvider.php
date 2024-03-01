@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Infrastructure\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Infrastructure\Loaders\AutoLoader;
+use Infrastructure\Loader\AutoLoader;
 
 class MainServiceProvider extends ServiceProvider
 {

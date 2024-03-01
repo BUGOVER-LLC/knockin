@@ -16,7 +16,7 @@ if (!function_exists('uniqueMachineID')) {
     function uniqueMachineID(string $salt = ''): string
     {
         if (0 === strncasecmp(PHP_OS, 'WIN', 3)) {
-            $temp = _helpers . phpsys_get_temp_dir() . DIRECTORY_SEPARATOR . 'diskpartscript.txt';
+            $temp = DIRECTORY_SEPARATOR . phpsys_get_temp_dir() . DIRECTORY_SEPARATOR . 'diskpartscript.txt';
             if (!file_exists($temp) && !is_file($temp)) {
                 file_put_contents($temp, "select disk 0\ndetail disk");
             }
@@ -91,8 +91,7 @@ if (!function_exists('recursive_loaders')) {
         array &$results = [],
         bool $only_class = false,
         bool $with_path = false
-    ): void
-    {
+    ): void {
         $files = scandir($dir);
         $app_path = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app';
         $app_name = substr($app_path, (strrpos($app_path, DIRECTORY_SEPARATOR) + 1));

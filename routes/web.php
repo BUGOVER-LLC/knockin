@@ -26,11 +26,11 @@ Route::group(['middleware' => ['guest', 'set_auth_payload'], 'prefix' => 'auth']
     Route::group(['prefix' => 'started'], fn() => [
         Route::post('check-email', CheckEmailController::class)->name('checkEmail'),
         Route::post('check-code', CheckCodeController::class)->name('checkCode'),
+        Route::get('workspaces', GetWorkspaceController::class)->name('workspaces'),
     ]),
 
     Route::group(['prefix' => 'workspace'], fn() => [
-        Route::get('workspaces', GetWorkspaceController::class)->name('workspaces'),
-        Route::post('createWorkspace', CreateWorkspaceController::class)->name('createWorkspace'),
+        Route::post('create', CreateWorkspaceController::class)->name('createWorkspace'),
     ]),
 
     Route::get('{any}', SignInController::class)->where('any', '.*'),

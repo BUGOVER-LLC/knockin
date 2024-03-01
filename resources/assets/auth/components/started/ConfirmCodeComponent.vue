@@ -15,14 +15,14 @@
             />
             <span class="error">{{ errors[0] }}</span>
         </ValidationProvider>
-        <a @click="triggerOtp">Resend again</a>
+        <a @click="triggerOtp" v-text="'Resend again'" />
         <v-progress-circular v-if="loader" />
     </div>
 </template>
 
 <script lang="ts">
 import { VueMaskDirective, VueMaskFilter } from 'v-mask';
-import { ValidationProvider, extend, validate } from 'vee-validate';
+import { extend, validate, ValidationProvider } from 'vee-validate';
 import { max, min, required } from 'vee-validate/dist/rules';
 import { Component, Emit, PropSync, Vue, Watch } from 'vue-property-decorator';
 
@@ -35,22 +35,21 @@ extend('max', max);
     directives: { mask: VueMaskDirective },
     filters: { VMask: VueMaskFilter },
 })
-export default class ConfirmCode extends Vue {
+export default class ConfirmCodeComponent extends Vue {
     @PropSync('disabledSync') public disabled = false;
 
-    private loader = false;
-    private length = 6;
-    private code: string | number = '';
+    public loader: boolean = false;
+    public length: number = 6;
+    public code: string | number = '';
 
     @Watch('disabled')
-    observeDisabled() {
+    public observeDisabled() {
         this.disabled = false;
         this.loader = false;
         this.code = '';
     }
 
-    @Emit('codeValidation')
-    private triggerOtp() {
+    public triggerOtp() {
         const payload = { code: this.code, valid: false };
         if (this.length === (this.code as string).length) {
             validate(this.code, 'required|min:6|max:6', { name: 'code' }).then((result: any) => {
@@ -60,9 +59,13 @@ export default class ConfirmCode extends Vue {
                     payload.code = this.code;
                     payload.valid = true;
                 }
+                this.emitCode(payload);
             });
         }
+    }
 
+    @Emit('codeValidation')
+    private emitCode(payload: object) {
         return payload;
     }
 }

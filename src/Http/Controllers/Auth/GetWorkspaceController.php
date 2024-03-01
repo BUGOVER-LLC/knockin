@@ -30,12 +30,13 @@ class GetWorkspaceController extends AbstractController
      */
     public function __invoke(Request $request, WorkspaceService $workspaceService)
     {
-        $email = $this->redis->hMGet(
+        $auth_data = $this->redis->hMGet(
             EmailType::acceptCodeEmail->value . ':' . $request->cookie('authenticator'),
             ['auth', 'code', 'email']
         );
 
-        $workspaces = $workspaceService->getWorkspacesByClientEmail(igbinary_unserialize($email));
+        $email = igbinary_unserialize($auth_data['email']);
+        $workspaces = $workspaceService->getWorkspacesByClientEmail($email);
 
         return WorkspaceResource::collection($workspaces);
     }

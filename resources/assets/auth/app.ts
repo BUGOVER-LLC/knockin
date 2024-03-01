@@ -7,7 +7,7 @@ import Vue from 'vue';
 import { vuetify } from '@/auth/plugins';
 import { router } from '@/auth/router';
 
-import App from './pages/App.vue';
+import App from './layout/App.vue';
 import store from './store';
 
 Vue.use(VueMask);

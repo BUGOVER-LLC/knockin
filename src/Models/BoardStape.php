@@ -19,6 +19,16 @@ use Src\Repositories\BoardRepository;
  * @method static \Illuminate\Database\Eloquent\Builder|BoardStape newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BoardStape newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BoardStape query()
+ * @property int $board_stape_id
+ * @property int $board_id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape whereBoardId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape whereBoardStapeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardStape whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 #[ModelEntity()]

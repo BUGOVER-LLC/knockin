@@ -27,6 +27,9 @@
                                         @codeValidation="codeValidation = $event"
                                     />
                                 </v-window-item>
+                                <v-window-item :value="3">
+                                    <WorkspacesListComponent />
+                                </v-window-item>
                             </v-window>
                         </VCol>
 
@@ -74,13 +77,14 @@
 </template>
 
 <script lang="ts">
-import axios, { AxiosError, AxiosResponse } from 'axios';
 import { extend, ValidationProvider } from 'vee-validate';
 import { email, max, min, required } from 'vee-validate/dist/rules';
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch, PropSync } from 'vue-property-decorator';
 
-import ConfirmCode from '@/auth/components/started/ConfirmCode.vue';
-import EmailSender from '@/auth/components/started/EmailSender.vue';
+import ConfirmCode from '@/auth/components/started/ConfirmCodeComponent.vue';
+import EmailSender from '@/auth/components/started/EmailSenderComponent.vue';
+import WorkspacesListComponent from '@/auth/components/started/WorkspacesListComponent.vue';
+import AuthModule from '@/auth/store/modules/AuthModule';
 
 extend('required', required);
 extend('min', min);
@@ -88,18 +92,18 @@ extend('max', max);
 extend('email', email);
 
 @Component({
-    components: { ConfirmCode, EmailSender, ValidationProvider },
+    components: { WorkspacesListComponent, ConfirmCode, EmailSender, ValidationProvider },
 })
 export default class AuthIndex extends Vue {
-    @Prop({ required: true }) private readonly code: boolean = false;
-    @Prop({ required: false }) private readonly email: string = '';
+    @Prop({ required: true }) public readonly code: boolean = false;
+    @Prop({ required: false }) public readonly email: string = '';
+    @PropSync('currentStep') public step: number = 1;
 
-    private step = 1;
-    private loader = false;
-    private disabledOtp = false;
+    public loader: boolean = false;
+    public disabledOtp: boolean = false;
 
-    private emailValidation = { valid: false, email: '', sent: false };
-    private codeValidation = { valid: false, code: '', sent: false };
+    public emailValidation = { valid: false, email: '', sent: false };
+    public codeValidation = { valid: false, code: '', sent: false };
 
     created() {
         'emailSender' !== this.$router.currentRoute.name ? this.prevStep() : null;
@@ -112,37 +116,33 @@ export default class AuthIndex extends Vue {
     }
 
     @Watch('codeValidation')
-    observeCode(val: string | number) {
+    async observeCode(val: string | number) {
         if (val && this.emailValidation.valid && this.codeValidation) {
             this.disabledOtp = true;
-            axios
-                .post('/auth/check-code', { email: this.emailValidation.email, code: this.codeValidation.code })
-                .then((response: AxiosResponse) => {
-                    if (response.data.next ?? false) {
-                        this.$router.push({ name: 'selectWorkspace' });
-                    }
-                })
-                .catch((error: Error | AxiosError) => {})
-                .finally(() => {
-                    this.disabledOtp = false;
-                });
+            try {
+                await AuthModule.addAcceptCode(this.codeValidation.code, this.email);
+                this.$router.push({ name: 'selectWorkspace' });
+            } finally {
+                this.disabledOtp = false;
+            }
         }
     }
 
-    prevStep() {
+    public prevStep() {
         this.step = 1;
         this.$router.push({ name: 'emailSender' });
     }
 
-    nextStep() {
+    public nextStep() {
         this.step = 2;
         this.$router.push({ name: 'authConfirm' });
     }
 
-    textBtn() {
+    public textBtn() {
         if (this.emailValidation.email && this.emailValidation.sent) {
             return 'send code again';
         }
+
         return 'next';
     }
 
@@ -156,20 +156,15 @@ export default class AuthIndex extends Vue {
         }
     }
 
-    private async checkSend() {
+    public async checkSend() {
         if (this.emailValidation.valid) {
-            axios
-                .post('/auth/check-email', { email: this.emailValidation.email })
-                .then((result: AxiosResponse) => {
-                    if (422 !== result.status) {
-                        this.nextStep();
-                        this.emailValidation.sent = true;
-                    }
-                })
-                .catch((error: Error | AxiosError) => {})
-                .finally(() => {
-                    this.loader = false;
-                });
+            try {
+                await AuthModule.addEmail(this.emailValidation.email);
+                this.nextStep();
+                this.emailValidation.sent = true;
+            } finally {
+                this.loader = false;
+            }
         }
     }
 }

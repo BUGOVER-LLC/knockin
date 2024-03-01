@@ -32,9 +32,9 @@ extend('max', max);
     components: { ValidationProvider },
     mixins: [],
 })
-export default class EmailSender extends Vue {
-    protected email = '';
-    protected valid = false;
+export default class EmailSenderComponent extends Vue {
+    public email: string = '';
+    private valid: boolean = false;
 
     @Prop({ required: false }) private readonly emailValue: string = '';
 

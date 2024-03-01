@@ -20,6 +20,26 @@ use Znck\Eloquent\Relations\BelongsToThrough;
  * @method static \Illuminate\Database\Eloquent\Builder|BoardTask newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BoardTask newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BoardTask query()
+ * @property int $board_task_id
+ * @property int $stape_id
+ * @property int $creator_id
+ * @property int|null $channel_id
+ * @property string $title
+ * @property mixed $body
+ * @property bool $assigned
+ * @property string $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereAssigned($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereBoardTaskId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereChannelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereCreatorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereStapeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|BoardTask whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class BoardTask extends AbstractModel

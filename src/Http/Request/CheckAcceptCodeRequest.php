@@ -37,7 +37,7 @@ class CheckAcceptCodeRequest extends AbstractRequest
         ];
     }
 
-    public function prepareForValidation()
+    public function prepareForValidation(): void
     {
         parent::prepareForValidation();
 

@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Src\Core\Abstract\AbstractModel;
 use Src\Core\Attribute\ModelEntity;
-use Src\Repositories\BoardRepository;
 use Src\Repositories\WorkspaceRepository;
 
 /**
@@ -28,6 +27,19 @@ use Src\Repositories\WorkspaceRepository;
  * @method static \Illuminate\Database\Eloquent\Builder|Workspace newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Workspace newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Workspace query()
+ * @property int $workspace_id
+ * @property int|null $creator_id
+ * @property string|null $uid
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Src\Models\WorkspaceLogo|null $logo
+ * @method static \Illuminate\Database\Eloquent\Builder|Workspace whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Workspace whereCreatorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Workspace whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Workspace whereUid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Workspace whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Workspace whereWorkspaceId($value)
  * @mixin \Eloquent
  */
 #[ModelEntity(repositoryClass: WorkspaceRepository::class)]
@@ -85,5 +97,10 @@ class Workspace extends AbstractModel
     public function tasks(): HasManyThrough
     {
         return $this->hasManyThrough(Board::class, BoardTask::class);
+    }
+
+    public function logo()
+    {
+        return $this->hasOne(WorkspaceLogo::class, 'workspace_id', 'workspace_id');
     }
 }

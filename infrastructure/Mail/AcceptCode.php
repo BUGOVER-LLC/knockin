@@ -11,7 +11,7 @@ class AcceptCode extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(private string $froms, private readonly array $body)
+    public function __construct(private readonly string $froms, private readonly array $body)
     {
     }
 

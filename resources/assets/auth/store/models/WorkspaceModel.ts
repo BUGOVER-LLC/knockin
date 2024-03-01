@@ -1,3 +1,7 @@
 /** @format */
 
-export type WorkspaceModel = {};
+export type WorkspaceModel = {
+    name: string;
+    uid: string;
+    logo: string;
+};

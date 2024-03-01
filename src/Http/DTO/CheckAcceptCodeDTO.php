@@ -9,7 +9,7 @@ use Src\Core\Abstract\AbstractDTO;
 class CheckAcceptCodeDTO extends AbstractDTO
 {
     /**
-     * @param int $acceptCode
+     * @param string $acceptCode
      * @param string $email
      * @param string $authenticator
      */

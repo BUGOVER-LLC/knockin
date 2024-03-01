@@ -56,14 +56,6 @@ class CheckAcceptCodeAction
             throw new UnauthorizedException('Unauthorized');
         }
 
-        $this->redis->hDel(
-            EmailType::acceptCodeEmail->value . ':' . $dto->authenticator,
-            'auth',
-            'code',
-            'email'
-        );
-
-//        $user = $this->authorizeUser($dto->email, $dto->acceptCode);
         Cookie::forget('authenticator');
 
         return true;

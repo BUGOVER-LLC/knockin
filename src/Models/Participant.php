@@ -15,6 +15,14 @@ use Src\Core\Abstract\AbstractModel;
  * @method static \Illuminate\Database\Eloquent\Builder|Participant newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Participant newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Participant query()
+ * @property int $participant_id
+ * @property int $channel_id
+ * @property int $user_id
+ * @property string $created_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant whereChannelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant whereCreatedId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant whereParticipantId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Participant whereUserId($value)
  * @mixin \Eloquent
  */
 class Participant extends AbstractModel

@@ -16,6 +16,22 @@ use Src\Core\Abstract\AbstractModel;
  * @method static \Illuminate\Database\Eloquent\Builder|Message newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Message newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Message query()
+ * @property int $message_id
+ * @property int $workspace_id
+ * @property int $channel_id
+ * @property int $author_id
+ * @property int $parent_id
+ * @property mixed $body
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereAuthorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereChannelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereMessageId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereParentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Message whereWorkspaceId($value)
  * @mixin \Eloquent
  */
 class Message extends AbstractModel

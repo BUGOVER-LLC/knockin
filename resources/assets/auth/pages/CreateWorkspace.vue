@@ -2,7 +2,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import CreateComponent from '@/auth/components/workspace/CreateComponent.vue';
-import ChoiceComponent from '@/auth/components/workspace/ChoiceComponent.vue';
+import ChoiceComponent from '@/auth/components/started/WorkspacesListComponent.vue';
 import axios from 'axios';
 
 @Component({
@@ -27,8 +27,7 @@ export default class SelectWorkspace extends Vue {
     private workspaces: object = {};
 
     created() {
-        console.log(11122);
-        axios.get(`'/workspaces'`).then().catch();
+        axios.get('/auth/workspaces').then().catch();
     }
 }
 </script>

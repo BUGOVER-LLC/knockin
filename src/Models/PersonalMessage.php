@@ -16,6 +16,26 @@ use Src\Core\Abstract\AbstractModel;
  * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage query()
+ * @property int $personal_message_id
+ * @property int $author_id
+ * @property int $participant_id
+ * @property int $workspace_id
+ * @property int|null $parent_id
+ * @property mixed $body
+ * @property bool $viewed
+ * @property string|null $viewed_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereAuthorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereParentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereParticipantId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage wherePersonalMessageId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereViewed($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereViewedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PersonalMessage whereWorkspaceId($value)
  * @mixin \Eloquent
  */
 class PersonalMessage extends AbstractModel

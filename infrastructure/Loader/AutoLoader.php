@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure\Loaders;
+namespace Infrastructure\Loader;
 
 trait AutoLoader
 {

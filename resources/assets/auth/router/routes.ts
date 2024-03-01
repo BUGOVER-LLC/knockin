@@ -2,12 +2,11 @@
 
 import { RouteConfig } from 'vue-router';
 
-import { acceptCodePageCheck } from '@/auth/router/middlewares';
-
-const emailSender = (): object => import('@/auth/components/started/EmailSender.vue');
-const confirmCode = (): object => import('@/auth/components/started/ConfirmCode.vue');
-const authIndex = (): object => import('@/auth/pages/AuthIndex.vue');
-const selectWorkspace = (): object => import('@/auth/pages/AuthWorkspace.vue');
+const emailSender = (): object => import('@/auth/components/started/EmailSenderComponent.vue');
+const confirmCode = (): object => import('@/auth/components/started/ConfirmCodeComponent.vue');
+const authIndex = (): object => import('@/auth/pages/Email.vue');
+const choiseWorkspace = (): object => import('@/auth/components/started/WorkspacesListComponent.vue');
+const createWorkspace = (): object => import('@/auth/pages/CreateWorkspace.vue');
 
 export const Routes: RouteConfig[] = [
     {
@@ -27,16 +26,19 @@ export const Routes: RouteConfig[] = [
                 path: 'confirm',
                 name: 'authConfirm',
                 component: confirmCode,
-                meta: {
-                    middleware: acceptCodePageCheck,
-                },
+            },
+            {
+                props: true,
+                path: 'workspace',
+                name: 'selectWorkspace',
+                component: choiseWorkspace,
             },
         ],
     },
     {
         props: true,
-        path: '/auth/workspace',
-        name: 'selectWorkspace',
-        component: selectWorkspace,
+        name: 'createWorkspace',
+        path: 'workspace/create',
+        component: createWorkspace,
     },
 ];

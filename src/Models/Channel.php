@@ -27,6 +27,24 @@ use Src\Core\Abstract\AbstractModel;
  * @method static \Illuminate\Database\Eloquent\Builder|Channel newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Channel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Channel query()
+ * @property int $channel_id
+ * @property int $workspace_id
+ * @property int $creator_id
+ * @property string $uid
+ * @property string $name
+ * @property string $status
+ * @property int $total_connected
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereChannelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereCreatorId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereTotalConnected($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereUid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Channel whereWorkspaceId($value)
  * @mixin \Eloquent
  */
 class Channel extends AbstractModel
