@@ -2,7 +2,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import CreateComponent from '@/auth/components/workspace/CreateComponent.vue';
-import ChoiceComponent from '@/auth/components/started/WorkspacesListComponent.vue';
+import ChoiceComponent from '@/auth/components/workspace/WorkspacesListComponent.vue';
 import axios from 'axios';
 
 @Component({

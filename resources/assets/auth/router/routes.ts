@@ -4,16 +4,16 @@ import { RouteConfig } from 'vue-router';
 
 const emailSender = (): object => import('@/auth/components/started/EmailSenderComponent.vue');
 const confirmCode = (): object => import('@/auth/components/started/ConfirmCodeComponent.vue');
-const authIndex = (): object => import('@/auth/pages/Email.vue');
-const choiseWorkspace = (): object => import('@/auth/components/started/WorkspacesListComponent.vue');
-const createWorkspace = (): object => import('@/auth/pages/CreateWorkspace.vue');
+const authEmail = (): object => import('@/auth/pages/Email.vue');
+const choiseWorkspace = (): object => import('@/auth/components/workspace/WorkspacesListComponent.vue');
+const createWorkspace = (): object => import('@/auth/pages/SelectWorkspace.vue');
 
 export const Routes: RouteConfig[] = [
     {
         props: true,
         name: 'authIndex',
         path: '/auth/started',
-        component: authIndex,
+        component: authEmail,
         children: [
             {
                 props: false,

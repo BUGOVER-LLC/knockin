@@ -23,15 +23,10 @@ use Src\Http\Controllers\Auth\SignInController;
 Route::group(['middleware' => ['guest', 'set_auth_payload'], 'prefix' => 'auth'], static fn() => [
     Route::get('/', SignInController::class)->name('signInIndex'),
 
-    Route::group(['prefix' => 'started'], fn() => [
-        Route::post('check-email', CheckEmailController::class)->name('checkEmail'),
-        Route::post('check-code', CheckCodeController::class)->name('checkCode'),
-        Route::get('workspaces', GetWorkspaceController::class)->name('workspaces'),
-    ]),
-
-    Route::group(['prefix' => 'workspace'], fn() => [
-        Route::post('create', CreateWorkspaceController::class)->name('createWorkspace'),
-    ]),
+    Route::post('check-email', CheckEmailController::class)->name('checkEmail'),
+    Route::post('check-code', CheckCodeController::class)->name('checkCode'),
+    Route::get('workspaces', GetWorkspaceController::class)->name('workspaces'),
+    Route::post('create-workspace', CreateWorkspaceController::class)->name('createWorkspace'),
 
     Route::get('{any}', SignInController::class)->where('any', '.*'),
 ]);

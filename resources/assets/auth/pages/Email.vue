@@ -83,7 +83,7 @@ import { Component, Prop, Vue, Watch, PropSync } from 'vue-property-decorator';
 
 import ConfirmCode from '@/auth/components/started/ConfirmCodeComponent.vue';
 import EmailSender from '@/auth/components/started/EmailSenderComponent.vue';
-import WorkspacesListComponent from '@/auth/components/started/WorkspacesListComponent.vue';
+import WorkspacesListComponent from '@/auth/components/workspace/WorkspacesListComponent.vue';
 import AuthModule from '@/auth/store/modules/AuthModule';
 
 extend('required', required);
