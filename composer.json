@@ -66,8 +66,8 @@
       "src/Core/_helpers.php"
     ],
     "psr-4": {
-      "Infrastructure\\": "infrastructure/",
       "Src\\": "src/",
+      "Infrastructure\\": "infrastructure/",
       "Database\\Factories\\": "database/factories/",
       "Database\\Seeders\\": "database/seeders/"
     }
