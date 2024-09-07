@@ -26,28 +26,26 @@
     "ext-igbinary": "*",
     "ext-mbstring": "*",
     "ext-calendar": "*",
-    "laravel/framework": "^10.0.0",
     "laravel/octane": "^2.0.0",
     "laravel/tinker": "^2.0.0",
     "pda/pheanstalk": "^5.0.0",
-    "shipyard/manager": "^0.3.0",
+    "bugover/ship-manager": "^1.0.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.0.0",
-    "barryvdh/laravel-ide-helper": "^2.0.0",
-    "beyondcode/laravel-er-diagram-generator": "^2.0.0",
-    "beyondcode/laravel-query-detector": "^1.0.0",
+    "barryvdh/laravel-ide-helper": "^3.0.0",
+    "beyondcode/laravel-er-diagram-generator": "^3.0.0",
     "fakerphp/faker": "^1.0.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",
-    "jetbrains/phpstorm-stubs": "^2023.2",
-    "laravel/homestead": "^14.5.0",
+    "jetbrains/phpstorm-stubs": "^2024.2",
+    "laravel/homestead": "^15.0.3",
     "laravel/horizon": "^5.0.0",
     "laravel/pint": "^1.0.0",
     "laravel/sail": "^1.0.0",
-    "laravel/telescope": "^4.0.0",
+    "laravel/telescope": "^5.0.0",
     "mockery/mockery": "^1.5.0",
-    "nunomaduro/collision": "^7.0.0",
+    "nunomaduro/collision": "^8.0.0",
     "orangehill/iseed": "^3.0.1",
     "phpmd/phpmd": "^2.0.0",
     "phpstan/phpstan": "^1.0.0",
@@ -88,12 +86,16 @@
     "hook-test": "sh bin/package_links"
   },
   "extra": {
+    "installer-paths": {
+      "../{$name}/": [
+        "bugover/ship-manager"
+      ]
+    },
     "laravel": {
       "dont-discover": []
     },
     "merge-plugin": {
       "include": [
-        "app/Ship/composer.json",
         "app/Containers/*/composer.json",
         "app/Containers/*/*/composer.json"
       ],
@@ -135,6 +137,5 @@
     "ext-mbstring": "*",
     "ext-calendar": "*"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  "minimum-stability": "dev"
 }
