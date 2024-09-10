@@ -1,11 +1,14 @@
 {
+  "name": "noix/auth-container",
+  "type": "ship-container",
+  "license": "MIT",
   "require": {
     "php": "<=8.2.3",
     "php-64bit": "<=8.2.3",
     "laravel/socialite": "^5.0.0",
-    "laravel/framework": "^10.0.0",
-    "laravel/sanctum": "^3.0.0",
-    "laravel/passport": "^11.0.0",
+    "laravel/framework": "^10.0.0|^11.0.0",
+    "laravel/sanctum": "^4.0.0",
+    "laravel/passport": "^12.0.0",
     "pragmarx/google2fa-laravel": "^2.0.0"
   },
   "require-dev": {
