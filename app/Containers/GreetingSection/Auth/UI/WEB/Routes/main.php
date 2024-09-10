@@ -12,7 +12,7 @@ $_attributes = [
     'name' => 'auth',
     'as' => 'auth.',
     'middleware' => ['guest'],
-    'namespace' => '\Containers\GreetingSection\Auth\UI\WEB\Controllers'
+    'namespace' => '\Containers\GreetingSection\Auth\UI\WEB\Controllers',
 ];
 
 Route::group($_attributes, static fn() => [

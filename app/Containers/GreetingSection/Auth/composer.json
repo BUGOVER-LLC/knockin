@@ -15,5 +15,17 @@
     "psr-4": {
       "Containers\\GreetingSection\\Auth\\": "/"
     }
+  },
+  "extra": {
+    "nucleus": {
+      "container": {
+        "name": "Auth"
+      }
+    },
+    "laravel": {
+      "providers": [
+        "Containers\\GreetingSection\\Auth\\Providers\\MainServiceProvider"
+      ]
+    }
   }
 }
