@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fac90cfda7399e1ab6683cb875dd89ff",
+    "content-hash": "e790c03782bc1bdf83da9c01a67929d0",
     "packages": [
         {
             "name": "brick/math",
@@ -212,16 +212,16 @@
         },
         {
             "name": "bugover/ship-manager",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship-manager.git",
-                "reference": "082c95585e3238d4aece08e484c83a111e4b2a0e"
+                "reference": "564886986128756a8faa78e09d37f12e9be73290"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship-manager/zipball/082c95585e3238d4aece08e484c83a111e4b2a0e",
-                "reference": "082c95585e3238d4aece08e484c83a111e4b2a0e",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship-manager/zipball/564886986128756a8faa78e09d37f12e9be73290",
+                "reference": "564886986128756a8faa78e09d37f12e9be73290",
                 "shasum": ""
             },
             "require": {
@@ -251,9 +251,9 @@
             "description": "Nuclear Ship folder where shared functionality resides",
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship-manager/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship-manager/tree/1.2.1"
+                "source": "https://github.com/BUGOVER-LLC/ship-manager/tree/1.2.2"
             },
-            "time": "2024-09-11T09:34:55+00:00"
+            "time": "2024-09-11T10:26:41+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -9311,6 +9311,83 @@
                 "source": "https://github.com/JetBrains/phpstorm-stubs/tree/v2024.2"
             },
             "time": "2024-06-17T19:18:18+00:00"
+        },
+        {
+            "name": "kitloong/laravel-migrations-generator",
+            "version": "v7.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitloong/laravel-migrations-generator.git",
+                "reference": "8b3575285bc3d65a084085fb20d7c1ba5f903c4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitloong/laravel-migrations-generator/zipball/8b3575285bc3d65a084085fb20d7c1ba5f903c4e",
+                "reference": "8b3575285bc3d65a084085fb20d7c1ba5f903c4e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "illuminate/support": "^10.43|^11.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "barryvdh/laravel-ide-helper": "^2.0|^3.0",
+                "friendsofphp/php-cs-fixer": "^3.1",
+                "larastan/larastan": "^1.0|^2.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^8.0|^9.0",
+                "phpmd/phpmd": "^2.10",
+                "slevomat/coding-standard": "^8.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KitLoong\\MigrationsGenerator\\MigrationsGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KitLoong\\MigrationsGenerator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kit Loong",
+                    "email": "kitloong1008@gmail.com"
+                }
+            ],
+            "description": "Generates Laravel Migrations from an existing database",
+            "keywords": [
+                "artisan",
+                "generator",
+                "laravel",
+                "lumen",
+                "migration",
+                "migrations"
+            ],
+            "support": {
+                "issues": "https://github.com/kitloong/laravel-migrations-generator/issues",
+                "source": "https://github.com/kitloong/laravel-migrations-generator/tree/v7.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/kitloong",
+                    "type": "buy_me_a_coffee"
+                },
+                {
+                    "url": "https://github.com/kitloong",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-08-06T13:18:32+00:00"
         },
         {
             "name": "laravel/homestead",

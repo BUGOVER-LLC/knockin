@@ -36,6 +36,7 @@
     "friendsofphp/php-cs-fixer": "^3.0.0",
     "jetbrains/phpstorm-attributes": "^1.0",
     "jetbrains/phpstorm-stubs": "^2024.2",
+    "kitloong/laravel-migrations-generator": "^7.0.0",
     "laravel/homestead": "^15.0.0",
     "laravel/horizon": "^5.0.0",
     "laravel/pint": "^1.0.0",
