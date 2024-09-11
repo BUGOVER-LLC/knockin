@@ -20,7 +20,7 @@
     }
   },
   "extra": {
-    "nucleus": {
+    "ship": {
       "container": {
         "name": "Auth"
       }
