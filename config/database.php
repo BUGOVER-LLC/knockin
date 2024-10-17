@@ -93,7 +93,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . 'store_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'store_'),
             'serializer' => env('REDIS_SERIALIZER', 'igbinary'),
         ],
 
@@ -115,5 +115,4 @@ return [
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
     ],
-
 ];

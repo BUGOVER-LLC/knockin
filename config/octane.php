@@ -2,23 +2,8 @@
 
 declare(strict_types=1);
 
-use Laravel\Octane\Contracts\OperationTerminated;
-use Laravel\Octane\Events\RequestHandled;
-use Laravel\Octane\Events\RequestReceived;
-use Laravel\Octane\Events\RequestTerminated;
-use Laravel\Octane\Events\TaskReceived;
-use Laravel\Octane\Events\TaskTerminated;
-use Laravel\Octane\Events\TickReceived;
-use Laravel\Octane\Events\TickTerminated;
-use Laravel\Octane\Events\WorkerErrorOccurred;
-use Laravel\Octane\Events\WorkerStarting;
-use Laravel\Octane\Events\WorkerStopping;
-use Laravel\Octane\Listeners\EnsureUploadedFilesAreValid;
-use Laravel\Octane\Listeners\EnsureUploadedFilesCanBeMoved;
-use Laravel\Octane\Listeners\FlushTemporaryContainerInstances;
-use Laravel\Octane\Listeners\ReportException;
-use Laravel\Octane\Listeners\StopWorkerIfNecessary;
 use Laravel\Octane\Octane;
+use Swoole\Constant;
 
 return [
 
@@ -34,7 +19,6 @@ return [
     | Supported: "roadrunner", "swoole"
     |
     */
-
     'server' => env('OCTANE_SERVER', 'swoole'),
 
     /*
@@ -47,12 +31,31 @@ return [
     | protocol. Otherwise your links may be generated using plain HTTP.
     |
     */
-    'https' => (bool)env('OCTANE_HTTPS', true),
+    'https' => (bool) env('OCTANE_HTTPS', true),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Swoole Core options
+    |--------------------------------------------------------------------------
+    |
+    | When this configuration value is set to "true", Octane will inform the
+    | framework that all absolute links must be generated using the HTTPS
+    | protocol. Otherwise your links may be generated using plain HTTP.
+    */
     'swoole' => [
         'options' => [
-            'log_file' => base_path('var/swoole/_http.log'),
-            'package_max_length' => 10 * 1024 * 1024,
+            Constant::OPTION_LOG_FILE => base_path('var/swoole/_http.log'),
+            Constant::OPTION_PACKAGE_MAX_LENGTH => 10 * 1024 * 1024,
+            Constant::OPTION_ENABLE_COROUTINE => true,
+            Constant::OPTION_WORKER_NUM => swoole_cpu_num(),
+            Constant::OPTION_MAX_THREAD_NUM => swoole_cpu_num() * 4,
+            Constant::OPTION_MIN_THREAD_NUM => 1,
+            Constant::OPTION_OPEN_TCP_NODELAY => true,
+            Constant::OPTION_MAX_COROUTINE => 100000,
+            Constant::OPTION_OPEN_HTTP2_PROTOCOL => true,
+            Constant::OPTION_MAX_REQUEST => 100000,
+            Constant::OPTION_SOCKET_BUFFER_SIZE => 2 * 1024 * 1024,
+            Constant::OPTION_BUFFER_OUTPUT_SIZE => 2 * 1024 * 1024,
         ],
     ],
 
@@ -69,55 +72,55 @@ return [
     |
     */
     'listeners' => [
-        WorkerStarting::class => [
-            EnsureUploadedFilesAreValid::class,
-            EnsureUploadedFilesCanBeMoved::class,
+        Laravel\Octane\Events\WorkerStarting::class => [
+            Laravel\Octane\Listeners\EnsureUploadedFilesAreValid::class,
+            Laravel\Octane\Listeners\EnsureUploadedFilesCanBeMoved::class,
         ],
 
-        RequestReceived::class => [
+        Laravel\Octane\Events\RequestReceived::class => [
             ...Octane::prepareApplicationForNextOperation(),
             ...Octane::prepareApplicationForNextRequest(),
             //
         ],
 
-        RequestHandled::class => [
+        Laravel\Octane\Events\RequestHandled::class => [
             //
         ],
 
-        RequestTerminated::class => [
+        Laravel\Octane\Events\RequestTerminated::class => [
             // FlushUploadedFiles::class,
         ],
 
-        TaskReceived::class => [
+        Laravel\Octane\Events\TaskReceived::class => [
             ...Octane::prepareApplicationForNextOperation(),
             //
         ],
 
-        TaskTerminated::class => [
+        Laravel\Octane\Events\TaskTerminated::class => [
             //
         ],
 
-        TickReceived::class => [
+        Laravel\Octane\Events\TickReceived::class => [
             ...Octane::prepareApplicationForNextOperation(),
             //
         ],
 
-        TickTerminated::class => [
+        Laravel\Octane\Events\TickTerminated::class => [
             //
         ],
 
-        OperationTerminated::class => [
-            FlushTemporaryContainerInstances::class,
+        Laravel\Octane\Contracts\OperationTerminated::class => [
+            Laravel\Octane\Listeners\FlushTemporaryContainerInstances::class,
             // DisconnectFromDatabases::class,
             // CollectGarbage::class,
         ],
 
-        WorkerErrorOccurred::class => [
-            ReportException::class,
-            StopWorkerIfNecessary::class,
+        Laravel\Octane\Events\WorkerErrorOccurred::class => [
+            Laravel\Octane\Listeners\ReportException::class,
+            Laravel\Octane\Listeners\StopWorkerIfNecessary::class,
         ],
 
-        WorkerStopping::class => [
+        Laravel\Octane\Events\WorkerStopping::class => [
             //
         ],
     ],

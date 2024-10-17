@@ -32,23 +32,6 @@ return [
     |
     */
     'stores' => [
-        'array' => [
-            'driver' => 'array',
-            'serialize' => false,
-        ],
-
-        'database' => [
-            'driver' => 'database',
-            'table' => 'cache',
-            'connection' => null,
-            'lock_connection' => null,
-        ],
-
-        'file' => [
-            'driver' => 'file',
-            'path' => base_path('var/framework/cache/data'),
-        ],
-
         'redis' => [
             'driver' => 'redis',
             'connection' => 'cache',
@@ -70,5 +53,5 @@ return [
     | that reason, you may prefix every cache key to avoid collisions.
     |
     */
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . 'cache_'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'cache_'),
 ];

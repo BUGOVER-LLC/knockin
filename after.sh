@@ -30,9 +30,9 @@ sudo cp -r /home/vagrant/noix/.etc/supervisor/queue-base.conf /etc/supervisor/co
 sudo cp -r /home/vagrant/noix/.etc/supervisor/swoole-http.conf /etc/supervisor/conf.d/
 
 # Set PHP version
-update-alternatives: using /usr/bin/php8.2
-update-alternatives: using /usr/bin/php-config8.2
-update-alternatives: using /usr/bin/phpize8.2
+update-alternatives: using /usr/bin/php8.3
+update-alternatives: using /usr/bin/php-config8.3
+update-alternatives: using /usr/bin/phpize8.3
 sudo phpenmod xdebug
 
 # Add PPA repository
