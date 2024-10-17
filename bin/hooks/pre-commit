@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 fileList=$(git diff --diff-filter=d --cached --name-only)
 

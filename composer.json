@@ -11,23 +11,24 @@
   "require": {
     "php": "<=8.2.3",
     "php-64bit": "<=8.2.3",
-    "ext-gd": "*",
-    "ext-pdo": "*",
-    "ext-json": "*",
-    "ext-curl": "*",
-    "ext-zlib": "*",
-    "ext-redis": "*",
-    "ext-pcntl": "*",
-    "ext-swoole": "*",
     "ext-bcmath": "*",
-    "ext-imagick": "*",
-    "ext-openssl": "*",
-    "ext-sockets": "*",
-    "ext-igbinary": "*",
-    "ext-mbstring": "*",
     "ext-calendar": "*",
-    "pda/pheanstalk": "^5.0.0",
+    "ext-curl": "*",
+    "ext-gd": "*",
+    "ext-igbinary": "*",
+    "ext-imagick": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-openssl": "*",
+    "ext-pcntl": "*",
+    "ext-pdo": "*",
+    "ext-redis": "*",
+    "ext-sockets": "*",
+    "ext-swoole": "*",
+    "ext-zlib": "*",
     "bugover/ship-manager": "^1.0.0",
+    "laravel/pulse": "^1.2",
+    "pda/pheanstalk": "^5.0.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
   },
   "require-dev": {
@@ -73,7 +74,8 @@
     "post-create-project-cmd": [
       "@php artisan key:generate --ansi"
     ],
-    "hook-test": "sh bin/package_links"
+    "hook-test": "sh bin/package_links",
+    "analyse": "phpstan analyse --memory-limit 300M"
   },
   "extra": {
     "installer-paths": {

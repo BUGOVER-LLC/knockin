@@ -71,7 +71,7 @@ rollback at a later time
 ---
 ![image info](https://repository-images.githubusercontent.com/5133949/13b58180-bc96-11ea-939f-53b1ca16d341)
 
-(sudo apt install libc-ares-dev libcurl4-gnutls-dev libcurl4-openssl-dev libcurl-dev)
+(sudo apt install libc-ares-dev libcurl4-openssl-dev libbrotli-dev)
 1. sudo pecl install swoole
 2. ADD swoole.ini file to php mods-available folder
     - ;configuration for php common module
