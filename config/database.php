@@ -33,36 +33,30 @@ return [
     |
     */
     'connections' => [
-        'pgsql' => [
-            'driver' => 'pgsql',
+        'mysql' => [
+            'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
+            'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
-            'schema' => env('DB_SCHEMA', 'public'),
-            'charset' => 'utf8',
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'prefix_indexes' => true,
-            'search_path' => env('DB_SCHEMA', 'public'),
-            'sslmode' => 'prefer',
-        ],
-
-        'pgsql_app' => [
-            'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST_APP', '127.0.0.1'),
-            'port' => env('DB_PORT_APP', '5432'),
-            'database' => env('DB_DATABASE_APP', 'forge'),
-            'username' => env('DB_USERNAME_APP', 'forge'),
-            'password' => env('DB_PASSWORD_APP', ''),
-            'schema' => env('DB_SCHEMA_APP', 'app'),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'search_path' => env('DB_SCHEMA_APP', 'app'),
-            'sslmode' => 'prefer',
+            'strict' => true,
+            'engine' => 'InnoDB',
+            'transaction_isolation' => 'READ-COMMITTED',
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+            'modes' => [
+                'NO_ZERO_IN_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_ENGINE_SUBSTITUTION',
+            ],
         ],
     ],
 
@@ -89,12 +83,13 @@ return [
     |
     */
     'redis' => [
-        'client' => env('REDIS_CLIENT', 'predis'),
+        'client' => env('REDIS_CLIENT', 'phpredis'),
 
         'options' => [
-            'cluster' => env('REDIS_CLUSTER', 'redis'),
+            'cluster' => env('REDIS_CLUSTER', 'phpredis'),
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'store_'),
-            'serializer' => env('REDIS_SERIALIZER', 'igbinary'),
+            'serializer' => \defined('\Redis::SERIALIZER_IGBINARY') ? Redis::SERIALIZER_IGBINARY : null,
+            'compression' => \defined('\Redis::COMPRESSION_ZSTD_MAX') ? Redis::COMPRESSION_ZSTD_MAX : null,
         ],
 
         'default' => [

@@ -44,6 +44,8 @@ return [
     */
     'swoole' => [
         'options' => [
+            Constant::OPTION_SSL_CERT_FILE => env('LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT'),
+            Constant::OPTION_SSL_KEY_FILE => env('LARAVEL_WEBSOCKETS_SSL_LOCAL_PK'),
             Constant::OPTION_LOG_FILE => base_path('var/swoole/_http.log'),
             Constant::OPTION_PACKAGE_MAX_LENGTH => 10 * 1024 * 1024,
             Constant::OPTION_ENABLE_COROUTINE => true,

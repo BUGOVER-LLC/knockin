@@ -54,4 +54,10 @@ class CheckAcceptCodeRequest extends ParentRequest
     {
         return [];
     }
+
+    #[\Override] public function toDTO(): object
+    {
+        return new class {
+        };
+    }
 }
