@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Ship\Parents\Jobs\Job;
 
 /**
- * @method static dispatch(string $context, string $address, array $body = []): \Illuminate\Foundation\Bus\Dispatchable
+ * @method static dispatch(string $context, string $address, array $body = [])
  */
 class SendMailQueue extends Job
 {
