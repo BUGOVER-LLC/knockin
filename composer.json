@@ -2,7 +2,7 @@
   "name": "noix/ship-container",
   "type": "project",
   "description": "Sea to sea project. for modeling the universe🙂.",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "keywords": [
     "framework",
     "laravel"
@@ -80,7 +80,7 @@
   "extra": {
     "installer-paths": {
       "app/{$name}": [
-        "type:ship-manager"
+        "type:laravel-library"
       ]
     },
     "laravel": {
