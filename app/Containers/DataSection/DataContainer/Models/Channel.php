@@ -58,17 +58,17 @@ final class Channel extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'channel_id';
+    protected $primaryKey = 'channelId';
+
     /**
      * @var string[]
      */
     protected $fillable = [
-        'workspace_id',
-        'creator_id',
-        'uid',
+        'workspaceId',
+        'creatorId',
         'name',
         'status',
-        'total_connected',
+        'totalConnected',
     ];
 
     /**
@@ -76,7 +76,7 @@ final class Channel extends Model
      */
     public function workspace(): BelongsTo
     {
-        return $this->belongsTo(Workspace::class, 'workspace_id', 'workspace_id');
+        return $this->belongsTo(Workspace::class, 'workspaceId', 'workspaceId');
     }
 
     /**
@@ -84,7 +84,7 @@ final class Channel extends Model
      */
     public function boards(): HasMany
     {
-        return $this->hasMany(SharedBoard::class, 'workspace_id', 'workspace_id');
+        return $this->hasMany(SharedBoard::class, 'workspaceId', 'workspaceId');
     }
 
     /**
@@ -92,7 +92,7 @@ final class Channel extends Model
      */
     public function tBoards(): HasMany
     {
-        return $this->hasMany(SharedBoard::class, 'target_id', 'workspace_id');
+        return $this->hasMany(SharedBoard::class, 'targetId', 'workspaceId');
     }
 
     /**
@@ -100,7 +100,7 @@ final class Channel extends Model
      */
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'creator_id', 'user_id');
+        return $this->belongsTo(User::class, 'creatorId', 'userId');
     }
 
     /**
@@ -108,7 +108,7 @@ final class Channel extends Model
      */
     public function shared(): HasMany
     {
-        return $this->hasMany(SharedChannel::class, 'channel_id', 'channel_id');
+        return $this->hasMany(SharedChannel::class, 'channelId', 'channelId');
     }
 
     /**
@@ -116,7 +116,7 @@ final class Channel extends Model
      */
     public function participant(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, Participant::class, 'user_id', 'channel_id');
+        return $this->belongsToMany(User::class, Participant::class, 'userId', 'channelId');
     }
 
     /**
@@ -124,6 +124,6 @@ final class Channel extends Model
      */
     public function tasks(): HasMany
     {
-        return $this->hasMany(BoardTask::class, 'channel_id', 'channel_id');
+        return $this->hasMany(BoardTask::class, 'channelId', 'channelId');
     }
 }

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
-use App\Containers\DataSection\DataContainer\Models\Board;
-use App\Containers\DataSection\DataContainer\Models\BoardTask;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Ship\Parents\Models\Model;
@@ -44,19 +42,22 @@ final class BoardStape extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'board_stape_id';
+    protected $primaryKey = 'boardStapeId';
 
     /**
      * @var string[]
      */
-    protected $fillable = ['board_id', 'name'];
+    protected $fillable = [
+        'boardId',
+        'name',
+    ];
 
     /**
      * @return BelongsTo
      */
     public function board(): BelongsTo
     {
-        return $this->belongsTo(Board::class, 'board_id', 'board_id');
+        return $this->belongsTo(Board::class, 'boardId', 'boardId');
     }
 
     /**
@@ -64,6 +65,6 @@ final class BoardStape extends Model
      */
     public function tasks(): HasMany
     {
-        return $this->hasMany(BoardTask::class, 'board_task_id', 'strape_id');
+        return $this->hasMany(BoardTask::class, 'boardTaskId', 'strapeId');
     }
 }

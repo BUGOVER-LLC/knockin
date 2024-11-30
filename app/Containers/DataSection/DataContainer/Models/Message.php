@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Containers\DataSection\DataContainer\Models;
 
 use App\Containers\DashboardSection\User\Models\User;
-use App\Containers\DataSection\DataContainer\Models\Channel;
-use App\Containers\DataSection\DataContainer\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 
@@ -44,18 +42,25 @@ final class Message extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'message_id';
+    protected $primaryKey = 'messageId';
+
     /**
      * @var string[]
      */
-    protected $fillable = ['author_id', 'channel_id', 'workspace_id', 'parent_id', 'body'];
+    protected $fillable = [
+        'authorId',
+        'channelId',
+        'workspaceId',
+        'parentId',
+        'body',
+    ];
 
     /**
      * @return BelongsTo
      */
     public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'author_id');
+        return $this->belongsTo(User::class, 'userId', 'authorId');
     }
 
     /**
@@ -63,7 +68,7 @@ final class Message extends Model
      */
     public function channel(): BelongsTo
     {
-        return $this->belongsTo(Channel::class, 'channel_id', 'channel_id');
+        return $this->belongsTo(Channel::class, 'channelId', 'channelId');
     }
 
     /**
@@ -71,6 +76,6 @@ final class Message extends Model
      */
     public function workspace(): BelongsTo
     {
-        return $this->belongsTo(Workspace::class, 'workspace_id', 'workspace_id');
+        return $this->belongsTo(Workspace::class, 'workspaceId', 'workspaceId');
     }
 }

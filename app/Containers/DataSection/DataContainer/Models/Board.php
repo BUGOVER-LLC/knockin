@@ -51,19 +51,19 @@ final class Board extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'board_id';
+    protected $primaryKey = 'boardId';
 
     /**
      * @var string[]
      */
-    protected $fillable = ['workspace_id', 'title'];
+    protected $fillable = ['workspaceId', 'title'];
 
     /**
      * @return BelongsTo
      */
     public function workspace(): BelongsTo
     {
-        return $this->belongsTo(Workspace::class, 'workspace_id', 'workspace_id');
+        return $this->belongsTo(Workspace::class, 'workspaceId', 'workspaceId');
     }
 
     /**
@@ -71,7 +71,7 @@ final class Board extends Model
      */
     public function shared(): HasMany
     {
-        return $this->hasMany(SharedBoard::class, 'board_id', 'board_id');
+        return $this->hasMany(SharedBoard::class, 'boardId', 'boardId');
     }
 
     /**
@@ -79,7 +79,7 @@ final class Board extends Model
      */
     public function stapes(): HasMany
     {
-        return $this->hasMany(BoardStape::class, 'board_id', 'board_id');
+        return $this->hasMany(BoardStape::class, 'boardId', 'boardId');
     }
 
     /**@TODO FIX THIS RELATION
@@ -87,6 +87,6 @@ final class Board extends Model
      */
     public function tasks(): HasManyThrough
     {
-        return $this->hasManyThrough(BoardTask::class, BoardStape::class, 'board_id', 'board_id');
+        return $this->hasManyThrough(BoardTask::class, BoardStape::class, 'boardId', 'boardId');
     }
 }

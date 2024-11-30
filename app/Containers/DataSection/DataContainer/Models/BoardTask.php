@@ -50,19 +50,26 @@ final class BoardTask extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'board_task_id';
+    protected $primaryKey = 'boardTaskId';
 
     /**
      * @var string[]
      */
-    protected $fillable = ['stape_id', 'creator_id', 'channel_id', 'title', 'body', 'assigned'];
+    protected $fillable = [
+        'stapeId',
+        'creatorId',
+        'channelId',
+        'title',
+        'body',
+        'assigned',
+    ];
 
     /**
      * @return BelongsTo
      */
     public function channel(): BelongsTo
     {
-        return $this->belongsTo(Channel::class, 'channel_id', 'channel_id');
+        return $this->belongsTo(Channel::class, 'channelId', 'channelId');
     }
 
     /**
@@ -70,7 +77,7 @@ final class BoardTask extends Model
      */
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'creator_id');
+        return $this->belongsTo(User::class, 'userId', 'creatorId');
     }
 
     /**
@@ -78,15 +85,16 @@ final class BoardTask extends Model
      */
     public function stape(): BelongsTo
     {
-        return $this->belongsTo(BoardStape::class, 'board_stape_id', 'stape_id');
+        return $this->belongsTo(BoardStape::class, 'boardStapeId', 'stapeId');
     }
 
-    /**@TODO FIX THIS RELATION
+    /**
+* @TODO FIX THIS RELATION
      * @return BelongsToThrough
      */
     public function board(): BelongsToThrough
     {
-        return $this->belongsToThrough(BoardStape::class, Board::class, 'board_id', 'board_id');
+        return $this->belongsToThrough(BoardStape::class, Board::class, 'boardId', 'boardId');
     }
 
     /**
@@ -94,6 +102,6 @@ final class BoardTask extends Model
      */
     public function executors(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, TaskExecution::class, 'task_id', 'task_execution_id', 'user_id');
+        return $this->belongsToMany(User::class, TaskExecution::class, 'taskId', 'taskExecutionId', 'userId');
     }
 }
