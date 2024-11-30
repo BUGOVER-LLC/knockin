@@ -105,7 +105,6 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "allow-plugins": {
-      "pestphp/pest-plugin": true,
       "wikimedia/composer-merge-plugin": true,
       "composer/installers": true
     }
