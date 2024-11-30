@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      *
      * @return void
      */
     public function up(): void
     {
-        Schema::create('devices', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('devices', function (Blueprint $table) {
             $table->id('device_id')->index('device_index_device_id');
 
             $table->string('name')->unique();
@@ -26,12 +26,12 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down(): void
     {
-        Schema::dropIfExists('devices');
+        Schema::connection('pgsql_app')->dropIfExists('devices');
     }
 };

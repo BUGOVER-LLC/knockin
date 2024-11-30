@@ -14,18 +14,18 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('pgsql_app')->table('task_execution', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('users', function (Blueprint $table) {
             $table
-                ->foreign('task_id', 'task_execution_foreign_task_id')
-                ->references('board_task_id')
-                ->on('board_tasks')
+                ->foreign('current_workspace_id', 'users_foreign_current_workspace_id')
+                ->references('workspace_id')
+                ->on('workspaces')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
 
             $table
-                ->foreign('executor_id', 'task_execution_foreign_executor_id')
-                ->references('user_id')
-                ->on('users')
+                ->foreign('current_device_id', 'users_foreign_current_device_id')
+                ->references('device_id')
+                ->on('devices')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
         });
@@ -38,8 +38,9 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::connection('pgsql_app')->table('task_execution', function (Blueprint $table) {
-            $table->dropForeign('task_execution_foreign_executor_id');
+        Schema::connection('pgsql_app')->table('users', function (Blueprint $table) {
+            $table->dropForeign('users_foreign_current_workspace_id');
+            $table->dropForeign('users_foreign_current_device_id');
         });
     }
 };

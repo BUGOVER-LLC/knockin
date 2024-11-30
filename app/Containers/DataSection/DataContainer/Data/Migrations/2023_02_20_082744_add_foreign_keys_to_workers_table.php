@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::table('workers', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('workers', function (Blueprint $table) {
             $table
                 ->foreign('workspace_id', 'workers_foreign_workspace_id')
                 ->references('workspace_id')
@@ -30,11 +30,11 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::table('workers', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('workers', function (Blueprint $table) {
             $table->dropForeign('workers_foreign_user_id');
         });
     }

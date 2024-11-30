@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      *
      * @return void
      */
     public function up(): void
     {
-        Schema::create('board_tasks', static function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('board_tasks', static function (Blueprint $table) {
             $table->id('board_task_id')->index('board_tasks_index_board_task_id');
 
             $table->unsignedBigInteger('stape_id')->index('board_tasks_index_stape_id');
@@ -30,12 +30,12 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down(): void
     {
-        Schema::dropIfExists('board_tasks');
+        Schema::connection('pgsql_app')->dropIfExists('board_tasks');
     }
 };
