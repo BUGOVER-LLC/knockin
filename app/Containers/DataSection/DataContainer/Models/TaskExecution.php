@@ -42,18 +42,18 @@ final class TaskExecution extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'task_execution_id';
+    protected $primaryKey = 'taskExecutionId';
     /**
      * @var string[]
      */
-    protected $fillable = ['task_id', 'executor_id'];
+    protected $fillable = ['taskId', 'executorId'];
 
     /**
      * @return BelongsTo
      */
     public function task(): BelongsTo
     {
-        return $this->belongsTo(BoardTask::class, 'board_task_id', 'task_id');
+        return $this->belongsTo(BoardTask::class, 'boardTaskId', 'taskId');
     }
 
     /**
@@ -61,6 +61,6 @@ final class TaskExecution extends Model
      */
     public function executor(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'executor_id');
+        return $this->belongsTo(User::class, 'userId', 'executorId');
     }
 }

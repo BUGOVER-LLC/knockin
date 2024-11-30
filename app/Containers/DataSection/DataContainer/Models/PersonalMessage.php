@@ -43,19 +43,19 @@ final class PersonalMessage extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'personal_message_id';
+    protected $primaryKey = 'personalMessageId';
 
     /**
      * @var string[]
      */
-    protected $fillable = ['author_id', 'participant_id', 'workspace_id', 'parent_id', 'body', 'viewed', 'viewed_at'];
+    protected $fillable = ['authorId', 'participantId', 'workspaceId', 'parentId', 'body', 'viewed', 'viewedAt'];
 
     /**
      * @return BelongsTo
      */
     public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'author_id');
+        return $this->belongsTo(User::class, 'userId', 'authorId');
     }
 
     /**
@@ -63,7 +63,7 @@ final class PersonalMessage extends Model
      */
     public function participant(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'participant_id');
+        return $this->belongsTo(User::class, 'userId', 'participantId');
     }
 
     /**
@@ -71,6 +71,6 @@ final class PersonalMessage extends Model
      */
     public function workspace(): BelongsTo
     {
-        return $this->belongsTo(Workspace::class, 'workspace_id', 'workspace_id');
+        return $this->belongsTo(Workspace::class, 'workspaceId', 'workspaceId');
     }
 }

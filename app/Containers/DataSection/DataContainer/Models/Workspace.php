@@ -55,13 +55,13 @@ final class Workspace extends Model
     /**
      * @var string
      */
-    protected $primaryKey = 'workspace_id';
+    protected $primaryKey = 'workspaceId';
+
     /**
      * @var string[]
      */
     protected $fillable = [
-        'workspace_id',
-        'creator_id',
+        'creatorId',
         'uid',
         'name',
     ];
@@ -71,7 +71,7 @@ final class Workspace extends Model
      */
     public function creator(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'creator_id');
+        return $this->belongsTo(User::class, 'userId', 'creatorId');
     }
 
     /**
@@ -79,7 +79,7 @@ final class Workspace extends Model
      */
     public function channels(): HasMany
     {
-        return $this->hasMany(Channel::class, 'workspace_id', 'workspace_id');
+        return $this->hasMany(Channel::class, 'workspaceId', 'workspaceId');
     }
 
     /**
@@ -87,7 +87,7 @@ final class Workspace extends Model
      */
     public function boards(): HasMany
     {
-        return $this->hasMany(Channel::class, 'workspace_id', 'workspace_id');
+        return $this->hasMany(Channel::class, 'workspaceId', 'workspaceId');
     }
 
     /**
@@ -95,7 +95,7 @@ final class Workspace extends Model
      */
     public function workers(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, Worker::class, 'user_id', 'workspace_id');
+        return $this->belongsToMany(User::class, Worker::class, 'userId', 'workspaceId');
     }
 
     /**@TODO FIX THIS RELATION

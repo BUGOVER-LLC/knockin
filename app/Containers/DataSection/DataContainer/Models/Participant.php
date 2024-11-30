@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Containers\DataSection\DataContainer\Models;
 
 use App\Containers\DashboardSection\User\Models\User;
-use App\Containers\DataSection\DataContainer\Models\Channel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 
@@ -39,16 +38,19 @@ use Ship\Parents\Models\Model;
  */
 final class Participant extends Model
 {
-    protected $primaryKey = 'participant_id';
+    protected $primaryKey = 'participantId';
 
-    protected $fillable = ['channel_id', 'user_id'];
+    protected $fillable = [
+        'channelId',
+        'userId',
+    ];
 
     /**
      * @return BelongsTo
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'user_id');
+        return $this->belongsTo(User::class, 'userId', 'userId');
     }
 
     /**
@@ -56,6 +58,6 @@ final class Participant extends Model
      */
     public function channel(): BelongsTo
     {
-        return $this->belongsTo(Channel::class, 'channel_id', 'channel_id');
+        return $this->belongsTo(Channel::class, 'channelId', 'channelId');
     }
 }

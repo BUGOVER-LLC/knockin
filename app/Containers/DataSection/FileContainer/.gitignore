@@ -1,0 +1,5 @@
+### Nucleus FileContainer Container
+.idea
+vendor
+node_modules
+.env
