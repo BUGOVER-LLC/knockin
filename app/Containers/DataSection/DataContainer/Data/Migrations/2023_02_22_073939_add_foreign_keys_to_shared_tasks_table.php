@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      *
      * @return void
      */
     public function up(): void
     {
-        Schema::table('shared_tasks', static function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('shared_tasks', static function (Blueprint $table) {
             $table
                 ->foreign('task_id', 'shared_tasks_foreign_task_id')
                 ->references('board_task_id')
@@ -39,13 +39,13 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down(): void
     {
-        Schema::table('shared_tasks', static function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('shared_tasks', static function (Blueprint $table) {
             $table->dropForeign('shared_tasks_foreign_task_id');
             $table->dropForeign('shared_tasks_foreign_board_id');
             $table->dropForeign('shared_tasks_foreign_target_id');

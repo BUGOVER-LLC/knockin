@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('shared_channels', static function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('shared_channels', static function (Blueprint $table) {
             $table->id('shared_channel_id')->index('shared_channels_index_shared_channel_id');
             $table->unsignedBigInteger('channel_id')->index('shared_channels_index_channel_id');
             $table->unsignedBigInteger('workspace_id')->index('shared_channels_index_workspace_id');
@@ -24,10 +24,10 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('shared_channels');
+        Schema::connection('pgsql_app')->dropIfExists('shared_channels');
     }
 };

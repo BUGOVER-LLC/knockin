@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
@@ -14,11 +15,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('pgsql_app')->create('task_execution', function (Blueprint $table) {
-            $table->id('task_execution_id')->index('task_execution_task_execution_id');
+        Schema::connection('pgsql_app')->create('user_device', function (Blueprint $table) {
+            $table->id('user_device_id')->index('user_device_index_user_device_id');
 
-            $table->unsignedBigInteger('task_id')->index('task_execution_task_id');
-            $table->unsignedBigInteger('executor_id')->index('task_execution_executor_id');
+            $table->unsignedBigInteger('user_id')->index('user_device_index_user_id');
+            $table->unsignedBigInteger('device_id')->index('user_device_index_device_id');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
@@ -31,6 +32,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::connection('pgsql_app')->dropIfExists('task_execution');
+        Schema::connection('pgsql_app')->dropIfExists('user_device');
     }
 };

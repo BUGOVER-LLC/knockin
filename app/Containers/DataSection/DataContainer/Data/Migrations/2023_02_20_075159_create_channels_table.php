@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('channels', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('channels', function (Blueprint $table) {
             $table->id('channel_id')->index('channels_index_channel_id');
             $table->bigInteger('workspace_id')->index('channels_index_workspace_id');
             $table->bigInteger('creator_id')->index('channels_index_creator_id');
@@ -25,10 +25,10 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('channels');
+        Schema::connection('pgsql_app')->dropIfExists('channels');
     }
 };

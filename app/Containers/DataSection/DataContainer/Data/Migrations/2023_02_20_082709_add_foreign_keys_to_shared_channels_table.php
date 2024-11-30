@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::table('shared_channels', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('shared_channels', function (Blueprint $table) {
             $table
                 ->foreign('channel_id', 'shared_channels_foreign_channel_id')
                 ->references('channel_id')
@@ -37,11 +37,11 @@ return new class extends Migration {
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::table('shared_channels', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('shared_channels', function (Blueprint $table) {
             $table->dropForeign('shared_channels_foreign_channel_id');
             $table->dropForeign('shared_channels_foreign_workspace_id');
             $table->dropForeign('shared_channels_foreign_target_id');

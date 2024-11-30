@@ -14,18 +14,18 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('pgsql_app')->table('task_execution', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->table('users_profile', static function (Blueprint $table) {
             $table
-                ->foreign('task_id', 'task_execution_foreign_task_id')
-                ->references('board_task_id')
-                ->on('board_tasks')
+                ->foreign('user_id', 'users_profile_foreign_user_id')
+                ->references('user_id')
+                ->on('users')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
 
             $table
-                ->foreign('executor_id', 'task_execution_foreign_executor_id')
-                ->references('user_id')
-                ->on('users')
+                ->foreign('country_id', 'users_profile_foreign_country_id')
+                ->references('country_id')
+                ->on('countries')
                 ->onUpdate('NO ACTION')
                 ->onDelete('CASCADE');
         });
@@ -38,8 +38,9 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::connection('pgsql_app')->table('task_execution', function (Blueprint $table) {
-            $table->dropForeign('task_execution_foreign_executor_id');
+        Schema::connection('pgsql_app')->table('users_profile', function (Blueprint $table) {
+            $table->dropForeign('users_profile_foreign_user_id');
+            $table->dropForeign('users_profile_foreign_country_id');
         });
     }
 };

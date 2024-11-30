@@ -8,28 +8,29 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     /**
-     * Run the Migrations.
+     * Run the migrations.
      *
      * @return void
      */
     public function up(): void
     {
-        Schema::create('boards', function (Blueprint $table) {
+        Schema::connection('pgsql_app')->create('boards', function (Blueprint $table) {
             $table->id('board_id')->index('boards_index_board_id');
 
             $table->unsignedBigInteger('workspace_id')->index('boards_index_workspace_id');
             $table->string('title');
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE app.boards ADD COLUMN terms daterange NULL');
     }
 
     /**
-     * Reverse the Migrations.
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down(): void
     {
-        Schema::dropIfExists('boards');
+        Schema::connection('pgsql_app')->dropIfExists('boards');
     }
 };
