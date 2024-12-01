@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
-use App\Containers\DashboardSection\User\Models\User;
-use App\Containers\DataSection\DataContainer\Models\Board;
-use App\Containers\DataSection\DataContainer\Models\BoardTask;
-use App\Containers\DataSection\DataContainer\Models\Channel;
-use App\Containers\DataSection\DataContainer\Models\Worker;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;

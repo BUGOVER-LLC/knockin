@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
-use Nucleus\Models\Entity\ServiceModel;
 use Ship\Parents\Models\Model;
 
 /**

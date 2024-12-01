@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use App\Containers\DataSection\DataContainer\Data\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Nucleus\Abstracts\Models\AuthModel;
-use Ship\Parents\Models\Model;
+use Nucleus\Attributes\ModelEntity;
+use Ship\Parents\Models\UserModel;
 
 /**
  * Src\Models\User
@@ -60,7 +61,7 @@ use Ship\Parents\Models\Model;
  * @mixin \Eloquent
  */
 #[ModelEntity(repositoryClass: UserRepository::class)]
-final class User extends AuthModel
+final class User extends UserModel
 {
     protected $connection = 'pgsql_app';
 
