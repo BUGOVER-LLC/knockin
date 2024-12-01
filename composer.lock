@@ -363,16 +363,16 @@
         },
         {
             "name": "bugover/ship-manager",
-            "version": "1.2.20",
+            "version": "1.2.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship-manager.git",
-                "reference": "6eac40eef56317992dac906dcba5c75d6b4e5f97"
+                "reference": "c5507854dd600d575414b487973cf2a269c28116"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship-manager/zipball/6eac40eef56317992dac906dcba5c75d6b4e5f97",
-                "reference": "6eac40eef56317992dac906dcba5c75d6b4e5f97",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship-manager/zipball/c5507854dd600d575414b487973cf2a269c28116",
+                "reference": "c5507854dd600d575414b487973cf2a269c28116",
                 "shasum": ""
             },
             "require": {
@@ -401,9 +401,9 @@
             "description": "Nuclear Ship folder where shared functionality resides",
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship-manager/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship-manager/tree/1.2.20"
+                "source": "https://github.com/BUGOVER-LLC/ship-manager/tree/1.2.21"
             },
-            "time": "2024-11-16T18:03:55+00:00"
+            "time": "2024-12-01T11:07:10+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
