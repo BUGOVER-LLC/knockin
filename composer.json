@@ -2,7 +2,7 @@
   "name": "noix/ship-container",
   "type": "project",
   "description": "Sea to sea project. for modeling the universe🙂.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "keywords": [
     "framework",
     "laravel"
