@@ -1,0 +1,42 @@
+<template>
+    <v-snackbar :value="notification.show" :color="colorByType()" :timeout="10000" elevation="6" class="mt-12">
+        <span>{{ notification.message }}</span>
+
+        <template #action="{ attrs }">
+            <v-btn v-bind="attrs" class="float-right" text icon @click="closeSnackbar">
+                <v-icon v-text="'mdi-close'" />
+            </v-btn>
+        </template>
+    </v-snackbar>
+</template>
+
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator';
+import NotifyModule from '@/store/modules/NotifyModule';
+import { NotifyType } from '@/store/models/NotifyModel';
+@Component({})
+export default class NotificationComponents extends Vue {
+    get notification() {
+        return NotifyModule.notification;
+    }
+
+    colorByType() {
+        switch (this.notification.type) {
+            case NotifyType.error:
+                return 'error';
+            case NotifyType.warning:
+                return 'warning';
+            case NotifyType.info:
+                return 'info';
+            case NotifyType.message:
+                return 'success';
+        }
+    }
+
+    closeSnackbar() {
+        NotifyModule.notify({ message: '', type: NotifyType.error, show: false });
+    }
+}
+</script>
+
+<style scoped lang="scss"></style>
