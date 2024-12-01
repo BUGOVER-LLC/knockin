@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
-use Nucleus\Abstracts\Models\AuthModel;
+use Ship\Parents\Models\UserModel;
 
 /**
  * Src\Models\UserProfile
@@ -14,6 +14,6 @@ use Nucleus\Abstracts\Models\AuthModel;
  * @method static \Illuminate\Database\Eloquent\Builder|UserProfile query()
  * @mixin \Eloquent
  */
-class UserProfile extends AuthModel
+class UserProfile extends UserModel
 {
 }

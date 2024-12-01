@@ -1,7 +1,7 @@
 {
   "name": "ship/auth",
   "type": "ship-container",
-  "description": "Auth Container for nucleus.",
+  "description": "Auth Container for a nucleus.",
   "require": {
     "php": "^8.3.2",
     "php-64bit": "^8.3.2"

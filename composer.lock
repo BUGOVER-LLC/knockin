@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b7442c5eb5692434486a3db953bfd66",
+    "content-hash": "ebfdc942c508bd02fd39fe6c1643cd49",
     "packages": [
         {
             "name": "brick/math",
@@ -278,16 +278,16 @@
         },
         {
             "name": "bugover/ship",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship.git",
-                "reference": "58d6aec88785d5129f05180ac2161c018c7e79b3"
+                "reference": "a798dcf6d0d077b94c66e075248a396c9d861cce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/58d6aec88785d5129f05180ac2161c018c7e79b3",
-                "reference": "58d6aec88785d5129f05180ac2161c018c7e79b3",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/a798dcf6d0d077b94c66e075248a396c9d861cce",
+                "reference": "a798dcf6d0d077b94c66e075248a396c9d861cce",
                 "shasum": ""
             },
             "require": {
@@ -357,22 +357,22 @@
             ],
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.4.4"
+                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.4.5"
             },
-            "time": "2024-11-30T19:46:34+00:00"
+            "time": "2024-12-01T11:31:16+00:00"
         },
         {
             "name": "bugover/ship-manager",
-            "version": "1.2.21",
+            "version": "1.2.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship-manager.git",
-                "reference": "c5507854dd600d575414b487973cf2a269c28116"
+                "reference": "09777189be333adca5e5af6c24f87b553cfa258e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship-manager/zipball/c5507854dd600d575414b487973cf2a269c28116",
-                "reference": "c5507854dd600d575414b487973cf2a269c28116",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship-manager/zipball/09777189be333adca5e5af6c24f87b553cfa258e",
+                "reference": "09777189be333adca5e5af6c24f87b553cfa258e",
                 "shasum": ""
             },
             "require": {
@@ -401,9 +401,9 @@
             "description": "Nuclear Ship folder where shared functionality resides",
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship-manager/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship-manager/tree/1.2.21"
+                "source": "https://github.com/BUGOVER-LLC/ship-manager/tree/1.2.22"
             },
-            "time": "2024-12-01T11:07:10+00:00"
+            "time": "2024-12-01T11:31:58+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
-use App\Containers\DashboardSection\User\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 
