@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('pgsql_app')->create('users_profile', static function (Blueprint $table) {
+        Schema::create('users_profile', static function (Blueprint $table) {
             $table->id('user_profile_id')->index('users_profile_index_user_profile_id');
 
             $table->unsignedBigInteger('user_id')->index('users_profile_index_user_id');
@@ -32,6 +32,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::connection('pgsql_app')->dropIfExists('users_profile');
+        Schema::dropIfExists('users_profile');
     }
 };

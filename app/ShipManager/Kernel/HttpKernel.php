@@ -4,14 +4,9 @@ declare(strict_types=1);
 
 namespace Ship\Kernel;
 
-use Ship\Middlewares\Authenticate;
-use Ship\Middlewares\EncryptCookies;
-use Ship\Middlewares\PreventRequestsDuringMaintenance;
-use Ship\Middlewares\TrimStrings;
-use Ship\Middlewares\TrustProxies;
-use Ship\Middlewares\VerifyCsrfToken;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
+use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Foundation\Http\Kernel as LaravelHttpKernel;
@@ -28,6 +23,12 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Nucleus\Middlewares\Http\ProcessETagHeadersMiddleware;
 use Nucleus\Middlewares\Http\ProfilerMiddleware;
 use Nucleus\Middlewares\Http\ValidateJsonContent;
+use Ship\Middlewares\Authenticate;
+use Ship\Middlewares\EncryptCookies;
+use Ship\Middlewares\PreventRequestsDuringMaintenance;
+use Ship\Middlewares\TrimStrings;
+use Ship\Middlewares\TrustProxies;
+use Ship\Middlewares\VerifyCsrfToken;
 
 class HttpKernel extends LaravelHttpKernel
 {
@@ -88,7 +89,7 @@ class HttpKernel extends LaravelHttpKernel
         'cache.headers' => SetCacheHeaders::class,
         'can' => Authorize::class,
         // Note: The "guest" middleware is registered by MiddlewareServiceProvider in Authentication Container
-        // 'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => RedirectIfAuthenticated::class,
         'password.confirm' => RequirePassword::class,
         'signed' => ValidateSignature::class,
         'throttle' => ThrottleRequests::class,
