@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Containers\DataSection\DataContainer\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,18 +13,17 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('pgsql_app')->create('users', function (Blueprint $table) {
-            $table->id('user_id')->index('users_index_user_id');
+        Schema::create('Users', function (Blueprint $table) {
+            $table->ulid('userId')->index('users_index_user_id');
 
-            $table->unsignedBigInteger('current_workspace_id')->nullable()->index('users_index_current_workspace_id');
-            $table->unsignedBigInteger('current_device_id')->nullable()->index('users_index_current_device_id');
-            $table->uuid('uid')->unique();
+            $table->foreignUlid('currentWorkspaceId')->nullable()->index('users_index_current_workspace_id');
+            $table->foreignUlid('currentDeviceId')->nullable()->index('users_index_current_device_id');
             $table->string('name', 150)->nullable()->unique();
             $table->string('phone', 32)->nullable()->unique();
             $table->string('email', 250)->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamp('verified_at')->nullable();
+            $table->timestamp('verifiedAt')->nullable();
 
             $table->timestamps();
         });
@@ -34,6 +34,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::connection('pgsql_app')->dropIfExists('users');
+        Schema::dropIfExists('users');
     }
 };

@@ -12,14 +12,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('pgsql_app')->create('personal_access_tokens', function (Blueprint $table) {
-            $table->id('personal_access_token_id')->index('personal_access_tokens_index_personal_access_token_id');
-            $table->unsignedBigInteger('user_id')->index('personal_access_tokens_index_user_id');
+        Schema::create('PersonalAccessTokens', function (Blueprint $table) {
+            $table->ulid('personalAccessTokenId')->index('personal_access_tokens_index_personal_access_token_id');
+            $table->foreignUlid('userId')->index('personal_access_tokens_index_user_id');
             $table->string('name');
             $table->string('token', 64)->unique();
             $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamp('expires_at')->nullable();
+            $table->timestamp('lastUsedAt')->nullable();
+            $table->timestamp('expiresAt')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::connection('pgsql_app')->dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('PersonalAccessTokens');
     }
 };

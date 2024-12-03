@@ -1,7 +1,7 @@
-@extends('layouts.producer')
+@extends('authSection@auth::app')
 
 @guest
     @section('app-content')
-        <router-view :producer="{{ json_encode($producer, JSON_THROW_ON_ERROR) }}"></router-view>
+        <router-view></router-view>
     @endsection
 @endguest
