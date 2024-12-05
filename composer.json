@@ -2,7 +2,7 @@
   "name": "noix/ship-container",
   "type": "project",
   "description": "Sea to sea project. for modeling the universe🙂.",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "keywords": [
     "framework",
     "laravel"
@@ -88,7 +88,7 @@
     },
     "merge-plugin": {
       "include": [
-        "app/ShipManager/composer.json",
+        "app/Ship/composer.json",
         "app/Containers/*/composer.json",
         "app/Containers/*/*/composer.json"
       ],

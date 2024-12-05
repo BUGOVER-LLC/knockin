@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Containers\DataSection\DataContainer\Models;
 
 use Ship\Parents\Models\Model;
+use Ship\Parents\Models\UserModel;
 
 /**
  * Containers\Vendor\Models\Worker
@@ -30,8 +31,14 @@ use Ship\Parents\Models\Model;
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Worker sum($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Worker truncate()
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model withCacheCooldownSeconds(?int $seconds = null)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Passport\Client> $clients
+ * @property-read int|null $clients_count
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Passport\Token> $tokens
+ * @property-read int|null $tokens_count
  * @mixin \Eloquent
  */
-final class Worker extends Model
+final class Worker extends UserModel
 {
 }

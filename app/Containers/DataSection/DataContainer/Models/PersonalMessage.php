@@ -46,7 +46,15 @@ final class PersonalMessage extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['authorId', 'participantId', 'workspaceId', 'parentId', 'body', 'viewed', 'viewedAt'];
+    protected $fillable = [
+        'authorId',
+        'participantId',
+        'workspaceId',
+        'parentId',
+        'body',
+        'viewed',
+        'viewedAt',
+    ];
 
     /**
      * @return BelongsTo

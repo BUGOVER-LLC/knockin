@@ -8,7 +8,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Nucleus\Loaders\SeederLoaderTrait;
 
-class DatabaseSeeder extends Seeder
+final class DatabaseSeeder extends Seeder
 {
     use SeederLoaderTrait;
 
