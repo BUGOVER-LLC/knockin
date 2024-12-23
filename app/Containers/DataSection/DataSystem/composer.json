@@ -1,0 +1,29 @@
+{
+  "name": "ship/data-container",
+  "type": "ship-container",
+  "description": "DataContainer Container for nucleus.",
+  "require": {
+    "php": "^8.3.2",
+    "php-64bit": "^8.3.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Containers\\DataSection\\DataSystem\\": "/"
+    }
+  },
+  "extra": {
+    "ship": {
+      "container": {
+        "name": "DataContainer"
+      }
+    },
+    "laravel": {
+      "providers": [
+        "Containers\\DataSection\\DataSystem\\Providers\\MainServiceProvider"
+      ]
+    }
+  }
+}
