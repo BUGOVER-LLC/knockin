@@ -1,0 +1,29 @@
+{
+  "name": "ship/file-system",
+  "type": "ship-container",
+  "description": "FileSystem Container for nucleus.",
+  "require": {
+    "php": "^8.3.2",
+    "php-64bit": "^8.3.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Containers\\DataSection\\FileSystem\\": "/"
+    }
+  },
+  "extra": {
+    "ship": {
+      "container": {
+        "name": "FileSystem"
+      }
+    },
+    "laravel": {
+      "providers": [
+        "Containers\\DataSection\\FileSystem\\Providers\\MainServiceProvider"
+      ]
+    }
+  }
+}

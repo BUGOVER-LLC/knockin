@@ -1,0 +1,29 @@
+{
+  "name": "ship/authentication",
+  "type": "ship-container",
+  "description": "Authentication Container for nucleus.",
+  "require": {
+    "php": "^8.3.2",
+    "php-64bit": "^8.3.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Containers\\AuthSection\\Authentication\\": "/"
+    }
+  },
+  "extra": {
+    "ship": {
+      "container": {
+        "name": "Authentication"
+      }
+    },
+    "laravel": {
+      "providers": [
+        "Containers\\AuthSection\\Authentication\\Providers\\MainServiceProvider"
+      ]
+    }
+  }
+}
