@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\BoardStape;
+use Containers\DataSection\DataContainer\Models\Channel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Ship\Parents\Models\Model;
@@ -12,11 +14,11 @@ use Znck\Eloquent\Relations\BelongsToThrough;
 /**
  * Containers\Vendor\Models\BoardTask
  *
- * @property-read \App\Containers\DataSection\DataContainer\Models\Channel|null $channel
+ * @property-read \Containers\DataSection\DataContainer\Models\Channel|null $channel
  * @property-read User|null $creator
  * @property-read \Illuminate\Database\Eloquent\Collection<int, User> $executors
  * @property-read int|null $executors_count
- * @property-read \App\Containers\DataSection\DataContainer\Models\BoardStape|null $stape
+ * @property-read \Containers\DataSection\DataContainer\Models\BoardStape|null $stape
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|BoardTask all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|BoardTask avg($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|BoardTask cache(array $tags = [])

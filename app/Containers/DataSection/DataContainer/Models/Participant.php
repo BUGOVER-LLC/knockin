@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\Channel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 
 /**
  * Containers\Vendor\Models\Participant
  *
- * @property-read \App\Containers\DataSection\DataContainer\Models\Channel|null $channel
+ * @property-read \Containers\DataSection\DataContainer\Models\Channel|null $channel
  * @property-read User|null $user
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Participant all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Participant avg($column)

@@ -22,7 +22,5 @@ var
 .php-cs-fixer.cache
 app/Ship
 .vagrant
-.etc/phpmyadmin
-.etc/ssl/
-!.etc/ssl/.gitkeep
 /auth.json
+phpstan.neon

@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\BoardTask;
+use Containers\DataSection\DataContainer\Models\Participant;
+use Containers\DataSection\DataContainer\Models\SharedBoard;
+use Containers\DataSection\DataContainer\Models\SharedChannel;
+use Containers\DataSection\DataContainer\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -12,18 +17,18 @@ use Ship\Parents\Models\Model;
 /**
  * Containers\Vendor\Models\Channel
  *
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\SharedBoard> $boards
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\SharedBoard> $boards
  * @property-read int|null $boards_count
  * @property-read User|null $creator
  * @property-read \Illuminate\Database\Eloquent\Collection<int, User> $participant
  * @property-read int|null $participant_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\SharedChannel> $shared
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\SharedChannel> $shared
  * @property-read int|null $shared_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\SharedBoard> $tBoards
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\SharedBoard> $tBoards
  * @property-read int|null $t_boards_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\BoardTask> $tasks
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\BoardTask> $tasks
  * @property-read int|null $tasks_count
- * @property-read \App\Containers\DataSection\DataContainer\Models\Workspace|null $workspace
+ * @property-read \Containers\DataSection\DataContainer\Models\Workspace|null $workspace
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel avg($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Channel cache(array $tags = [])

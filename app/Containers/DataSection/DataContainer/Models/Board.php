@@ -4,21 +4,26 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\BoardStape;
+use Containers\DataSection\DataContainer\Models\BoardTask;
+use Containers\DataSection\DataContainer\Models\SharedBoard;
+use Containers\DataSection\DataContainer\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Nucleus\Attributes\ModelEntity;
 use Ship\Parents\Models\Model;
 
 /**
  * Containers\Vendor\Models\Board
  *
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\SharedBoard> $shared
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\SharedBoard> $shared
  * @property-read int|null $shared_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\BoardStape> $stapes
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\BoardStape> $stapes
  * @property-read int|null $stapes_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\BoardTask> $tasks
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\BoardTask> $tasks
  * @property-read int|null $tasks_count
- * @property-read \App\Containers\DataSection\DataContainer\Models\Workspace|null $workspace
+ * @property-read \Containers\DataSection\DataContainer\Models\Workspace|null $workspace
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Board all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Board avg($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Board cache(array $tags = [])
@@ -42,6 +47,7 @@ use Ship\Parents\Models\Model;
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model withCacheCooldownSeconds(?int $seconds = null)
  * @mixin \Eloquent
  */
+#[ModelEntity]
 final class Board extends Model
 {
     /**

@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace App\Containers\DataSection\DataContainer\Models;
 
 use App\Containers\DataSection\DataContainer\Data\Repositories\UserRepository;
+use Containers\DataSection\DataContainer\Models\BoardTask;
+use Containers\DataSection\DataContainer\Models\Channel;
+use Containers\DataSection\DataContainer\Models\Participant;
+use Containers\DataSection\DataContainer\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if [ ! -f phpcs.phar ]; then
     wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar

@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Data\Repositories\MessageRepository;
+use Containers\DataSection\DataContainer\Models\Channel;
+use Containers\DataSection\DataContainer\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Nucleus\Attributes\ModelEntity;
 use Ship\Parents\Models\Model;
 
 /**
  * Containers\Vendor\Models\Message
  *
  * @property-read User|null $author
- * @property-read \App\Containers\DataSection\DataContainer\Models\Channel|null $channel
- * @property-read \App\Containers\DataSection\DataContainer\Models\Workspace|null $workspace
+ * @property-read \Containers\DataSection\DataContainer\Models\Channel|null $channel
+ * @property-read \Containers\DataSection\DataContainer\Models\Workspace|null $workspace
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message avg($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Message cache(array $tags = [])
@@ -36,6 +40,7 @@ use Ship\Parents\Models\Model;
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|Model withCacheCooldownSeconds(?int $seconds = null)
  * @mixin \Eloquent
  */
+#[ModelEntity(repositoryClass: MessageRepository::class)]
 final class Message extends Model
 {
     /**

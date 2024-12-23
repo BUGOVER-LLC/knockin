@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\BoardTask;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 
@@ -11,7 +12,7 @@ use Ship\Parents\Models\Model;
  * Containers\Vendor\Models\TaskExecution
  *
  * @property-read User|null $executor
- * @property-read \App\Containers\DataSection\DataContainer\Models\BoardTask|null $task
+ * @property-read \Containers\DataSection\DataContainer\Models\BoardTask|null $task
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|TaskExecution all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|TaskExecution avg($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|TaskExecution cache(array $tags = [])

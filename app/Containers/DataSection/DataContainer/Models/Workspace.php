@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\BoardTask;
+use Containers\DataSection\DataContainer\Models\Channel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,9 +15,9 @@ use Ship\Parents\Models\Model;
 /**
  * Containers\Vendor\Models\Workspace
  *
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\Channel> $boards
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\Channel> $boards
  * @property-read int|null $boards_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\Channel> $channels
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataContainer\Models\Channel> $channels
  * @property-read int|null $channels_count
  * @property-read User|null $creator
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataContainer\Models\Board> $tasks

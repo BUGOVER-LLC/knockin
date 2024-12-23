@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Containers\DataSection\DataContainer\Models;
 
+use Containers\DataSection\DataContainer\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 
@@ -12,7 +13,7 @@ use Ship\Parents\Models\Model;
  *
  * @property-read User|null $author
  * @property-read User|null $participant
- * @property-read \App\Containers\DataSection\DataContainer\Models\Workspace|null $workspace
+ * @property-read \Containers\DataSection\DataContainer\Models\Workspace|null $workspace
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|PersonalMessage all($columns = [])
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|PersonalMessage avg($column)
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|PersonalMessage cache(array $tags = [])
