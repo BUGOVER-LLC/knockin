@@ -1,0 +1,5 @@
+### Nucleus Home Container
+.idea
+vendor
+node_modules
+.env
