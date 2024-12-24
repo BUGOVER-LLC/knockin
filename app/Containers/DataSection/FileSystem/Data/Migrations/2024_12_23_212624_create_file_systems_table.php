@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('mysql')->create('file_systems', function (Blueprint $table) {
+        Schema::connection('mysql')->create('FileSystem', function (Blueprint $table) {
             $table->id();
 
             $table->timestamps();

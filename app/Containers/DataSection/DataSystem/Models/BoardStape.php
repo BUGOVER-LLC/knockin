@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
-use Containers\DataSection\DataSystem\Models\BoardTask;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Ship\Parents\Models\Model;
@@ -12,7 +11,7 @@ use Ship\Parents\Models\Model;
 /**
  * Containers\Vendor\Models\BoardStape
  *
- * @property-read \App\Containers\DataSection\DataSystem\Models\Board|null $board
+ * @property-read \Containers\DataSection\DataSystem\Models\Board|null $board
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataSystem\Models\BoardTask> $tasks
  * @property-read int|null $tasks_count
  * @method static \GeneaLabs\LaravelModelCaching\CachedBuilder|BoardStape all($columns = [])

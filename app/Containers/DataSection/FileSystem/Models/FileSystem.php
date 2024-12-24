@@ -8,6 +8,14 @@ use Ship\Parents\Models\Model as ParentModel;
 use Nucleus\Attributes\ModelEntity;
 
 #[ModelEntity()]
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FileSystem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FileSystem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FileSystem query()
+ * @mixin \Eloquent
+ */
 class FileSystem extends ParentModel
 {
     protected $fillable = [

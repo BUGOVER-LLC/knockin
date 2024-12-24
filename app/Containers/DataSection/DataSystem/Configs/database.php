@@ -87,7 +87,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'phpredis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'store_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . 'store_'),
             'serializer' => \defined('\Redis::SERIALIZER_IGBINARY') ? Redis::SERIALIZER_IGBINARY : null,
             'compression' => \defined('\Redis::COMPRESSION_ZSTD_MAX') ? Redis::COMPRESSION_ZSTD_MAX : null,
         ],
@@ -108,6 +108,15 @@ return [
             'password' => env('REDIS_PASSWORD'),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
+        ],
+
+        'queue' => [
+            'url' => env('REDIS_URL'),
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'username' => env('REDIS_USERNAME'),
+            'password' => env('REDIS_PASSWORD'),
+            'port' => env('REDIS_PORT', '6379'),
+            'database' => env('REDIS_QUEUE_DB', '2'),
         ],
     ],
 ];

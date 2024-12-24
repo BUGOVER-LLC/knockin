@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
+use App\Containers\AuthSection\Authentication\Models\User;
 use Containers\DataSection\DataSystem\Data\Repositories\MessageRepository;
-use Containers\DataSection\DataSystem\Models\Channel;
-use Containers\DataSection\DataSystem\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Nucleus\Attributes\ModelEntity;
 use Ship\Parents\Models\Model;

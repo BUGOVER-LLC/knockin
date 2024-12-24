@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
-use Containers\DataSection\DataSystem\Models\BoardTask;
-use Containers\DataSection\DataSystem\Models\Channel;
+use App\Containers\AuthSection\Authentication\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -20,7 +19,7 @@ use Ship\Parents\Models\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataSystem\Models\Channel> $channels
  * @property-read int|null $channels_count
  * @property-read User|null $creator
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Containers\DataSection\DataSystem\Models\Board> $tasks
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Containers\DataSection\DataSystem\Models\Board> $tasks
  * @property-read int|null $tasks_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, User> $workers
  * @property-read int|null $workers_count

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
-use Containers\DataSection\DataSystem\Models\Workspace;
+use App\Containers\AuthSection\Authentication\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Ship\Parents\Models\Model;
 

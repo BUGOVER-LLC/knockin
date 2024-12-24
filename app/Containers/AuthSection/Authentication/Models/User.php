@@ -2,12 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace App\Containers\AuthSection\Authentication\Models;
 
-use App\Containers\DataSection\DataSystem\Data\Repositories\UserRepository;
+use Containers\DataSection\DataSystem\Data\Repositories\UserRepository;
+use Containers\DataSection\DataSystem\Models\Board;
 use Containers\DataSection\DataSystem\Models\BoardTask;
 use Containers\DataSection\DataSystem\Models\Channel;
 use Containers\DataSection\DataSystem\Models\Participant;
+use Containers\DataSection\DataSystem\Models\PersonalMessage;
+use Containers\DataSection\DataSystem\Models\TaskExecution;
+use Containers\DataSection\DataSystem\Models\UserProfile;
 use Containers\DataSection\DataSystem\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -62,13 +66,17 @@ use Ship\Parents\Models\UserModel;
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereVerifiedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Passport\Client> $clients
+ * @property-read int|null $clients_count
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
+ * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Passport\Token> $tokens
+ * @property-read int|null $tokens_count
  * @mixin \Eloquent
  */
 #[ModelEntity(repositoryClass: UserRepository::class)]
 final class User extends UserModel
 {
-    protected $connection = 'pgsql_app';
-
     /**
      * @var string
      */

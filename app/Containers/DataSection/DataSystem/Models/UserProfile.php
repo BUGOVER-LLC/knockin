@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
 use Ship\Parents\Models\UserModel;
 

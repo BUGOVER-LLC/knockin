@@ -61,7 +61,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => \App\Containers\DataSection\DataContainer\Models\User::class,
+            'model' => \App\Containers\AuthSection\Authentication\Models\User::class,
         ],
     ],
 

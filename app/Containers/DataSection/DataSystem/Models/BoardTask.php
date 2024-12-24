@@ -2,14 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
-use Containers\DataSection\DataSystem\Models\BoardStape;
-use Containers\DataSection\DataSystem\Models\Channel;
+use App\Containers\AuthSection\Authentication\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Ship\Parents\Models\Model;
-use Znck\Eloquent\Relations\BelongsToThrough;
 
 /**
  * Containers\Vendor\Models\BoardTask
@@ -86,7 +84,7 @@ final class BoardTask extends Model
     }
 
     /**
-* @TODO FIX THIS RELATION
+     * @TODO FIX THIS RELATION
      * @return BelongsToThrough
      */
     public function board(): BelongsToThrough

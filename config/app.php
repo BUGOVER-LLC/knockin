@@ -28,8 +28,6 @@ return [
     */
     'path' => env('APP_PATH', base_path('app/')),
 
-    'container_name' => 'Containers',
-
     /*
     |--------------------------------------------------------------------------
     | Application Environment

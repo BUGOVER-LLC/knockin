@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Models;
+namespace Containers\DataSection\DataSystem\Models;
 
-use Containers\DataSection\DataSystem\Models\BoardStape;
-use Containers\DataSection\DataSystem\Models\BoardTask;
-use Containers\DataSection\DataSystem\Models\SharedBoard;
-use Containers\DataSection\DataSystem\Models\Workspace;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
