@@ -1,0 +1,199 @@
+<!-- @format -->
+
+<template>
+    <v-menu
+        :close-on-content-click="false"
+        :nudge-right="0"
+        :nudge-top="30"
+        :min-width="pickerWidth"
+        offset-y
+        transition="scale-transition"
+        v-model="picker"
+    >
+        <template v-slot:activator="{ on }">
+            <v-text-field
+                :color="color"
+                :dense="dense"
+                :prepend-inner-icon="inputIcon"
+                :name="name"
+                :label="label"
+                :disabled="disabled"
+                v-model="inputValue"
+                v-mask="mask"
+                outlined
+            >
+                <template v-slot:append style="margin-top: 0">
+                    <v-btn
+                        depressed
+                        :style="!dense ? 'margin-top: -15px; right: -10.6px;' : 'margin-top: -6.2px; right: -10.6px;'"
+                        :disabled="disabled"
+                        @click="picker = !picker"
+                        :color="color"
+                        :x-large="!dense"
+                    >
+                        <v-icon color="primary" v-text="pickerIcon" large />
+                    </v-btn>
+                </template>
+            </v-text-field>
+        </template>
+        <v-date-picker
+            :color="color"
+            @input="picker = false"
+            no-title
+            :max="max"
+            :min="min"
+            v-model="pickerValue"
+            :year-format="format"
+        />
+    </v-menu>
+</template>
+
+<script>
+import { VueMaskDirective } from 'v-mask';
+
+export default {
+    // inject: ['$validator'],
+
+    props: {
+        min: {
+            default: null,
+            required: false,
+            type: String,
+        },
+        max: {
+            default: null,
+            required: false,
+            type: String,
+        },
+        dense: {
+            default: false,
+            required: false,
+            type: Boolean,
+        },
+        disabled: {
+            default: false,
+            required: false,
+            type: Boolean,
+        },
+        value: {
+            default: null,
+            type: String,
+        },
+        pickerWidth: {
+            default: 290,
+            type: [String, Number],
+        },
+        pickerIcon: {
+            default: 'mdi-calendar',
+            type: String,
+        },
+        inputIcon: {
+            default: null,
+            type: String,
+        },
+        name: {
+            default: null,
+            type: String,
+        },
+        scope: {
+            default: null,
+            type: String,
+        },
+        color: {
+            default: null,
+            type: String,
+        },
+        label: {
+            default: null,
+            type: String,
+        },
+        errorMessages: {
+            default: null,
+            type: [Array, Object],
+        },
+        dataVvAs: {
+            default: null,
+            type: [Array, String],
+        },
+        rules: {
+            default: '',
+            type: [String, Object],
+        },
+        mask: {
+            default: '##.##.####',
+            type: String,
+        },
+        format: {
+            default: 'dd.mm.yyyy',
+            type: String,
+        },
+    },
+
+    data() {
+        return {
+            picker: false,
+            inputValue: null,
+            pickerValue: null,
+            mainRules: 'date_format:',
+        };
+    },
+
+    directives: {
+        mask: VueMaskDirective,
+    },
+
+    computed: {
+        inputRules() {
+            return this.rules
+                ? `${this.mainRules}${this.format}` + `|${this.rules}`
+                : `${this.mainRules}${this.format}`;
+        },
+    },
+
+    watch: {
+        inputValue() {
+            this.setInputValue();
+        },
+        pickerValue() {
+            this.setPickerValue();
+        },
+        value() {
+            this.getValue();
+        },
+    },
+
+    methods: {
+        setInputValue() {
+            if (this.inputValue) {
+                const arr = this.inputValue.split('.');
+                if (3 === arr.length && arr[2] && 4 === arr[2].length) {
+                    arr.reverse();
+                    const format = arr.join('-');
+                    if (!isNaN(Date.parse(format))) {
+                        this.$emit('input', format);
+                    }
+                }
+            } else {
+                this.$emit('input', null);
+            }
+        },
+
+        setPickerValue() {
+            this.$emit('input', this.pickerValue);
+        },
+
+        getValue() {
+            this.pickerValue = this.value;
+            if (this.value) {
+                const arr = this.value.split('-');
+                arr.reverse();
+                this.inputValue = arr.join('.');
+            }
+        },
+    },
+
+    created() {
+        this.getValue();
+    },
+};
+</script>

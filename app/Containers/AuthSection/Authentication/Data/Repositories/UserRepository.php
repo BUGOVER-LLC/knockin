@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Data\Repositories;
+namespace App\Containers\AuthSection\Authentication\Data\Repositories;
 
-use App\Containers\DataSection\DataSystem\Models\User;
+use App\Containers\AuthSection\Authentication\Models\User;
 use Illuminate\Contracts\Container\Container;
 use Ship\Parents\Repositories\Repository;
 

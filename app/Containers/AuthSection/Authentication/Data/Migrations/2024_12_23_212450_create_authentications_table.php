@@ -12,7 +12,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::connection('mysql')->create('authentications', function (Blueprint $table) {
+        Schema::connection('mysql')->create('Authentications', function (Blueprint $table) {
             $table->id();
 
             $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('authentications');
+        Schema::dropIfExists('Authentications');
     }
 };
