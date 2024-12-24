@@ -1,34 +1,8 @@
 /** @format */
 
-export interface IRouteNames {
-    authIndex: string;
-    produceBoard: string;
-    boardRole: string;
-    boardPermission: string;
-    usersControl: string;
-    producerProfile: string;
-    createRole: string;
-    editRole: string;
-    attributes: string;
-    app: string;
-    authPassword: string;
-    setEnvironment: string;
-}
+export interface IRouteNames {}
 
-const routesNames: Readonly<IRouteNames> = {
-    authIndex: 'authIndex',
-    produceBoard: 'produceBoard',
-    boardRole: 'boardRole',
-    boardPermission: 'boardPermission',
-    usersControl: 'usersControl',
-    producerProfile: 'producerProfile',
-    createRole: 'createRole',
-    editRole: 'editRole',
-    attributes: 'resourceAttributes',
-    app: 'appControl',
-    authPassword: 'authPassword',
-    setEnvironment: 'setEnvironment',
-};
+const routesNames: Readonly<IRouteNames> = {};
 
 declare module 'vue/types/vue' {
     // noinspection JSUnusedGlobalSymbols

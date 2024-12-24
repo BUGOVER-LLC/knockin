@@ -2,6 +2,7 @@
 
 import '@/plugins/validate/index';
 import '@/common/bootstrap';
+import 'vue-class-component/hooks';
 
 import Vue from 'vue';
 
