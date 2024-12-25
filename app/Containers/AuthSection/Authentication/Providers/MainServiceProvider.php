@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\AuthSection\Authentication\Providers;
 
+use App\Containers\AuthSection\Authentication\Providers\AuthServiceProvider;
 use App\Containers\AuthSection\Authentication\Providers\MiddlewareServiceProvider;
 use Ship\Parents\Providers\MainServiceProvider as ParentMainServiceProvider;
 
@@ -17,6 +18,7 @@ class MainServiceProvider extends ParentMainServiceProvider
      */
     public array $serviceProviders = [
         MiddlewareServiceProvider::class,
+        AuthServiceProvider::class,
     ];
 
     /**

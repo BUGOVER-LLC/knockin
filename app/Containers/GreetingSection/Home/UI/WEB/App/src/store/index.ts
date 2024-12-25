@@ -4,12 +4,14 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
 
+import { HandlerModel } from '@/store/models/HandlerModel';
 import { UserModel } from '@/store/models/UserModel';
 
 Vue.use(Vuex);
 
 interface ModulesState {
     user: UserModel;
+    handler: HandlerModel;
 }
 
 const vuexLocal: VuexPersistence<object> = new VuexPersistence({
