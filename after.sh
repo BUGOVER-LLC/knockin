@@ -21,7 +21,7 @@ fi
 sudo cp -r /home/vagrant/noix/.etc/mysql/my.cnf /etc/mysql/
 
 # Copy SSL Certificates
-sudo cp -r /etc/ssl/certs/ca.homestead.-api.crt /home/vagrant/noix/.etc/ssl
+sudo cp -r /etc/ssl/certs/ca.homestead.noix.crt /home/vagrant/noix/.etc/ssl
 
 # Set PHP version
 sudo update-alternatives --set php /usr/bin/php8.3

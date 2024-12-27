@@ -14,6 +14,6 @@ class CreateHomeController extends WebController
 {
     public function __invoke(StoreHomeRequest $request): Application|Factory|\Illuminate\Contracts\View\View|View
     {
-        return view('greetingSection@home::Index');
+        return view('greetingSection@home::index');
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Containers\AuthSection\Authentication\Models;
 
-use Containers\DataSection\DataSystem\Data\Repositories\UserRepository;
+use App\Containers\AuthSection\Authentication\Data\Repositories\UserRepository;
 use Containers\DataSection\DataSystem\Models\Board;
 use Containers\DataSection\DataSystem\Models\BoardTask;
 use Containers\DataSection\DataSystem\Models\Channel;
@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Laravel\Passport\HasApiTokens;
 use Nucleus\Attributes\ModelEntity;
 use Ship\Parents\Models\UserModel;
 
@@ -77,10 +78,12 @@ use Ship\Parents\Models\UserModel;
 #[ModelEntity(repositoryClass: UserRepository::class)]
 final class User extends UserModel
 {
+    use HasApiTokens;
+
     /**
      * @var string
      */
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'userId';
 
     /**
      * The attributes that are mass assignable.
@@ -92,7 +95,7 @@ final class User extends UserModel
         'password',
         'phone',
         'uid',
-        'verified_at',
+        'verifiedAt',
     ];
 
     /**
@@ -102,7 +105,7 @@ final class User extends UserModel
      */
     protected $hidden = [
         'password',
-        'remember_token',
+        'rememberToken',
     ];
 
     /**
@@ -111,7 +114,7 @@ final class User extends UserModel
      * @var array<string, string>
      */
     protected $casts = [
-        'verified_at' => 'datetime',
+        'verifiedAt' => 'datetime',
     ];
 
     /**

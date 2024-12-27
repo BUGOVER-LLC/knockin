@@ -4,7 +4,8 @@
   "description": "Home Container for nucleus.",
   "require": {
     "php": "^8.3.2",
-    "php-64bit": "^8.3.2"
+    "php-64bit": "^8.3.2",
+    "artesaos/seotools": "^1.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
