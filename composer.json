@@ -27,11 +27,12 @@
     "ext-swoole": "*",
     "ext-zlib": "*",
     "bugover/ship-manager": "^1.0.0",
-    "pda/pheanstalk": "^5.0.0",
+    "pda/pheanstalk": "^6.0.0",
     "wikimedia/composer-merge-plugin": "^2.0.0"
   },
   "require-dev": {
     "beyondcode/laravel-er-diagram-generator": "^3.0.0",
+    "composer/composer": "^2.8",
     "fakerphp/faker": "^1.0.0",
     "friendsofphp/php-cs-fixer": "^3.0.0",
     "jetbrains/phpstorm-stubs": "^2024.2",

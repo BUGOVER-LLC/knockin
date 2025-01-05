@@ -31,11 +31,18 @@ return [
     */
 
     'disks' => [
+        // DISK
+        'tmp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/tmp'),
+            'throw' => false,
+            'visibility' => 'private',
+        ],
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/private'),
-            'serve' => true,
+            'root' => storage_path('app/local'),
+            'visibility' => 'private',
             'throw' => false,
         ],
 
