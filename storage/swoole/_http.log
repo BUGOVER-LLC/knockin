@@ -1,0 +1,87 @@
+[2024-12-24 08:00:48 @8197.0]	WARNING	ListenPort::listen(): listen(127.0.0.1:8000, 512) failed, Error: Address already in use[98]
+[2024-12-24 08:31:54 ^8215.2]	WARNING	swoole_signal_callback() (ERRNO 721): Unable to find callback function for signal Hangup: 1
+[2024-12-24 08:31:54 #8214.0]	WARNING	swoole_signal_callback() (ERRNO 721): Unable to find callback function for signal Hangup: 1
+[2024-12-24 08:31:54 ^8218.5]	WARNING	swoole_signal_callback() (ERRNO 721): Unable to find callback function for signal Hangup: 1
+[2024-12-24 08:31:54 ^8217.4]	WARNING	swoole_signal_callback() (ERRNO 721): Unable to find callback function for signal Hangup: 1
+[2024-12-24 08:31:54 ^8216.3]	WARNING	swoole_signal_callback() (ERRNO 721): Unable to find callback function for signal Hangup: 1
+[2024-12-24 09:00:23 #9083.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:08:53 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:08:53 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:08:59 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61120, id=1) exit timeout, force kill the process
+[2024-12-24 09:08:59 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61119, id=0) exit timeout, force kill the process
+[2024-12-24 09:08:59 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61124, id=5) exit timeout, force kill the process
+[2024-12-24 09:08:59 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61123, id=4) exit timeout, force kill the process
+[2024-12-24 09:08:59 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61122, id=3) exit timeout, force kill the process
+[2024-12-24 09:08:59 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61121, id=2) exit timeout, force kill the process
+[2024-12-24 09:08:59 #61081.0]	WARNING	Worker::report_error(): worker(pid=61120, id=1) abnormal exit, status=0, signal=9
+[2024-12-24 09:08:59 #61081.0]	WARNING	Worker::report_error(): worker(pid=61121, id=2) abnormal exit, status=0, signal=9
+[2024-12-24 09:08:59 #61081.0]	WARNING	Worker::report_error(): worker(pid=61119, id=0) abnormal exit, status=0, signal=9
+[2024-12-24 09:08:59 #61081.0]	WARNING	Worker::report_error(): worker(pid=61124, id=5) abnormal exit, status=0, signal=9
+[2024-12-24 09:08:59 #61081.0]	WARNING	Worker::report_error(): worker(pid=61123, id=4) abnormal exit, status=0, signal=9
+[2024-12-24 09:08:59 #61081.0]	WARNING	Worker::report_error(): worker(pid=61122, id=3) abnormal exit, status=0, signal=9
+[2024-12-24 09:09:12 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:09:21 #61073.2]	WARNING	Server::timer_callback() (ERRNO 9007): No idle task worker is available
+[2024-12-24 09:17:53 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:18:03 #61073.2]	WARNING	Server::timer_callback() (ERRNO 9007): No idle task worker is available
+[2024-12-24 09:19:37 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:20:47 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:20:49 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:20:55 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61771, id=1) exit timeout, force kill the process
+[2024-12-24 09:20:55 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61770, id=0) exit timeout, force kill the process
+[2024-12-24 09:20:55 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61775, id=5) exit timeout, force kill the process
+[2024-12-24 09:20:55 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61774, id=4) exit timeout, force kill the process
+[2024-12-24 09:20:55 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61773, id=3) exit timeout, force kill the process
+[2024-12-24 09:20:55 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61772, id=2) exit timeout, force kill the process
+[2024-12-24 09:20:55 #61081.0]	WARNING	Worker::report_error(): worker(pid=61771, id=1) abnormal exit, status=0, signal=9
+[2024-12-24 09:20:55 #61081.0]	WARNING	Worker::report_error(): worker(pid=61772, id=2) abnormal exit, status=0, signal=9
+[2024-12-24 09:20:55 #61081.0]	WARNING	Worker::report_error(): worker(pid=61773, id=3) abnormal exit, status=0, signal=9
+[2024-12-24 09:20:55 #61081.0]	WARNING	Worker::report_error(): worker(pid=61770, id=0) abnormal exit, status=0, signal=9
+[2024-12-24 09:20:55 #61081.0]	WARNING	Worker::report_error(): worker(pid=61774, id=4) abnormal exit, status=0, signal=9
+[2024-12-24 09:20:55 #61081.0]	WARNING	Worker::report_error(): worker(pid=61775, id=5) abnormal exit, status=0, signal=9
+[2024-12-24 09:20:58 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:21:04 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61776, id=1) exit timeout, force kill the process
+[2024-12-24 09:21:04 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61779, id=0) exit timeout, force kill the process
+[2024-12-24 09:21:04 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61781, id=5) exit timeout, force kill the process
+[2024-12-24 09:21:04 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61780, id=4) exit timeout, force kill the process
+[2024-12-24 09:21:04 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61778, id=3) exit timeout, force kill the process
+[2024-12-24 09:21:04 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=61777, id=2) exit timeout, force kill the process
+[2024-12-24 09:21:04 #61081.0]	WARNING	Worker::report_error(): worker(pid=61776, id=1) abnormal exit, status=0, signal=9
+[2024-12-24 09:21:04 #61081.0]	WARNING	Worker::report_error(): worker(pid=61778, id=3) abnormal exit, status=0, signal=9
+[2024-12-24 09:21:04 #61081.0]	WARNING	Worker::report_error(): worker(pid=61781, id=5) abnormal exit, status=0, signal=9
+[2024-12-24 09:21:04 #61081.0]	WARNING	Worker::report_error(): worker(pid=61779, id=0) abnormal exit, status=0, signal=9
+[2024-12-24 09:21:04 #61081.0]	WARNING	Worker::report_error(): worker(pid=61777, id=2) abnormal exit, status=0, signal=9
+[2024-12-24 09:21:04 #61081.0]	WARNING	Worker::report_error(): worker(pid=61780, id=4) abnormal exit, status=0, signal=9
+[2024-12-24 09:23:28 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:23:51 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:24:00 #61073.2]	WARNING	Server::timer_callback() (ERRNO 9007): No idle task worker is available
+[2024-12-24 09:29:24 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:40:40 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:40:46 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:41:12 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:42:02 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:42:02 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:42:08 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62441, id=1) exit timeout, force kill the process
+[2024-12-24 09:42:08 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62440, id=0) exit timeout, force kill the process
+[2024-12-24 09:42:08 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62445, id=5) exit timeout, force kill the process
+[2024-12-24 09:42:08 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62444, id=4) exit timeout, force kill the process
+[2024-12-24 09:42:08 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62443, id=3) exit timeout, force kill the process
+[2024-12-24 09:42:08 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62442, id=2) exit timeout, force kill the process
+[2024-12-24 09:42:08 #61081.0]	WARNING	Worker::report_error(): worker(pid=62441, id=1) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:08 #61081.0]	WARNING	Worker::report_error(): worker(pid=62445, id=5) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:09 #61081.0]	WARNING	Worker::report_error(): worker(pid=62443, id=3) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:09 #61081.0]	WARNING	Worker::report_error(): worker(pid=62444, id=4) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:09 #61081.0]	WARNING	Worker::report_error(): worker(pid=62440, id=0) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:09 #61081.0]	WARNING	Worker::report_error(): worker(pid=62442, id=2) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:11 #61081.0]	INFO	Server is reloading all workers now
+[2024-12-24 09:42:17 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62446, id=1) exit timeout, force kill the process
+[2024-12-24 09:42:17 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62450, id=0) exit timeout, force kill the process
+[2024-12-24 09:42:17 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62447, id=5) exit timeout, force kill the process
+[2024-12-24 09:42:17 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62449, id=4) exit timeout, force kill the process
+[2024-12-24 09:42:17 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62448, id=3) exit timeout, force kill the process
+[2024-12-24 09:42:17 #61081.0]	WARNING	Manager::kill_timeout_process() (ERRNO 9101): worker(pid=62451, id=2) exit timeout, force kill the process
+[2024-12-24 09:42:17 #61081.0]	WARNING	Worker::report_error(): worker(pid=62446, id=1) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:17 #61081.0]	WARNING	Worker::report_error(): worker(pid=62450, id=0) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:17 #61081.0]	WARNING	Worker::report_error(): worker(pid=62447, id=5) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:17 #61081.0]	WARNING	Worker::report_error(): worker(pid=62448, id=3) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:17 #61081.0]	WARNING	Worker::report_error(): worker(pid=62449, id=4) abnormal exit, status=0, signal=9
+[2024-12-24 09:42:17 #61081.0]	WARNING	Worker::report_error(): worker(pid=62451, id=2) abnormal exit, status=0, signal=9
