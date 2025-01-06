@@ -6,9 +6,9 @@ namespace Containers\DataSection\FileSystem\Tasks;
 
 use Containers\DataSection\FileSystem\Data\Repositories\FileSystemRepository;
 use Containers\DataSection\FileSystem\Models\FileSystem;
-use Ship\Exceptions\NotFoundException;
-use Ship\Exceptions\UpdateResourceFailedException;
-use Ship\Parents\Tasks\Task as ParentTask;
+use Ship\Exception\NotFoundException;
+use Ship\Exception\UpdateResourceFailedException;
+use Ship\Parent\Task\Task as ParentTask;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Closure;

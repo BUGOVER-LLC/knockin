@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Containers\AuthSection\Authentication\UI\WEB\Controllers\GetAllAuthenticationsController;
+use Containers\AuthSection\Authentication\UI\WEB\Controller\GetAllAuthenticationsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('authentications', [GetAllAuthenticationsController::class, 'index'])

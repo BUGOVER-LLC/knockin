@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\DataSection\DataSystem\Data\Seeders;
+namespace Containers\DataSection\DataSystem\Data\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\DataSection\FileSystem\UI\API\Requests;
 
-use Ship\Parents\Requests\Request as ParentRequest;
+use Ship\Parent\Request\Request as ParentRequest;
 
 class GetAllFileSystemsRequest extends ParentRequest
 {

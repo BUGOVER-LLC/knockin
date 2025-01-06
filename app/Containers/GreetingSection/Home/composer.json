@@ -23,7 +23,7 @@
     },
     "laravel": {
       "providers": [
-        "Containers\\GreetingSection\\Home\\Providers\\MainServiceProvider"
+        "Containers\\GreetingSection\\Home\\Provider\\MainServiceProvider"
       ]
     }
   }

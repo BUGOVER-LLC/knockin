@@ -8,7 +8,7 @@ use Containers\DataSection\FileSystem\Actions\FindFileSystemByIdAction;
 use Containers\DataSection\FileSystem\Actions\UpdateFileSystemAction;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\EditFileSystemRequest;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\UpdateFileSystemRequest;
-use Ship\Parents\Controllers\WebController;
+use Ship\Parent\Controller\WebController;
 
 class UpdateFileSystemController extends WebController
 {

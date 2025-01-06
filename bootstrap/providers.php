@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    /* Laravel Framework Service Providers...*/
+    /* Illuminate Service Providers */
     Illuminate\Auth\AuthServiceProvider::class,
     Illuminate\Broadcasting\BroadcastServiceProvider::class,
     Illuminate\Bus\BusServiceProvider::class,

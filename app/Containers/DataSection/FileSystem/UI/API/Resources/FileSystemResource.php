@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Containers\DataSection\FileSystem\UI\API\Resource;
 
 use Containers\DataSection\FileSystem\Models\FileSystem;
-use Ship\Parents\Resources\Resource as ParentResource;
+use Ship\Parent\Resource\Resource as ParentResource;
 
 class FileSystemResource extends ParentResource
 {

@@ -6,7 +6,7 @@ namespace Containers\DataSection\FileSystem\UI\WEB\Controllers;
 
 use Containers\DataSection\FileSystem\Actions\FindFileSystemByIdAction;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\FindFileSystemByIdRequest;
-use Ship\Parents\Controllers\WebController;
+use Ship\Parent\Controller\WebController;
 
 class FindFileSystemByIdController extends WebController
 {

@@ -6,7 +6,7 @@ namespace Containers\DataSection\FileSystem\Tasks;
 
 use Nucleus\Exceptions\CoreInternalErrorException;
 use Containers\DataSection\FileSystem\Data\Repositories\FileSystemRepository;
-use Ship\Parents\Tasks\Task as ParentTask;
+use Ship\Parent\Task\Task as ParentTask;
 
 class GetAllFileSystemsTask extends ParentTask
 {

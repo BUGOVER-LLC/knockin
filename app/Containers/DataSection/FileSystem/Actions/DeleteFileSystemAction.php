@@ -6,9 +6,9 @@ namespace Containers\DataSection\FileSystem\Actions;
 
 use Containers\DataSection\FileSystem\Tasks\DeleteFileSystemTask;
 use Containers\DataSection\FileSystem\UI\API\Requests\DeleteFileSystemRequest;
-use Ship\Exceptions\DeleteResourceFailedException;
-use Ship\Exceptions\NotFoundException;
-use Ship\Parents\Actions\Action as ParentAction;
+use Ship\Exception\DeleteResourceFailedException;
+use Ship\Exception\NotFoundException;
+use Ship\Parent\Action\Action as ParentAction;
 
 class DeleteFileSystemAction extends ParentAction
 {

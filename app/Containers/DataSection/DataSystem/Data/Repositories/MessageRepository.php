@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Containers\DataSection\DataSystem\Data\Repositories;
 
-use Containers\DataSection\DataSystem\Models\Message;
+use Containers\DataSection\DataSystem\Model\Message;
 use Illuminate\Contracts\Container\Container;
-use Ship\Parents\Repositories\Repository as AbstractRepository;
+use Ship\Parent\Repositories\Repository as AbstractRepository;
 
 class MessageRepository extends AbstractRepository
 {

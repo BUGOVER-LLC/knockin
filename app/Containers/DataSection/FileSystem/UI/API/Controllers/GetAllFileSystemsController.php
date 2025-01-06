@@ -9,7 +9,7 @@ use Nucleus\Exceptions\InvalidResourceException;
 use Containers\DataSection\FileSystem\Actions\GetAllFileSystemsAction;
 use Containers\DataSection\FileSystem\UI\API\Requests\GetAllFileSystemsRequest;
 use Containers\DataSection\FileSystem\UI\API\Resource\FileSystemResource;
-use Ship\Parents\Controllers\ApiController;
+use Ship\Parent\Controller\ApiController;
 
 class GetAllFileSystemsController extends ApiController
 {

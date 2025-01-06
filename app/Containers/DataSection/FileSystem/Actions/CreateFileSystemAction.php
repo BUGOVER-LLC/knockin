@@ -8,8 +8,8 @@ use Nucleus\Exceptions\IncorrectIdException;
 use Containers\DataSection\FileSystem\Models\FileSystem;
 use Containers\DataSection\FileSystem\Tasks\CreateFileSystemTask;
 use Containers\DataSection\FileSystem\UI\API\Requests\CreateFileSystemRequest;
-use Ship\Exceptions\CreateResourceFailedException;
-use Ship\Parents\Actions\Action as ParentAction;
+use Ship\Exception\CreateResourceFailedException;
+use Ship\Parent\Action\Action as ParentAction;
 
 class CreateFileSystemAction extends ParentAction
 {

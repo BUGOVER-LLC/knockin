@@ -6,8 +6,8 @@ namespace Containers\DataSection\FileSystem\Tasks;
 
 use Containers\DataSection\FileSystem\Data\Repositories\FileSystemRepository;
 use Containers\DataSection\FileSystem\Models\FileSystem;
-use Ship\Exceptions\CreateResourceFailedException;
-use Ship\Parents\Tasks\Task as ParentTask;
+use Ship\Exception\CreateResourceFailedException;
+use Ship\Parent\Task\Task as ParentTask;
 use Exception;
 use Closure;
 

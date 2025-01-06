@@ -8,9 +8,9 @@ use Nucleus\Exceptions\IncorrectIdException;
 use Containers\DataSection\FileSystem\Models\FileSystem;
 use Containers\DataSection\FileSystem\Tasks\UpdateFileSystemTask;
 use Containers\DataSection\FileSystem\UI\API\Requests\UpdateFileSystemRequest;
-use Ship\Exceptions\NotFoundException;
-use Ship\Exceptions\UpdateResourceFailedException;
-use Ship\Parents\Actions\Action as ParentAction;
+use Ship\Exception\NotFoundException;
+use Ship\Exception\UpdateResourceFailedException;
+use Ship\Parent\Action\Action as ParentAction;
 
 class UpdateFileSystemAction extends ParentAction
 {

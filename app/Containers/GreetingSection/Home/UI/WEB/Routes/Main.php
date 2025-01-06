@@ -2,12 +2,16 @@
 
 declare(strict_types=1);
 
-use Containers\GreetingSection\Home\UI\WEB\Controllers\CreateHomeController;
+use App\Containers\GreetingSection\Home\UI\WEB\Controller\ContactController;
+use App\Containers\GreetingSection\Home\UI\WEB\Controller\PricingController;
+use Containers\GreetingSection\Home\UI\WEB\Controller\CreateHomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(
-    ['namespace' => '\Containers\GreetingSection\Home\UI\WEB\Controllers', 'middleware' => ['guest']],
+    ['middleware' => ['guest']],
     static fn() => [
         Route::get('/', CreateHomeController::class),
+        Route::get('contact', ContactController::class),
+        Route::get('pricing', PricingController::class),
     ]
 );

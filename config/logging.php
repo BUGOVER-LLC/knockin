@@ -61,7 +61,7 @@ return [
 
         'single' => [
             'driver' => 'single',
-            'path' => base_path('logs/laravel.log'),
+            'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
         ],
 

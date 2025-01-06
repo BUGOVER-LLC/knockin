@@ -6,7 +6,7 @@ namespace Containers\DataSection\FileSystem\UI\WEB\Controllers;
 
 use Containers\DataSection\FileSystem\Actions\GetAllFileSystemsAction;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\GetAllFileSystemsRequest;
-use Ship\Parents\Controllers\WebController;
+use Ship\Parent\Controller\WebController;
 
 class GetAllFileSystemsController extends WebController
 {

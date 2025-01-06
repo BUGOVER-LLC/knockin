@@ -6,9 +6,9 @@ namespace Containers\DataSection\FileSystem\UI\API\Controllers;
 
 use Containers\DataSection\FileSystem\Actions\DeleteFileSystemAction;
 use Containers\DataSection\FileSystem\UI\API\Requests\DeleteFileSystemRequest;
-use Ship\Exceptions\DeleteResourceFailedException;
-use Ship\Exceptions\NotFoundException;
-use Ship\Parents\Controllers\ApiController;
+use Ship\Exception\DeleteResourceFailedException;
+use Ship\Exception\NotFoundException;
+use Ship\Parent\Controller\ApiController;
 use Illuminate\Http\JsonResponse;
 
 class DeleteFileSystemController extends ApiController

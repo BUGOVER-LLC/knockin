@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Containers\GreetingSection\Home\Data\Repositories;
 
-use Containers\GreetingSection\Home\Models\Home;
-use Ship\Parents\Repositories\Repository as AbstractRepository;
+use Containers\GreetingSection\Home\Model\Home;
+use Ship\Parent\Repository\Repository as AbstractRepository;
 use Illuminate\Contracts\Container\Container;
 
 class HomeRepository extends AbstractRepository

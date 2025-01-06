@@ -2,8 +2,8 @@
 
 namespace Containers\DataSection\DataSystem\Data\Factories;
 
-use Containers\DataSection\DataSystem\Models\DataContainer;
-use Ship\Parents\Factories\Factory as ParentFactory;
+use Containers\DataSection\DataSystem\Model\DataContainer;
+use Ship\Parent\Factories\Factory as ParentFactory;
 
 class DataContainerFactory extends ParentFactory
 {

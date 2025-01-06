@@ -6,7 +6,7 @@ namespace Containers\DataSection\FileSystem\UI\WEB\Controllers;
 
 use Containers\DataSection\FileSystem\Actions\DeleteFileSystemAction;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\DeleteFileSystemRequest;
-use Ship\Parents\Controllers\WebController;
+use Ship\Parent\Controller\WebController;
 
 class DeleteFileSystemController extends WebController
 {

@@ -7,7 +7,7 @@ namespace Containers\DataSection\FileSystem\UI\WEB\Controllers;
 use Containers\DataSection\FileSystem\Actions\CreateFileSystemAction;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\CreateFileSystemRequest;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\StoreFileSystemRequest;
-use Ship\Parents\Controllers\WebController;
+use Ship\Parent\Controller\WebController;
 
 class CreateFileSystemController extends WebController
 {

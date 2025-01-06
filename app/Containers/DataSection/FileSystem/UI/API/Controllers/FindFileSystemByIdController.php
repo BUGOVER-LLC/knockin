@@ -8,8 +8,8 @@ use Nucleus\Exceptions\InvalidResourceException;
 use Containers\DataSection\FileSystem\Actions\FindFileSystemByIdAction;
 use Containers\DataSection\FileSystem\UI\API\Requests\FindFileSystemByIdRequest;
 use Containers\DataSection\FileSystem\UI\API\Resource\FileSystemResource;
-use Ship\Exceptions\NotFoundException;
-use Ship\Parents\Controllers\ApiController;
+use Ship\Exception\NotFoundException;
+use Ship\Parent\Controller\ApiController;
 
 class FindFileSystemByIdController extends ApiController
 {

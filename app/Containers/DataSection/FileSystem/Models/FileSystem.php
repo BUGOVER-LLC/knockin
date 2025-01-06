@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Containers\DataSection\FileSystem\Models;
 
-use Ship\Parents\Models\Model as ParentModel;
+use Ship\Parent\Model\Model as ParentModel;
 use Nucleus\Attributes\ModelEntity;
 
 #[ModelEntity()]
 /**
- * 
+ *
  *
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FileSystem newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|FileSystem newQuery()

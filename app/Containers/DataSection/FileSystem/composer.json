@@ -22,7 +22,7 @@
     },
     "laravel": {
       "providers": [
-        "Containers\\DataSection\\FileSystem\\Providers\\MainServiceProvider"
+        "App\\Containers\\DataSection\\FileSystem\\Providers\\MainServiceProvider"
       ]
     }
   }
