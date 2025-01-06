@@ -20,7 +20,6 @@ yarn-error.log
 /.vscode
 var
 .php-cs-fixer.cache
-app/Ship
 .vagrant
 /auth.json
 phpstan.neon
