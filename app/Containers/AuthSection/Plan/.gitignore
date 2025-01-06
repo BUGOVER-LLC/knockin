@@ -1,0 +1,5 @@
+### Nucleus Plan Container
+.idea
+vendor
+node_modules
+.env

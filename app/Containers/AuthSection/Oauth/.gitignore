@@ -1,0 +1,5 @@
+### Nucleus Oauth Container
+.idea
+vendor
+node_modules
+.env
