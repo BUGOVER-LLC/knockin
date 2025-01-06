@@ -70,7 +70,7 @@ return [
     | the Migrations on disk haven't actually been run in the database.
     |
     */
-    'Migrations' => 'Migrations',
+    'migrations' => 'Migrations',
 
     /*
     |--------------------------------------------------------------------------
@@ -87,7 +87,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'phpredis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . 'store_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'store_'),
             'serializer' => \defined('\Redis::SERIALIZER_IGBINARY') ? Redis::SERIALIZER_IGBINARY : null,
             'compression' => \defined('\Redis::COMPRESSION_ZSTD_MAX') ? Redis::COMPRESSION_ZSTD_MAX : null,
         ],

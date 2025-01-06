@@ -1,3 +1,4 @@
+---
 ip: 192.168.56.60
 memory: 2048
 cpus: 2
@@ -5,6 +6,7 @@ provider: virtualbox
 authorize: ~/.ssh/id_rsa.pub
 keys:
   - ~/.ssh/id_rsa
+ssl: true
 
 folders:
   - map: ~/work/projects/noix
@@ -16,30 +18,33 @@ folders:
 sites:
   - map: noix.loc
     to: /home/vagrant/noix/public
-    php: "8.2"
+    php: "8.3"
     schedule: true
     type: laravel
 
   - map: noix.phpmyadmin.loc
     to: /home/vagrant/noix/.etc/phpmyadmin
-    php: "8.2"
+    php: "8.3"
+    type: statamic
 
 databases:
   - noix
   - noix_test
 
 features:
-  - postgresql:
-      version: 16.0
-  - elasticsearch:
-      version: 8.0.0
-  - golang: true
+  - mysql:
+      version: 8.4
+  - redis:
+      version: 7
   - minio: true
+  - mailpit: true
   - python: true
-  - trader: true
-  - webdriver: true
-  - mysql: false
-  - mariadb: false
+  - golang: true
+  - mongodb: true
+  - rabbitmq: false
+  - postgresql: false
+  - webdriver: false
+  - docker: false
   - php5.6: false
   - php7.0: false
   - php7.1: false
@@ -47,15 +52,22 @@ features:
   - php7.3: false
   - php7.4: false
   - php8.0: false
-  - php8.1: true
-  - php8.2: true
+  - php8.1: false
+  - php8.2: false
   - php8.3: true
+  - php8.4: true
 
 services:
   - enabled:
-      - "postgresql"
-  - disabled:
-      - "elasticsearch"
+      - "mysql"
+      - "minio"
+      - "redis"
+
+buckets:
+  - name: local
+    policy: public
+  - name: shared
+    policy: public
 
 name: noix
 hostname: noix.loc
