@@ -1,6 +1,6 @@
 <div class="container-fluid container-xl position-relative d-flex align-items-center">
     <a href="/" class="logo d-flex align-items-center me-auto">
-        <img src="<?php echo e(asset('assets/img/logo.png')); ?>" alt="">
+        <img src="<?php echo e(asset('storage/img/logo.png')); ?>" alt="">
         <h1 class="sitename">QuickStart</h1>
     </a>
 

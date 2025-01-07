@@ -13,8 +13,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Index - QuickStart</title>
     <!-- Favicons -->
-    <link href="<?php echo e(asset('assets/img/favicon.png')); ?>" rel="icon">
-    <link href="<?php echo e(asset('assets/img/apple-touch-icon.png')); ?>" rel="apple-touch-icon">
+    <link href="<?php echo e(asset('storage/img/favicon.png')); ?>" rel="icon">
+    <link href="<?php echo e(asset('storage/img/apple-touch-icon.png')); ?>" rel="apple-touch-icon">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>

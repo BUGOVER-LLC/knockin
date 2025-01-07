@@ -2,7 +2,7 @@
 <?php $__env->startSection('main-content'); ?>
     <section id="hero" class="hero section">
         <div class="hero-bg">
-            <img src="<?php echo e(asset('assets/img/hero-bg-light.webp')); ?>" alt="hero-image">
+            <img src="<?php echo e(asset('storage/img/hero-bg-light.webp')); ?>" alt="hero-image">
         </div>
         <div class="container text-center">
             <div class="d-flex flex-column justify-content-center align-items-center">
@@ -15,7 +15,7 @@
                        class="glightbox btn-watch-video d-flex align-items-center"><i
                             class="bi bi-play-circle"></i><span>Watch Video</span></a>
                 </div>
-                <img src="<?php echo e(asset('assets/img/hero-services-img.webp')); ?>" class="img-fluid hero-img" alt=""
+                <img src="<?php echo e(asset('storage/img/hero-services-img.webp')); ?>" class="img-fluid hero-img" alt=""
                      data-aos="zoom-out"
                      data-aos-delay="300">
             </div>

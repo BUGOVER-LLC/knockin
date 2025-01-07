@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\DataSection\FileSystem\Providers;
+namespace Containers\DataSection\FileSystem\Provider;
 
 use Ship\Parent\Provider\MainServiceProvider as ParentMainServiceProvider;
 
