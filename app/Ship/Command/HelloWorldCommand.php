@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ship\Commands;
+namespace Ship\Command;
 
 use Ship\Parent\Command\ConsoleCommand;
 
