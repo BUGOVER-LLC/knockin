@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Authentication\Model;
+namespace App\Containers\AuthSection\Authentication\Domain\Model;
 
 use Ship\Parent\Model\UserModel;
 

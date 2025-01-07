@@ -43,7 +43,7 @@
     "laravel/sail": "^1.0.0",
     "laravel/telescope": "^5.0.0",
     "orangehill/iseed": "^3.0.1",
-    "phpstan/phpstan": "*",
+    "phpstan/phpstan": "^1.0.0",
     "phpunit/phpunit": "^11.0.0",
     "predis/predis": "^2.0.0",
     "roave/security-advisories": "dev-latest",

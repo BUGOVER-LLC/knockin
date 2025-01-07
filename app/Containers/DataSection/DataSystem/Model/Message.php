@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\DataSection\DataSystem\Model;
 
-use Containers\AuthSection\Authentication\Model\User;
+use App\Containers\AuthSection\Authentication\Domain\Model\User;
 use Containers\DataSection\DataSystem\Data\Repositories\MessageRepository;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Nucleus\Attributes\ModelEntity;

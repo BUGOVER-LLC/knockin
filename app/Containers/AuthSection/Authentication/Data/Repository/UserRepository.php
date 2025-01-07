@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\AuthSection\Authentication\Data\Repository;
 
-use Containers\AuthSection\Authentication\Model\User;
+use App\Containers\AuthSection\Authentication\Domain\Model\User;
 use Illuminate\Contracts\Container\Container;
 use Ship\Parent\Repository\Repository;
 
