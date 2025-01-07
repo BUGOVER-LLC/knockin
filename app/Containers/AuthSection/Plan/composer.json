@@ -22,7 +22,7 @@
     },
     "laravel": {
       "providers": [
-        "App\\Containers\\AuthSection\\Plan\\Provider\\MainServiceProvider"
+        "Containers\\AuthSection\\Plan\\Provider\\MainServiceProvider"
       ]
     }
   }
