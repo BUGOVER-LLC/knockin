@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\GreetingSection\Home\UI\WEB\Controller;
+namespace Containers\GreetingSection\Home\UI\WEB\Controller;
 
 use Ship\Parent\Controller\WebController;
 

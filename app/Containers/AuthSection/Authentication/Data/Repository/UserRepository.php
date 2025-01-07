@@ -6,7 +6,7 @@ namespace Containers\AuthSection\Authentication\Data\Repository;
 
 use Containers\AuthSection\Authentication\Model\User;
 use Illuminate\Contracts\Container\Container;
-use Ship\Parent\Repositories\Repository;
+use Ship\Parent\Repository\Repository;
 
 class UserRepository extends Repository
 {
