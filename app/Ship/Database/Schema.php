@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Database;
+namespace Ship\Database;
 
 use Illuminate\Database\Schema\Builder;
 use Illuminate\Support\Facades\Schema as BaseSchema;

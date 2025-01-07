@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Containers\DataSection\FileSystem\UI\API\Resource;
 
 use Containers\DataSection\FileSystem\Models\FileSystem;
+use Illuminate\Http\Request;
+use Nucleus\Abstracts\Schema\Schema;
 use Ship\Parent\Resource\Resource as ParentResource;
 
 class FileSystemResource extends ParentResource
@@ -32,5 +34,10 @@ class FileSystemResource extends ParentResource
             'readable_updated_at' => $filesystem->updated_at->diffForHumans(),
             // 'deleted_at' => $filesystem->deleted_at,
         ], $response);
+    }
+
+    public function toSchema(Request $request): Schema|string
+    {
+        // TODO: Implement toSchema() method.
     }
 }

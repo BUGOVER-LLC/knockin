@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
-use App\Ship\Database\Blueprint;
-use App\Ship\Database\Schema;
+use Ship\Database\Blueprint;
+use Ship\Database\Schema;
 
 return new class extends Migration
 {
