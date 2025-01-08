@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\AuthSection\Authentication\UI\API\Schema;
+namespace Containers\AuthSection\Authentication\UI\API\Schema;
 
 use Illuminate\Http\Request;
 use Nucleus\Abstracts\Schema\Schema;

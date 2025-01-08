@@ -61,7 +61,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'passport',
-            'model' => \App\Containers\AuthSection\Authentication\Domain\Model\User::class,
+            'model' => \Containers\AuthSection\Authentication\Domain\Model\User::class,
         ],
     ],
 

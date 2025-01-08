@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06ac5ebfe3b1ac022991c38061fb371f",
+    "content-hash": "990fc9cee2e8be52dae5eaf1a79329fd",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -351,16 +351,16 @@
         },
         {
             "name": "bugover/ship",
-            "version": "1.9.10",
+            "version": "1.9.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship.git",
-                "reference": "3c51d2ea1142a1193e832a6c5ca5c2198682387e"
+                "reference": "59945565679b8769d2e457cd5a2bd68fbe708c45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/3c51d2ea1142a1193e832a6c5ca5c2198682387e",
-                "reference": "3c51d2ea1142a1193e832a6c5ca5c2198682387e",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/59945565679b8769d2e457cd5a2bd68fbe708c45",
+                "reference": "59945565679b8769d2e457cd5a2bd68fbe708c45",
                 "shasum": ""
             },
             "require": {
@@ -432,9 +432,9 @@
             ],
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.9.10"
+                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.9.11"
             },
-            "time": "2025-01-07T08:36:01+00:00"
+            "time": "2025-01-07T18:39:25+00:00"
         },
         {
             "name": "bugover/ship-manager",
@@ -552,16 +552,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.5.4",
+            "version": "1.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "bc0593537a463e55cadf45fd938d23b75095b7e1"
+                "reference": "08c50d5ec4c6ced7d0271d2862dec8c1033283e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/bc0593537a463e55cadf45fd938d23b75095b7e1",
-                "reference": "bc0593537a463e55cadf45fd938d23b75095b7e1",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/08c50d5ec4c6ced7d0271d2862dec8c1033283e6",
+                "reference": "08c50d5ec4c6ced7d0271d2862dec8c1033283e6",
                 "shasum": ""
             },
             "require": {
@@ -608,7 +608,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.5.4"
+                "source": "https://github.com/composer/ca-bundle/tree/1.5.5"
             },
             "funding": [
                 {
@@ -624,7 +624,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-27T15:35:25+00:00"
+            "time": "2025-01-08T16:17:16+00:00"
         },
         {
             "name": "composer/class-map-generator",
@@ -4500,12 +4500,12 @@
             "version": "3.8.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
+                "url": "https://github.com/CarbonPHP/carbon.git",
                 "reference": "129700ed449b1f02d70272d2ac802357c8c30c58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
                 "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
                 "shasum": ""
             },
@@ -10405,16 +10405,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v3.5.2",
+            "version": "v3.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "655e0576260b74014731280826c43c0417cb1f20"
+                "reference": "271682a2a6d57691e1c7ff378f44e4ae6ac2aba0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/655e0576260b74014731280826c43c0417cb1f20",
-                "reference": "655e0576260b74014731280826c43c0417cb1f20",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/271682a2a6d57691e1c7ff378f44e4ae6ac2aba0",
+                "reference": "271682a2a6d57691e1c7ff378f44e4ae6ac2aba0",
                 "shasum": ""
             },
             "require": {
@@ -10483,7 +10483,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-ide-helper/issues",
-                "source": "https://github.com/barryvdh/laravel-ide-helper/tree/v3.5.2"
+                "source": "https://github.com/barryvdh/laravel-ide-helper/tree/v3.5.3"
             },
             "funding": [
                 {
@@ -10495,7 +10495,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-06T15:29:58+00:00"
+            "time": "2025-01-08T10:01:30+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -11144,16 +11144,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.66.2",
+            "version": "v3.67.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "25addd3cb10e54cfd20b84d9c083c6625cd52218"
+                "reference": "0ad34c75d1172f7d30320460e803887981830cbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/25addd3cb10e54cfd20b84d9c083c6625cd52218",
-                "reference": "25addd3cb10e54cfd20b84d9c083c6625cd52218",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/0ad34c75d1172f7d30320460e803887981830cbf",
+                "reference": "0ad34c75d1172f7d30320460e803887981830cbf",
                 "shasum": ""
             },
             "require": {
@@ -11235,7 +11235,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.66.2"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.67.0"
             },
             "funding": [
                 {
@@ -11243,7 +11243,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-07T09:21:51+00:00"
+            "time": "2025-01-08T10:17:40+00:00"
         },
         {
             "name": "jetbrains/phpstorm-stubs",

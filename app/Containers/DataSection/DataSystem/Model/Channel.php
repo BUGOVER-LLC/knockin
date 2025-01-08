@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\DataSection\DataSystem\Model;
 
-use App\Containers\AuthSection\Authentication\Domain\Model\User;
+use Containers\AuthSection\Authentication\Domain\Model\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Containers\AuthSection\Authentication\Domain\ValueObject\User;
+namespace Containers\AuthSection\Authentication\Domain\ValueObject\User;
 
 use Illuminate\Database\Eloquent\Model;
 use Ship\Parent\Value\Value;
