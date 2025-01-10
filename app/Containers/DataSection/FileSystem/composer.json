@@ -1,5 +1,5 @@
 {
-  "name": "ship/file-system",
+  "name": "data-section/file-system",
   "type": "ship-container",
   "description": "FileSystem Container for nucleus.",
   "require": {

@@ -1,5 +1,5 @@
 {
-  "name": "ship/home",
+  "name": "gretting-section/home",
   "type": "ship-container",
   "description": "Home Container for nucleus.",
   "require": {

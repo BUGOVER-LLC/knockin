@@ -1,5 +1,5 @@
 {
-  "name": "ship/data-container",
+  "name": "data-section/data-system",
   "type": "ship-container",
   "description": "DataContainer Container for nucleus.",
   "require": {
