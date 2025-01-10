@@ -1,14 +1,13 @@
 <?php
 
-namespace Containers\AuthSection\Oauth\Data\Factories;
+declare(strict_types=1);
 
-use Containers\AuthSection\Oauth\Models\Oauth;
-use Ship\Parent\Factories\Factory as ParentFactory;
+namespace Containers\AuthSection\Oauth\Data\Factory;
+
+use Ship\Parent\Factory\Factory as ParentFactory;
 
 class OauthFactory extends ParentFactory
 {
-    protected $model = Oauth::class;
-
     public function definition(): array
     {
         return [
