@@ -172,7 +172,7 @@ return [
         'use-etag' => false,
     ],
 
-    'seeders' => [
+    'seeder' => [
         'deployment' => Nucleus\Commands\SeedDeploymentDataCommand::class,
         'testing' => Nucleus\Commands\SeedTestingDataCommand::class,
     ],
