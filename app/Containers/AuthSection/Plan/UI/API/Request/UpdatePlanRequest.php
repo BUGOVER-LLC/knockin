@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\WEB\Requests;
+namespace Containers\AuthSection\Plan\UI\API\Request;
 
 use Ship\Parent\Request\Request as ParentRequest;
 
-class EditPlanRequest extends ParentRequest
+class UpdatePlanRequest extends ParentRequest
 {
     /**
      * Define which Roles and/or Permissions has access to this request.

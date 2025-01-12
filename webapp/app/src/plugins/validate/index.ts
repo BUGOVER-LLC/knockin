@@ -4,7 +4,6 @@ import * as rules from 'vee-validate/dist/rules';
 import { i18n } from './i18';
 
 configure({
-    //@ts-expect-error
     defaultMessage: (field, values) => {
         values._field_ = i18n.t(`${field}`);
 

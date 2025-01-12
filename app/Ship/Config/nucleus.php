@@ -116,7 +116,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | Define a list of roles that do not need to go through the "hasAccess"
-        | check in Requests. These roles automatically pass this check. This is
+        | check in Request. These roles automatically pass this check. This is
         | useful, if you want to make all routes accessible for admin users.
         |
         | Usage: ['admin', 'editor']

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\API\Requests;
+namespace Containers\AuthSection\Plan\UI\WEB\Request;
 
 use Ship\Parent\Request\Request as ParentRequest;
 

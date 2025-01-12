@@ -1,4 +1,6 @@
-<template> </template>
+<template>
+    <v-container id="password-confirm"></v-container>
+</template>
 
 <script lang="ts">
 import { ValidationObserver, ValidationProvider } from 'vee-validate';

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\API\Controllers;
+namespace Containers\AuthSection\Plan\UI\API\Controller;
 
 use Nucleus\Exceptions\InvalidResourceException;
 use Containers\AuthSection\Plan\Action\FindPlanByIdAction;

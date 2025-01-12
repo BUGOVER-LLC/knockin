@@ -1,5 +1,5 @@
 <template lang="html">
-    <div></div>
+    <v-container id="auth-confirm"></v-container>
 </template>
 
 <script lang="ts">

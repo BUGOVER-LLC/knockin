@@ -1,4 +1,5 @@
 import en from 'vee-validate/dist/locale/en.json';
+import ru from 'vee-validate/dist/locale/ru.json';
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 
@@ -13,6 +14,9 @@ const i18n = new VueI18n({
         },
         en: {
             validation: en.messages,
+        },
+        ru: {
+            validation: ru.messages,
         },
     },
 });

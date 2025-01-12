@@ -2,35 +2,34 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\API\Controllers;
+namespace Containers\AuthSection\Plan\UI\API\Controller;
 
 use Nucleus\Exceptions\IncorrectIdException;
 use Nucleus\Exceptions\InvalidResourceException;
-use Containers\AuthSection\Plan\Action\UpdatePlanAction;
-use Containers\AuthSection\Plan\UI\API\Requests\UpdatePlanRequest;
+use Containers\AuthSection\Plan\Action\CreatePlanAction;
+use Containers\AuthSection\Plan\UI\API\Requests\CreatePlanRequest;
 use Containers\AuthSection\Plan\UI\API\Resource\PlanResource;
-use Ship\Exception\NotFoundException;
-use Ship\Exception\UpdateResourceFailedException;
+use Ship\Exception\CreateResourceFailedException;
 use Ship\Parent\Controller\ApiController;
+use Illuminate\Http\JsonResponse;
 use OpenApi\Attributes\JsonContent;
-use OpenApi\Attributes\Put;
+use OpenApi\Attributes\Post;
 use OpenApi\Attributes\Property;
 use OpenApi\Attributes\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class UpdatePlanController extends ApiController
+class CreatePlanController extends ApiController
 {
     /**
-     * @param UpdatePlanRequest $request
-     * @return array
+     * @param CreatePlanRequest $request
+     * @return JsonResponse
+     * @throws CreateResourceFailedException
      * @throws InvalidResourceException
-     * @throws UpdateResourceFailedException
      * @throws IncorrectIdException
-     * @throws NotFoundException
      */
-    #[Route(path: '/', methods: ['PUT'])]
-    #[
-         Put(
+     #[Route(path: '/', methods: ['POST'])]
+     #[
+         Post(
              path: '/',
              description: 'create',
              summary: '',
@@ -38,7 +37,7 @@ class UpdatePlanController extends ApiController
              responses: [
                  new Response(
                      response: 200,
-                     description: 'Get to Update',
+                     description: 'Get to create',
                      content: new JsonContent(properties: [
                          new Property(
                              property: '_payload',
@@ -49,10 +48,10 @@ class UpdatePlanController extends ApiController
              ]
          ),
     ]
-    public function updatePlan(UpdatePlanRequest $request): array
+    public function createPlan(CreatePlanRequest $request): JsonResponse
     {
-        $plan = app(UpdatePlanAction::class)->run($request);
+        $plan = app(CreatePlanAction::class)->run($request);
 
-        return $this->transform($plan, PlanResource::class);
+        return $this->created($this->transform($plan, PlanResource::class));
     }
 }

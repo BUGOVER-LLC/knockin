@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\API\Requests;
+namespace Containers\AuthSection\Plan\UI\WEB\Request;
 
 use Ship\Parent\Request\Request as ParentRequest;
 
-class GetAllPlansRequest extends ParentRequest
+class CreatePlanRequest extends ParentRequest
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -59,5 +59,10 @@ class GetAllPlansRequest extends ParentRequest
     public function errorMessages(): array
     {
         return [];
+    }
+
+    #[\Override] public function toDTO(): object
+    {
+        // TODO: Implement toDTO() method.
     }
 }

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\WEB\Requests;
+namespace Containers\AuthSection\Plan\UI\WEB\Request;
 
 use Ship\Parent\Request\Request as ParentRequest;
 
-class CreatePlanRequest extends ParentRequest
+class UpdatePlanRequest extends ParentRequest
 {
     /**
      * Define which Roles and/or Permissions has access to this request.
@@ -20,7 +20,7 @@ class CreatePlanRequest extends ParentRequest
      * Id's that needs decoding before applying the validation rules.
      */
     protected array $decode = [
-        // 'id',
+        'id',
     ];
 
     /**
@@ -28,7 +28,7 @@ class CreatePlanRequest extends ParentRequest
      * validation rules on them and allows accessing them like request data.
      */
     protected array $urlParameters = [
-        // 'id',
+        'id',
     ];
 
     /**
@@ -37,7 +37,7 @@ class CreatePlanRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            // 'id' => 'required',
+            // 'id' => 'required'
         ];
     }
 

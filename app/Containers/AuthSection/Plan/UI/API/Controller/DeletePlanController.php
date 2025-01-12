@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\API\Controllers;
+namespace Containers\AuthSection\Plan\UI\API\Controller;
 
 use Containers\AuthSection\Plan\Action\DeletePlanAction;
 use Containers\AuthSection\Plan\UI\API\Requests\DeletePlanRequest;

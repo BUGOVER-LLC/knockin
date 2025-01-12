@@ -104,7 +104,7 @@ return [
 
     /*
      |--------------------------------------------------------------------------
-     | Capture Ajax Requests
+     | Capture Ajax Request
      |--------------------------------------------------------------------------
      |
      | The Debugbar can capture Ajax requests and display them. If you don't want this (ie. because of errors),

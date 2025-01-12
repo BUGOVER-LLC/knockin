@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\AuthSection\Plan\UI\WEB\Controllers;
+namespace Containers\AuthSection\Plan\UI\WEB\Controller;
 
 use Containers\AuthSection\Plan\Action\CreatePlanAction;
 use Containers\AuthSection\Plan\UI\WEB\Requests\CreatePlanRequest;
