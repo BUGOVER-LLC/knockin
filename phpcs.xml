@@ -122,7 +122,7 @@
     <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
     <rule ref="Zend.Files.ClosingTag"/>
 
-    <file>app</file>
+    <file>src</file>
     <file>config</file>
     <file>database</file>
     <file->bootstrap</file->

@@ -12,8 +12,8 @@ declare(strict_types=1);
 | the IoC container for the system binding all of the various parts.
 |
 */
-$app = new Illuminate\Foundation\Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
+$app = (new Illuminate\Foundation\Application($_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)))->useAppPath(
+    __DIR__ . '/../src'
 );
 
 /*
@@ -51,5 +51,4 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-
 return $app;

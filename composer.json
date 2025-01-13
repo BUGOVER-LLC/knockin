@@ -49,14 +49,9 @@
   },
   "autoload": {
     "psr-4": {
-      "Ship\\": "app/Ship/",
-      "Containers\\": "app/Containers/",
+      "Ship\\": "src/Ship/",
+      "Containers\\": "src/Containers/",
       "Database\\Seed\\": "database/Seed/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Tests\\": "tests/"
     }
   },
   "scripts": {
@@ -78,7 +73,7 @@
   },
   "extra": {
     "installer-paths": {
-      "app/{$name}": [
+      "src/{$name}": [
         "type:laravel-library"
       ]
     },
@@ -87,9 +82,9 @@
     },
     "merge-plugin": {
       "include": [
-        "app/Ship/composer.json",
-        "app/Containers/*/composer.json",
-        "app/Containers/*/*/composer.json"
+        "src/Ship/composer.json",
+        "src/Containers/*/composer.json",
+        "src/Containers/*/*/composer.json"
       ],
       "recurse": true,
       "replace": false,

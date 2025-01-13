@@ -1,4 +1,3 @@
-/** @format */
 require('dotenv').config();
 const path = require('path');
 const mix = require('laravel-mix');
@@ -17,7 +16,7 @@ const bCompress = bObfuscate || 'true' === process.env.WEBPACK_COMPRESS;
 const bAnalyze = 'true' === process.env.WEBPACK_ANALYZE;
 const bCleanup = bObfuscate || 'true' === process.env.WEBPACK_CLEANUP;
 
-const buildFolder = 'builds';
+const buildFolder = 'builds/app';
 const buildFolderFull = path.resolve(__dirname, 'public', buildFolder);
 
 mix.setPublicPath('./../../public');
@@ -51,7 +50,7 @@ mix.extend('i18n', function (webpackConfig) {
         type: 'javascript/auto',
     });
 });
-mix.i18n().ts('./src/app.ts', `${buildFolder}/js/app.js`).sass('./src/scss/app.scss', `${buildFolder}/css/app.css`);
+mix.i18n().ts('./src/src.ts', `${buildFolder}/js/app.js`).sass('./src/scss/src.scss', `${buildFolder}/css/app.css`);
 
 const mixOptions = {
     processCssUrls: true,

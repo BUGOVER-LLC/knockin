@@ -1,6 +1,6 @@
 parameters:
     paths:
-        - app
+        - src
         - config
         - database
         - bootstrap

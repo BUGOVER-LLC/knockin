@@ -52,5 +52,5 @@ return [
     | that reason, you may prefix every cache key to avoid collisions.
     |
     */
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'cache_'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'noix'), '_').'cache_'),
 ];
