@@ -1,0 +1,31 @@
+{
+  "name": "payment-section/subscribe",
+  "type": "ship-container",
+  "description": "Subscribe Container for nucleus.",
+  "require": {
+    "php": "^8.3.2",
+    "php-64bit": "^8.3.2",
+    "laravel/cashier": "^15.6.0",
+    "laravel/framework": "^11.0.0"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Containers\\PaymentSection\\Subscribe\\": "/"
+    }
+  },
+  "extra": {
+    "ship": {
+      "container": {
+        "name": "Subscribe"
+      }
+    },
+    "laravel": {
+      "providers": [
+        "Containers\\PaymentSection\\Subscribe\\Provider\\MainServiceProvider"
+      ]
+    }
+  }
+}

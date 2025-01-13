@@ -1,0 +1,5 @@
+### Nucleus Subscribe Container
+.idea
+vendor
+node_modules
+.env
