@@ -256,7 +256,7 @@ return [
         'proxy' => false,
 
         /*
-         * Config plugin allows to fetch external configs instead of passing them to SwaggerUIBundle.
+         * config plugin allows to fetch external configs instead of passing them to SwaggerUIBundle.
          * See more at: https://github.com/swagger-api/swagger-ui#configs-plugin
          */
         'additional_config_url' => null,

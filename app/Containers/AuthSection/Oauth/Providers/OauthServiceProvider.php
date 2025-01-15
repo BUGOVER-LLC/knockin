@@ -10,29 +10,12 @@ use Containers\AuthSection\Oauth\Models\Client;
 use Containers\AuthSection\Oauth\Models\PersonalClient;
 use Containers\AuthSection\Oauth\Models\RefreshToken;
 use Containers\AuthSection\Oauth\Models\Token;
+use Illuminate\Support\ServiceProvider;
 use Laravel\Passport\Passport;
-use Ship\Parent\Provider\MainServiceProvider as ParentMainServiceProvider;
 
-/**
- * The Main Service Provider of this container, it will be automatically registered in the framework.
- */
-class MainServiceProvider extends ParentMainServiceProvider
+class OauthServiceProvider extends ServiceProvider
 {
-    /**
-     * Container Service Providers.
-     */
-    public array $serviceProviders = [
-        // InternalServiceProviderExample::class,
-    ];
-
-    /**
-     * Container Aliases
-     */
-    public array $aliases = [
-        // 'Foo' => Bar::class,
-    ];
-
-    public function boot(): void
+    public function boot()
     {
         // Keys path
         Passport::loadKeysFrom(__DIR__ . '/../var');
@@ -60,16 +43,5 @@ class MainServiceProvider extends ParentMainServiceProvider
         Passport::tokensExpireIn(now()->addDays(config('nucleus.api.expires-in')));
         Passport::refreshTokensExpireIn(now()->addDays(config('nucleus.api.refresh-expires-in')));
         Passport::personalAccessTokensExpireIn(now()->addDays(config('nucleus.api.expires-in')));
-    }
-
-    /**
-     * Register anything in the container.
-     */
-    public function register(): void
-    {
-        parent::register();
-
-        // $this->src->bind(UserRepositoryInterface::class, UserRepository::class);
-        // ...
     }
 }

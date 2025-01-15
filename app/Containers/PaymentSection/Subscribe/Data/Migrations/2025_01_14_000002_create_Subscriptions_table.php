@@ -14,8 +14,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('Subscriptions', function (Blueprint $table) {
-            $table->char('subscriptionId', 26);
-            $table->foreignId('userId');
+            $table->ulidPrimary('subscriptionId');
+            $table->foreignUlid('userId')
+                ->nullable()
+                ->constrained('Users', 'userId')
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
+
             $table->string('type');
             $table->string('stripeId')->unique();
             $table->string('stripeStatus');

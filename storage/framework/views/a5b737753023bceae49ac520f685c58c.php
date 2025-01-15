@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
-    <title><?php echo e(config('app.name', 'NOIX')); ?></title>
+    <title><?php echo e(config('src.name', 'NOIX')); ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffc107">

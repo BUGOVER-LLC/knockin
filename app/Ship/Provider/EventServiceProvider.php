@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Ship\Provider;
+namespace Ship\Provider;
 
 class EventServiceProvider extends \Ship\Parent\Provider\EventServiceProvider
 {

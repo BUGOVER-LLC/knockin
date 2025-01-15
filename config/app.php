@@ -26,7 +26,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-    'path' => env('APP_PATH', base_path('src/')),
+    'path' => env('APP_PATH', base_path('app/')),
 
     /*
     |--------------------------------------------------------------------------

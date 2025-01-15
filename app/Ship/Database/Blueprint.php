@@ -112,4 +112,9 @@ class Blueprint extends BaseBlueprint
             'unsigned' => true,
         ]));
     }
+
+    public function ulidPrimary(string $column, int $length = 26): ColumnDefinition
+    {
+        return $this->char($column, $length)->primary();
+    }
 }

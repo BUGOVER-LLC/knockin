@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\PaymentSection\Subscribe\Domain\Repository;
 
-use Containers\PaymentSection\Subscribe\Data\Repository\Subscribe;
+use Containers\PaymentSection\Subscribe\Domain\Model\Subscribe;
 use Illuminate\Contracts\Container\Container;
 use Ship\Parent\Repository\Repository as AbstractRepository;
 
