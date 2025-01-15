@@ -24,15 +24,4 @@ class MainServiceProvider extends ParentMainServiceProvider
     public array $aliases = [
         // 'Foo' => Bar::class,
     ];
-
-    /**
-     * Register anything in the container.
-     */
-    public function register(): void
-    {
-        parent::register();
-
-        // $this->src->bind(UserRepositoryInterface::class, UserRepository::class);
-        // ...
-    }
 }

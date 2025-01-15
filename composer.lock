@@ -351,16 +351,16 @@
         },
         {
             "name": "bugover/ship",
-            "version": "1.9.17",
+            "version": "1.9.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship.git",
-                "reference": "aedfff15a9da40f1e1092e6c185fa534776083ed"
+                "reference": "848e8555e0319c036dd9965dc1bc42a4e866719e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/aedfff15a9da40f1e1092e6c185fa534776083ed",
-                "reference": "aedfff15a9da40f1e1092e6c185fa534776083ed",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/848e8555e0319c036dd9965dc1bc42a4e866719e",
+                "reference": "848e8555e0319c036dd9965dc1bc42a4e866719e",
                 "shasum": ""
             },
             "require": {
@@ -432,9 +432,9 @@
             ],
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.9.17"
+                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.9.18"
             },
-            "time": "2025-01-15T13:39:18+00:00"
+            "time": "2025-01-15T15:02:55+00:00"
         },
         {
             "name": "bugover/ship-manager",
