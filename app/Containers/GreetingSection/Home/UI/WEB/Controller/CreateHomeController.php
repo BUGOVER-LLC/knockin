@@ -14,6 +14,6 @@ class CreateHomeController extends WebController
 {
     public function __invoke(CreateHomeRequest $request): Application|Factory|\Illuminate\Contracts\View\View|View
     {
-        return view('greetingSection@home::page.hero');
+        return view('greeting-section@home::page.hero');
     }
 }

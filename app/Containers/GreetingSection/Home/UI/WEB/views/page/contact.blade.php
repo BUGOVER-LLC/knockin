@@ -1,4 +1,4 @@
-@extends('greetingSection@home::index')
+@extends('greeting-section@home::index')
 
 @section('main-content')
     <section id="contact" class="contact section">

@@ -1,4 +1,4 @@
-@extends('greetingSection@home::index')
+@extends('greeting-section@home::index')
 
 <!-- Hero Section -->
 @section('main-content')

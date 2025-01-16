@@ -15,12 +15,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Notifications', function (Blueprint $table) {
-            $table->ulid('notificationId')->primary();
+        Schema::create('notifications', function (Blueprint $table) {
+            $table->ulid('notification_id')->primary();
             $table->string('type');
             $table->morphs('notifiable');
             $table->text('data');
-            $table->timestamp('readAt')->nullable();
+            $table->timestamp('read_at')->nullable();
             $table->timestamps();
         });
     }

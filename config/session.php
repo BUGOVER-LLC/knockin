@@ -83,7 +83,7 @@ return [
     | provided for you; however, you are free to change this as needed.
     |
     */
-    'table' => 'Sessions',
+    'table' => 'sessions',
 
     /*
     |--------------------------------------------------------------------------

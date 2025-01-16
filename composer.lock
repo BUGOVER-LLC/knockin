@@ -351,16 +351,16 @@
         },
         {
             "name": "bugover/ship",
-            "version": "1.9.18",
+            "version": "1.9.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BUGOVER-LLC/ship.git",
-                "reference": "848e8555e0319c036dd9965dc1bc42a4e866719e"
+                "reference": "ae4d63cef1142652d05ff22e927b0ee0e0f23bbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/848e8555e0319c036dd9965dc1bc42a4e866719e",
-                "reference": "848e8555e0319c036dd9965dc1bc42a4e866719e",
+                "url": "https://api.github.com/repos/BUGOVER-LLC/ship/zipball/ae4d63cef1142652d05ff22e927b0ee0e0f23bbc",
+                "reference": "ae4d63cef1142652d05ff22e927b0ee0e0f23bbc",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +385,8 @@
                 "laravel/tinker": "^2.0.0",
                 "php": "^8.3.2",
                 "php-64bit": "^8.3.2",
-                "swoole/ide-helper": "^5.0.0"
+                "swoole/ide-helper": "^5.0.0",
+                "vlucas/phpdotenv": "^5.6.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.0.0",
@@ -432,9 +433,9 @@
             ],
             "support": {
                 "issues": "https://github.com/BUGOVER-LLC/ship/issues",
-                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.9.18"
+                "source": "https://github.com/BUGOVER-LLC/ship/tree/1.9.22"
             },
-            "time": "2025-01-15T15:02:55+00:00"
+            "time": "2025-01-16T19:43:31+00:00"
         },
         {
             "name": "bugover/ship-manager",

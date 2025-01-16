@@ -70,7 +70,7 @@ return [
     | the Migrations on disk haven't actually been run in the database.
     |
     */
-    'migrations' => 'Migrations',
+    'migrations' => 'migrations',
 
     /*
     |--------------------------------------------------------------------------

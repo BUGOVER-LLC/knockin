@@ -1,8 +1,8 @@
-@extends('greetingSection@home::home-layout')
+@extends('greeting-section@home::home-layout')
 
 @section('noix-home')
     <header id="header" class="header d-flex align-items-center fixed-top">
-        @include('greetingSection@home::components.header')
+        @include('greeting-section@home::components.header')
     </header>
 
     <main class="main">
@@ -10,7 +10,7 @@
     </main>
 
     <footer id="footer" class="footer position-relative light-background">
-        @include('greetingSection@home::components.footer')
+        @include('greeting-section@home::components.footer')
     </footer>
 
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
