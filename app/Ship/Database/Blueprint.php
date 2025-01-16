@@ -113,7 +113,7 @@ class Blueprint extends BaseBlueprint
         ]));
     }
 
-    public function ulidPrimary(string $column, int $length = 26): ColumnDefinition
+    public function ulidPrimary(string $column = 'id', int $length = 26): ColumnDefinition
     {
         return $this->char($column, $length)->primary();
     }

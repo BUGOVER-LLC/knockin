@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\DataSection\FileSystem\UI\WEB\Controllers;
+namespace Containers\DataSection\FileSystem\UI\WEB\Controller;
 
 use Containers\DataSection\FileSystem\Actions\CreateFileSystemAction;
 use Containers\DataSection\FileSystem\UI\WEB\Requests\CreateFileSystemRequest;

@@ -7,7 +7,7 @@ namespace Containers\AuthSection\Plan\UI\API\Controller;
 use Nucleus\Exceptions\IncorrectIdException;
 use Nucleus\Exceptions\InvalidResourceException;
 use Containers\AuthSection\Plan\Action\CreatePlanAction;
-use Containers\AuthSection\Plan\UI\API\Requests\CreatePlanRequest;
+use Containers\AuthSection\Plan\UI\API\Request\CreatePlanRequest;
 use Containers\AuthSection\Plan\UI\API\Resource\PlanResource;
 use Ship\Exception\CreateResourceFailedException;
 use Ship\Parent\Controller\ApiController;

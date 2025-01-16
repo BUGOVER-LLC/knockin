@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Containers\DataSection\FileSystem\UI\API\Controllers;
+namespace Containers\DataSection\FileSystem\UI\API\Controller;
 
 use Nucleus\Exceptions\IncorrectIdException;
 use Nucleus\Exceptions\InvalidResourceException;

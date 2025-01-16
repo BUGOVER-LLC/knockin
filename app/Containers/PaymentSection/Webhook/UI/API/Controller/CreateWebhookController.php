@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Containers\PaymentSection\Webhook\UI\API\Controller;
 
-use Containers\PaymentSection\Webhook\Action\CreateWebhookAction;
 use Containers\PaymentSection\Webhook\UI\API\Request\CreateWebhookRequest;
-use Containers\PaymentSection\Webhook\UI\API\Resource\WebhookResource;
 use Illuminate\Http\JsonResponse;
 use Nucleus\Exceptions\IncorrectIdException;
 use Nucleus\Exceptions\InvalidResourceException;
@@ -50,8 +48,5 @@ class CreateWebhookController extends ApiController
     ]
     public function __invoke(CreateWebhookRequest $request): JsonResponse
     {
-        $webhook = app(CreateWebhookAction::class)->run($request);
-
-        return $this->created($this->transform($webhook, WebhookResource::class));
     }
 }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Containers\AuthSection\Plan\UI\WEB\Controller;
 
 use Containers\AuthSection\Plan\Action\CreatePlanAction;
-use Containers\AuthSection\Plan\UI\WEB\Requests\CreatePlanRequest;
-use Containers\AuthSection\Plan\UI\WEB\Requests\StorePlanRequest;
+use Containers\AuthSection\Plan\UI\WEB\Request\CreatePlanRequest;
+use Containers\AuthSection\Plan\UI\WEB\Request\StorePlanRequest;
 use Ship\Parent\Controller\WebController;
 
 class CreatePlanController extends WebController
